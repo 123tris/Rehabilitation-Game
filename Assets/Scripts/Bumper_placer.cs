@@ -20,8 +20,6 @@ public class Bumper_placer : MonoBehaviour {
             Instantiate(Bumpers[Random.Range(0, Bumpers.Count)], spawnPosition);
             SpawnPoints.RemoveAt(randomspawn);
         }
-
-
 	}
 	
 

@@ -7,6 +7,7 @@ public class Ball_Controler : MonoBehaviour {
     float speed = 0.1f;
 
     bool vertical;
+    public Ball_Spawn b_s;
 
 	void Update () {
 
@@ -44,6 +45,15 @@ public class Ball_Controler : MonoBehaviour {
 
             Debug.Log("test2");
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "target")
+        {
+            Debug.Log("yeh bitch");
+        }
+
     }
 
 }
