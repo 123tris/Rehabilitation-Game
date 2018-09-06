@@ -6,23 +6,44 @@ public class Ball_Controler : MonoBehaviour {
     public Rigidbody rb;
     float speed = 0.1f;
 
-    bool up;
-    bool down;
+    bool vertical;
 
 	void Update () {
+
+        if(gameObject.transform.eulerAngles.y == 0 || gameObject.transform.eulerAngles.y == 180 || gameObject.transform.eulerAngles.y == -180)
+        {
+            vertical = true;
+        }else
+        {
+            vertical = false;
+        }
 
            transform.Translate(0,0, speed);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Bumper1" && down == true)
+        if (other.gameObject.tag == "Bumper1" && vertical == false)
         {
             gameObject.transform.Rotate(0, -90, 0);
-            Debug.Log("blm");
+            Debug.Log("test1");
+        } else if (other.gameObject.tag == "Bumper1" && vertical == true)
+        {
+            gameObject.transform.Rotate(0, 90, 0);
+
+            Debug.Log("test2");
         }
+        else if (other.gameObject.tag == "Bumper2" && vertical == false)
+        {
+            gameObject.transform.Rotate(0, 90, 0);
+            Debug.Log("test1");
+        }
+        else if (other.gameObject.tag == "Bumper2" && vertical == true)
+        {
+            gameObject.transform.Rotate(0, -90, 0);
 
+            Debug.Log("test2");
+        }
     }
-
 
 }

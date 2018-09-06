@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Bumper1
+  - Bumper2
   layers:
   - Default
   - TransparentFX
