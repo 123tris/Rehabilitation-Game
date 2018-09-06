@@ -6,9 +6,12 @@ public class Bumper_placer : MonoBehaviour {
 
     public List<GameObject> Bumpers;
     public List<Transform> SpawnPoints;
+    public List<GameObject> spawnedBumpers;
 
     public int Spawns;
     public int randomspawn;
+
+    public float timer = 5f;
 	
 	void Start () {
         for (int i = 0; i < Spawns; i++)
@@ -24,6 +27,15 @@ public class Bumper_placer : MonoBehaviour {
 	
 
 	void Update () {
-		
+        timer -= Time.deltaTime;
+        for (int i = 0; i < Spawns; i++)
+        {
+
+        }
+
+        if(timer <= 0)
+        {
+
+        }
 	}
 }

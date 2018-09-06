@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ball_Controler : MonoBehaviour {
     public Rigidbody rb;
@@ -20,6 +21,12 @@ public class Ball_Controler : MonoBehaviour {
         }
 
            transform.Translate(0,0, speed);
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("PinBal Recal Test Scene");
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
