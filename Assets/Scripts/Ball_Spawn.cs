@@ -11,14 +11,16 @@ public class Ball_Spawn : MonoBehaviour {
     public  Renderer rend;
     public GameObject ball;
     public GameObject playerCamera;
+    public GameObject pijl;
     public Material clicked;
     public Material standard;
     public GameObject target;
+    GameObject tagSearcher;
 
     void Start () {
         Chosen = false;
-       
 
+        RandomizerBal();
     }
 
     private void Update()
@@ -44,12 +46,38 @@ public class Ball_Spawn : MonoBehaviour {
             }
         }
     }
-   
-    public void SpawnBall()
+    void RandomizerBal()
     {
         randomspawn = Random.Range(0, TagSearcher.Count);
 
-        GameObject tagSearcher = TagSearcher[randomspawn];
+        tagSearcher = TagSearcher[randomspawn];
+
+        if (tagSearcher.tag == "Up")
+        {
+            Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+            Debug.Log("boven");
+        }
+        else if (tagSearcher.tag == "Down")
+        {
+            Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
+            Debug.Log("beneden");
+        }
+        else if (tagSearcher.tag == "left")
+        {
+            Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, -90, 0)));
+            Debug.Log("links");
+        }
+        else if (tagSearcher.tag == "Right")
+        {
+            Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 90, 0)));
+            Debug.Log("rechts");
+        }
+    }
+
+   
+    public void SpawnBall()
+    {
+       
 
         if(tagSearcher.tag == "Up")
         {
