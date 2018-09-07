@@ -5,12 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class Ball_Controler : MonoBehaviour {
     public Rigidbody rb;
+    
     float speed = 0.1f;
 
     bool vertical;
     public Ball_Spawn b_s;
+    public Bumper_placer b_p;
+    public GameObject bSP;
 
-	void Update () {
+    private void Start()
+    {
+        bSP = GameObject.FindGameObjectWithTag("Spawner");
+        b_p = bSP.GetComponent<Bumper_placer>();
+    }
+
+
+    void Update () {
 
         if(gameObject.transform.eulerAngles.y == 0 || gameObject.transform.eulerAngles.y == 180 || gameObject.transform.eulerAngles.y == -180)
         {
@@ -29,37 +39,45 @@ public class Ball_Controler : MonoBehaviour {
 
     }
 
-    private void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
+    if (other.gameObject.tag == "Bumper1" || other.gameObject.tag == "Bumper2")
+     {
+            other.gameObject.GetComponent<MeshRenderer>().enabled = true;
+            //Debug.Log("reee");
+        }
+
         if (other.gameObject.tag == "Bumper1" && vertical == false)
         {
             gameObject.transform.Rotate(0, -90, 0);
-            Debug.Log("test1");
+           // Debug.Log("test1");
         } else if (other.gameObject.tag == "Bumper1" && vertical == true)
         {
             gameObject.transform.Rotate(0, 90, 0);
 
-            Debug.Log("test2");
+            //Debug.Log("test2");
         }
         else if (other.gameObject.tag == "Bumper2" && vertical == false)
         {
             gameObject.transform.Rotate(0, 90, 0);
-            Debug.Log("test1");
+            //Debug.Log("test1");
         }
         else if (other.gameObject.tag == "Bumper2" && vertical == true)
         {
             gameObject.transform.Rotate(0, -90, 0);
 
-            Debug.Log("test2");
+           // Debug.Log("test2");
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.name == "target")
         {
-            Debug.Log("yeh bitch");
+           // Debug.Log("yeh bitch");
         }
+
+        
 
     }
 

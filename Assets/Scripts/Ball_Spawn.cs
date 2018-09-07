@@ -55,22 +55,22 @@ public class Ball_Spawn : MonoBehaviour {
         if (tagSearcher.tag == "Up")
         {
             Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-            Debug.Log("boven");
+           // Debug.Log("boven");
         }
         else if (tagSearcher.tag == "Down")
         {
             Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
-            Debug.Log("beneden");
+          //  Debug.Log("beneden");
         }
         else if (tagSearcher.tag == "left")
         {
             Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, -90, 0)));
-            Debug.Log("links");
+           // Debug.Log("links");
         }
         else if (tagSearcher.tag == "Right")
         {
             Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 90, 0)));
-            Debug.Log("rechts");
+          //  Debug.Log("rechts");
         }
     }
 
@@ -82,22 +82,22 @@ public class Ball_Spawn : MonoBehaviour {
         if(tagSearcher.tag == "Up")
         {
             Instantiate(ball,tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
-            Debug.Log("boven");
+         //   Debug.Log("boven");
         }
         else if(tagSearcher.tag == "Down")
         {
             Instantiate(ball, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-            Debug.Log("beneden");
+         //   Debug.Log("beneden");
         }
         else if (tagSearcher.tag == "left")
         {
             Instantiate(ball, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 90, 0)));
-            Debug.Log("links");
+          //  Debug.Log("links");
         }
         else if (tagSearcher.tag == "Right")
         {
             Instantiate(ball, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, -90, 0)));
-            Debug.Log("rechts");
+          //  Debug.Log("rechts");
         }
     }
 
