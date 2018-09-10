@@ -3,20 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Ball_Controler : MonoBehaviour {
-    public Rigidbody rb;
-    
-    float speed = 0.1f;
 
-    bool vertical;
+public class Ball_Controler : MonoBehaviour {
+  
+
+    [Header("Scripts")]
     public Ball_Spawn b_s;
     public Bumper_placer b_p;
+    public PointSystem p_s;
+
+    [Header("Find_Scripts")]
     public GameObject bSP;
+    public GameObject GameController;
+
+    [Header("Rigidbody")]
+    public Rigidbody rb;
+
+    float speed = 0.1f;
+    bool vertical;
+    bool Spawned;
 
     private void Start()
     {
         bSP = GameObject.FindGameObjectWithTag("Spawner");
+        GameController = GameObject.FindGameObjectWithTag("Observer");
         b_p = bSP.GetComponent<Bumper_placer>();
+        p_s = GameController.GetComponent<PointSystem>();
+
+        Spawned = false;
     }
 
 
@@ -44,6 +58,7 @@ public class Ball_Controler : MonoBehaviour {
     if (other.gameObject.tag == "Bumper1" || other.gameObject.tag == "Bumper2")
      {
             other.gameObject.GetComponent<MeshRenderer>().enabled = true;
+            Spawned = true;
             //Debug.Log("reee");
         }
 
@@ -74,11 +89,13 @@ public class Ball_Controler : MonoBehaviour {
     {
         if(collision.gameObject.name == "target")
         {
-           // Debug.Log("yeh bitch");
+            p_s.AddPoints();
+            SceneManager.LoadScene("PinBal Recal Test Scene");
         }
 
-        
-
+        if (collision.gameObject.tag == "Outer" && Spawned == true)
+        {
+            SceneManager.LoadScene("PinBal Recal Test Scene");
+        }
     }
-
 }

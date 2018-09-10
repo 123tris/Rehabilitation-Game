@@ -13,6 +13,7 @@ TagManager:
   - Right
   - Outer
   - Spawner
+  - Observer
   layers:
   - Default
   - TransparentFX

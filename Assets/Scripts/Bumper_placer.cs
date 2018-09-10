@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bumper_placer : MonoBehaviour {
 
+    public Ball_Spawn b_s;
     public List<GameObject> Bumpers;
     public List<Transform> SpawnPoints;
     public List<GameObject> spawnedBumpers =  new List<GameObject>();
@@ -53,10 +54,11 @@ public class Bumper_placer : MonoBehaviour {
         if (timer <= 0 && timerOn == true)
         {
             //Debug.Log("dede");
+            b_s.RandomizerBal();
             for (int i = 0; i < Spawns; i++)
             {
                 spawnedBumpers[i].GetComponent<MeshRenderer>().enabled = false;
-                Debug.Log("MeshOff");
+                Debug.Log("MeshOff");             
                 timerOn = false;
             }
         }

@@ -8,6 +8,7 @@ public class Ball_Spawn : MonoBehaviour {
 
     int randomspawn;
     bool Chosen;
+    public Bumper_placer b_p;
     public  Renderer rend;
     public GameObject ball;
     public GameObject playerCamera;
@@ -20,7 +21,7 @@ public class Ball_Spawn : MonoBehaviour {
     void Start () {
         Chosen = false;
 
-        RandomizerBal();
+       
     }
 
     private void Update()
@@ -34,7 +35,7 @@ public class Ball_Spawn : MonoBehaviour {
             {             
                 GameObject test = hit.collider.gameObject;
                 Debug.Log(test);
-                if (test.gameObject.tag == "Outer")
+                if (test.gameObject.tag == "Outer" && b_p.timer <= 0)
                 {
                     target = hit.transform.gameObject;
                     target.gameObject.name = "target";
@@ -46,7 +47,7 @@ public class Ball_Spawn : MonoBehaviour {
             }
         }
     }
-    void RandomizerBal()
+    public void RandomizerBal()
     {
         randomspawn = Random.Range(0, TagSearcher.Count);
 
