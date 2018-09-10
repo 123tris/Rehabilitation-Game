@@ -9,12 +9,12 @@ public class Bumper_placer : MonoBehaviour {
     public Ball_Spawn b_s;
 
     [Header("Lists")]
-    public List<GameObject> Bumpers;
-    public List<Transform> SpawnPoints;
+    public List<GameObject> bumpers;
+    public List<Transform> spawnPoints;
     public List<GameObject> spawnedBumpers = new List<GameObject>();
 
     [Header("Misc")]
-    public int Spawns;  
+    public int spawns;  
     public float timer = 5f;
     public bool timerOn;
     int randomspawn;
@@ -22,14 +22,14 @@ public class Bumper_placer : MonoBehaviour {
     void Start () {
         timerOn = true;
 
-        for (int i = 0; i < Spawns; i++)
+        for (int i = 0; i < spawns; i++)
         {
-            randomspawn = Random.Range(0, SpawnPoints.Count);
+            randomspawn = Random.Range(0, spawnPoints.Count);
 
-            Transform spawnPosition = SpawnPoints[randomspawn];
+            Transform spawnPosition = spawnPoints[randomspawn];
             
-            GameObject Bumper = Instantiate(Bumpers[Random.Range(0, Bumpers.Count)], spawnPosition);
-            SpawnPoints.RemoveAt(randomspawn);
+            GameObject Bumper = Instantiate(bumpers[Random.Range(0, bumpers.Count)], spawnPosition);
+            spawnPoints.RemoveAt(randomspawn);
             
             spawnedBumpers.Add(Bumper);
         }
@@ -51,7 +51,7 @@ public class Bumper_placer : MonoBehaviour {
         {
             //Debug.Log("dede");
             b_s.RandomizerBal();
-            for (int i = 0; i < Spawns; i++)
+            for (int i = 0; i < spawns; i++)
             {
                 spawnedBumpers[i].GetComponent<MeshRenderer>().enabled = false;
                 Debug.Log("MeshOff");             

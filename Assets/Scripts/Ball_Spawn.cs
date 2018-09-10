@@ -21,15 +21,15 @@ public class Ball_Spawn : MonoBehaviour {
     public Material standard;
 
     [Header("List")]
-    public List<GameObject> TagSearcher;
+    public List<GameObject> tagSearcherList;
 
     GameObject tagSearcher;
 
     int randomspawn;
-    bool Chosen;
+    bool chosen;
 
     void Start () {
-        Chosen = false;     
+        chosen = false;     
     }
 
     private void Update()
@@ -39,17 +39,17 @@ public class Ball_Spawn : MonoBehaviour {
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 200f))
         { 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && Chosen == false)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && chosen == false)
             {             
                 GameObject test = hit.collider.gameObject;
-                Debug.Log(test);
+                
                 if (test.gameObject.tag == "Outer" && b_p.timer <= 0)
                 {
                     target = hit.transform.gameObject;
                     target.gameObject.name = "target";
                     rend = target.GetComponent<Renderer>();
                     rend.sharedMaterial = clicked;
-                    Chosen = true;
+                    chosen = true;
                     SpawnBall();
                 }             
             }
@@ -57,9 +57,9 @@ public class Ball_Spawn : MonoBehaviour {
     }
     public void RandomizerBal()
     {
-        randomspawn = Random.Range(0, TagSearcher.Count);
+        randomspawn = Random.Range(0, tagSearcherList.Count);
 
-        tagSearcher = TagSearcher[randomspawn];
+        tagSearcher = tagSearcherList[randomspawn];
 
         if (tagSearcher.tag == "Up")
         {
