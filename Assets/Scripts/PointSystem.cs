@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class PointSystem : MonoBehaviour {
 
+    [Header("Texts")]
     public Text points_Var;
+
     int currentLifetimeScore;
     int newLifeTimeScore;
 
@@ -13,12 +15,6 @@ public class PointSystem : MonoBehaviour {
         currentLifetimeScore = PlayerPrefs.GetInt("LifeTimeScore");
         points_Var.text = currentLifetimeScore.ToString();
     }
-	
-
-	void Update () {
-		
-	}
-
     public void AddPoints()
     {
          newLifeTimeScore = currentLifetimeScore + 1;

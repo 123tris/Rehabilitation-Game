@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Ball_Controler : MonoBehaviour {
   
 
-    [Header("Scripts")]
+    [Header("External Scripts")]
     public Ball_Spawn b_s;
     public Bumper_placer b_p;
     public PointSystem p_s;
@@ -33,7 +33,6 @@ public class Ball_Controler : MonoBehaviour {
         Spawned = false;
     }
 
-
     void Update () {
 
         if(gameObject.transform.eulerAngles.y == 0 || gameObject.transform.eulerAngles.y == 180 || gameObject.transform.eulerAngles.y == -180)
@@ -50,7 +49,6 @@ public class Ball_Controler : MonoBehaviour {
         {
             SceneManager.LoadScene("PinBal Recal Test Scene");
         }
-
     }
 
      void OnTriggerEnter(Collider other)

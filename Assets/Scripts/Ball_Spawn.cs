@@ -4,24 +4,32 @@ using UnityEngine;
 
 public class Ball_Spawn : MonoBehaviour {
 
-    public List<GameObject> TagSearcher;
-
-    int randomspawn;
-    bool Chosen;
+    [Header("External Scripts")]
     public Bumper_placer b_p;
+
+    [Header("MeshRenderer")]
     public  Renderer rend;
+
+    [Header("GameObjects")]
     public GameObject ball;
     public GameObject playerCamera;
     public GameObject pijl;
+    public GameObject target;
+
+    [Header("Materials")]
     public Material clicked;
     public Material standard;
-    public GameObject target;
+
+    [Header("List")]
+    public List<GameObject> TagSearcher;
+
     GameObject tagSearcher;
 
-    void Start () {
-        Chosen = false;
+    int randomspawn;
+    bool Chosen;
 
-       
+    void Start () {
+        Chosen = false;     
     }
 
     private void Update()
@@ -75,11 +83,8 @@ public class Ball_Spawn : MonoBehaviour {
         }
     }
 
-   
     public void SpawnBall()
     {
-       
-
         if(tagSearcher.tag == "Up")
         {
             Instantiate(ball,tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));

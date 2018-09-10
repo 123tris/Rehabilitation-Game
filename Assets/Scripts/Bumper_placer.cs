@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class Bumper_placer : MonoBehaviour {
 
+
+    [Header("External Scripts")]
     public Ball_Spawn b_s;
+
+    [Header("Lists")]
     public List<GameObject> Bumpers;
     public List<Transform> SpawnPoints;
-    public List<GameObject> spawnedBumpers =  new List<GameObject>();
-    public int Spawns;
-    public int randomspawn;
+    public List<GameObject> spawnedBumpers = new List<GameObject>();
 
+    [Header("Misc")]
+    public int Spawns;  
     public float timer = 5f;
     public bool timerOn;
-	
-	void Start () {
+    int randomspawn;
 
+    void Start () {
         timerOn = true;
-
 
         for (int i = 0; i < Spawns; i++)
         {
@@ -29,27 +32,20 @@ public class Bumper_placer : MonoBehaviour {
             SpawnPoints.RemoveAt(randomspawn);
             
             spawnedBumpers.Add(Bumper);
-           
-
         }
 	}
 	
-
 	void Update () {
-        BumperTimer();
-        
+        BumperTimer();      
 	}
     
     void BumperTimer()
-    {
-        
+    {       
         if (timerOn)
         {
             timer -= Time.deltaTime;
             Debug.Log("Timeronn");
         }
-       
-
 
         if (timer <= 0 && timerOn == true)
         {
@@ -64,10 +60,6 @@ public class Bumper_placer : MonoBehaviour {
         }
     }
 
-   public void BumperHit()
-    {
-
-    }
 }
 
 
