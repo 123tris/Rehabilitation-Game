@@ -17,11 +17,11 @@ public class Bumper_placer : MonoBehaviour
     public int spawns;
     public float timer = 5f;
     public bool timerOn;
+    [SerializeField] private float bumperSpawnAmount = 2;
 
     public static Bumper_placer instance;
 
-    [HideInInspector]
-    public SpawnEntity[,] board = new SpawnEntity[6, 6];
+    [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[6, 6];
     private Vector2 ballBoardIndex;
     public float horizontalSpacing;
     public float verticalSpacing;
@@ -35,8 +35,6 @@ public class Bumper_placer : MonoBehaviour
     {
         timerOn = true;
 
-        GenereateRandomBumper();
-
     }
 
     void Update()
@@ -44,25 +42,24 @@ public class Bumper_placer : MonoBehaviour
 
     }
 
-    void GenereateRandomBumper()
+    void GenerateBumpers(int bumperAmount)
+    {
+        for (int i = 0; i < bumperAmount; i++)
+        {
+            GenerateRandomBumper();
+        }
+    }
+
+    void GenerateRandomBumper()
     {
         //Randomize ball position first because the bumper needs to be aware of where the ball spawns before it can be generated
         RandomizeBallPosition();
 
         var randomBumperIndex = GenerateRandomBumperIndex();
-        int bumperRotation = Random.Range(0, 1);
+        int bumperDirection = Random.Range(0, 1);
         //TODO:Validate index first, set new value to random bumperindex if valid is not true until valid is true
-        bool onEdge = bumper.transform.position.x != 1 && bumper.transform.position.x != 4 && bumper.transform.position.y != 1 && bumper.transform.position.y != 4;
 
-        while (onEdge)
-        {
-            SpawnBumper(randomBumperIndex, bumperRotation);
-        }
-
-            //GenereateRandomBumper();
-        
-
-        //SpawnBumper(randomBumperIndex, bumperDirection);
+        SpawnBumper(randomBumperIndex, bumperDirection);
     }
 
     private void SpawnBumper(Vector2 randomBumperIndex, int bumperDirection)
