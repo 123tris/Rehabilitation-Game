@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum SpawnEntity
 {
-    Bumper, Ball
+    Empty, Bumper, Ball, Entity
 }
 
 public class Bumper_placer : MonoBehaviour
@@ -34,7 +34,6 @@ public class Bumper_placer : MonoBehaviour
     void Start()
     {
         timerOn = true;
-
     }
 
     void Update()
@@ -44,19 +43,30 @@ public class Bumper_placer : MonoBehaviour
 
     void GenerateBumpers(int bumperAmount)
     {
+        //Randomize ball position first because the bumper needs to be aware of where the ball spawns before it can be generated
+        RandomizeBallPosition();
+
         for (int i = 0; i < bumperAmount; i++)
         {
             GenerateRandomBumper();
+
         }
     }
 
     void GenerateRandomBumper()
     {
-        //Randomize ball position first because the bumper needs to be aware of where the ball spawns before it can be generated
-        RandomizeBallPosition();
-
         var randomBumperIndex = GenerateRandomBumperIndex();
         int bumperDirection = Random.Range(0, 1);
+
+
+        var entity = board[(int)randomBumperIndex.x, (int)randomBumperIndex.y];
+
+        if (entity == SpawnEntity.Entity)
+        {
+            entity = board[(int)randomBumperIndex.x, (int)randomBumperIndex.y];
+        }
+        
+
         //TODO:Validate index first, set new value to random bumperindex if valid is not true until valid is true
 
         SpawnBumper(randomBumperIndex, bumperDirection);
@@ -125,10 +135,9 @@ public class Bumper_placer : MonoBehaviour
             for (int j = 0; j < board.GetLength(1); j++)
             {
                 var targetPos = transform.position + Vector3.right * horizontalSpacing * i +
-                                Vector3.forward * verticalSpacing * j;
+                Vector3.forward * verticalSpacing * j;
                 Gizmos.DrawCube(targetPos, Vector3.one * .5f);
             }
         }
     }
-
 }
