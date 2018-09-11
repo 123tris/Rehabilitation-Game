@@ -13,7 +13,7 @@ public class Ball_Spawn : MonoBehaviour {
     [Header("GameObjects")]
     public GameObject ball;
     public GameObject playerCamera;
-    public GameObject pijl;
+    public GameObject arrow;
     public GameObject target;
 
     [Header("Materials")]
@@ -21,15 +21,17 @@ public class Ball_Spawn : MonoBehaviour {
     public Material standard;
 
     [Header("List")]
-    public List<GameObject> TagSearcher;
+    public List<GameObject> tagSearcherList;
 
     GameObject tagSearcher;
 
     int randomspawn;
-    bool Chosen;
+    bool chosen;
+    private Vector3 newBallPosition;
+    private Vector3 newBallRotation;
 
     void Start () {
-        Chosen = false;     
+        chosen = false;     
     }
 
     private void Update()
@@ -39,72 +41,33 @@ public class Ball_Spawn : MonoBehaviour {
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 200f))
         { 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && Chosen == false)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && chosen == false)
             {             
                 GameObject test = hit.collider.gameObject;
-                Debug.Log(test);
+                
                 if (test.gameObject.tag == "Outer" && b_p.timer <= 0)
                 {
                     target = hit.transform.gameObject;
                     target.gameObject.name = "target";
                     rend = target.GetComponent<Renderer>();
                     rend.sharedMaterial = clicked;
-                    Chosen = true;
+                    chosen = true;
                     SpawnBall();
                 }             
             }
         }
     }
-    public void RandomizerBal()
+
+    public void SetUpcomingBallPosition(Vector3 position,Vector3 rotation)
     {
-        randomspawn = Random.Range(0, TagSearcher.Count);
-
-        tagSearcher = TagSearcher[randomspawn];
-
-        if (tagSearcher.tag == "Up")
-        {
-            Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-           // Debug.Log("boven");
-        }
-        else if (tagSearcher.tag == "Down")
-        {
-            Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
-          //  Debug.Log("beneden");
-        }
-        else if (tagSearcher.tag == "left")
-        {
-            Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, -90, 0)));
-           // Debug.Log("links");
-        }
-        else if (tagSearcher.tag == "Right")
-        {
-            Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 90, 0)));
-          //  Debug.Log("rechts");
-        }
+        Instantiate(arrow, position, Quaternion.Euler(rotation));
+        newBallPosition = position;
+        newBallRotation = rotation;
     }
 
     public void SpawnBall()
     {
-        if(tagSearcher.tag == "Up")
-        {
-            Instantiate(ball,tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
-         //   Debug.Log("boven");
-        }
-        else if(tagSearcher.tag == "Down")
-        {
-            Instantiate(ball, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-         //   Debug.Log("beneden");
-        }
-        else if (tagSearcher.tag == "left")
-        {
-            Instantiate(ball, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 90, 0)));
-          //  Debug.Log("links");
-        }
-        else if (tagSearcher.tag == "Right")
-        {
-            Instantiate(ball, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, -90, 0)));
-          //  Debug.Log("rechts");
-        }
+        Instantiate(ball, newBallPosition, Quaternion.Euler(newBallRotation));
     }
 
 }

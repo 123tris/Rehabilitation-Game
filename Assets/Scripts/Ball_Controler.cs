@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class Ball_Controler : MonoBehaviour {
-  
+public class Ball_Controler : MonoBehaviour
+{
+
 
     [Header("External Scripts")]
     public Ball_Spawn b_s;
@@ -14,36 +15,38 @@ public class Ball_Controler : MonoBehaviour {
 
     [Header("Find_Scripts")]
     public GameObject bSP;
-    public GameObject GameController;
+    public GameObject gameController;
 
     [Header("Rigidbody")]
     public Rigidbody rb;
 
-    float speed = 0.08f;
+    float speed = 0.1f;
     bool vertical;
-    bool Spawned;
+    bool spawned;
 
     private void Start()
     {
         bSP = GameObject.FindGameObjectWithTag("Spawner");
-        GameController = GameObject.FindGameObjectWithTag("Observer");
+        gameController = GameObject.FindGameObjectWithTag("Observer");
         b_p = bSP.GetComponent<Bumper_placer>();
-        p_s = GameController.GetComponent<PointSystem>();
+        p_s = gameController.GetComponent<PointSystem>();
 
-        Spawned = false;
-    }   
+        spawned = false;
+    }
 
-    void Update () {
+    void Update()
+    {
 
-        if(gameObject.transform.eulerAngles.y == 0 || gameObject.transform.eulerAngles.y == 180 || gameObject.transform.eulerAngles.y == -180)
+        if (gameObject.transform.eulerAngles.y == 0 || gameObject.transform.eulerAngles.y == 180 || gameObject.transform.eulerAngles.y == -180)
         {
             vertical = true;
-        }else
+        }
+        else
         {
             vertical = false;
         }
 
-           transform.Translate(0,0, speed);
+        transform.Translate(0, 0, speed);
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -51,20 +54,21 @@ public class Ball_Controler : MonoBehaviour {
         }
     }
 
-     void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-    if (other.gameObject.tag == "Bumper1" || other.gameObject.tag == "Bumper2")
-     {
+        if (other.gameObject.tag == "Bumper1" || other.gameObject.tag == "Bumper2")
+        {
             other.gameObject.GetComponent<MeshRenderer>().enabled = true;
-            Spawned = true;
+            spawned = true;
             //Debug.Log("reee");
         }
 
         if (other.gameObject.tag == "Bumper1" && vertical == false)
         {
             gameObject.transform.Rotate(0, -90, 0);
-           // Debug.Log("test1");
-        } else if (other.gameObject.tag == "Bumper1" && vertical == true)
+            // Debug.Log("test1");
+        }
+        else if (other.gameObject.tag == "Bumper1" && vertical == true)
         {
             gameObject.transform.Rotate(0, 90, 0);
 
@@ -79,21 +83,21 @@ public class Ball_Controler : MonoBehaviour {
         {
             gameObject.transform.Rotate(0, -90, 0);
 
-           // Debug.Log("test2");
+            // Debug.Log("test2");
         }
     }
 
-     void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "target")
+        if (collision.gameObject.name == "target")
         {
             p_s.AddPoints();
-            SceneManager.LoadScene("PinBal Recal Test Scene");
+            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));
         }
 
-        if (collision.gameObject.tag == "Outer" && Spawned == true)
+        if (collision.gameObject.tag == "Outer" && spawned == true)
         {
-            SceneManager.LoadScene("PinBal Recal Test Scene");
+            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));
         }
     }
 }
