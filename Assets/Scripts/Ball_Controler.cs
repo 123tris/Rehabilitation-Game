@@ -19,7 +19,7 @@ public class Ball_Controler : MonoBehaviour {
     [Header("Rigidbody")]
     public Rigidbody rb;
 
-    float speed = 0.1f;
+    float speed = 0.08f;
     bool vertical;
     bool Spawned;
 
@@ -31,7 +31,7 @@ public class Ball_Controler : MonoBehaviour {
         p_s = GameController.GetComponent<PointSystem>();
 
         Spawned = false;
-    }
+    }   
 
     void Update () {
 
