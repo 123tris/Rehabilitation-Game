@@ -17,11 +17,11 @@ public class Bumper_placer : MonoBehaviour
     public int spawns;
     public float timer = 5f;
     public bool timerOn;
+    [SerializeField] private float bumperSpawnAmount = 2;
 
     public static Bumper_placer instance;
 
-    [HideInInspector]
-    public SpawnEntity[,] board = new SpawnEntity[6, 6];
+    [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[6, 6];
     private Vector2 ballBoardIndex;
     public float horizontalSpacing;
     public float verticalSpacing;
@@ -35,7 +35,6 @@ public class Bumper_placer : MonoBehaviour
     {
         timerOn = true;
 
-        GenereateRandomBumper();
     }
 
     void Update()
@@ -43,7 +42,15 @@ public class Bumper_placer : MonoBehaviour
 
     }
 
-    void GenereateRandomBumper()
+    void GenerateBumpers(int bumperAmount)
+    {
+        for (int i = 0; i < bumperAmount; i++)
+        {
+            GenerateRandomBumper();
+        }
+    }
+
+    void GenerateRandomBumper()
     {
         //Randomize ball position first because the bumper needs to be aware of where the ball spawns before it can be generated
         RandomizeBallPosition();
