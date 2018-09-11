@@ -13,7 +13,7 @@ public class Ball_Spawn : MonoBehaviour {
     [Header("GameObjects")]
     public GameObject ball;
     public GameObject playerCamera;
-    public GameObject pijl;
+    public GameObject arrow;
     public GameObject target;
 
     [Header("Materials")]
@@ -27,6 +27,8 @@ public class Ball_Spawn : MonoBehaviour {
 
     int randomspawn;
     bool chosen;
+    private Vector3 newBallPosition;
+    private Vector3 newBallRotation;
 
     void Start () {
         chosen = false;     
@@ -55,56 +57,17 @@ public class Ball_Spawn : MonoBehaviour {
             }
         }
     }
-    public void RandomizerBal()
+
+    public void SetUpcomingBallPosition(Vector3 position,Vector3 rotation)
     {
-        randomspawn = Random.Range(0, tagSearcherList.Count);
-
-        tagSearcher = tagSearcherList[randomspawn];
-
-        if (tagSearcher.tag == "Up")
-        {
-            Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-           // Debug.Log("boven");
-        }
-        else if (tagSearcher.tag == "Down")
-        {
-            Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
-          //  Debug.Log("beneden");
-        }
-        else if (tagSearcher.tag == "left")
-        {
-            Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, -90, 0)));
-           // Debug.Log("links");
-        }
-        else if (tagSearcher.tag == "Right")
-        {
-            Instantiate(pijl, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 90, 0)));
-          //  Debug.Log("rechts");
-        }
+        Instantiate(arrow, position, Quaternion.Euler(rotation));
+        newBallPosition = position;
+        newBallRotation = rotation;
     }
 
     public void SpawnBall()
     {
-        if(tagSearcher.tag == "Up")
-        {
-            Instantiate(ball,tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
-         //   Debug.Log("boven");
-        }
-        else if(tagSearcher.tag == "Down")
-        {
-            Instantiate(ball, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-         //   Debug.Log("beneden");
-        }
-        else if (tagSearcher.tag == "left")
-        {
-            Instantiate(ball, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, 90, 0)));
-          //  Debug.Log("links");
-        }
-        else if (tagSearcher.tag == "Right")
-        {
-            Instantiate(ball, tagSearcher.transform.position, Quaternion.Euler(new Vector3(0, -90, 0)));
-          //  Debug.Log("rechts");
-        }
+        Instantiate(ball, newBallPosition, Quaternion.Euler(newBallRotation));
     }
 
 }

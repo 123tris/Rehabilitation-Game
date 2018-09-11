@@ -820,7 +820,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   ball: {fileID: 1443160213498848, guid: 12ba4f832314fd546a9815934ef8f0cd, type: 2}
   playerCamera: {fileID: 930414689}
-  pijl: {fileID: 1268086877434714, guid: 261487362a987cd41b7365783167177e, type: 2}
+  arrow: {fileID: 1268086877434714, guid: 261487362a987cd41b7365783167177e, type: 2}
   target: {fileID: 0}
   clicked: {fileID: 2100000, guid: c0c8b2eeb76c8374e93ea4ef4b1da954, type: 2}
   standard: {fileID: 2100000, guid: 0be15c88c020c5f4692dc0801dbddceb, type: 2}
@@ -866,6 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points_Var: {fileID: 884209953}
+  targetScores: 
 --- !u!1 &191274770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,9 +1453,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   b_s: {fileID: 181663014}
-  bumpers:
-  - {fileID: 1402388904706420, guid: 1c542ff2736502343911a16e84e45a63, type: 2}
-  - {fileID: 1249487529435552, guid: 80fc9bf6b96ee064aba57a4b5111f53a, type: 2}
   spawnPoints:
   - {fileID: 1817765867}
   - {fileID: 1461170907}
@@ -1473,17 +1471,20 @@ MonoBehaviour:
   - {fileID: 2052339246}
   - {fileID: 1414597381}
   spawnedBumpers: []
+  bumper: {fileID: 1402388904706420, guid: 1c542ff2736502343911a16e84e45a63, type: 2}
   spawns: 6
   timer: 5
   timerOn: 0
+  horizontalSpacing: 1
+  verticalSpacing: 1
 --- !u!4 &407157496
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 407157494}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4969818, y: -7.4696074, z: 4.955957}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1511,7 +1512,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 431423655}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.399, y: 0, z: 0.74800014}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1251553291}

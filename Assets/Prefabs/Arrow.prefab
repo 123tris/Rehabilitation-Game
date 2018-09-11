@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23854437429295984}
   - component: {fileID: 64407925077033734}
   m_Layer: 0
-  m_Name: Pijl
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

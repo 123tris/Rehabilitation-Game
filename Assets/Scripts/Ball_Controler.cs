@@ -92,18 +92,12 @@ public class Ball_Controler : MonoBehaviour
         if (collision.gameObject.name == "target")
         {
             p_s.AddPoints();
-            StartCoroutine(WaitForIt(3.0F));
+            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));
         }
 
         if (collision.gameObject.tag == "Outer" && spawned == true)
         {
-            StartCoroutine(WaitForIt(3.0F));
+            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));
         }
-    }
-
-    IEnumerator WaitForIt(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        SceneManager.LoadScene("PinBal Recal Test Scene");
     }
 }
