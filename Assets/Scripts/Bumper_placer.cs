@@ -36,6 +36,7 @@ public class Bumper_placer : MonoBehaviour
         timerOn = true;
 
         GenereateRandomBumper();
+
     }
 
     void Update()
@@ -49,10 +50,19 @@ public class Bumper_placer : MonoBehaviour
         RandomizeBallPosition();
 
         var randomBumperIndex = GenerateRandomBumperIndex();
-        int bumperDirection = Random.Range(0, 1);
+        int bumperRotation = Random.Range(0, 1);
         //TODO:Validate index first, set new value to random bumperindex if valid is not true until valid is true
+        bool onEdge = bumper.transform.position.x != 1 && bumper.transform.position.x != 4 && bumper.transform.position.y != 1 && bumper.transform.position.y != 4;
 
-        SpawnBumper(randomBumperIndex, bumperDirection);
+        while (onEdge)
+        {
+            SpawnBumper(randomBumperIndex, bumperRotation);
+        }
+
+            //GenereateRandomBumper();
+        
+
+        //SpawnBumper(randomBumperIndex, bumperDirection);
     }
 
     private void SpawnBumper(Vector2 randomBumperIndex, int bumperDirection)
