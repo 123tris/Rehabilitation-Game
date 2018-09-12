@@ -1457,6 +1457,7 @@ MonoBehaviour:
   spawns: 6
   timer: 5
   timerOn: 0
+  bumperSpawnAmount: 2
   horizontalSpacing: 1
   verticalSpacing: 1
 --- !u!4 &407157496
