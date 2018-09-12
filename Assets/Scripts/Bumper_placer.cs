@@ -4,7 +4,12 @@ using UnityEngine;
 
 public enum SpawnEntity
 {
-    Empty, Bumper, Ball, Entity
+    Empty, Bumper, Ball
+}
+
+public enum Direction
+{
+    Up,Down,Right,Left
 }
 
 public class Bumper_placer : MonoBehaviour
@@ -23,6 +28,7 @@ public class Bumper_placer : MonoBehaviour
 
     [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[6, 6];
     private Vector2 ballBoardIndex;
+    private Direction ballDirectionIndex;
     public float horizontalSpacing;
     public float verticalSpacing;
 
@@ -55,17 +61,18 @@ public class Bumper_placer : MonoBehaviour
 
     void GenerateRandomBumper()
     {
-        var randomBumperIndex = GenerateRandomBumperIndex();
+        Vector2 randomBumperIndex = GenerateRandomBumperIndex();
         int bumperDirection = Random.Range(0, 1);
 
-
-        var entity = board[(int)randomBumperIndex.x, (int)randomBumperIndex.y];
-
-        if (entity == SpawnEntity.Entity)
+        SpawnEntity entity = board[(int)randomBumperIndex.x, (int)randomBumperIndex.y];
+        while (entity != SpawnEntity.Empty)
         {
+            randomBumperIndex = GenerateRandomBumperIndex();
             entity = board[(int)randomBumperIndex.x, (int)randomBumperIndex.y];
         }
-        
+        int x = (int) randomBumperIndex.x;
+        int y = (int) randomBumperIndex.y;
+        bool onBorder = x == 1 || y == 1 || x == board.GetLength(0) - 2 || y == board.GetLength(0) - 2;
 
         //TODO:Validate index first, set new value to random bumperindex if valid is not true until valid is true
 
@@ -75,7 +82,7 @@ public class Bumper_placer : MonoBehaviour
     private void SpawnBumper(Vector2 randomBumperIndex, int bumperDirection)
     {
         board[(int) randomBumperIndex.x, (int) randomBumperIndex.y] = SpawnEntity.Bumper;
-        var position = GetSpawnPositionByIndex((int) randomBumperIndex.x, (int) randomBumperIndex.y);
+        Vector3 position = GetSpawnPositionByIndex((int) randomBumperIndex.x, (int) randomBumperIndex.y);
 
         //Calculate rotation
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 45, 0));
@@ -134,7 +141,7 @@ public class Bumper_placer : MonoBehaviour
         {
             for (int j = 0; j < board.GetLength(1); j++)
             {
-                var targetPos = transform.position + Vector3.right * horizontalSpacing * i +
+                Vector3 targetPos = transform.position + Vector3.right * horizontalSpacing * i +
                 Vector3.forward * verticalSpacing * j;
                 Gizmos.DrawCube(targetPos, Vector3.one * .5f);
             }
