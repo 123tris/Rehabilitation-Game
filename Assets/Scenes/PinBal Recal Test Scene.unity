@@ -1453,28 +1453,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   b_s: {fileID: 181663014}
-  spawnPoints:
-  - {fileID: 1817765867}
-  - {fileID: 1461170907}
-  - {fileID: 1569617072}
-  - {fileID: 1453572709}
-  - {fileID: 1148187498}
-  - {fileID: 1939296119}
-  - {fileID: 515027590}
-  - {fileID: 1317964269}
-  - {fileID: 937431730}
-  - {fileID: 1640957294}
-  - {fileID: 806060136}
-  - {fileID: 1807038051}
-  - {fileID: 480856600}
-  - {fileID: 929406119}
-  - {fileID: 2052339246}
-  - {fileID: 1414597381}
-  spawnedBumpers: []
   bumper: {fileID: 1402388904706420, guid: 1c542ff2736502343911a16e84e45a63, type: 2}
   spawns: 6
   timer: 5
   timerOn: 0
+  bumperSpawnAmount: 2
   horizontalSpacing: 1
   verticalSpacing: 1
 --- !u!4 &407157496

@@ -34,6 +34,7 @@ public class Bumper_placer : MonoBehaviour
     void Start()
     {
         timerOn = true;
+        GenerateBumpers(2);
     }
 
     void Update()
@@ -49,7 +50,6 @@ public class Bumper_placer : MonoBehaviour
         for (int i = 0; i < bumperAmount; i++)
         {
             GenerateRandomBumper();
-
         }
     }
 
@@ -61,8 +61,9 @@ public class Bumper_placer : MonoBehaviour
 
         var entity = board[(int)randomBumperIndex.x, (int)randomBumperIndex.y];
 
-        if (entity == SpawnEntity.Entity)
+        while (entity != SpawnEntity.Empty)
         {
+            randomBumperIndex = GenerateRandomBumperIndex();
             entity = board[(int)randomBumperIndex.x, (int)randomBumperIndex.y];
         }
         
@@ -123,8 +124,8 @@ public class Bumper_placer : MonoBehaviour
 
     public Vector3 GetSpawnPositionByIndex(int x, int y)
     {
-        Vector3 verticalOffset = Vector3.forward * verticalSpacing * y;
-        Vector3 horizontalOffset = Vector3.right * horizontalSpacing * x;
+        Vector3 verticalOffset = y * verticalSpacing * Vector3.forward;
+        Vector3 horizontalOffset = x * horizontalSpacing * Vector3.right;
         return transform.position + verticalOffset + horizontalOffset;
     }
 
