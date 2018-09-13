@@ -36,6 +36,10 @@ public class Ball_Controler : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("PinBal Recal Test Scene");
+        }
 
         if (gameObject.transform.eulerAngles.y == 0 || gameObject.transform.eulerAngles.y == 180 || gameObject.transform.eulerAngles.y == -180)
         {
@@ -48,10 +52,7 @@ public class Ball_Controler : MonoBehaviour
 
         transform.Translate(0, 0, speed);
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("PinBal Recal Test Scene");
-        }
+        
     }
 
     void OnTriggerEnter(Collider other)

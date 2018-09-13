@@ -20,12 +20,13 @@ public class Bumper_placer : MonoBehaviour
     [Header("Misc")]
     public GameObject bumper;
     public int spawns;
-    public float timer = 5f;
+    public float timer = 1f;
     public bool timerOn;
     [SerializeField] private float bumperSpawnAmount = 2;
 
     public static Bumper_placer instance;
     Direction ballDirection;
+    SpawnEntity spawnPlace;
     bool lastBumperIsBumper1;
 
     [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[6, 6];
@@ -43,6 +44,7 @@ public class Bumper_placer : MonoBehaviour
 
     void Start()
     {
+        timer = 1f;
         timerOn = true;
         GenerateBumpers(3);
     }
@@ -148,23 +150,25 @@ public class Bumper_placer : MonoBehaviour
             }
         }
 
+        spawnPlace = board[(int)randomBumperIndex.x, (int)randomBumperIndex.y];
         lastBumperIsBumper1 = true;
         lastBumperIndex = randomBumperIndex;
-        Instantiate(bumper, GetSpawnPositionByIndex((int)randomBumperIndex.x, (int)randomBumperIndex.y), Quaternion.Euler(0, 45, 0));
+
+        if (spawnPlace == SpawnEntity.Empty) {
+            Instantiate(bumper, GetSpawnPositionByIndex((int)randomBumperIndex.x, (int)randomBumperIndex.y), Quaternion.Euler(0, 45, 0));
+        }
+        else
+        {
+            GenerateBumper(false);
+        }
     }
 
     void GenerateRandomBumper()
     {
 
-        Vector2 randomBumperIndex = GenerateRandomBumperIndex();
+        
         int bumperDirection = Random.Range(0, 1);
-
-        SpawnEntity entity = board[(int)randomBumperIndex.x, (int)randomBumperIndex.y];
-        while (entity != SpawnEntity.Empty)
-        {
-            randomBumperIndex = GenerateRandomBumperIndex();
-            entity = board[(int)randomBumperIndex.x, (int)randomBumperIndex.y];
-        }
+        
         int x = (int)randomBumperIndex.x;
         int y = (int)randomBumperIndex.y;
         bool leftSide = x == 1;
@@ -197,6 +201,8 @@ public class Bumper_placer : MonoBehaviour
     private Vector2 GenerateRandomBumperIndex()
     {
         return new Vector2(Random.Range(1, 5), Random.Range(1, 5));
+
+
     }
 
     private Vector2 GenerateRandomBumperxUpIndex()
@@ -205,7 +211,7 @@ public class Bumper_placer : MonoBehaviour
     }
     private Vector2 GenerateRandomBumperxDownIndex()
     {
-        return new Vector2(Random.Range(1, 5), Random.Range(1, randomBumperIndex.y + 1));
+        return new Vector2(Random.Range(1, 5), Random.Range(1, randomBumperIndex.y ));
     }
     private Vector2 GenerateRandomBumperyLeftIndex()
     {
@@ -213,13 +219,13 @@ public class Bumper_placer : MonoBehaviour
     }
     private Vector2 GenerateRandomBumperyRightIndex()
     {
-        return new Vector2(Random.Range(1, randomBumperIndex.x + 1), Random.Range(1, 5));
+        return new Vector2(Random.Range(1, randomBumperIndex.x ), Random.Range(1, 5));
     }
 
     private void RandomizeBallPosition()
     {
         int randomDirection = Random.Range(0, 4);
-        int randomBallPosition = Random.Range(1, 5);
+        int randomBallPosition = Random.Range(1, 4);
 
         switch (randomDirection)
         {   

@@ -1,60 +1,14 @@
 fileFormatVersion: 2
-guid: e4215a4dd8748db428c74f7312c3786f
+guid: b274409110051f64692d06b14661a218
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: B_Middle_Board2
-    100002: BL_Corner_Board
-    100004: BR_Corner_Board
-    100006: Corners
-    100008: //RootNode
-    100010: L_Middle_Board1
-    100012: Mid_Sides
-    100014: Middle_Board
-    100016: R_Middle_Board3
-    100018: T_Middle_Board
-    100020: TL_Corner_Board
-    100022: TR_Corner_Board
-    400000: B_Middle_Board2
-    400002: BL_Corner_Board
-    400004: BR_Corner_Board
-    400006: Corners
-    400008: //RootNode
-    400010: L_Middle_Board1
-    400012: Mid_Sides
-    400014: Middle_Board
-    400016: R_Middle_Board3
-    400018: T_Middle_Board
-    400020: TL_Corner_Board
-    400022: TR_Corner_Board
+    100000: //RootNode
+    400000: //RootNode
     2100000: lambert1
-    2300000: B_Middle_Board2
-    2300002: BL_Corner_Board
-    2300004: BR_Corner_Board
-    2300006: L_Middle_Board1
-    2300008: Middle_Board
-    2300010: R_Middle_Board3
-    2300012: T_Middle_Board
-    2300014: TL_Corner_Board
-    2300016: TR_Corner_Board
-    3300000: B_Middle_Board2
-    3300002: BL_Corner_Board
-    3300004: BR_Corner_Board
-    3300006: L_Middle_Board1
-    3300008: Middle_Board
-    3300010: R_Middle_Board3
-    3300012: T_Middle_Board
-    3300014: TL_Corner_Board
-    3300016: TR_Corner_Board
-    4300000: Middle_Board
-    4300002: R_Middle_Board3
-    4300004: B_Middle_Board2
-    4300006: L_Middle_Board1
-    4300008: T_Middle_Board
-    4300010: TR_Corner_Board
-    4300012: BR_Corner_Board
-    4300014: BL_Corner_Board
-    4300016: TL_Corner_Board
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pPlane1
   externalObjects: {}
   materials:
     importMaterials: 1
