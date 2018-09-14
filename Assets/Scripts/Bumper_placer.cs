@@ -136,7 +136,7 @@ public class Bumper_placer : MonoBehaviour
         }
 
         spawnPlace = board[(int)randomBumperIndex.x, (int)randomBumperIndex.y];
-        lastBumperIsBumper1 = true;
+        //lastBumperIsBumper1 = true;
         lastBumperIndex = randomBumperIndex;
 
         if (spawnPlace == SpawnEntity.Empty)
