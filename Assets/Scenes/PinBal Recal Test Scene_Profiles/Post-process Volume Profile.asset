@@ -122,10 +122,10 @@ MonoBehaviour:
     value: {x: 0.83180386, y: 1, z: 0.6972958, w: 0}
   gamma:
     overrideState: 1
-    value: {x: 0.8023353, y: 0.85005087, z: 1, w: 0}
+    value: {x: 0.9606785, y: 0.9448314, z: 1, w: 0}
   gain:
     overrideState: 1
-    value: {x: 0.9360888, y: 0.8190714, z: 1, w: 0}
+    value: {x: 1, y: 0.9618196, z: 0.96023786, w: 0}
   masterCurve:
     overrideState: 1
     value:
@@ -1431,7 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a34fa72bd4185749832024e9c8010bf, type: 3}
   m_Name: ScreenSpaceReflections
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
