@@ -23,18 +23,19 @@ public class PointSystem : MonoBehaviour
         else
             Debug.LogError("Target scores is empty, please fill in the target scores list to indicate then necessary points per round");
 
-        score = PlayerPrefs.GetInt("Score");
-        points_Var.text = score.ToString();
+        points_Var.text = PlayerPrefs.GetInt("Score").ToString();
     }
     public void AddPoints()
     {
         score++;
-        if (score >= targetScore)
-        {
+        //if (score >= targetScore)
+        //{
             //TODO: implement round changes
-            targetScore = targetScores[0];
-            targetScores.RemoveAt(0);
-        }
+          //  targetScore = targetScores[0];
+            //targetScores.RemoveAt(0);
+        //}
         PlayerPrefs.SetInt("Score", score);
+        points_Var.text = score.ToString();
+
     }
 }
