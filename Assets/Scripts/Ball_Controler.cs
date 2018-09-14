@@ -94,11 +94,13 @@ public class Ball_Controler : MonoBehaviour
         {
             p_s.AddPoints();
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));
+            Debug.Log(":)");
         }
 
         if (collision.gameObject.tag == "Outer" && spawned == true)
         {
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));
+            Debug.Log(":(");
         }
     }
 }

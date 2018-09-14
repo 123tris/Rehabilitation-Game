@@ -18,7 +18,7 @@ public class Bumper_placer : MonoBehaviour
     public Ball_Spawn b_s;
 
     [Header("Misc")]
-    public GameObject bumper;
+    public GameObject[] bumpers;
     public int spawns;
     public float timer = 1f;
     public bool timerOn;
@@ -28,6 +28,7 @@ public class Bumper_placer : MonoBehaviour
     Direction ballDirection;
     SpawnEntity spawnPlace;
     bool lastBumperIsBumper1;
+    int lastBumperIsBumperInt1;
 
     [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[6, 6];
     private Vector2 ballBoardIndex;
@@ -48,7 +49,7 @@ public class Bumper_placer : MonoBehaviour
     {
         timer = 1f;
         timerOn = true;
-        GenerateBumpers(3);
+        GenerateBumpers(testBumpersToSpawn);
     }
 
     void Update()
@@ -125,7 +126,6 @@ public class Bumper_placer : MonoBehaviour
             else if (ballDirection == Direction.Left)
             {
                 ballDirection = lastBumperIsBumper1 ? Direction.Down : Direction.Up;
-
                 randomBumperIndex.y = lastBumperIsBumper1 ? Random.Range(1, randomBumperIndex.y - 1) : Random.Range(randomBumperIndex.y + 1, board.GetLength(0) - 2);
             }
             else if (ballDirection == Direction.Right)
@@ -136,12 +136,21 @@ public class Bumper_placer : MonoBehaviour
         }
 
         spawnPlace = board[(int)randomBumperIndex.x, (int)randomBumperIndex.y];
-        lastBumperIsBumper1 = true;
+        //lastBumperIsBumper1 = true;
         lastBumperIndex = randomBumperIndex;
 
         if (spawnPlace == SpawnEntity.Empty)
         {
-            SpawnBumper(randomBumperIndex, 0);
+            lastBumperIsBumperInt1 = Random.Range(0, 2);
+            if(lastBumperIsBumperInt1 == 0)
+            {
+                lastBumperIsBumper1 = true;
+            }
+            else
+            {
+                lastBumperIsBumper1 = false;
+            }
+            SpawnBumper(randomBumperIndex, lastBumperIsBumper1);
         }
         else
         {
@@ -161,34 +170,33 @@ public class Bumper_placer : MonoBehaviour
         bool topSide = y == board.GetLength(0) - 2;
         bool onBorder = leftSide || bottomSide || rightSide || topSide;
 
-        if (!onBorder)
-            SpawnBumper(randomBumperIndex, bumperDirection);
+        //if (!onBorder)
+       //     SpawnBumper(randomBumperIndex, bumperDirection);
 
-        if (onBorder)
-            SpawnBumper(randomBumperIndex, bumperDirection);
+       // if (onBorder)
+         //   SpawnBumper(randomBumperIndex, bumperDirection);
         //TODO:Validate index first, set new value to random bumperindex if valid is not true until valid is true
     }
 
-    private void SpawnBumper(Vector2 randomBumperIndex, int bumperDirection)
+    private void SpawnBumper(Vector2 randomBumperIndex, bool bumperDirection)
     {
         board[(int)randomBumperIndex.x, (int)randomBumperIndex.y] = SpawnEntity.Bumper;
         Vector3 position = GetSpawnPositionByIndex((int)randomBumperIndex.x, (int)randomBumperIndex.y);
 
         //Calculate rotation
-        Quaternion rotation = Quaternion.Euler(new Vector3(0, 45, 0));
-        if (bumperDirection != 0)
-            rotation = Quaternion.Euler(new Vector3(0, -45, 0));
+        //Quaternion rotation = Quaternion.Euler(new Vector3(0, 45, 0));
+        //if (bumperDirection != true)
+         //   rotation = Quaternion.Euler(new Vector3(0, -45, 0));
 
-        GameObject instantiatedBumper = Instantiate(bumper, transform);
+        GameObject instantiatedBumper = Instantiate(bumpers[bumperDirection ? 0 : 1], transform);
+        Debug.Log(instantiatedBumper);
         instantiatedBumper.transform.position = position;
-        instantiatedBumper.transform.rotation = rotation;
+       // instantiatedBumper.transform.rotation = rotation;
     }
 
     private Vector2 GenerateRandomBumperIndex()
     {
         return new Vector2(Random.Range(1, 5), Random.Range(1, 5));
-
-
     }
 
     private void RandomizeBallPosition()
