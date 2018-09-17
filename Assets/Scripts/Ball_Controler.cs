@@ -93,6 +93,7 @@ public class Ball_Controler : MonoBehaviour
         if (collision.gameObject.name == "target")
         {
             p_s.AddPoints();
+            GetComponent<MeshRenderer>().enabled = false;
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));
             Debug.Log(":)");
         }
@@ -100,6 +101,7 @@ public class Ball_Controler : MonoBehaviour
         if (collision.gameObject.tag == "Outer" && spawned == true)
         {
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));
+            GetComponent<MeshRenderer>().enabled = false;
             Debug.Log(":(");
         }
     }

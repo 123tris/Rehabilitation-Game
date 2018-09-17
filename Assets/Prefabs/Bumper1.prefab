@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4480979393227064}
   - component: {fileID: 33518269705083380}
   - component: {fileID: 23545835148666246}
-  - component: {fileID: 65001774085802796}
+  - component: {fileID: 65346738748250622}
   m_Layer: 0
   m_Name: Bumper1
   m_TagString: Bumper1
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1402388904706420}
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -0.028535396, y: 0.85486245, z: -1.679826}
+  m_LocalPosition: {x: -1.0912833, y: 1.896, z: -1.3995229}
   m_LocalScale: {x: 1, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +84,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1402388904706420}
   m_Mesh: {fileID: 4300000, guid: 9784d16d3759ff645b9bf09b025c0093, type: 3}
---- !u!65 &65001774085802796
+--- !u!65 &65346738748250622
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,5 +94,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3, z: 0.7}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.91432124, y: 0.71536183, z: 0.13478623}
+  m_Center: {x: 0, y: -0.19637981, z: 0}
