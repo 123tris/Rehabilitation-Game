@@ -85,17 +85,19 @@ public class Bumper_placer : MonoBehaviour
 
         void GenerateBumper(bool firstIteration)
         {
-            int x = (int)randomBumperIndex.x;
-            int y = (int)randomBumperIndex.y;
-            bool leftSide = x == 1;
-            bool bottomSide = y == 1;
-            bool rightSide = x == board.GetLength(0) - 2;
-            bool topSide = y == board.GetLength(0) - 2;
-            bool onBorder = leftSide || bottomSide || rightSide || topSide;
-            Direction borderSide;
 
-            //Vector2 randomBumperIndex = Vector2.zero;
-            if (firstIteration)
+        lastBumperIsBumperInt1 = Random.Range(0, 2);
+        if (lastBumperIsBumperInt1 == 0)
+        {
+            lastBumperIsBumper1 = true;
+        }
+        else
+        {
+            lastBumperIsBumper1 = false;
+        }
+
+        //Vector2 randomBumperIndex = Vector2.zero;
+        if (firstIteration)
             {
                 //Calculate a new random bumper index using the location of where the ball spawns
                 if (ballBoardIndex.x == 0)
@@ -134,8 +136,9 @@ public class Bumper_placer : MonoBehaviour
                     BorderSide bumperSide = IsValidBumper(randomBumperIndex);
                     if (!IsValidBumper(bumperSide))
                     {
-                        //Change bumper
-                    }
+                    lastBumperIsBumperInt1 = lastBumperIsBumper1 ? 0 : 1;
+                    lastBumperIsBumper1 = lastBumperIsBumperInt1 ? true : false;
+                }
 
                 }
                 else if (ballDirection == Direction.Down)
@@ -161,15 +164,6 @@ public class Bumper_placer : MonoBehaviour
 
             if (spawnPlace == SpawnEntity.Empty)
             {
-                lastBumperIsBumperInt1 = Random.Range(0, 2);
-                if (lastBumperIsBumperInt1 == 0)
-                {
-                    lastBumperIsBumper1 = true;
-                }
-                else
-                {
-                    lastBumperIsBumper1 = false;
-                }
                 SpawnBumper(randomBumperIndex, lastBumperIsBumper1);
             }
             else
