@@ -17,8 +17,9 @@ public class Ball_Spawn : MonoBehaviour {
     public GameObject target;
 
     [Header("Materials")]
-    public Material clicked;
-    public Material standard;
+    public Material clicked_mat;
+    public Material right_mat;
+    public Material wrong_mat;
 
     [Header("List")]
     public List<GameObject> tagSearcherList;
@@ -27,6 +28,8 @@ public class Ball_Spawn : MonoBehaviour {
 
     int randomspawn;
     bool chosen;
+    public bool right;
+    public bool wrong;
     private Vector3 newBallPosition;
     private Vector3 newBallRotation;
 
@@ -50,11 +53,23 @@ public class Ball_Spawn : MonoBehaviour {
                     target = hit.transform.gameObject;
                     target.gameObject.name = "target";
                     rend = target.GetComponent<Renderer>();
-                    rend.sharedMaterial = clicked;
+                    rend.sharedMaterial = clicked_mat;
                     chosen = true;
                     SpawnBall();
                 }             
             }
+        }
+
+        if(right == true)
+        {
+            rend = target.GetComponent<Renderer>();
+            rend.sharedMaterial = right_mat;
+        }
+
+        if(wrong == true)
+        {
+            rend = target.GetComponent<Renderer>();
+            rend.sharedMaterial = wrong_mat;
         }
     }
 
