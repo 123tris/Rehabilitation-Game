@@ -14,7 +14,7 @@ public enum Direction
 
 public enum BorderSide
 {
-    Top = 1, Bottom = 2, Right = 4, Left = 8
+    Nothing = 0, Top = 1, Bottom = 2, Right = 4, Left = 8
 }
 
 public class Bumper_placer : MonoBehaviour
@@ -50,6 +50,7 @@ public class Bumper_placer : MonoBehaviour
     {
         instance = this;
     }
+
     void Start()
     {
         timer = 2f;
@@ -80,7 +81,7 @@ public class Bumper_placer : MonoBehaviour
     void GenerateBumpers(int bumperAmount)
     {
         //Randomize ball position first because the bumper needs to be aware of where the ball spawns before it can be generated
-            
+
         print("Ball position: " + ballBoardIndex.x + "\t" + ballBoardIndex.y);
 
         for (int i = 0; i < bumperAmount; i++)
@@ -119,13 +120,13 @@ public class Bumper_placer : MonoBehaviour
                 randomBumperIndex = GenerateRandomBumperIndex();
                 randomBumperIndex.x = ballBoardIndex.x;
             }
-            else if (ballBoardIndex.x == board.GetLength(0) - 1)
+            else if (ballBoardIndex.x == board.GetLength(0)-1)
             {
                 ballDirection = Direction.Left;
                 randomBumperIndex = GenerateRandomBumperIndex();
                 randomBumperIndex.y = ballBoardIndex.y;
             }
-            else if (ballBoardIndex.y == board.GetLength(0) - 1)
+            else if (ballBoardIndex.y == board.GetLength(0)-1)
             {
                 ballDirection = Direction.Down;
                 randomBumperIndex = GenerateRandomBumperIndex();
@@ -137,31 +138,57 @@ public class Bumper_placer : MonoBehaviour
             //Calculate a new random bumper index using the location of the last bumper
             if (ballDirection == Direction.Up)
             {
-                ballDirection = lastBumperIsBumper1 ? Direction.Right : Direction.Left;
+                ballDirection = lastBumperIsBumper1 ? Direction.Left : Direction.Right;
 
-                randomBumperIndex.x = lastBumperIsBumper1 ? Random.Range(randomBumperIndex.x + 1, board.GetLength(0) - 2) : Random.Range(1, randomBumperIndex.x - 1);
-                //    BorderSide bumperSide = IsValidBumper(randomBumperIndex);
-                //    if (!IsValidBumper(bumperSide))
-                //    {
-                //    lastBumperIsBumperInt1 = lastBumperIsBumper1 ? 0 : 1;
-                //   lastBumperIsBumper1 = lastBumperIsBumperInt1 ? true : false;
-                // }
+                randomBumperIndex.x = lastBumperIsBumper1 ? Random.Range(randomBumperIndex.y + 1, board.GetLength(0) - 2) : Random.Range(1, randomBumperIndex.y - 1);
+                GetBumperSide();
+                BorderSide bumperSide = GetBumperSide();
+                //make function that returns on what side the bumper is placed.
+                if (!IsValidBumper(bumperSide, ballDirection, lastBumperIsBumper1))
+                {
+                    lastBumperIsBumperInt1 = lastBumperIsBumper1 ? 0 : 1;
+                    ballDirection = lastBumperIsBumper1 ? Direction.Left : Direction.Right;
+                }
 
             }
             else if (ballDirection == Direction.Down)
             {
-                ballDirection = lastBumperIsBumper1 ? Direction.Left : Direction.Right;
-                randomBumperIndex.x = lastBumperIsBumper1 ? Random.Range(1, randomBumperIndex.x - 1) : Random.Range(randomBumperIndex.x + 1, board.GetLength(0) - 2);
+                ballDirection = lastBumperIsBumper1 ? Direction.Right : Direction.Left;
+                randomBumperIndex.x = lastBumperIsBumper1 ? Random.Range(1, randomBumperIndex.y - 1) : Random.Range(randomBumperIndex.y + 1, board.GetLength(0) - 2);
+                GetBumperSide();
+                BorderSide bumperSide = GetBumperSide();
+                //make function that returns on what side the bumper is placed.
+                if (!IsValidBumper(bumperSide, ballDirection, lastBumperIsBumper1))
+                {
+                    lastBumperIsBumperInt1 = lastBumperIsBumper1 ? 0 : 1;
+                    ballDirection = lastBumperIsBumper1 ? Direction.Right : Direction.Left;
+                }
             }
             else if (ballDirection == Direction.Left)
             {
-                ballDirection = lastBumperIsBumper1 ? Direction.Down : Direction.Up;
-                randomBumperIndex.y = lastBumperIsBumper1 ? Random.Range(1, randomBumperIndex.y - 1) : Random.Range(randomBumperIndex.y + 1, board.GetLength(0) - 2);
+                ballDirection = lastBumperIsBumper1 ? Direction.Up : Direction.Down;
+                randomBumperIndex.y = lastBumperIsBumper1 ? Random.Range(1, randomBumperIndex.x - 1) : Random.Range(randomBumperIndex.x + 1, board.GetLength(0) - 2);
+                GetBumperSide();
+                BorderSide bumperSide = GetBumperSide();
+                //make function that returns on what side the bumper is placed.
+                if (!IsValidBumper(bumperSide, ballDirection, lastBumperIsBumper1))
+                {
+                    lastBumperIsBumperInt1 = lastBumperIsBumper1 ? 0 : 1;
+                    ballDirection = lastBumperIsBumper1 ? Direction.Up : Direction.Down;
+                }
             }
             else if (ballDirection == Direction.Right)
             {
-                ballDirection = lastBumperIsBumper1 ? Direction.Up : Direction.Down;
-                randomBumperIndex.y = lastBumperIsBumper1 ? Random.Range(randomBumperIndex.y + 1, board.GetLength(0) - 2) : Random.Range(1, randomBumperIndex.y - 1);
+                ballDirection = lastBumperIsBumper1 ? Direction.Down : Direction.Up;
+                randomBumperIndex.y = lastBumperIsBumper1 ? Random.Range(randomBumperIndex.x + 1, board.GetLength(0) - 2) : Random.Range(1, randomBumperIndex.x - 1);
+                GetBumperSide();
+                BorderSide bumperSide = GetBumperSide();
+                //make function that returns on what side the bumper is placed.
+                if (!IsValidBumper(bumperSide, ballDirection, lastBumperIsBumper1))
+                {
+                    lastBumperIsBumperInt1 = lastBumperIsBumper1 ? 0 : 1;
+                    ballDirection = lastBumperIsBumper1 ? Direction.Down : Direction.Up;
+                }
             }
         }
 
@@ -179,28 +206,52 @@ public class Bumper_placer : MonoBehaviour
         }
     }
 
-    private static void IsValidBumper(BorderSide bumperSide)
+    private bool IsValidBumper(BorderSide bumperSide, Direction ballDirection, bool isBumper1)
     {
         switch (bumperSide)
         {
             case BorderSide.Top:
-                break;
+                return isBumper1 ? ballDirection != Direction.Left : ballDirection != Direction.Right;
             case BorderSide.Bottom:
-                break;
+                return isBumper1 ? ballDirection != Direction.Right : ballDirection != Direction.Left;
             case BorderSide.Right:
-                break;
+                return isBumper1 ? ballDirection != Direction.Down : ballDirection != Direction.Up;
             case BorderSide.Left:
-                break;
+                return isBumper1 ? ballDirection != Direction.Up : ballDirection != Direction.Down;
             case BorderSide.Right | BorderSide.Top: //top right corner
-                break;
+                return isBumper1 ? ballDirection == Direction.Up && ballDirection == Direction.Right : ballDirection == Direction.Down && ballDirection == Direction.Left;
             case BorderSide.Right | BorderSide.Bottom: //bottom right corner
-                break;
+                return isBumper1 ? ballDirection == Direction.Up && ballDirection == Direction.Left : ballDirection == Direction.Down && ballDirection == Direction.Right;
             case BorderSide.Left | BorderSide.Top://top left corner
-                break;
+                return isBumper1 ? ballDirection == Direction.Down && ballDirection == Direction.Right : ballDirection == Direction.Up && ballDirection == Direction.Left;
             case BorderSide.Left | BorderSide.Bottom://bottom left corner
-                break;
+                return isBumper1 ? ballDirection == Direction.Down && ballDirection == Direction.Left : ballDirection == Direction.Up && ballDirection == Direction.Right;
+            default:
+                return false;
         }
     }
+
+    BorderSide GetBumperSide()
+    {
+        if (randomBumperIndex.y == 1)
+        {
+            return BorderSide.Bottom;
+        }
+        else if (randomBumperIndex.x == 1)
+        {
+            return BorderSide.Left;
+        }
+        else if (randomBumperIndex.x == board.GetLength(0) - 2)
+        {
+            return BorderSide.Right;
+        }
+        else if (randomBumperIndex.y == board.GetLength(0) - 2)
+        {
+            return BorderSide.Top;
+        }
+        return BorderSide.Nothing;
+    }
+
     void GenerateRandomBumper(Vector2 randomBumperIndex)
     {
         int bumperDirection = Random.Range(0, 1);
@@ -213,7 +264,6 @@ public class Bumper_placer : MonoBehaviour
         bool topSide = y == board.GetLength(0) - 2;
         bool onBorder = leftSide || bottomSide || rightSide || topSide;
 
-        //TODO:Validate index first, set new value to random bumperindex if valid is not true until valid is true
     }
 
     private void SpawnBumper(Vector2 randomBumperIndex, bool bumperDirection)
@@ -242,9 +292,10 @@ public class Bumper_placer : MonoBehaviour
             timerOn = false;
         }
     }
+
     private Vector2 GenerateRandomBumperIndex()
     {
-        return new Vector2(Random.Range(1, 5), Random.Range(1, 5));
+        return new Vector2(Random.Range(1, board.GetLength(0) - 2), Random.Range(1, board.GetLength(0) - 2));
     }
 
     private void RandomizeBallPosition()
@@ -260,9 +311,9 @@ public class Bumper_placer : MonoBehaviour
                 b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(0, randomBallPosition), Vector3.up * 90, transform);
                 break;
             case 1:
-                ballBoardIndex = new Vector2(5, randomBallPosition);
+                ballBoardIndex = new Vector2(board.GetLength(0) - 1, randomBallPosition);
                 board[4, randomBallPosition] = SpawnEntity.Ball;
-                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(5, randomBallPosition), Vector3.up * -90, transform);
+                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(board.GetLength(0) - 1, randomBallPosition), Vector3.up * -90, transform);
                 break;
             case 2:
                 ballBoardIndex = new Vector2(randomBallPosition, 0);
@@ -270,9 +321,9 @@ public class Bumper_placer : MonoBehaviour
                 b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, 0), Vector3.zero, transform);
                 break;
             case 3:
-                ballBoardIndex = new Vector2(randomBallPosition, 5);
-                board[randomBallPosition, 5] = SpawnEntity.Ball;
-                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, 5), Vector3.up * 180, transform);
+                ballBoardIndex = new Vector2(randomBallPosition, board.GetLength(0) - 1);
+                board[randomBallPosition, board.GetLength(0) - 1] = SpawnEntity.Ball;
+                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, board.GetLength(0) - 1), Vector3.up * 180, transform);
                 break;
         }
 
