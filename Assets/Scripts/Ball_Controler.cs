@@ -35,7 +35,7 @@ public class Ball_Controler : MonoBehaviour
         spawned = false;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -51,9 +51,7 @@ public class Ball_Controler : MonoBehaviour
             vertical = false;
         }
 
-        transform.Translate(0, 0, speed);
-
-        
+        transform.Translate(0, 0, speed);  
     }
 
     void OnTriggerEnter(Collider other)
@@ -98,7 +96,7 @@ public class Ball_Controler : MonoBehaviour
             GetComponent<MeshRenderer>().enabled = false;
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));          
             Debug.Log(":)");
-        }
+        }else
 
         if (collision.gameObject.tag == "Outer" && spawned == true)
         {
