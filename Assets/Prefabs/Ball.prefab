@@ -37,8 +37,8 @@ GameObject:
   - component: {fileID: 4505778769633726}
   - component: {fileID: 33618187797952330}
   - component: {fileID: 23344359875245872}
-  - component: {fileID: 135670991435142126}
   - component: {fileID: 54181627693330250}
+  - component: {fileID: 135163381424513594}
   - component: {fileID: 114266783333366938}
   m_Layer: 0
   m_Name: Ball
@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 1443160213498848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.880066, y: 1.04, z: -3.612915}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4684117622885270}
   m_Father: {fileID: 0}
@@ -89,7 +89,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: c5dbd788d70251e4d97964645e96538b, type: 2}
+  - {fileID: 2100000, guid: ff0e452d6c65d5949a5702f1f1a21026, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
     m_RotationOrder: 0
   Duration: 3
   Speed: 15
-  Magnitude: 0.5
+  Magnitude: 0.3
   DistanceForce: 50
   RotationDamper: 3
   IsEnabled: 1
@@ -208,7 +208,7 @@ MonoBehaviour:
   bSP: {fileID: 0}
   gameController: {fileID: 0}
   rb: {fileID: 54181627693330250}
---- !u!135 &135670991435142126
+--- !u!135 &135163381424513594
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,5 +218,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.55785275
+  m_Center: {x: -0.0019968746, y: -0.00054430956, z: 0.00063008064}

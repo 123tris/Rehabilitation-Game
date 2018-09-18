@@ -1,0 +1,234 @@
+fileFormatVersion: 2
+guid: d92db65b26618b246bfbbe755040529b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: B_MiddleField
+    100002: B_MiddleFrame
+    100004: Field
+    100006: //RootNode
+    100008: L_BottomCornerFrame
+    100010: L_BottomCornerFrames
+    100012: L_BottomField
+    100014: L_BottomFrame
+    100016: L_BottomFrame2
+    100018: L_Field
+    100020: L_MiddleField
+    100022: L_MiddleFrame
+    100024: L_TopCornerFrame
+    100026: L_TopCornerFrames
+    100028: L_TopField
+    100030: L_TopFrame
+    100032: L_TopFrame2
+    100034: MiddleField
+    100036: MiddleField 1
+    100038: MiddleFrames
+    100040: R_BottomCornerFrame
+    100042: R_BottomCornerFrames
+    100044: R_BottomField
+    100046: R_BottomFrame
+    100048: R_BottomFrame2
+    100050: R_Field
+    100052: R_MiddleField
+    100054: R_MiddleFrame
+    100056: R_TopCornerFrame
+    100058: R_TopCornerFrames
+    100060: R_TopField
+    100062: R_TopFrame
+    100064: R_TopFrame2
+    100066: T_MiddleField
+    100068: T_MiddleFrame
+    400000: B_MiddleField
+    400002: B_MiddleFrame
+    400004: Field
+    400006: //RootNode
+    400008: L_BottomCornerFrame
+    400010: L_BottomCornerFrames
+    400012: L_BottomField
+    400014: L_BottomFrame
+    400016: L_BottomFrame2
+    400018: L_Field
+    400020: L_MiddleField
+    400022: L_MiddleFrame
+    400024: L_TopCornerFrame
+    400026: L_TopCornerFrames
+    400028: L_TopField
+    400030: L_TopFrame
+    400032: L_TopFrame2
+    400034: MiddleField
+    400036: MiddleField 1
+    400038: MiddleFrames
+    400040: R_BottomCornerFrame
+    400042: R_BottomCornerFrames
+    400044: R_BottomField
+    400046: R_BottomFrame
+    400048: R_BottomFrame2
+    400050: R_Field
+    400052: R_MiddleField
+    400054: R_MiddleFrame
+    400056: R_TopCornerFrame
+    400058: R_TopCornerFrames
+    400060: R_TopField
+    400062: R_TopFrame
+    400064: R_TopFrame2
+    400066: T_MiddleField
+    400068: T_MiddleFrame
+    2100000: lambert1
+    2300000: B_MiddleField
+    2300002: B_MiddleFrame
+    2300004: L_BottomCornerFrame
+    2300006: L_BottomField
+    2300008: L_BottomFrame
+    2300010: L_BottomFrame2
+    2300012: L_MiddleField
+    2300014: L_MiddleFrame
+    2300016: L_TopCornerFrame
+    2300018: L_TopField
+    2300020: L_TopFrame
+    2300022: L_TopFrame2
+    2300024: MiddleField 1
+    2300026: R_BottomCornerFrame
+    2300028: R_BottomField
+    2300030: R_BottomFrame
+    2300032: R_BottomFrame2
+    2300034: R_MiddleField
+    2300036: R_MiddleFrame
+    2300038: R_TopCornerFrame
+    2300040: R_TopField
+    2300042: R_TopFrame
+    2300044: R_TopFrame2
+    2300046: T_MiddleField
+    2300048: T_MiddleFrame
+    3300000: B_MiddleField
+    3300002: B_MiddleFrame
+    3300004: L_BottomCornerFrame
+    3300006: L_BottomField
+    3300008: L_BottomFrame
+    3300010: L_BottomFrame2
+    3300012: L_MiddleField
+    3300014: L_MiddleFrame
+    3300016: L_TopCornerFrame
+    3300018: L_TopField
+    3300020: L_TopFrame
+    3300022: L_TopFrame2
+    3300024: MiddleField 1
+    3300026: R_BottomCornerFrame
+    3300028: R_BottomField
+    3300030: R_BottomFrame
+    3300032: R_BottomFrame2
+    3300034: R_MiddleField
+    3300036: R_MiddleFrame
+    3300038: R_TopCornerFrame
+    3300040: R_TopField
+    3300042: R_TopFrame
+    3300044: R_TopFrame2
+    3300046: T_MiddleField
+    3300048: T_MiddleFrame
+    4300000: L_TopField
+    4300002: L_MiddleField
+    4300004: L_BottomField
+    4300006: T_MiddleField
+    4300008: MiddleField
+    4300010: B_MiddleField
+    4300012: R_TopField
+    4300014: R_MiddleField
+    4300016: R_BottomField
+    4300018: L_TopFrame
+    4300020: L_TopCornerFrame
+    4300022: L_TopFrame2
+    4300024: R_TopFrame
+    4300026: R_TopFrame2
+    4300028: R_TopCornerFrame
+    4300030: L_BottomFrame2
+    4300032: L_BottomCornerFrame
+    4300034: L_BottomFrame
+    4300036: R_BottomFrame
+    4300038: R_BottomCornerFrame
+    4300040: R_BottomFrame2
+    4300042: L_MiddleFrame
+    4300044: R_MiddleFrame
+    4300046: T_MiddleFrame
+    4300048: B_MiddleFrame
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.042
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

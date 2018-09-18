@@ -28,13 +28,14 @@ public class Ball_Controler : MonoBehaviour
     {
         bSP = GameObject.FindGameObjectWithTag("Spawner");
         gameController = GameObject.FindGameObjectWithTag("Observer");
+        b_s = gameController.GetComponent<Ball_Spawn>();
         b_p = bSP.GetComponent<Bumper_placer>();
         p_s = gameController.GetComponent<PointSystem>();
 
         spawned = false;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -50,9 +51,7 @@ public class Ball_Controler : MonoBehaviour
             vertical = false;
         }
 
-        transform.Translate(0, 0, speed);
-
-        
+        transform.Translate(0, 0, speed);  
     }
 
     void OnTriggerEnter(Collider other)
@@ -93,15 +92,17 @@ public class Ball_Controler : MonoBehaviour
         if (collision.gameObject.name == "target")
         {
             p_s.AddPoints();
+            b_s.right = true;
             GetComponent<MeshRenderer>().enabled = false;
-            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));
+            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));          
             Debug.Log(":)");
-        }
+        }else
 
         if (collision.gameObject.tag == "Outer" && spawned == true)
         {
-            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));
             GetComponent<MeshRenderer>().enabled = false;
+            b_s.wrong = true;
+            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));           
             Debug.Log(":(");
         }
     }
