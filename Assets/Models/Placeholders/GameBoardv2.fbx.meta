@@ -74,6 +74,7 @@ ModelImporter:
     400066: T_MiddleField
     400068: T_MiddleFrame
     2100000: lambert1
+    2100002: M_Board
     2300000: B_MiddleField
     2300002: B_MiddleFrame
     2300004: L_BottomCornerFrame
