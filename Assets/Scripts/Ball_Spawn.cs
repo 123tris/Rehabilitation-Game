@@ -15,6 +15,7 @@ public class Ball_Spawn : MonoBehaviour {
     public GameObject playerCamera;
     public GameObject arrow;
     public GameObject target;
+    public GameObject instantiatedArrow;
 
     [Header("Materials")]
     public Material clicked_mat;
@@ -75,8 +76,9 @@ public class Ball_Spawn : MonoBehaviour {
 
     public void SetUpcomingBallPosition(Vector3 position,Vector3 rotation, Transform parent)
     {
-        var instantiatedArrow = Instantiate(arrow,parent);
-        instantiatedArrow.transform.position     = position;
+        instantiatedArrow = Instantiate(arrow,parent);
+        instantiatedArrow.GetComponent<MeshRenderer>().enabled = false;
+        instantiatedArrow.transform.position = position;
         instantiatedArrow.transform.rotation = Quaternion.Euler(rotation);
         newBallPosition = position;
         newBallRotation = rotation;
