@@ -12,8 +12,10 @@ ModelImporter:
     2100000: lambert1
     2300000: Tower 1
     2300002: TowerBottom
+    2300004: //RootNode
     3300000: Tower 1
     3300002: TowerBottom
+    3300004: //RootNode
     4300000: TowerBottom
     4300002: Tower
   externalObjects: {}
