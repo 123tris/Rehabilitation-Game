@@ -15,12 +15,15 @@ ModelImporter:
     2300000: Ash
     2300002: Logs
     2300004: Rocks
+    2300006: //RootNode
     3300000: Ash
     3300002: Logs
     3300004: Rocks
+    3300006: //RootNode
     4300000: Logs
     4300002: Ash
     4300004: Rocks
+    4300006: Campfire
   externalObjects: {}
   materials:
     importMaterials: 1
