@@ -77,7 +77,7 @@ public class Ball_Spawn : MonoBehaviour {
     public void SetUpcomingBallPosition(Vector3 position,Vector3 rotation, Transform parent)
     {
         instantiatedArrow = Instantiate(arrow,parent);
-        instantiatedArrow.GetComponent<MeshRenderer>().enabled = false;
+        instantiatedArrow.gameObject.SetActive(false);
         instantiatedArrow.transform.position = position;
         instantiatedArrow.transform.rotation = Quaternion.Euler(rotation);
         newBallPosition = position;

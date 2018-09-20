@@ -1,29 +1,16 @@
 fileFormatVersion: 2
-guid: 53c69f9376508a64daa0006a57db76d2
+guid: 39a3cbcf85e7b2d4690a0cfde097d9cd
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Candle
-    100002: Glass
-    100004: //RootNode
-    100006: LanternBase
-    100008: Lantern
-    400000: Candle
-    400002: Glass
-    400004: //RootNode
-    400006: LanternBase
-    400008: Lantern
-    2100000: Glass_M
-    2100002: lambert1
-    2300000: Candle
-    2300002: Glass
-    2300004: LanternBase
-    3300000: Candle
-    3300002: Glass
-    3300004: LanternBase
-    4300000: Glass
-    4300002: Candle
-    4300004: LanternBase
+    100000: Tree_Stump
+    100002: //RootNode
+    400000: Tree_Stump
+    400002: //RootNode
+    2100000: lambert1
+    2300000: Tree_Stump
+    3300000: Tree_Stump
+    4300000: Tree_Stump
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -55,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.04
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
