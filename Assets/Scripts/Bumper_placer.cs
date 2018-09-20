@@ -65,7 +65,7 @@ public class Bumper_placer : MonoBehaviour
         if (timer <= 0 && timerOn == true)
         {
             BumperVisibility();
-           b_s.instantiatedArrow.GetComponent<MeshRenderer>().enabled = true;
+            b_s.instantiatedArrow.gameObject.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.T))
@@ -125,7 +125,7 @@ public class Bumper_placer : MonoBehaviour
                 randomBumperIndex = GenerateRandomBumperIndex();
                 randomBumperIndex.y = ballBoardIndex.y;
             }
-            else if (ballBoardIndex.y == board.GetLength(0)-1)
+            else if (ballBoardIndex.y == board.GetLength(0) - 1)
             {
                 ballDirection = Direction.Down;
                 randomBumperIndex = GenerateRandomBumperIndex();
@@ -140,10 +140,9 @@ public class Bumper_placer : MonoBehaviour
             {
                 ballDirection = lastBumperIsBumper1 ? Direction.Right : Direction.Left;
 
-                randomBumperIndex.x = lastBumperIsBumper1 ? Random.Range(randomBumperIndex.y + 1, board.GetLength(0) - 2) : Random.Range(1, randomBumperIndex.y - 1);
+                randomBumperIndex.x = lastBumperIsBumper1 ? Random.Range(randomBumperIndex.y + 1, board.GetLength(0) - 2) : Random.Range(2, randomBumperIndex.y - 1);
                 GetBumperSide();
                 BorderSide bumperSide = GetBumperSide();
-                //make function that returns on what side the bumper is placed.
                 if (IsValidBumper(bumperSide, ballDirection, lastBumperIsBumper1))
                 {
                     lastBumperIsBumperInt1 = lastBumperIsBumper1 ? 0 : 1;
@@ -154,10 +153,9 @@ public class Bumper_placer : MonoBehaviour
             else if (ballDirection == Direction.Down)
             {
                 ballDirection = lastBumperIsBumper1 ? Direction.Left : Direction.Right;
-                randomBumperIndex.x = lastBumperIsBumper1 ? Random.Range(1, randomBumperIndex.y - 1) : Random.Range(randomBumperIndex.y + 1, board.GetLength(0) - 2);
+                randomBumperIndex.x = lastBumperIsBumper1 ? Random.Range(2, randomBumperIndex.y - 1) : Random.Range(randomBumperIndex.y + 1, board.GetLength(0) - 2);
                 GetBumperSide();
                 BorderSide bumperSide = GetBumperSide();
-                //make function that returns on what side the bumper is placed.
                 if (!IsValidBumper(bumperSide, ballDirection, lastBumperIsBumper1))
                 {
                     lastBumperIsBumperInt1 = lastBumperIsBumper1 ? 0 : 1;
@@ -166,11 +164,10 @@ public class Bumper_placer : MonoBehaviour
             }
             else if (ballDirection == Direction.Left)
             {
-                ballDirection = lastBumperIsBumper1 ? Direction.Down: Direction.Up;
-                randomBumperIndex.y = lastBumperIsBumper1 ? Random.Range(1, randomBumperIndex.x - 1) : Random.Range(randomBumperIndex.x + 1, board.GetLength(0) - 2);
+                ballDirection = lastBumperIsBumper1 ? Direction.Down : Direction.Up;
+                randomBumperIndex.y = lastBumperIsBumper1 ? Random.Range(2, randomBumperIndex.x - 1) : Random.Range(randomBumperIndex.x + 1, board.GetLength(0) - 2);
                 GetBumperSide();
                 BorderSide bumperSide = GetBumperSide();
-                //make function that returns on what side the bumper is placed.
                 if (!IsValidBumper(bumperSide, ballDirection, lastBumperIsBumper1))
                 {
                     lastBumperIsBumperInt1 = lastBumperIsBumper1 ? 0 : 1;
@@ -180,18 +177,18 @@ public class Bumper_placer : MonoBehaviour
             else if (ballDirection == Direction.Right)
             {
                 ballDirection = lastBumperIsBumper1 ? Direction.Up : Direction.Down;
-                randomBumperIndex.y = lastBumperIsBumper1 ? Random.Range(randomBumperIndex.x + 1, board.GetLength(0) - 2) : Random.Range(1, randomBumperIndex.x - 1);
+                randomBumperIndex.y = lastBumperIsBumper1 ? Random.Range(randomBumperIndex.x + 1, board.GetLength(0) - 2) : Random.Range(2, randomBumperIndex.x - 1);
                 GetBumperSide();
                 BorderSide bumperSide = GetBumperSide();
-                //make function that returns on what side the bumper is placed.
                 if (!IsValidBumper(bumperSide, ballDirection, lastBumperIsBumper1))
                 {
                     lastBumperIsBumperInt1 = lastBumperIsBumper1 ? 0 : 1;
                     ballDirection = lastBumperIsBumper1 ? Direction.Up : Direction.Down;
                 }
             }
-            Debug.Log(ballDirection);
+
             lastBumperIsBumperInt1 = Random.Range(0, 2);
+            Debug.Log(ballDirection);
             if (lastBumperIsBumperInt1 == 0)
             {
                 lastBumperIsBumper1 = true;
@@ -285,7 +282,6 @@ public class Bumper_placer : MonoBehaviour
         for (int i = 0; i < spawnedBumpers.Count; i++)
         {
             spawnedBumpers[i].GetComponent<MeshRenderer>().enabled = false;
-           // Debug.Log("MeshOff");
             timerOn = false;
         }
     }
