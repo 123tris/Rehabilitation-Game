@@ -41,14 +41,16 @@ public class Ball_Controler : MonoBehaviour
         {
             SceneManager.LoadScene("PinBal Recal Test Scene");
         }
-
-        if (gameObject.transform.eulerAngles.y == 0 || gameObject.transform.eulerAngles.y == 180 || gameObject.transform.eulerAngles.y == -180)
+        Debug.Log(gameObject.transform.eulerAngles.y);
+        if ((gameObject.transform.eulerAngles.y >= 0 && gameObject.transform.eulerAngles.y <= 89.99f) || (gameObject.transform.eulerAngles.y >= 180 && gameObject.transform.eulerAngles.y <= 269.99) || (gameObject.transform.eulerAngles.y >= -180 && gameObject.transform.eulerAngles.y <= -269.99))// gameObject.transform.eulerAngles.y == 0 || gameObject.transform.eulerAngles.y == 180 || gameObject.transform.eulerAngles.y == -180
         {
             vertical = true;
+            Debug.Log(vertical);
         }
         else
         {
             vertical = false;
+            Debug.Log(vertical);
         }
 
         transform.Translate(0, 0, speed);  
@@ -65,8 +67,8 @@ public class Ball_Controler : MonoBehaviour
 
         if (other.gameObject.tag == "Bumper1" && vertical == false)
         {
-            gameObject.transform.Rotate(0, -90, 0);
-            // Debug.Log("test1");
+            gameObject.transform.Rotate(0, -90 , 0);
+           // Debug.Log("test1");
         }
         else if (other.gameObject.tag == "Bumper1" && vertical == true)
         {
@@ -77,13 +79,13 @@ public class Ball_Controler : MonoBehaviour
         else if (other.gameObject.tag == "Bumper2" && vertical == false)
         {
             gameObject.transform.Rotate(0, 90, 0);
-            //Debug.Log("test1");
+            Debug.Log("test1 - horizontal");
         }
         else if (other.gameObject.tag == "Bumper2" && vertical == true)
         {
             gameObject.transform.Rotate(0, -90, 0);
 
-            // Debug.Log("test2");
+            Debug.Log("test1 - horizontal");
         }
     }
 
