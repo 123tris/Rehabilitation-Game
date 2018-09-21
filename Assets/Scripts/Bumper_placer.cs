@@ -44,7 +44,7 @@ public class Bumper_placer : MonoBehaviour
     public float horizontalSpacing;
     public float verticalSpacing;
 
-    public int testBumpersToSpawn = 4;
+    public int testBumpersToSpawn ;
 
     void Awake()
     {
@@ -309,7 +309,7 @@ public class Bumper_placer : MonoBehaviour
                 b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(board.GetLength(0) - 1, randomBallPosition), Vector3.up * -90, transform);
                 break;
             case 2:
-                ballBoardIndex = new Vector2(randomBallPosition, 0);
+                ballBoardIndex = new Vector2(randomBallPosition, 0f);
                 board[randomBallPosition, 0] = SpawnEntity.Ball;
                 b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, 0), Vector3.zero, transform);
                 break;
