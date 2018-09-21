@@ -21,7 +21,7 @@ public class Ball_Controler : MonoBehaviour
     public Rigidbody rb;
 
     float speed = 0.1f;
-    bool vertical;
+    public bool vertical;
     bool spawned;
 
     private void Start()
@@ -41,19 +41,20 @@ public class Ball_Controler : MonoBehaviour
         {
             SceneManager.LoadScene("PinBal Recal Test Scene");
         }
-        Debug.Log(gameObject.transform.eulerAngles.y);
-        if ((gameObject.transform.eulerAngles.y >= 0 && gameObject.transform.eulerAngles.y <= 89.99f) || (gameObject.transform.eulerAngles.y >= 180 && gameObject.transform.eulerAngles.y <= 269.99) || (gameObject.transform.eulerAngles.y >= -180 && gameObject.transform.eulerAngles.y <= -269.99))// gameObject.transform.eulerAngles.y == 0 || gameObject.transform.eulerAngles.y == 180 || gameObject.transform.eulerAngles.y == -180
+
+        if (Mathf.Round(gameObject.transform.eulerAngles.y) == 0 || Mathf.Round(gameObject.transform.eulerAngles.y) == 180 
+            || Mathf.Round(gameObject.transform.eulerAngles.y) == -180 || Mathf.Round(gameObject.transform.eulerAngles.y) == 360 || Mathf.Round(gameObject.transform.eulerAngles.y) == -360)
         {
             vertical = true;
-            Debug.Log(vertical);
+            Debug.Log("34");
         }
         else
         {
             vertical = false;
-            Debug.Log(vertical);
+            Debug.Log("23");
         }
 
-        transform.Translate(0, 0, speed);  
+        transform.Translate(0, 0, speed);
     }
 
     void OnTriggerEnter(Collider other)
@@ -62,30 +63,27 @@ public class Ball_Controler : MonoBehaviour
         {
             other.gameObject.GetComponent<MeshRenderer>().enabled = true;
             spawned = true;
-            //Debug.Log("reee");
         }
 
         if (other.gameObject.tag == "Bumper1" && vertical == false)
         {
-            gameObject.transform.Rotate(0, -90 , 0);
-           // Debug.Log("test1");
+            gameObject.transform.Rotate(0, -90, 0);
+            Debug.Log("1");
         }
         else if (other.gameObject.tag == "Bumper1" && vertical == true)
         {
             gameObject.transform.Rotate(0, 90, 0);
-
-            //Debug.Log("test2");
+            Debug.Log("2");
         }
         else if (other.gameObject.tag == "Bumper2" && vertical == false)
         {
             gameObject.transform.Rotate(0, 90, 0);
-            Debug.Log("test1 - horizontal");
+            Debug.Log("3");
         }
         else if (other.gameObject.tag == "Bumper2" && vertical == true)
         {
             gameObject.transform.Rotate(0, -90, 0);
-
-            Debug.Log("test1 - horizontal");
+            Debug.Log("4");
         }
     }
 
@@ -98,9 +96,8 @@ public class Ball_Controler : MonoBehaviour
             GetComponent<MeshRenderer>().enabled = false;
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene("PinBal Recal Test Scene")));          
             Debug.Log(":)");
-        }else
-
-        if (collision.gameObject.tag == "Outer" && spawned == true)
+        }
+        else if (collision.gameObject.tag == "Outer" && spawned == true)
         {
             GetComponent<MeshRenderer>().enabled = false;
             b_s.wrong = true;

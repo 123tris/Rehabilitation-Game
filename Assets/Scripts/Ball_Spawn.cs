@@ -41,7 +41,6 @@ public class Ball_Spawn : MonoBehaviour {
     private void Update()
     {
         RaycastHit hit;
-       // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition, out hit);
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 200f))
         { 
