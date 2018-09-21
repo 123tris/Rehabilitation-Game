@@ -1010,7 +1010,7 @@ MonoBehaviour:
   bumperSpawnAmount: 2
   horizontalSpacing: 1
   verticalSpacing: 1
-  testBumpersToSpawn: 0
+  testBumpersToSpawn: 6
 --- !u!4 &407157496
 Transform:
   m_ObjectHideFlags: 0

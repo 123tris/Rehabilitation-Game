@@ -20,8 +20,8 @@ public class PointSystem : MonoBehaviour
             targetScore = targetScores[0];
             targetScores.RemoveAt(0);
         }
-        else
-            Debug.LogError("Target scores is empty, please fill in the target scores list to indicate then necessary points per round");
+        //else
+           // Debug.LogError("Target scores is empty, please fill in the target scores list to indicate then necessary points per round");
 
         points_Var.text = PlayerPrefs.GetInt("Score").ToString();
     }
