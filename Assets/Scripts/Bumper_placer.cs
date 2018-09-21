@@ -288,7 +288,7 @@ public class Bumper_placer : MonoBehaviour
 
     private Vector2 GenerateRandomBumperIndex()
     {
-        return new Vector2(Random.Range(1, board.GetLength(0) - 2), Random.Range(1, board.GetLength(0) - 2));
+        return new Vector2(Random.Range(1, board.GetLength(1    ) - 2), Random.Range(1, board.GetLength(0) - 2));
     }
 
     private void RandomizeBallPosition()
