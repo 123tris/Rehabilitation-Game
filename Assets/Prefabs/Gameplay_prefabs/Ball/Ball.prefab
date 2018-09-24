@@ -89,7 +89,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ff0e452d6c65d5949a5702f1f1a21026, type: 2}
+  - {fileID: 2100000, guid: 37162f8cbd0c65e4ba90bbe98290791b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -207,7 +207,10 @@ MonoBehaviour:
   p_s: {fileID: 0}
   bSP: {fileID: 0}
   gameController: {fileID: 0}
+  blackScreen: {fileID: 0}
   rb: {fileID: 54181627693330250}
+  anim: {fileID: 0}
+  vertical: 0
 --- !u!135 &135163381424513594
 SphereCollider:
   m_ObjectHideFlags: 1

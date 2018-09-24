@@ -28,7 +28,7 @@ public class Bumper_placer : MonoBehaviour
     public int spawns;
     public float timer = 2.5f;
     public bool timerOn;
-    [SerializeField] private float bumperSpawnAmount = 2;
+   // [SerializeField] private float bumperSpawnAmount = 2;
 
     public static Bumper_placer instance;
     Direction ballDirection;
@@ -44,7 +44,7 @@ public class Bumper_placer : MonoBehaviour
     public float horizontalSpacing;
     public float verticalSpacing;
 
-    public int testBumpersToSpawn ;
+    public int testBumpersToSpawn;
 
     void Awake()
     {

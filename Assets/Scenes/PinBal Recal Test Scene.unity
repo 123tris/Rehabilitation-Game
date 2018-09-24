@@ -490,7 +490,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points_Var: {fileID: 884209953}
-  targetScores: 
+  score: 0
+  targetScore: 0
+  b_p: {fileID: 407157495}
 --- !u!1 &191274770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,13 +1077,12 @@ MonoBehaviour:
   - {fileID: 1402388904706420, guid: 1c542ff2736502343911a16e84e45a63, type: 2}
   - {fileID: 1249487529435552, guid: 80fc9bf6b96ee064aba57a4b5111f53a, type: 2}
   spawnedBumpers: []
-  spawns: 6
+  spawns: 1
   timer: 5
   timerOn: 0
-  bumperSpawnAmount: 2
   horizontalSpacing: 1
   verticalSpacing: 1
-  testBumpersToSpawn: 4
+  testBumpersToSpawn: 2
 --- !u!4 &407157496
 Transform:
   m_ObjectHideFlags: 0
@@ -1465,7 +1466,7 @@ Terrain:
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
-  m_DrawTreesAndFoliage: 0
+  m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
   m_MaterialType: 0
   m_LegacySpecular:
@@ -2270,7 +2271,7 @@ GameObject:
   - component: {fileID: 799514904}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: BlackScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2290,7 +2291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000025618114, y: 0.00043550794}
+  m_AnchoredPosition: {x: 0.000029628716, y: 0.0004296164}
   m_SizeDelta: {x: 800, y: 449.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &799514902
