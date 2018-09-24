@@ -15,7 +15,7 @@ public class Camera_Change : MonoBehaviour {
     {
         camera = GetComponent<Camera>();
         animDone = true;
-        twoD = true;
+        ThreeD = true;
     }
 
     void Update () {
