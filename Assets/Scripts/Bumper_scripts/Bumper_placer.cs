@@ -22,6 +22,7 @@ public class Bumper_placer : MonoBehaviour
 
     [Header("External Scripts")]
     public Ball_Spawn b_s;
+    public BoardMaker b_m;
 
     [Header("Misc")]
     public GameObject[] bumpers;
@@ -50,9 +51,8 @@ public class Bumper_placer : MonoBehaviour
     {
         timerOn = true;
         RandomizeBall();
-        testBumpersToSpawn= PlayerPrefs.GetInt("BumperAmount", testBumpersToSpawn);
-        
-        
+        b_m.BuildBoard();
+        testBumpersToSpawn = PlayerPrefs.GetInt("BumperAmount", testBumpersToSpawn);
         GenerateBumpers(testBumpersToSpawn);
     }
 
