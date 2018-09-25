@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1827354414}
-  m_IndirectSpecularColor: {r: 0.54784787, g: 0.56056416, b: 0.53027475, a: 1}
+  m_IndirectSpecularColor: {r: 0.8380996, g: 0.8548111, b: 0.88133496, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: 396bb9ac252ba2940b1001ab731023b3,
+  m_LightingDataAsset: {fileID: 112000002, guid: 51240ecf760b78740bdbc00198c92ec3,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -2254,6 +2254,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 527fd389e29662f459a6f1a00da0c0c1, type: 2}
+    - target: {fileID: 1111555695618648, guid: cd55f474dbe234c458dfcd9098203978, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd55f474dbe234c458dfcd9098203978, type: 2}
   m_IsPrefabAsset: 0
