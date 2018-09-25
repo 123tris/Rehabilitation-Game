@@ -30,7 +30,7 @@ public class Bumper_placer : MonoBehaviour
     public float horizontalSpacing;
     public float verticalSpacing;
 
-    public int testBumpersToSpawn;
+    int testBumpersToSpawn = 1;
 
     [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[6, 6];
     private List<GameObject> spawnedBumpers = new List<GameObject>();
@@ -50,6 +50,9 @@ public class Bumper_placer : MonoBehaviour
     {
         timerOn = true;
         RandomizeBall();
+        testBumpersToSpawn= PlayerPrefs.GetInt("BumperAmount", testBumpersToSpawn);
+        
+        
         GenerateBumpers(testBumpersToSpawn);
     }
 
@@ -67,6 +70,13 @@ public class Bumper_placer : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("PinBal Recal Test Scene");
         }
+    }
+
+    public void Levelup()
+    {
+        testBumpersToSpawn += 1;
+        PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
+        Debug.Log(testBumpersToSpawn);
     }
 
     void GenerateBumpers(int bumperAmount)

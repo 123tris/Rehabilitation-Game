@@ -97,6 +97,7 @@ public class Ball_Controler : MonoBehaviour
         else if (collision.gameObject.tag == "Outer" && spawned == true)
         {
             anim.SetBool("Out", true);
+            p_s.Missed();
             GetComponent<MeshRenderer>().enabled = false;
             b_s.wrong = true;
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));           

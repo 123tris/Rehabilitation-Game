@@ -41,13 +41,18 @@ public class PointSystem : MonoBehaviour
         if (targetScore >= 2)
         {
             PlayerPrefs.SetInt("TargetScore", 0);
-            b_p.testBumpersToSpawn +=1;
-            Debug.Log(b_p.testBumpersToSpawn);
+            b_p.Levelup();
         }
+    }
+
+    public void Missed()
+    {
+        PlayerPrefs.SetInt("TargetScore", 0);
     }
 
     void Reset()
     {
         PlayerPrefs.DeleteKey("Score");
+        PlayerPrefs.DeleteKey("BumperAmount");
     }
 }
