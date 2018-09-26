@@ -31,7 +31,7 @@ public class Bumper_placer : MonoBehaviour
     public float horizontalSpacing;
     public float verticalSpacing;
 
-    int testBumpersToSpawn = 1;
+    public int testBumpersToSpawn = 1;
 
     [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[6, 6];
     private List<GameObject> spawnedBumpers = new List<GameObject>();
