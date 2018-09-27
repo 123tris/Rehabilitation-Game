@@ -296,7 +296,7 @@ public class Bumper_placer : MonoBehaviour
     private void RandomizeBall()
     {
         int randomDirection = Random.Range(0, 4);
-        int randomBallPosition = Random.Range(1, 4);
+        int randomBallPosition = Random.Range(1, board.GetLength(0) - 2);
 
         switch (randomDirection)
         {
