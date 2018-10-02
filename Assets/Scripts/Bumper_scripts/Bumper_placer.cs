@@ -32,8 +32,9 @@ public class Bumper_placer : MonoBehaviour
     public float verticalSpacing;
 
     public int testBumpersToSpawn = 1;
+    public int boardSize = 5;
 
-    [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[6, 6];
+    [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[10, 10];
     private List<GameObject> spawnedBumpers = new List<GameObject>();
     private Vector2 ballPosition;
     Vector2 bumperPosition;
@@ -49,8 +50,11 @@ public class Bumper_placer : MonoBehaviour
 
     void Start()
     {
+        boardSize = PlayerPrefs.GetInt("BoardSize", boardSize);
+        board = new SpawnEntity[boardSize, boardSize];
         timerOn = true;
         RandomizeBall();
+        b_m.SetBoardPosition();
         b_m.BuildBoard();
         testBumpersToSpawn = PlayerPrefs.GetInt("BumperAmount", testBumpersToSpawn);
         GenerateBumpers(testBumpersToSpawn);
@@ -72,11 +76,31 @@ public class Bumper_placer : MonoBehaviour
         }
     }
 
-    public void Levelup()
+    public void LevelUpTile()
     {
         testBumpersToSpawn += 1;
         PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
-        Debug.Log(testBumpersToSpawn);
+    }
+
+    public void LevelUpBoard()
+    {
+        testBumpersToSpawn += 1;
+        PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
+        boardSize += 1;
+        PlayerPrefs.SetInt("BoardSize", boardSize);
+    }
+    public void LevelDownTile()
+    {
+        testBumpersToSpawn -= 1;
+        PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
+    }
+
+    public void LevelDownBoard()
+    {
+        testBumpersToSpawn -= 1;
+        PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
+        boardSize -= 1;
+        PlayerPrefs.SetInt("BoardSize", boardSize);
     }
 
     void GenerateBumpers(int bumperAmount)
@@ -143,7 +167,7 @@ public class Bumper_placer : MonoBehaviour
             {
                 ballDirection = lastBumperIsBumper1 ? Direction.Right : Direction.Left;
 
-                bumperPosition.x = lastBumperIsBumper1 ? Random.Range((int)bumperPosition.x + 1, board.GetLength(0) - 1) : Random.Range(1, (int)bumperPosition.x);
+                bumperPosition.x = lastBumperIsBumper1 ? Random.Range((int)bumperPosition.x + 1, board.GetLength(1) - 1) : Random.Range(1, (int)bumperPosition.x);
                 if (!IsValidBumper(GetBumperSide(), ballDirection, lastBumperIsBumper1))
                 {
                     lastBumperIsBumper1 = !lastBumperIsBumper1;
@@ -170,7 +194,7 @@ public class Bumper_placer : MonoBehaviour
             else if (ballDirection == Direction.Right)
             {
                 ballDirection = lastBumperIsBumper1 ? Direction.Up : Direction.Down;
-                bumperPosition.y = lastBumperIsBumper1 ? Random.Range((int)bumperPosition.y + 1, board.GetLength(1) - 1) : Random.Range(1, (int)bumperPosition.y);
+                bumperPosition.y = lastBumperIsBumper1 ? Random.Range((int)bumperPosition.y + 1, board.GetLength(0) - 1) : Random.Range(1, (int)bumperPosition.y);
                 if (!IsValidBumper(GetBumperSide(), ballDirection, lastBumperIsBumper1))
                 {
                     lastBumperIsBumper1 = !lastBumperIsBumper1;
@@ -179,7 +203,7 @@ public class Bumper_placer : MonoBehaviour
         }
 
         //Spawn the bumper if the calculated index is available
-        SpawnEntity spawnPlace = board[(int)bumperPosition.x, (int)bumperPosition.y];
+        SpawnEntity spawnPlace = board[(int)bumperPosition.x,(int)bumperPosition.y];
         if (spawnPlace == SpawnEntity.Empty)
         {
             SpawnBumper(bumperPosition, lastBumperIsBumper1);
@@ -307,7 +331,7 @@ public class Bumper_placer : MonoBehaviour
                 break;
             case 1:
                 ballPosition = new Vector2(board.GetLength(0) - 1, randomBallPosition);
-                board[4, randomBallPosition] = SpawnEntity.Ball;
+                board[board.GetLength(0) - 2, randomBallPosition] = SpawnEntity.Ball;
                 b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(board.GetLength(0) - 1, randomBallPosition), Vector3.up * -90, transform);
                 break;
             case 2:
@@ -317,8 +341,8 @@ public class Bumper_placer : MonoBehaviour
                 break;
             case 3:
                 ballPosition = new Vector2(randomBallPosition, board.GetLength(0) - 1);
-                board[randomBallPosition, board.GetLength(0) - 1] = SpawnEntity.Ball;
-                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, board.GetLength(0) - 1), Vector3.up * 180, transform);
+                board[randomBallPosition, board.GetLength(1) - 1] = SpawnEntity.Ball;
+                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, board.GetLength(1) - 1), Vector3.up * 180, transform);
                 break;
         }
 

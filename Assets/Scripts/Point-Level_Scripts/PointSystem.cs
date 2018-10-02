@@ -17,7 +17,6 @@ public class PointSystem : MonoBehaviour
 
     void Start()
     { 
-        //else
         // Debug.LogError("Target scores is empty, please fill in the target scores list to indicate then necessary points per round");
         score = PlayerPrefs.GetInt("Score", score);
         targetScore = PlayerPrefs.GetInt("TargetScore", 0);
@@ -40,8 +39,13 @@ public class PointSystem : MonoBehaviour
 
         if (targetScore == 2)
         {
+            b_p.LevelUpTile();
+        }
+        else if (targetScore == 4)
+        {
             PlayerPrefs.SetInt("TargetScore", 0);
-            b_p.Levelup();
+            b_p.LevelUpTile();
+            b_p.LevelUpBoard();
         }
     }
 
@@ -54,7 +58,10 @@ public class PointSystem : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("Score");
         PlayerPrefs.DeleteKey("BumperAmount");
+        PlayerPrefs.DeleteKey("BoardSize");
         b_p.testBumpersToSpawn = 1;
         PlayerPrefs.SetInt("BumperAmount", b_p.testBumpersToSpawn);
+        b_p.boardSize = 5;
+        PlayerPrefs.GetInt("BoardSize", b_p.boardSize);
     }
 }

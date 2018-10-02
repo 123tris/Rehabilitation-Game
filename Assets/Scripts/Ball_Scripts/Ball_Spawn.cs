@@ -35,7 +35,11 @@ public class Ball_Spawn : MonoBehaviour {
     private Vector3 newBallRotation;
 
     void Start () {
-        chosen = false;     
+        chosen = false;
+        if(playerCamera == null)
+        {
+            playerCamera = Camera.main.gameObject;
+        }
     }
 
     private void Update()

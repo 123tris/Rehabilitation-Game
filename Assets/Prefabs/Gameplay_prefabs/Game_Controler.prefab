@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1534020462740638}
+  m_IsPrefabAsset: 1
+--- !u!1 &1534020462740638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4765435691363964}
+  - component: {fileID: 114950076846941000}
+  - component: {fileID: 114633156715739338}
+  m_Layer: 0
+  m_Name: Game_Controler
+  m_TagString: Observer
+  m_Icon: {fileID: 2800000, guid: f5d5dda2ca81d1547abcefa9e205b710, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4765435691363964
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1534020462740638}
+  m_LocalRotation: {x: -0, y: 0.679661, z: -0, w: 0.73352647}
+  m_LocalPosition: {x: -2.45, y: -7.37, z: 4.955957}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 85.634, z: 0}
+--- !u!114 &114633156715739338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1534020462740638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52c8b852ac054440834a9451233dcd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points_Var: {fileID: 0}
+  score: 0
+  targetScore: 0
+  b_p: {fileID: 0}
+--- !u!114 &114950076846941000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1534020462740638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6cce22f5c31c34dac338655432e265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b_p: {fileID: 0}
+  rend: {fileID: 0}
+  ball: {fileID: 1443160213498848, guid: 12ba4f832314fd546a9815934ef8f0cd, type: 2}
+  playerCamera: {fileID: 0}
+  arrow: {fileID: 1059640707776218, guid: 97db207d65660ca4babe8559be8694e8, type: 2}
+  target: {fileID: 0}
+  instantiatedArrow: {fileID: 0}
+  clicked_mat: {fileID: 2100000, guid: b5f0e42ad46319a4aac63ad182711948, type: 2}
+  right_mat: {fileID: 2100000, guid: 4b8d3f5ab637e7944afb27a21a3a99f9, type: 2}
+  wrong_mat: {fileID: 2100000, guid: c0c8b2eeb76c8374e93ea4ef4b1da954, type: 2}
+  tagSearcherList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  right: 0
+  wrong: 0
