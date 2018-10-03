@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="EncodableAsset" id="{2c449964-82b9-42b8-bb98-f976e64509b8}">
+        <property name="assetPath">
+            <value>GameSounds/Bumpers/</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{269ef553-4ee4-43ec-882b-7afca1e67e4c}</destination>
+        </relationship>
+    </object>
+</objects>

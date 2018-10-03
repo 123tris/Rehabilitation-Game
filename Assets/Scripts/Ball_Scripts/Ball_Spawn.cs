@@ -25,6 +25,10 @@ public class Ball_Spawn : MonoBehaviour {
     [Header("List")]
     public List<GameObject> tagSearcherList;
 
+    [Header("Audio")]
+    [FMODUnity.EventRef]
+    public string CannonSound = "event:/Ball/CannonShot";
+
     GameObject tagSearcher;
 
     int randomspawn;
@@ -95,6 +99,7 @@ public class Ball_Spawn : MonoBehaviour {
     public void SpawnBall()
     {
         Instantiate(ball, newBallPosition, Quaternion.Euler(newBallRotation));
+        FMODUnity.RuntimeManager.PlayOneShot(CannonSound, instantiatedArrow.transform.position);
     }
 
 }

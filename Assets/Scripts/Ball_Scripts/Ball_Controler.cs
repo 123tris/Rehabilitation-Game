@@ -19,6 +19,18 @@ public class Ball_Controler : MonoBehaviour
     [Header("Rigidbody")]
     public Rigidbody rb;
 
+    [Header("Audio")]
+    [FMODUnity.EventRef]
+    public string CorrectSound = "event:/Ball/Correct";
+
+    [FMODUnity.EventRef]
+    public string WrongSound = "event:/Ball/Wrong";
+
+    [FMODUnity.EventRef]
+    public string BumpSound = "event:/Bumper/Bump";
+
+    FMODUnity.StudioEventEmitter emitterRef;
+
     public Animator anim;
 
     float speed = 0.1f;
@@ -63,6 +75,8 @@ public class Ball_Controler : MonoBehaviour
         if (other.gameObject.tag == "Bumper1" || other.gameObject.tag == "Bumper2")
         {
             other.gameObject.GetComponent<MeshRenderer>().enabled = true;
+
+            FMODUnity.RuntimeManager.PlayOneShot(BumpSound, transform.position);
             spawned = true;
         }
 
@@ -92,6 +106,7 @@ public class Ball_Controler : MonoBehaviour
             p_s.AddPoints();
             b_s.right = true;
             GetComponent<MeshRenderer>().enabled = false;
+            FMODUnity.RuntimeManager.PlayOneShot(CorrectSound, transform.position);
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));
         }
         else if (collision.gameObject.tag == "Outer" && spawned == true)
@@ -100,6 +115,7 @@ public class Ball_Controler : MonoBehaviour
             p_s.Missed();
             GetComponent<MeshRenderer>().enabled = false;
             b_s.wrong = true;
+            FMODUnity.RuntimeManager.PlayOneShot(WrongSound, transform.position);
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));           
         }          
     }
