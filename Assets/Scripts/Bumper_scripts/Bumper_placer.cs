@@ -58,6 +58,7 @@ public class Bumper_placer : MonoBehaviour
         b_m.BuildBoard();
         testBumpersToSpawn = PlayerPrefs.GetInt("BumperAmount", testBumpersToSpawn);
         GenerateBumpers(testBumpersToSpawn);
+
     }
 
     void Update()
@@ -72,34 +73,40 @@ public class Bumper_placer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("PinBal Recal Test Scene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
         }
     }
 
     public void LevelUpTile()
     {
-        testBumpersToSpawn += 1;
+        if (testBumpersToSpawn < 7)
+            testBumpersToSpawn += 1;
         PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
     }
 
     public void LevelUpBoard()
     {
-        testBumpersToSpawn += 1;
+        if (testBumpersToSpawn < 7)
+            testBumpersToSpawn += 1;
         PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
-        boardSize += 1;
+        if (boardSize < 7)
+            boardSize += 1;
         PlayerPrefs.SetInt("BoardSize", boardSize);
     }
     public void LevelDownTile()
     {
-        testBumpersToSpawn -= 1;
+        if (testBumpersToSpawn > 1)
+            testBumpersToSpawn -= 1;
         PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
     }
 
     public void LevelDownBoard()
     {
-        testBumpersToSpawn -= 1;
+        if (testBumpersToSpawn > 1)
+            testBumpersToSpawn -= 1;
         PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
-        boardSize -= 1;
+        if (boardSize > 5)
+            boardSize -= 1;
         PlayerPrefs.SetInt("BoardSize", boardSize);
     }
 
@@ -107,11 +114,30 @@ public class Bumper_placer : MonoBehaviour
     {
         //Randomize ball position first because the bumper needs to be aware of where the ball spawns before it can be generated
 
-        print("Ball position: " + ballPosition.x + "\t" + ballPosition.y);
+        //print("Ball position: " + ballPosition.x + "\t" + ballPosition.y);
 
         for (int i = 0; i < bumperAmount; i++)
         {
             GenerateBumper(i == 0);
+            ValidateGeneratedBumper(i == 0);
+        }
+    }
+
+    private void ValidateGeneratedBumper(bool firstIteration)
+    {
+        if (!firstIteration) return;
+
+        if ((ballDirection == Direction.Right || ballDirection == Direction.Left) && ballPosition.y != bumperPosition.y)
+        {
+            Debug.LogError("");
+        }
+        if ((ballDirection == Direction.Down || ballDirection == Direction.Up) && ballPosition.y != bumperPosition.y)
+        {
+            Debug.LogError("");
+        }
+        if (GetBumperSide() == BorderSide.BottomRight || GetBumperSide() == BorderSide.BottomLeft)
+        {
+            Debug.LogError("bug");
         }
     }
 
@@ -153,7 +179,6 @@ public class Bumper_placer : MonoBehaviour
 
             if (!IsValidBumper(GetBumperSide(), ballDirection, lastBumperIsBumper1))
             {
-                Debug.Log("Swapping first bumper. Old: " + lastBumperIsBumper1);
                 lastBumperIsBumper1 = !lastBumperIsBumper1;
             }
         }
@@ -203,11 +228,11 @@ public class Bumper_placer : MonoBehaviour
         }
 
         //Spawn the bumper if the calculated index is available
-        SpawnEntity spawnPlace = board[(int)bumperPosition.x,(int)bumperPosition.y];
+        SpawnEntity spawnPlace = board[(int)bumperPosition.x, (int)bumperPosition.y];
         if (spawnPlace == SpawnEntity.Empty)
         {
             SpawnBumper(bumperPosition, lastBumperIsBumper1);
-            Debug.Log(ballDirection);
+          //  Debug.Log(ballDirection);
         }
         else
         {
