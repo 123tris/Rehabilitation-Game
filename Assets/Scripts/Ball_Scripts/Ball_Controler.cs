@@ -100,7 +100,7 @@ public class Ball_Controler : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "target")
+        if (collision.gameObject.name == "target" && spawned == true)
         {
             anim.SetBool("Out", true);
             p_s.AddPoints();
