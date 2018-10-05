@@ -207,13 +207,11 @@ public class Bumper_placer : MonoBehaviour
                 }
             }
         }
-
         //Spawn the bumper if the calculated index is available
         SpawnEntity spawnPlace = board[(int)bumperPosition.x, (int)bumperPosition.y];
         if (spawnPlace == SpawnEntity.Empty)
         {
             SpawnBumper(bumperPosition, lastBumperIsBumper1);
-          //  Debug.Log(ballDirection);
         }
         else
         {
@@ -281,7 +279,7 @@ public class Bumper_placer : MonoBehaviour
         {
             if (topEdge)
                 return BorderSide.Top;
-            else if (topEdge)
+            else if (bottomEdge)
                 return BorderSide.Bottom;
         }
 
