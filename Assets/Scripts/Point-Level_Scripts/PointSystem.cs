@@ -33,13 +33,13 @@ public class PointSystem : MonoBehaviour
     }
     public void AddPoints()
     {
-        score += 1;
+        score += 100;
         targetScore += 1;
         points_Var.text = score.ToString();      
         PlayerPrefs.SetInt("Score", score);
         PlayerPrefs.SetInt("TargetScore", targetScore);
-        Debug.Log(score + "score");
-        Debug.Log(targetScore + "targetscore");
+        //Debug.Log(score + "score");
+        //Debug.Log(targetScore + "targetscore");
         if (targetScore == 2 || targetScore == 6 || targetScore == 10 || targetScore == 12)
         {
             b_p.LevelUpTile();
@@ -55,7 +55,7 @@ public class PointSystem : MonoBehaviour
         if(targetScore >= 1)
         targetScore -= 1;
         PlayerPrefs.SetInt("TargetScore", targetScore);
-        Debug.Log(targetScore + "targetscore");
+        //Debug.Log(targetScore + "targetscore");
         if (targetScore == 1 || targetScore == 5 || targetScore == 9 || targetScore == 11)
         {
             b_p.LevelDownTile();
@@ -76,6 +76,6 @@ public class PointSystem : MonoBehaviour
         PlayerPrefs.SetInt("BumperAmount", b_p.testBumpersToSpawn);
         b_p.boardSize = 5;
         PlayerPrefs.GetInt("BoardSize", b_p.boardSize);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

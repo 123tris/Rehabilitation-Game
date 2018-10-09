@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PinBal Recal Timur Test Scene.unity
     guid: b916b16c6eaa2a040b457c12882f167a
+  - enabled: 1
+    path: Assets/Scenes/GreyBox.unity
+    guid: 2fd9d452112c41e4fb0e240d27d24606
   m_configObjects: {}

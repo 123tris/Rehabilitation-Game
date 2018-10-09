@@ -1303,8 +1303,8 @@ MonoBehaviour:
   timer: 5
   horizontalSpacing: 1
   verticalSpacing: 1
-  testBumpersToSpawn: 4
-  boardSize: 6
+  testBumpersToSpawn: 1
+  boardSize: 5
 --- !u!4 &407157496
 Transform:
   m_ObjectHideFlags: 0
