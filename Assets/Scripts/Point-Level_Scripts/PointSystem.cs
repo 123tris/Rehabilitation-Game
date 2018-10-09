@@ -33,7 +33,7 @@ public class PointSystem : MonoBehaviour
     }
     public void AddPoints()
     {
-        score += 1;
+        score += 100;
         targetScore += 1;
         points_Var.text = score.ToString();      
         PlayerPrefs.SetInt("Score", score);
@@ -76,6 +76,6 @@ public class PointSystem : MonoBehaviour
         PlayerPrefs.SetInt("BumperAmount", b_p.testBumpersToSpawn);
         b_p.boardSize = 5;
         PlayerPrefs.GetInt("BoardSize", b_p.boardSize);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

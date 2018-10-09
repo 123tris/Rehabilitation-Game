@@ -9,32 +9,39 @@ namespace Scripts
     public class AccountMaker : MonoBehaviour
     {
 
-        public bool accountDoesNotExist;
-
-        public InputField registerAccountName; 
+        public InputField registerAccountName;
         public Text notificationTextOne;
+        public List<string> accountsList;
+        public string[] accountArray;
 
         private void Start()
         {
             notificationTextOne.text = "";
         }
 
-
-
         public void CreateAccount()
         {
-            if (!PlayerPrefs.HasKey("User_" + registerAccountName.text.Trim()) && registerAccountName.text.Length > 0)
+            accountArray = PlayerPrefsX.GetStringArray("Users");
+            accountsList = new List<string>(accountArray);
+            Debug.Log(accountsList[3]);
+            if (!PlayerPrefs.HasKey("User_" + registerAccountName.text) && registerAccountName.text.Length > 0)
             {
-                StartCoroutine(NotificationTwo("Account is gecreert klik op de rechter pijl om verder te gaan klik niet op een andere knop"));
-                PlayerPrefs.SetString("User_" + registerAccountName.text.Trim(), registerAccountName.text.Trim());
-                PlayerPrefs.SetString("User", registerAccountName.text.Trim());
-                accountDoesNotExist = true;
+                StartCoroutine(NotificationTwo("Account is gecreert"));
+                PlayerPrefs.SetString("User_" + registerAccountName.text, registerAccountName.text);
+                PlayerPrefs.SetString("User", registerAccountName.text);
+                accountsList.Add(registerAccountName.text);
+                accountArray = accountsList.ToArray();
+                PlayerPrefsX.SetStringArray("Users", accountArray);
             }
             else
             {
                 StartCoroutine(NotificationTwo("Account naam bestaat al"));
-                accountDoesNotExist = false;
             }
+        }
+
+        public void DeleteAccount()
+        {
+            PlayerPrefs.DeleteAll();
         }
 
         private IEnumerator NotificationTwo(string _message)
