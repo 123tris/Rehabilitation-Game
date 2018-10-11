@@ -266,6 +266,9 @@
         <property name="position">
             <value>13.714285714285714</value>
         </property>
+        <relationship name="triggerConditions">
+            <destination>{20995d67-7449-4b32-a8b2-e52499253da9}</destination>
+        </relationship>
         <relationship name="destination">
             <destination>{2bd00bf5-c99a-4ea7-868d-521a70984239}</destination>
         </relationship>
@@ -280,6 +283,9 @@
         <property name="position">
             <value>6.8571428571428568</value>
         </property>
+        <relationship name="triggerConditions">
+            <destination>{8b0021e2-a778-43d9-bcad-4bba51564821}</destination>
+        </relationship>
         <relationship name="destination">
             <destination>{efc9ba76-1cd7-437d-9075-822e3c00679b}</destination>
         </relationship>
@@ -328,6 +334,28 @@
         </property>
         <property name="maximum">
             <value>0.50000005960464478</value>
+        </property>
+        <relationship name="parameter">
+            <destination>{930f7e1b-5909-4159-85ef-81e59c6fab3a}</destination>
+        </relationship>
+    </object>
+    <object class="ParameterCondition" id="{20995d67-7449-4b32-a8b2-e52499253da9}">
+        <property name="minimum">
+            <value>0.62000006437301636</value>
+        </property>
+        <property name="maximum">
+            <value>1</value>
+        </property>
+        <relationship name="parameter">
+            <destination>{930f7e1b-5909-4159-85ef-81e59c6fab3a}</destination>
+        </relationship>
+    </object>
+    <object class="ParameterCondition" id="{8b0021e2-a778-43d9-bcad-4bba51564821}">
+        <property name="minimum">
+            <value>0</value>
+        </property>
+        <property name="maximum">
+            <value>0.42000001668930054</value>
         </property>
         <relationship name="parameter">
             <destination>{930f7e1b-5909-4159-85ef-81e59c6fab3a}</destination>
@@ -387,7 +415,6 @@
         <property name="dataType">
             <value>-2</value>
         </property>
-        <property name="value"/>
     </object>
     <object class="Automator" id="{c2326932-6092-4f96-bc53-14222d73011b}">
         <property name="nameOfPropertyBeingAutomated">

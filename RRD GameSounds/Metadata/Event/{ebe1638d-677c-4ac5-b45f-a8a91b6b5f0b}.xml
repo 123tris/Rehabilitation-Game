@@ -121,7 +121,7 @@
     </object>
     <object class="SingleSound" id="{5877b869-cde8-4793-97f9-aec3a38d1125}">
         <property name="length">
-            <value>19.600000000000001</value>
+            <value>39</value>
         </property>
         <property name="timelockedOffset">
             <value>117.53182068989837</value>
@@ -146,10 +146,10 @@
     </object>
     <object class="LoopRegion" id="{06da7557-d0d3-4249-a526-4ea4573a7441}">
         <property name="position">
-            <value>0.10000000000000001</value>
+            <value>0</value>
         </property>
         <property name="length">
-            <value>19.5</value>
+            <value>19.574999999999999</value>
         </property>
         <relationship name="timeline">
             <destination>{488c814e-97cd-4a03-b5bb-7427baf73e8e}</destination>
@@ -186,7 +186,7 @@
             <value>3.49999976</value>
         </property>
         <property name="mix">
-            <value>67</value>
+            <value>100</value>
         </property>
     </object>
     <object class="MixerBusFader" id="{36e0968d-d703-4b75-8192-abc6b91fb0fd}"/>
