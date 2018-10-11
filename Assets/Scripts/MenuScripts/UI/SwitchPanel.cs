@@ -18,10 +18,4 @@ public class SwitchPanel : Button_3D
         panelToEnable.SetActive(true);
     }
 
-    public void Switch()
-    {
-        panelToDisable.SetActive(false);
-        panelToEnable.SetActive(true);
-    }
-
 }
