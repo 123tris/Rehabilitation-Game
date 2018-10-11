@@ -11,6 +11,8 @@ public class AccountMaker : MonoBehaviour
     public Text notificationTextOne;
     protected List<string> accountsList;
     protected string[] accountArray;
+    public GameObject panelToEnable;
+    public GameObject panelToDisable;
 
     private void Start()
     {
@@ -30,6 +32,8 @@ public class AccountMaker : MonoBehaviour
             accountsList.Add(registerAccountName.text);
             accountArray = accountsList.ToArray();
             PlayerPrefsX.SetStringArray("Users", accountArray);
+            panelToDisable.SetActive(false);
+            panelToEnable.SetActive(true);
         }
         else
         {
