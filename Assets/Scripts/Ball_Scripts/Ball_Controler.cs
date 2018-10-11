@@ -29,8 +29,6 @@ public class Ball_Controler : MonoBehaviour
     [FMODUnity.EventRef]
     public string BumpSound = "event:/Bumper/Bump";
 
-    FMODUnity.StudioEventEmitter emitterRef;
-
     public Animator anim;
 
     float speed = 0.1f;
