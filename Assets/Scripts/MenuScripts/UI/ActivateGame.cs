@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SwitchScene : Button_3D {
+public class ActivateGame : Button_3D {
 
-    public int sceneToLoad;
+    public GameObject gameboard;
 
     void Start()
     {
@@ -14,6 +14,6 @@ public class SwitchScene : Button_3D {
 
     void OnStart()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        gameboard.SetActive(false);
     }
 }
