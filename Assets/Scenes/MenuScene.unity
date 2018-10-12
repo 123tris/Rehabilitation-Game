@@ -1215,7 +1215,7 @@ MonoBehaviour:
   buttonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 28739449}
         m_MethodName: CreateAccount
         m_Mode: 1
         m_Arguments:
@@ -1420,6 +1420,7 @@ GameObject:
   - component: {fileID: 631408886}
   - component: {fileID: 631408885}
   - component: {fileID: 631408884}
+  - component: {fileID: 631408888}
   m_Layer: 0
   m_Name: StartGameButton
   m_TagString: Untagged
@@ -1468,7 +1469,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  sceneToLoad: 1
+  gameboard: {fileID: 0}
 --- !u!65 &631408885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1526,6 +1527,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 631408882}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &631408888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 631408882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d358cac8ba377e4a88e593c2603cb76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 631408888}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  panelToEnable: {fileID: 1023415303}
+  panelToDisable: {fileID: 888241195}
+  ClickSound: event:/Menu/Click
 --- !u!1 &637384724
 GameObject:
   m_ObjectHideFlags: 0
@@ -3872,7 +3903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1410074402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4723,7 +4754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1785310759
 RectTransform:
   m_ObjectHideFlags: 0
