@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114316578679205448}
-  - {fileID: 114353718568696796}
+  - {fileID: 114949647541261314}
   EditorEvents:
   - {fileID: 114819483966756960}
   - {fileID: 114725112938490560}
@@ -25,9 +25,9 @@ MonoBehaviour:
   - {fileID: 114241725177306652}
   - {fileID: 114940325523409830}
   - {fileID: 114238636454819546}
-  MasterBankRef: {fileID: 114353718568696796}
+  MasterBankRef: {fileID: 114949647541261314}
   StringsBankRef: {fileID: 114316578679205448}
-  stringsBankWriteTime: 636748699992197511
+  stringsBankWriteTime: 636748691390598404
   cacheVersion: 2
 --- !u!114 &114004384513829220
 MonoBehaviour:
@@ -319,6 +319,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 945
+--- !u!114 &114175600356026736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Stage\RRD GameSounds\Build\Desktop\Master Bank.bank
+  lastModified: 636748691390528202
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2378048
+  Exists: 1
 --- !u!114 &114205617726212512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,7 +425,7 @@ MonoBehaviour:
   Path: event:/Menu/Appearing
   guid: e71a47eaf5c70f4796a43f179e025cea
   Banks:
-  - {fileID: 114353718568696796}
+  - {fileID: 114949647541261314}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -429,7 +447,7 @@ MonoBehaviour:
   Path: event:/Menu/Switch
   guid: ccca591c4801504b903c16f4f3605a59
   Banks:
-  - {fileID: 114353718568696796}
+  - {fileID: 114949647541261314}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -629,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: RRD GameSounds\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636748699992197511
+  lastModified: 636748691390598404
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -695,6 +713,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 642
+--- !u!114 &114338856925137270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114341651079110960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,6 +797,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2378944
   Exists: 1
+--- !u!114 &114361863701921082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114384258196702634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,7 +990,7 @@ MonoBehaviour:
   Path: event:/Menu/Click
   guid: b4b61b14080a7b4ca296ac2b32018e93
   Banks:
-  - {fileID: 114353718568696796}
+  - {fileID: 114949647541261314}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -971,6 +1019,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1599
+--- !u!114 &114519020449716994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wrong
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114539985541284306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1047,6 +1110,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114598725494621172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wrong
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114600869170504756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,7 +1139,7 @@ MonoBehaviour:
   Path: event:/Menu/Check
   guid: 44c679b408859f4ea63602aff648e1c4
   Banks:
-  - {fileID: 114353718568696796}
+  - {fileID: 114949647541261314}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1128,7 +1206,7 @@ MonoBehaviour:
   Path: event:/Ball/Wrong
   guid: 8151685f75aa48499c8775e4386129a4
   Banks:
-  - {fileID: 114353718568696796}
+  - {fileID: 114949647541261314}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1158,6 +1236,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &114766064877904660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BallRolling
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114787044344153438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,7 +1295,7 @@ MonoBehaviour:
   Path: event:/Ball/Correct
   guid: 6c2065f92b358d41bb7d3b56d2d3c7fd
   Banks:
-  - {fileID: 114353718568696796}
+  - {fileID: 114949647541261314}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1210,6 +1303,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3428
+--- !u!114 &114823349557462396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BallRolling
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114829000349550602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,12 +1347,12 @@ MonoBehaviour:
   Path: event:/Music/Music
   guid: 8d63e1eb7c67c54ab45fa8a91b6b5f0b
   Banks:
-  - {fileID: 114353718568696796}
+  - {fileID: 114949647541261314}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114285128859774396}
+  - {fileID: 114598725494621172}
   MinDistance: 1
   MaxDistance: 20
   Length: 39000
@@ -1348,15 +1456,33 @@ MonoBehaviour:
   Path: event:/Ball/Rolling
   guid: e662aff514be6c40a53be8f50785f432
   Banks:
-  - {fileID: 114353718568696796}
+  - {fileID: 114949647541261314}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114119248378084598}
+  - {fileID: 114823349557462396}
   MinDistance: 1
   MaxDistance: 20
   Length: 13714
+--- !u!114 &114949647541261314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Stage\RRD GameSounds\Build\Desktop\Master Bank.bank
+  lastModified: 636748691390528202
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2378048
+  Exists: 1
 --- !u!114 &114954532717571912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,7 +1497,7 @@ MonoBehaviour:
   Path: event:/Ball/CannonShot
   guid: 8715db8d71816e4a94e30d3384b28138
   Banks:
-  - {fileID: 114353718568696796}
+  - {fileID: 114949647541261314}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1393,12 +1519,12 @@ MonoBehaviour:
   Path: event:/Bumper/Bump
   guid: cd3afd5948480b41b86838cc5cd1dc2c
   Banks:
-  - {fileID: 114353718568696796}
+  - {fileID: 114949647541261314}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114571972053096526}
+  - {fileID: 114361863701921082}
   MinDistance: 1
   MaxDistance: 20
   Length: 642
