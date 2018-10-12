@@ -19,6 +19,7 @@ public class ToggleScript : MonoBehaviour {
 
             toggleText = gameObject.GetComponentInChildren<Text>();
             PlayerPrefs.SetString("User", toggleText.ToString());
+            PlayerPrefs.SetString("User_" + toggleText.ToString(), toggleText.ToString());
         }
     }
 }

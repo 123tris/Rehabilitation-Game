@@ -50,13 +50,13 @@ public class Bumper_placer : MonoBehaviour
 
     void Start()
     {
-        boardSize = PlayerPrefs.GetInt("BoardSize", boardSize);
+        boardSize = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", boardSize);
         board = new SpawnEntity[boardSize, boardSize];
         timerOn = true;
         RandomizeBall();
         b_m.SetBoardPosition();
         b_m.BuildBoard();
-        testBumpersToSpawn = PlayerPrefs.GetInt("BumperAmount", testBumpersToSpawn);
+        testBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
         GenerateBumpers(testBumpersToSpawn);
 
     }
@@ -81,33 +81,33 @@ public class Bumper_placer : MonoBehaviour
     {
         if (testBumpersToSpawn < 7)
             testBumpersToSpawn += 1;
-        PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
+        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
     }
 
     public void LevelUpBoard()
     {
         if (testBumpersToSpawn < 7)
             testBumpersToSpawn += 1;
-        PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
+        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
         if (boardSize < 7)
             boardSize += 1;
-        PlayerPrefs.SetInt("BoardSize", boardSize);
+        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", boardSize);
     }
     public void LevelDownTile()
     {
         if (testBumpersToSpawn > 1)
             testBumpersToSpawn -= 1;
-        PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
+        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
     }
 
     public void LevelDownBoard()
     {
         if (testBumpersToSpawn > 1)
             testBumpersToSpawn -= 1;
-        PlayerPrefs.SetInt("BumperAmount", testBumpersToSpawn);
+        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
         if (boardSize > 5)
             boardSize -= 1;
-        PlayerPrefs.SetInt("BoardSize", boardSize);
+        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", boardSize);
     }
 
     void GenerateBumpers(int bumperAmount)
