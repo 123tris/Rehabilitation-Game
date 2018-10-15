@@ -101,7 +101,6 @@ public class BoardMaker : MonoBehaviour
         instantiatedXCorner2.transform.rotation = Quaternion.Euler(0, 90, 0);
         GameObject instantiatedYCorner2 = Instantiate(corner, tileParent.transform);
         instantiatedYCorner2.transform.position = GetSpawnFramePositionByIndex(b_p.board.GetLength(0) - 1, b_p.board.GetLength(1) - 1) + new Vector3(0.17f, 0, 0.17f);
-        instantiatedYCorner2.GetComponent<Renderer>().material.SetTextureScale("_MainTex", new Vector2(-1, 1));
     }
 
     //calculate tile positions
