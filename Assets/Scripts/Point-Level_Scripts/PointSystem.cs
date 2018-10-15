@@ -15,6 +15,7 @@ public class PointSystem : MonoBehaviour
 
     [Header("Scripts")]
     public Bumper_placer b_p;
+    public PlayerHigherScore b_h_S;
 
     void Start()
     { 
@@ -38,6 +39,7 @@ public class PointSystem : MonoBehaviour
         points_Var.text = score.ToString();      
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
+        b_h_S.UpdateScore();
         //Debug.Log(score + "score");
         //Debug.Log(targetScore + "targetscore");
         if (targetScore == 2 || targetScore == 6 || targetScore == 10 || targetScore == 12)

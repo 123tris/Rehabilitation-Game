@@ -19,6 +19,10 @@ public class Ball_Controler : MonoBehaviour
     [Header("Rigidbody")]
     public Rigidbody rb;
 
+    [Header("Collider")]
+    public SphereCollider sCollider;
+
+
     [Header("Audio")]
     [FMODUnity.EventRef]
     public string CorrectSound = "event:/Ball/Correct";
@@ -37,6 +41,7 @@ public class Ball_Controler : MonoBehaviour
 
     private void Start()
     {
+        sCollider = GetComponent<SphereCollider>();
         bSP = GameObject.FindGameObjectWithTag("Spawner");
         gameController = GameObject.FindGameObjectWithTag("Observer");
         blackScreen = GameObject.FindGameObjectWithTag("BlackScreen");
@@ -100,6 +105,7 @@ public class Ball_Controler : MonoBehaviour
             p_s.AddPoints();
             b_s.right = true;
             GetComponent<MeshRenderer>().enabled = false;
+            sCollider.enabled = false;
             FMODUnity.RuntimeManager.PlayOneShot(CorrectSound, transform.position);
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));
         }
@@ -108,6 +114,7 @@ public class Ball_Controler : MonoBehaviour
             anim.SetBool("Out", true);
             p_s.Missed();
             GetComponent<MeshRenderer>().enabled = false;
+            sCollider.enabled = false;
             b_s.wrong = true;
             FMODUnity.RuntimeManager.PlayOneShot(WrongSound, transform.position);
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));           

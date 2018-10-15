@@ -7,14 +7,44 @@ public class MusicController : MonoBehaviour {
     [FMODUnity.EventRef]
     public string music = "event:/Music/Music";
 
+    [FMODUnity.EventRef]
+    public string Bar = "event:/Ambiance/Bar";
+
     FMOD.Studio.EventInstance musicEv;
 
-    void Start () {
+    FMOD.Studio.EventInstance BarEV;
 
-        musicEv = FMODUnity.RuntimeManager.CreateInstance(music);
+    bool audioSpawned;
 
-        musicEv.start();
+    void Awake () {
+        SpawnAudio();
 
-	}
+        Debug.Log(audioSpawned);
+
+        audioSpawned = false;
+    }
+
+    void SpawnAudio()
+    {
+        if (audioSpawned == false)
+        {
+            Debug.Log("Audio spawned");
+
+            BarEV = FMODUnity.RuntimeManager.CreateInstance(Bar);
+
+            BarEV.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+
+            BarEV.start();
+
+            musicEv = FMODUnity.RuntimeManager.CreateInstance(music);
+
+            musicEv.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+
+            musicEv.start();
+
+            audioSpawned = true;
+        }
+
+    }
 	
 }
