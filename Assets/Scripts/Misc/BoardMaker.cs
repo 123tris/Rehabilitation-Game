@@ -12,6 +12,8 @@ public class BoardMaker : MonoBehaviour
     [Header("external objects and scripts")]
     public Bumper_placer b_p;
     public GameObject tileParent;
+    public Material[] tileMaterials;
+    public Material[] frameMaterials;
 
     int yAsPosition = 1;
     int yAsFramePosition = 0;
@@ -34,8 +36,9 @@ public class BoardMaker : MonoBehaviour
             {
                 Vector3 position = GetSpawnTilePositionByIndex(k, yAsPosition);
 
-                GameObject instantiatedBumper = Instantiate(tile, tileParent.transform);
-                instantiatedBumper.transform.position = position;
+                GameObject instantiatedTile = Instantiate(tile, tileParent.transform);
+                instantiatedTile.transform.position = position;
+                instantiatedTile.GetComponent<Renderer>().material = tileMaterials[Random.Range(0, 6)];
                 if (k == b_p.board.GetLength(0) - 2)
                 {
                     yAsPosition += 1;
@@ -53,6 +56,7 @@ public class BoardMaker : MonoBehaviour
                 if (k != 0 && k != b_p.board.GetLength(0) - 1)
                 {
                     GameObject instantiatedXFrame = Instantiate(frame, tileParent.transform);
+                    instantiatedXFrame.GetComponent<Renderer>().material = frameMaterials[Random.Range(0, 3)];
                     if (i == 0)
                     {
                         instantiatedXFrame.transform.position = xposition - new Vector3(0, 0, 0.165f);
@@ -65,6 +69,7 @@ public class BoardMaker : MonoBehaviour
 
 
                     GameObject instantiatedYFrame = Instantiate(frame, tileParent.transform);
+                    instantiatedYFrame.GetComponent<Renderer>().material = frameMaterials[Random.Range(0, 3)];
                     if (i == 0)
                     {
                         instantiatedYFrame.transform.position = yposition - new Vector3(0.165f, 0, 0);
