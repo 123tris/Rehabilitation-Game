@@ -38,7 +38,7 @@ public class BoardMaker : MonoBehaviour
 
                 GameObject instantiatedTile = Instantiate(tile, tileParent.transform);
                 instantiatedTile.transform.position = position;
-                instantiatedTile.GetComponent<Renderer>().material = tileMaterials[Random.Range(0, 6)];
+                instantiatedTile.GetComponent<Renderer>().material = tileMaterials[Random.Range(0, tileMaterials.Length)];
                 if (k == b_p.board.GetLength(0) - 2)
                 {
                     yAsPosition += 1;
@@ -56,7 +56,7 @@ public class BoardMaker : MonoBehaviour
                 if (k != 0 && k != b_p.board.GetLength(0) - 1)
                 {
                     GameObject instantiatedXFrame = Instantiate(frame, tileParent.transform);
-                    instantiatedXFrame.GetComponent<Renderer>().material = frameMaterials[Random.Range(0, 3)];
+                    instantiatedXFrame.GetComponent<Renderer>().material = frameMaterials[Random.Range(0, frameMaterials.Length)];
                     if (i == 0)
                     {
                         instantiatedXFrame.transform.position = xposition - new Vector3(0, 0, 0.165f);
@@ -69,7 +69,7 @@ public class BoardMaker : MonoBehaviour
 
 
                     GameObject instantiatedYFrame = Instantiate(frame, tileParent.transform);
-                    instantiatedYFrame.GetComponent<Renderer>().material = frameMaterials[Random.Range(0, 3)];
+                    instantiatedYFrame.GetComponent<Renderer>().material = frameMaterials[Random.Range(0, frameMaterials.Length)];
                     if (i == 0)
                     {
                         instantiatedYFrame.transform.position = yposition - new Vector3(0.165f, 0, 0);
