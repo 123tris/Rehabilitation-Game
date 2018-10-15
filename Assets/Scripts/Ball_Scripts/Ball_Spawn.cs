@@ -45,7 +45,9 @@ public class Ball_Spawn : MonoBehaviour {
 
     void Start () {
 
-        RollingEv = FMODUnity.RuntimeManager.CreateInstance(RollingSound);
+        
+
+       
 
         chosen = false;
         if(playerCamera == null)
@@ -108,6 +110,8 @@ public class Ball_Spawn : MonoBehaviour {
     {
         Instantiate(ball, newBallPosition, Quaternion.Euler(newBallRotation));
         FMODUnity.RuntimeManager.PlayOneShot(CannonSound, instantiatedArrow.transform.position);
+        RollingEv = FMODUnity.RuntimeManager.CreateInstance(RollingSound);
+        RollingEv.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(instantiatedArrow.transform));
         RollingEv.start();
     }
 

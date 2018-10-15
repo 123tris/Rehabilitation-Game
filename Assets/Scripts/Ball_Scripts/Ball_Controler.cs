@@ -33,6 +33,11 @@ public class Ball_Controler : MonoBehaviour
     [FMODUnity.EventRef]
     public string BumpSound = "event:/Bumper/Bump";
 
+    [FMODUnity.EventRef]
+    public string RollingSound = "event:/Ball/Rolling";
+
+    FMOD.Studio.EventInstance RollingEv;
+
     public Animator anim;
 
     float speed = 0.1f;
@@ -51,6 +56,10 @@ public class Ball_Controler : MonoBehaviour
         anim = blackScreen.GetComponent<Animator>();
 
         spawned = false;
+
+        RollingEv = FMODUnity.RuntimeManager.CreateInstance(RollingSound);
+        RollingEv.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+        RollingEv.start();
     }
 
     void FixedUpdate()
@@ -108,6 +117,7 @@ public class Ball_Controler : MonoBehaviour
             sCollider.enabled = false;
             FMODUnity.RuntimeManager.PlayOneShot(CorrectSound, transform.position);
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));
+            FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
         }
         else if (collision.gameObject.tag == "Outer" && spawned == true)
         {
@@ -117,7 +127,8 @@ public class Ball_Controler : MonoBehaviour
             sCollider.enabled = false;
             b_s.wrong = true;
             FMODUnity.RuntimeManager.PlayOneShot(WrongSound, transform.position);
-            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));           
+            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));
+            FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
         }          
     }
 } 

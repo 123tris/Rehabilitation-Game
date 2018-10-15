@@ -16,12 +16,17 @@ public class MusicController : MonoBehaviour {
 
     bool audioSpawned;
 
+    private void Start()
+    {
+        audioSpawned = false;
+    }
+
     void Awake () {
         SpawnAudio();
 
         Debug.Log(audioSpawned);
 
-        audioSpawned = false;
+        audioSpawned = PlayerPrefsX.GetBool("audiospawned", audioSpawned);
     }
 
     void SpawnAudio()
@@ -42,7 +47,7 @@ public class MusicController : MonoBehaviour {
 
             musicEv.start();
 
-            audioSpawned = true;
+            PlayerPrefsX.SetBool("audiospawned", audioSpawned = true);
         }
 
     }
