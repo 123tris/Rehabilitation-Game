@@ -14,6 +14,6 @@ public class ActivateGame : Button_3D {
 
     void OnStart()
     {
-        gameboard.SetActive(false);
+        gameboard.SetActive(true);
     }
 }
