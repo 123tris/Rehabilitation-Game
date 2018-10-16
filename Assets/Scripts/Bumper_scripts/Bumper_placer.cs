@@ -311,6 +311,11 @@ public class Bumper_placer : MonoBehaviour
         for (int i = 0; i < spawnedBumpers.Count; i++)
         {
             spawnedBumpers[i].GetComponent<MeshRenderer>().enabled = false;
+
+            foreach (Renderer r in spawnedBumpers[i].GetComponentsInChildren<Renderer>())
+            {
+                r.enabled = false;
+            }
             timerOn = false;
         }
     }
