@@ -381,10 +381,11 @@ MonoBehaviour:
   registerAccountName: {fileID: 1404379741}
   notificationTextOne: {fileID: 1729128808}
   panelToEnable: {fileID: 1758640153}
-  panelToDisable: {fileID: 1490895411}
+  panelToDisable: {fileID: 1366174058}
   scrollView: {fileID: 1856735842}
   toggleObject: {fileID: 1938288916609044, guid: f59884287fd5b9645bad558075222740,
     type: 2}
+  toggleBool: {fileID: 1914251500}
 --- !u!224 &47881553
 RectTransform:
   m_ObjectHideFlags: 0
@@ -393,7 +394,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 47881550}
   m_LocalRotation: {x: -0, y: -0.679661, z: -0, w: 0.73352647}
-  m_LocalPosition: {x: 0, y: 0, z: 574.40027}
+  m_LocalPosition: {x: 0, y: 0, z: 574.4004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 943975707}
@@ -401,7 +402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48.822025, y: 527.37}
+  m_AnchoredPosition: {x: 48.82204, y: 527.37}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &48784400
@@ -1084,6 +1085,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 250757560}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   panelToEnable: {fileID: 250757560}
@@ -1550,7 +1562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &250757561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2761,7 +2773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &407157495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3404,19 +3416,18 @@ Transform:
 --- !u!114 &477128323
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114955485101468390, guid: c6ac22ec3463caa449d2dfa30368c259,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 477128321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d358cac8ba377e4a88e593c2603cb76, type: 3}
+  m_Script: {fileID: 11500000, guid: d72fb5ca7dd017048af19086f564d86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 0d358cac8ba377e4a88e593c2603cb76, type: 3}
+      - m_Target: {fileID: 477128323}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -3429,9 +3440,9 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  gameboard: {fileID: 407157494}
   panelToEnable: {fileID: 344733501}
   panelToDisable: {fileID: 643020135}
-  ClickSound: event:/Menu/Click
 --- !u!65 &477128324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6178,7 +6189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &774203113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6305,19 +6316,18 @@ Transform:
 --- !u!114 &782688214
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114955485101468390, guid: c6ac22ec3463caa449d2dfa30368c259,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 782688212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d358cac8ba377e4a88e593c2603cb76, type: 3}
+  m_Script: {fileID: 11500000, guid: ebd101c2f2d9e62499734295b3d5c2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 0d358cac8ba377e4a88e593c2603cb76, type: 3}
+      - m_Target: {fileID: 782688214}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -6330,9 +6340,9 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  gameboard: {fileID: 407157494}
   panelToEnable: {fileID: 643020135}
   panelToDisable: {fileID: 344733501}
-  ClickSound: event:/Menu/Click
 --- !u!65 &782688215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10898,7 +10908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1366174059
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11596,7 +11606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1490895412
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19515,7 +19525,6 @@ GameObject:
   - component: {fileID: 1914251502}
   - component: {fileID: 1914251501}
   - component: {fileID: 1914251500}
-  - component: {fileID: 1914251504}
   m_Layer: 0
   m_Name: LoadConfirmButton
   m_TagString: Untagged
@@ -19540,19 +19549,18 @@ Transform:
 --- !u!114 &1914251500
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114955485101468390, guid: c6ac22ec3463caa449d2dfa30368c259,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1914251498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d358cac8ba377e4a88e593c2603cb76, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f2a61359dd7ff64cbed9b542c3f35d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 47881550}
+      - m_Target: {fileID: 1914251500}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -19565,9 +19573,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  panelToEnable: {fileID: 1758640153}
-  panelToDisable: {fileID: 1366174058}
-  ClickSound: event:/Menu/Click
+  isClicked: 0
 --- !u!65 &1914251501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19625,36 +19631,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1914251498}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1914251504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1914251498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 47881550}
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!1 &1919273696
 GameObject:
   m_ObjectHideFlags: 0
@@ -20695,6 +20671,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   gameboard: {fileID: 407157494}
+  panelToEnable: {fileID: 344733501}
+  panelToDisable: {fileID: 1758640153}
 --- !u!65 &2035315541
 BoxCollider:
   m_ObjectHideFlags: 0

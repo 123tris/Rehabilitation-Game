@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ActivateGame : Button_3D {
+public class DeactivateGame : Button_3D {
 
     public GameObject gameboard;
     public GameObject panelToEnable;
@@ -18,6 +18,6 @@ public class ActivateGame : Button_3D {
     {
         panelToDisable.SetActive(false);
         panelToEnable.SetActive(true);
-        gameboard.SetActive(true);
+        gameboard.SetActive(false);
     }
 }

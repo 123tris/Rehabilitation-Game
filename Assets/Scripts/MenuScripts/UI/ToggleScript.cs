@@ -7,27 +7,37 @@ public class ToggleScript : MonoBehaviour {
 
 
     Text toggleText;
-    bool buttonPressed;
+    public bool isToggleOn;
     public GameObject panelToEnable;
     public GameObject panelToDisable;
-    public Button buttonToPress;
+    public ToggleBool toggleBool;
 
     [FMODUnity.EventRef]
     public string CheckSound = "event:/Menu/Check";
 
-    private void Start()
+    void Update()
     {
-        buttonToPress.onClick.AddListener(ButtonIsPressed);
-    }
-
-    public void ButtonIsPressed()
-    {
-        buttonPressed = true;
+        if (toggleBool.isClicked == true)
+        {
+            SelectAccount();
+        }
     }
 
     public void AccountToggle(bool toggle)
     {
-        if (toggle == true && buttonPressed == true)
+        if (toggle == true)
+        {
+            isToggleOn = true;
+        }
+        else
+        {
+            isToggleOn = false;
+        }
+    }
+
+    void SelectAccount()
+    {
+        if (isToggleOn == true && toggleBool.isClicked == true)
         {
             FMODUnity.RuntimeManager.PlayOneShot(CheckSound, transform.position);
 
@@ -37,5 +47,6 @@ public class ToggleScript : MonoBehaviour {
             panelToDisable.SetActive(false);
             panelToEnable.SetActive(true);
         }
+            toggleBool.isClicked = false;
     }
 }

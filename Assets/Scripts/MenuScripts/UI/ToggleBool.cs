@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleBool : MonoBehaviour {
+public class ToggleBool : Button_3D {
 
-    public bool buttonIsActive;
+    public bool isClicked;
 
-	public void ButtonPressed()
+    void Start()
     {
-        buttonIsActive = true;
+        buttonPressed.AddListener(OnStart);
     }
-	
-	public void ButtonLoss () {
-        buttonIsActive = false;
-	}
+
+
+
+    void OnStart()
+    {
+        isClicked = true;
+    }
 }
