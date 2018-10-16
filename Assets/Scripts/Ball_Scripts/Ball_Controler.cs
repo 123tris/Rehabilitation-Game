@@ -82,8 +82,12 @@ public class Ball_Controler : MonoBehaviour
     {
         if (other.gameObject.tag == "Bumper1" || other.gameObject.tag == "Bumper2")
         {
+            foreach (Renderer r in other.gameObject.GetComponentsInChildren<Renderer>())
+            {
+                r.enabled = true;
+            }                
             other.gameObject.GetComponent<MeshRenderer>().enabled = true;
-
+           
             FMODUnity.RuntimeManager.PlayOneShot(BumpSound, transform.position);
             spawned = true;
         }

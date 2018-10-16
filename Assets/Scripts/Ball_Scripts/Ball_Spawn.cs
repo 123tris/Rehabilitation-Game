@@ -29,11 +29,6 @@ public class Ball_Spawn : MonoBehaviour {
     [FMODUnity.EventRef]
     public string CannonSound = "event:/Ball/CannonShot";
 
-    [FMODUnity.EventRef]
-    public string RollingSound = "event:/Ball/Rolling";
-
-    FMOD.Studio.EventInstance RollingEv;
-
     GameObject tagSearcher;
 
     int randomspawn;
@@ -110,9 +105,7 @@ public class Ball_Spawn : MonoBehaviour {
     {
         Instantiate(ball, newBallPosition, Quaternion.Euler(newBallRotation));
         FMODUnity.RuntimeManager.PlayOneShot(CannonSound, instantiatedArrow.transform.position);
-        RollingEv = FMODUnity.RuntimeManager.CreateInstance(RollingSound);
-        RollingEv.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(instantiatedArrow.transform));
-        RollingEv.start();
+
     }
 
 }

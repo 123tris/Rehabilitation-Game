@@ -39,6 +39,9 @@
         <relationship name="parameters">
             <destination>{5e1723cf-fc5d-4112-bdf5-9091431a5e26}</destination>
         </relationship>
+        <relationship name="banks">
+            <destination>{bb0fbd21-b432-4856-9144-f8e7af0a901c}</destination>
+        </relationship>
     </object>
     <object class="EventMixer" id="{3e68cf4d-817a-4a48-b251-aa3e0fd33442}">
         <relationship name="masterBus">
@@ -205,6 +208,9 @@
         <property name="length">
             <value>8</value>
         </property>
+        <property name="color">
+            <value>Red</value>
+        </property>
         <relationship name="audioFile">
             <destination>{920ae5c6-1785-4ac5-affc-039ca6bf8e5a}</destination>
         </relationship>
@@ -245,6 +251,9 @@
         </property>
         <property name="length">
             <value>16</value>
+        </property>
+        <property name="color">
+            <value>Yellow</value>
         </property>
         <relationship name="audioFile">
             <destination>{63c57245-b557-4d8b-a321-87bf0dd285a0}</destination>
