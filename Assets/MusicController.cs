@@ -39,13 +39,13 @@ public class MusicController : MonoBehaviour {
 
             BarEV.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
 
-            BarEV.start();
+            //BarEV.start();
 
             musicEv = FMODUnity.RuntimeManager.CreateInstance(music);
 
             musicEv.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
 
-            musicEv.start();
+            //musicEv.start();
 
             PlayerPrefsX.SetBool("audiospawned", audioSpawned = true);
         }
