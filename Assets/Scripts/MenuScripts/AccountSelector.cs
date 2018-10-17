@@ -9,6 +9,9 @@ public class AccountSelector : AccountMaker
     public GameObject scrollView;
     public GameObject toggleObject;
     Text toggleText;
+    public ToggleBool toggleBool;
+
+
 
     public void Awake()
     {
@@ -20,6 +23,9 @@ public class AccountSelector : AccountMaker
             toggleText = instantiatedObject.GetComponentInChildren<Text>();
             toggleText.text = accountsList[i];
             instantiatedObject.GetComponent<Toggle>().group = scrollView.GetComponent<ToggleGroup>();
+            instantiatedObject.GetComponent<ToggleScript>().panelToDisable = panelToDisable;
+            instantiatedObject.GetComponent<ToggleScript>().panelToEnable = panelToEnable;
+            instantiatedObject.GetComponent<ToggleScript>().toggleBool = toggleBool;
         }
     }
 }

@@ -170,9 +170,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0f709dcf925bb478055c3548125805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isToggleOn: 0
   panelToEnable: {fileID: 0}
   panelToDisable: {fileID: 0}
-  buttonToPress: {fileID: 0}
+  toggleBool: {fileID: 0}
   CheckSound: event:/Menu/Check
 --- !u!114 &114746384701917618
 MonoBehaviour:
