@@ -11,9 +11,7 @@ public class AccountSelector : AccountMaker
     Text toggleText;
     public ToggleBool toggleBool;
 
-
-
-    public void Awake()
+    public void Start()
     {
         accountArray = PlayerPrefsX.GetStringArray("Users");
         accountsList = new List<string>(accountArray);
@@ -26,6 +24,14 @@ public class AccountSelector : AccountMaker
             instantiatedObject.GetComponent<ToggleScript>().panelToDisable = panelToDisable;
             instantiatedObject.GetComponent<ToggleScript>().panelToEnable = panelToEnable;
             instantiatedObject.GetComponent<ToggleScript>().toggleBool = toggleBool;
+            if(i == accountsList.Count - 1)
+            {
+                instantiatedObject.GetComponent<ToggleScript>().isLast = true;
+            }
+            else
+            {
+                instantiatedObject.GetComponent<ToggleScript>().isLast = false;
+            }
         }
     }
 }
