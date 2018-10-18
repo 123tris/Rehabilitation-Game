@@ -301,3 +301,128 @@ ExportedObj/
 *.pidb
 *.booproj
 *.svd
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame3/MiddleFrame3_M_Roughness.png.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame3/MiddleFrame3_M_Normal.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV2/FieldTile_FieldTileV2_M_AO.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV2.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV1/FieldTileV1_M_Roughness.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV1.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH1/FieldTileH1_M_Normal.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH1/FieldTileH1_M_Base Color.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH1/FieldTileH1_M_AO.png.meta
+Assets/Plugins/UWP/x64.meta
+Assets/Plugins/Android/libs/x86.meta
+Assets/Models/Final Assets/MiddleFrame.fbx.meta
+Assets/Models/Final Assets/Launcher.fbx.meta
+Assets/Models/Final Assets/FieldTile.fbx.meta
+Assets/Models/Final Assets/CornerFrame.fbx.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame1/MiddleFrame1_M_Base Color.png.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame1/MiddleFrame1_M_AO.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV3/FieldTileV3_M_Base Color.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH2/FieldTileH2_M_Roughness.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH2/FieldTileH2_M_Normal.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH2/FieldTileH2_M_Base Color.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH1.meta
+Assets/Textures/Final Textures/FieldTiles_Tex.meta
+Assets/Plugins/UWP/x86.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame2/MiddleFrame2_M_Normal.png.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame2/MiddleFrame2_M_Base Color.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH3/FieldTileH3_M_Roughness.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH3/FieldTileH3_M_Normal.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH3/FieldTileH3_M_Base Color.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH3/FieldTileH3_M_AO.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH2/FieldTileH2_M_AO.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH2.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH1/FieldTileH1_M_Roughness.png.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame1.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV3/FieldTileV3_M_Roughness.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV3/FieldTileV3_M_Normal.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV1/FieldTileV1_M_Normal.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV1/FieldTileV1_M_Base Color.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileH3.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame2/MiddleFrame2_M_AO.png.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame2.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame1/MiddleFrame1_M_Roughness.png.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame1/MiddleFrame1_M_Normal.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV2/FieldTile_FieldTileV2_M_Roughness.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV2/FieldTile_FieldTileV2_M_Normal.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV2/FieldTile_FieldTileV2_M_Base Color.png.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame3/MiddleFrame3_M_Base Color.png.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame3/MiddleFrame3_M_AO.png.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame3.meta
+Assets/Textures/Final Textures/MiddleFrame_Tex/MiddleFrame2/MiddleFrame2_M_Roughness.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV3/FieldTileV3_M_AO.png.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV3.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/FieldTileV1/FieldTileV1_M_AO.png.meta
+Assets/Textures/RandomMized_Materials/MiddleFrames/Middle.mat.meta
+Assets/Textures/RandomMized_Materials/MiddleFrames.meta
+Assets/Textures/RandomMized_Materials.meta
+Assets/Textures/Final Textures/Launcher_Tex/Launcher_Stone_M_Normal.png.meta
+Assets/Textures/Final Textures/Launcher_Tex/Launcher_M_Normal.png.meta
+Assets/Textures/Final Textures/Launcher_Tex/LauncherTexture.mat.meta
+Assets/Textures/Final Textures/Launcher_Tex/LauncherTexture 1.mat.meta
+Assets/Textures/Final Textures/FieldTiles_Tex/Tile7.mat.meta
+Assets/Textures/Final Textures/CornerFrame_Tex/CornerFrame_M_Normal.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-13_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-13_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-12_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-12_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-11_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-11_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-10_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-10_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-0_comp_light.exr.meta
+Assets/Textures/RandomMized_Materials/Tiles/Tile6.mat.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-5_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-5_comp_dir.png.meta
+Assets/Prefabs/Gameplay_prefabs/MiddleFrame.prefab.meta
+Assets/Prefabs/Gameplay_prefabs/LauncherV2.prefab.meta
+Assets/Prefabs/Gameplay_prefabs/FieldTile.prefab.meta
+Assets/Prefabs/Gameplay_prefabs/CornerFrame.prefab.meta
+Assets/Prefabs/Gameplay_prefabs/Ball/Marble.prefab.meta
+Assets/Models/Marble_Tex/Textures/Marble_Glass_M_MetallicSmoothness.png.meta
+Assets/Models/Marble_Tex/Textures/Marble_Glass_M_AlbedoTransparency.png.meta
+Assets/Models/Marble_Tex/Textures/Marble_Decor_M_MetallicSmoothness.png.meta
+Assets/Models/Marble_Tex/Textures/Marble_Decor_M_AlbedoTransparency.png.meta
+Assets/Textures/Final Textures/CornerFrame_Tex/Corner.mat.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-9_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-9_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-8_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-8_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-7_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-7_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-6_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-6_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-1_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-17_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-17_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-16_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-16_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-15_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-15_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-14_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-14_comp_dir.png.meta
+Assets/Models/Marble_Tex/Test/tes.mat.meta
+Assets/Models/Marble_Tex/Test/Test.mat.meta
+Assets/Models/Marble_Tex/Test/Marble_Glass_M_Normal.png.meta
+Assets/Models/Marble_Tex/Test/Marble_Glass_M_MetallicSmoothness.png.meta
+Assets/Models/Marble_Tex/Test/Marble_Glass_M_AlbedoTransparency.png.meta
+Assets/Models/Marble_Tex/Test/Marble_Decor_M_Normal.png.meta
+Assets/Models/Marble_Tex/Test/Marble_Decor_M_MetallicSmoothness.png.meta
+Assets/Models/Marble_Tex/Test/Marble_Decor_M_AlbedoTransparency.png.meta
+Assets/Textures/RandomMized_Materials/Tiles/Tile5.mat.meta
+Assets/Textures/RandomMized_Materials/Tiles/Tile4.mat.meta
+Assets/Textures/RandomMized_Materials/Tiles/Tile3.mat.meta
+Assets/Textures/RandomMized_Materials/Tiles/Tile2.mat.meta
+Assets/Textures/RandomMized_Materials/Tiles/Tile1.mat.meta
+Assets/Textures/RandomMized_Materials/Tiles.meta
+Assets/Textures/RandomMized_Materials/MiddleFrames/Middle3.mat.meta
+Assets/Textures/RandomMized_Materials/MiddleFrames/Middle2.mat.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-4_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-4_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-3_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-3_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-2_comp_light.exr.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-2_comp_dir.png.meta
+Assets/Scenes/PinBal Recal Timur Test Scene/Lightmap-1_comp_light.exr.meta

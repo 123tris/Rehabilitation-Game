@@ -39,6 +39,11 @@ public class Ball_Spawn : MonoBehaviour {
     private Vector3 newBallRotation;
 
     void Start () {
+
+        
+
+       
+
         chosen = false;
         if(playerCamera == null)
         {
@@ -100,6 +105,7 @@ public class Ball_Spawn : MonoBehaviour {
     {
         Instantiate(ball, newBallPosition, Quaternion.Euler(newBallRotation));
         FMODUnity.RuntimeManager.PlayOneShot(CannonSound, instantiatedArrow.transform.position);
+
     }
 
 }

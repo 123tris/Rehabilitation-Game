@@ -12,6 +12,8 @@ public class BoardMaker : MonoBehaviour
     [Header("external objects and scripts")]
     public Bumper_placer b_p;
     public GameObject tileParent;
+    public Material[] tileMaterials;
+    public Material[] frameMaterials;
 
     int yAsPosition = 1;
     int yAsFramePosition = 0;
@@ -34,8 +36,9 @@ public class BoardMaker : MonoBehaviour
             {
                 Vector3 position = GetSpawnTilePositionByIndex(k, yAsPosition);
 
-                GameObject instantiatedBumper = Instantiate(tile, tileParent.transform);
-                instantiatedBumper.transform.position = position;
+                GameObject instantiatedTile = Instantiate(tile, tileParent.transform);
+                instantiatedTile.transform.position = position;
+                instantiatedTile.GetComponent<Renderer>().material = tileMaterials[Random.Range(0, tileMaterials.Length)];
                 if (k == b_p.board.GetLength(0) - 2)
                 {
                     yAsPosition += 1;
@@ -53,6 +56,7 @@ public class BoardMaker : MonoBehaviour
                 if (k != 0 && k != b_p.board.GetLength(0) - 1)
                 {
                     GameObject instantiatedXFrame = Instantiate(frame, tileParent.transform);
+                    instantiatedXFrame.GetComponent<Renderer>().material = frameMaterials[Random.Range(0, frameMaterials.Length)];
                     if (i == 0)
                     {
                         instantiatedXFrame.transform.position = xposition - new Vector3(0, 0, 0.165f);
@@ -65,6 +69,7 @@ public class BoardMaker : MonoBehaviour
 
 
                     GameObject instantiatedYFrame = Instantiate(frame, tileParent.transform);
+                    instantiatedYFrame.GetComponent<Renderer>().material = frameMaterials[Random.Range(0, frameMaterials.Length)];
                     if (i == 0)
                     {
                         instantiatedYFrame.transform.position = yposition - new Vector3(0.165f, 0, 0);
@@ -90,10 +95,11 @@ public class BoardMaker : MonoBehaviour
         instantiatedXCorner1.transform.rotation = Quaternion.Euler(0, 180, 0);
         GameObject instantiatedYCorner1 = Instantiate(corner, tileParent.transform);
         instantiatedYCorner1.transform.position = GetSpawnFramePositionByIndex(0, b_p.board.GetLength(1) - 1) - new Vector3(0.17f, 0, -0.17f);
-        instantiatedYCorner1.transform.rotation = Quaternion.Euler(0, -90, 0);
+        instantiatedYCorner1.transform.rotation = Quaternion.Euler(0, -180, 0);
+        instantiatedYCorner1.transform.localScale = new Vector3(1, 1, -1);
         GameObject instantiatedXCorner2 = Instantiate(corner, tileParent.transform);
         instantiatedXCorner2.transform.position = GetSpawnFramePositionByIndex(b_p.board.GetLength(0) - 1, 0) + new Vector3(0.17f, 0, -0.17f);
-        instantiatedXCorner2.transform.rotation = Quaternion.Euler(0, 90, 0);
+        instantiatedXCorner2.transform.localScale = new Vector3(1, 1, -1);
         GameObject instantiatedYCorner2 = Instantiate(corner, tileParent.transform);
         instantiatedYCorner2.transform.position = GetSpawnFramePositionByIndex(b_p.board.GetLength(0) - 1, b_p.board.GetLength(1) - 1) + new Vector3(0.17f, 0, 0.17f);
     }

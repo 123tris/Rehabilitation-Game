@@ -19,6 +19,10 @@ public class Ball_Controler : MonoBehaviour
     [Header("Rigidbody")]
     public Rigidbody rb;
 
+    [Header("Collider")]
+    public SphereCollider sCollider;
+
+
     [Header("Audio")]
     [FMODUnity.EventRef]
     public string CorrectSound = "event:/Ball/Correct";
@@ -29,7 +33,10 @@ public class Ball_Controler : MonoBehaviour
     [FMODUnity.EventRef]
     public string BumpSound = "event:/Bumper/Bump";
 
-    FMODUnity.StudioEventEmitter emitterRef;
+    [FMODUnity.EventRef]
+    public string RollingSound = "event:/Ball/Rolling";
+
+    FMOD.Studio.EventInstance RollingEv;
 
     public Animator anim;
 
@@ -39,6 +46,7 @@ public class Ball_Controler : MonoBehaviour
 
     private void Start()
     {
+        sCollider = GetComponent<SphereCollider>();
         bSP = GameObject.FindGameObjectWithTag("Spawner");
         gameController = GameObject.FindGameObjectWithTag("Observer");
         blackScreen = GameObject.FindGameObjectWithTag("BlackScreen");
@@ -48,6 +56,10 @@ public class Ball_Controler : MonoBehaviour
         anim = blackScreen.GetComponent<Animator>();
 
         spawned = false;
+
+        RollingEv = FMODUnity.RuntimeManager.CreateInstance(RollingSound);
+        RollingEv.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+        RollingEv.start();
     }
 
     void FixedUpdate()
@@ -70,8 +82,12 @@ public class Ball_Controler : MonoBehaviour
     {
         if (other.gameObject.tag == "Bumper1" || other.gameObject.tag == "Bumper2")
         {
+            foreach (Renderer r in other.gameObject.GetComponentsInChildren<Renderer>())
+            {
+                r.enabled = true;
+            }                
             other.gameObject.GetComponent<MeshRenderer>().enabled = true;
-
+           
             FMODUnity.RuntimeManager.PlayOneShot(BumpSound, transform.position);
             spawned = true;
         }
@@ -102,17 +118,21 @@ public class Ball_Controler : MonoBehaviour
             p_s.AddPoints();
             b_s.right = true;
             GetComponent<MeshRenderer>().enabled = false;
+            sCollider.enabled = false;
             FMODUnity.RuntimeManager.PlayOneShot(CorrectSound, transform.position);
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));
+            FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
         }
         else if (collision.gameObject.tag == "Outer" && spawned == true)
         {
             anim.SetBool("Out", true);
             p_s.Missed();
             GetComponent<MeshRenderer>().enabled = false;
+            sCollider.enabled = false;
             b_s.wrong = true;
             FMODUnity.RuntimeManager.PlayOneShot(WrongSound, transform.position);
-            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));           
+            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));
+            FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
         }          
     }
 } 

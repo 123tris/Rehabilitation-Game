@@ -15,14 +15,15 @@ public class PointSystem : MonoBehaviour
 
     [Header("Scripts")]
     public Bumper_placer b_p;
+    public PlayerHigherScore b_h_S;
 
     void Start()
     { 
 
         // Debug.LogError("Target scores is empty, please fill in the target scores list to indicate then necessary points per round");
-        score = PlayerPrefs.GetInt("Score", score);
-        targetScore = PlayerPrefs.GetInt("TargetScore", 0);
-        points_Var.text = PlayerPrefs.GetInt("Score").ToString();
+        score = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
+        targetScore = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", 0);
+        points_Var.text = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score").ToString();
     }
     private void Update()
     {
@@ -36,8 +37,9 @@ public class PointSystem : MonoBehaviour
         score += 100;
         targetScore += 1;
         points_Var.text = score.ToString();      
-        PlayerPrefs.SetInt("Score", score);
-        PlayerPrefs.SetInt("TargetScore", targetScore);
+        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
+        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
+        b_h_S.UpdateScore();
         //Debug.Log(score + "score");
         //Debug.Log(targetScore + "targetscore");
         if (targetScore == 2 || targetScore == 6 || targetScore == 10 || targetScore == 12)
@@ -54,7 +56,7 @@ public class PointSystem : MonoBehaviour
     {
         if(targetScore >= 1)
         targetScore -= 1;
-        PlayerPrefs.SetInt("TargetScore", targetScore);
+        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
         //Debug.Log(targetScore + "targetscore");
         if (targetScore == 1 || targetScore == 5 || targetScore == 9 || targetScore == 11)
         {
@@ -68,14 +70,14 @@ public class PointSystem : MonoBehaviour
 
     void ResetScene()
     {
-        PlayerPrefs.DeleteKey("Score");
-        PlayerPrefs.DeleteKey("TargetScore");
-        PlayerPrefs.DeleteKey("BumperAmount");
-        PlayerPrefs.DeleteKey("BoardSize");
+        PlayerPrefs.DeleteKey("User_" + PlayerPrefs.GetString("User") + "Score");
+        PlayerPrefs.DeleteKey("User_" + PlayerPrefs.GetString("User") + "TargetScore");
+        PlayerPrefs.DeleteKey("User_" + PlayerPrefs.GetString("User") + "BumperAmount");
+        PlayerPrefs.DeleteKey("User_" + PlayerPrefs.GetString("User") + "BoardSize");
         b_p.testBumpersToSpawn = 1;
-        PlayerPrefs.SetInt("BumperAmount", b_p.testBumpersToSpawn);
+        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", b_p.testBumpersToSpawn);
         b_p.boardSize = 5;
-        PlayerPrefs.GetInt("BoardSize", b_p.boardSize);
+        PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", b_p.boardSize);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

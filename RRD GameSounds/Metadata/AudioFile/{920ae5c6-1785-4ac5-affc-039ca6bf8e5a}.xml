@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{920ae5c6-1785-4ac5-affc-039ca6bf8e5a}">
+        <property name="assetPath">
+            <value>Ambiance/Bar/World_Bar_Ambiace_chattering_and_Laughing_transition.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>8</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{269ef553-4ee4-43ec-882b-7afca1e67e4c}</destination>
+        </relationship>
+    </object>
+</objects>
