@@ -9,6 +9,9 @@ public class AudioAndGraphicsOptions :Button_3D {
     string MusicPath = "vca:/Music";
     string AmbiancePath = "vca:/Ambiance";
 
+    string masterBusString = "Bus:/";
+    FMOD.Studio.Bus masterBus;
+
     public Wilberforce.Colorblind colorblind;
 
     FMOD.Studio.VCA SoundFX;
@@ -20,6 +23,7 @@ public class AudioAndGraphicsOptions :Button_3D {
         SoundFX= FMODUnity.RuntimeManager.GetVCA(SoundFXPath);
         Music = FMODUnity.RuntimeManager.GetVCA(MusicPath);
         Ambiance = FMODUnity.RuntimeManager.GetVCA(AmbiancePath);
+        masterBus = FMODUnity.RuntimeManager.GetBus(masterBusString);
     }
 
     public void ColourBlindOne()
@@ -66,11 +70,11 @@ public class AudioAndGraphicsOptions :Button_3D {
     {
         if(toggle == true)
         {
-            
+            masterBus.setVolume(1);
         }
         else
         {
-
+            masterBus.setVolume(0);
         }
     }
 }
