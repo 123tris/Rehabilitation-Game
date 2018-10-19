@@ -35,7 +35,7 @@ public class Bumper_placer : MonoBehaviour
     public int boardSize = 5;
 
     public int maxTestBumpersToSpawn = 1;
-    public int maxBoardSize = 5;
+    public int maxBoardSize;
 
     [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[10, 10];
     private List<GameObject> spawnedBumpers = new List<GameObject>();
@@ -60,10 +60,9 @@ public class Bumper_placer : MonoBehaviour
         b_m.SetBoardPosition();
         b_m.BuildBoard();
         testBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
-        maxTestBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBumperAmount", maxTestBumpersToSpawn);
-        maxBoardSize = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBoardSize", maxBoardSize);
+        maxTestBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBumperAmount");
+        maxBoardSize = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBoardSize");
         GenerateBumpers(testBumpersToSpawn);
-
     }
 
     void Update()
