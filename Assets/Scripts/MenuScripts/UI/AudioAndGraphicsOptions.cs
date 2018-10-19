@@ -5,8 +5,22 @@ using UnityEngine.Audio;
 
 public class AudioAndGraphicsOptions :Button_3D {
 
+    string SoundFXPath = "vca:/Sound FX";
+    string MusicPath = "vca:/Music";
+    string AmbiancePath = "vca:/Ambiance";
+
     public Wilberforce.Colorblind colorblind;
-    public AudioMixer audioMixer;
+
+    FMOD.Studio.VCA SoundFX;
+    FMOD.Studio.VCA Music;
+    FMOD.Studio.VCA Ambiance;
+
+    private void Start()
+    {
+        SoundFX= FMODUnity.RuntimeManager.GetVCA(SoundFXPath);
+        Music = FMODUnity.RuntimeManager.GetVCA(MusicPath);
+        Ambiance = FMODUnity.RuntimeManager.GetVCA(AmbiancePath);
+    }
 
     public void ColourBlindOne()
     {
@@ -31,10 +45,22 @@ public class AudioAndGraphicsOptions :Button_3D {
         colorblind.Type = 0;
     }
 
-    public void SetVolume(float volume)
+    public void SetSoundFXVolume(float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        SoundFX.setVolume(volume);
     }
+
+    public void SetMusicVolume(float volume)
+    {
+        Music.setVolume(volume);
+    }
+
+    public void SetAmbainceVolume(float volume)
+    {
+        Ambiance.setVolume(volume);
+    }
+
+
 
     public void DisableVolume(bool toggle)
     {
