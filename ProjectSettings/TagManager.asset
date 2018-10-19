@@ -15,6 +15,7 @@ TagManager:
   - Spawner
   - Observer
   - BlackScreen
+  - MusicController
   layers:
   - Default
   - TransparentFX
