@@ -34,6 +34,9 @@ public class Bumper_placer : MonoBehaviour
     public int testBumpersToSpawn = 1;
     public int boardSize = 5;
 
+    public int maxTestBumpersToSpawn = 1;
+    public int maxBoardSize = 5;
+
     [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[10, 10];
     private List<GameObject> spawnedBumpers = new List<GameObject>();
     private Vector2 ballPosition;
@@ -57,6 +60,8 @@ public class Bumper_placer : MonoBehaviour
         b_m.SetBoardPosition();
         b_m.BuildBoard();
         testBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
+        maxTestBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBumperAmount", maxTestBumpersToSpawn);
+        maxBoardSize = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBoardSize", maxBoardSize);
         GenerateBumpers(testBumpersToSpawn);
 
     }
@@ -79,17 +84,17 @@ public class Bumper_placer : MonoBehaviour
 
     public void LevelUpTile()
     {
-        if (testBumpersToSpawn < 7)
+        if (testBumpersToSpawn < maxTestBumpersToSpawn)
             testBumpersToSpawn += 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
     }
 
     public void LevelUpBoard()
     {
-        if (testBumpersToSpawn < 7)
+        if (testBumpersToSpawn < maxTestBumpersToSpawn)
             testBumpersToSpawn += 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
-        if (boardSize < 7)
+        if (boardSize < maxBoardSize + 2)
             boardSize += 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", boardSize);
     }

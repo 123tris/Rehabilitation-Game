@@ -7,10 +7,10 @@ using UnityEditor;
 
 namespace Wilberforce
 {
-    [ExecuteInEditMode]
-    [RequireComponent(typeof(Camera))]
-	[HelpURL("https://projectwilberforce.github.io/colorblind/")]
-    [AddComponentMenu("Image Effects/Color Adjustments/Colorblind")]
+    //[ExecuteInEditMode]
+    //[RequireComponent(typeof(Camera))]
+	//[HelpURL("https://projectwilberforce.github.io/colorblind/")]
+    //[AddComponentMenu("Image Effects/Color Adjustments/Colorblind")]
     public class Colorblind : MonoBehaviour
     {
         // public Parameters  
