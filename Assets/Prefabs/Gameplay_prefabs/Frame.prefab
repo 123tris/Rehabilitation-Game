@@ -18,30 +18,18 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4270196356574280}
+  - component: {fileID: 224075992309286998}
   - component: {fileID: 33463900575199940}
   - component: {fileID: 23051066765158870}
   - component: {fileID: 65377178344620402}
-  m_Layer: 0
+  - component: {fileID: 114236098261728958}
+  m_Layer: 9
   m_Name: Frame
   m_TagString: Outer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4270196356574280
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1911319819043260}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4182171, y: 0.26880437, z: -0.19064511}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23051066765158870
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -57,7 +45,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 689d292e29904ff4586795adf9a51f27, type: 2}
+  - {fileID: 2100000, guid: 0d35e00170671c44f940e6e4777071f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,3 +84,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9989804, y: 0.65781873, z: 1.350591}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114236098261728958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1911319819043260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0281d6a0a3f86ea4fa71e42c1577f9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mSensitivity: 5
+  mIsTriggered: 0
+  i: 0
+  mConfirmTransform: {fileID: 224075992309286998}
+  mCount: 0
+--- !u!224 &224075992309286998
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1911319819043260}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.19064511}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.4182171, y: 0.26880437}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
