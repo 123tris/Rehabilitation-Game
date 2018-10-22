@@ -13,6 +13,9 @@ public class ToggleScript : MonoBehaviour {
     public ToggleBool toggleBool;
     public DeleteBool deleteBool;
     public bool isLast;
+    public int listPosition;
+    protected List<string> accountsList;
+    protected string[] accountArray;
 
     [FMODUnity.EventRef]
     public string CheckSound = "event:/Menu/Check";
@@ -48,7 +51,6 @@ public class ToggleScript : MonoBehaviour {
             FMODUnity.RuntimeManager.PlayOneShot(CheckSound, transform.position);
             toggleText = gameObject.GetComponentInChildren<Text>();
             PlayerPrefs.SetString("User", toggleText.text.Trim());
-            Debug.Log(PlayerPrefs.GetString("User"));
             panelToDisable1.SetActive(false);
             panelToEnable1.SetActive(true);
             toggleBool.isClickedToggle = false;
@@ -61,19 +63,23 @@ public class ToggleScript : MonoBehaviour {
 
     void DeletePlayerSave()
     {
+        accountArray = PlayerPrefsX.GetStringArray("Users");
+        accountsList = new List<string>(accountArray);
         if (isToggleOn == true && deleteBool.isClickedDelete == true)
         {
+            toggleText = gameObject.GetComponentInChildren<Text>();
             PlayerPrefs.DeleteKey("User_" + toggleText.text.Trim());
             PlayerPrefs.SetString("User", "");
+            accountsList.RemoveAt(listPosition);
+            accountArray = accountsList.ToArray();
+            PlayerPrefsX.SetStringArray("Users", accountArray);
             panelToDisable1.SetActive(false);
             panelToEnable2.SetActive(true);
-            toggleBool.isClickedToggle = false;
+            deleteBool.isClickedDelete = false;
         }
         else if (isLast == true)
         {
             deleteBool.isClickedDelete = false;
         }
     }
-
-
 }
