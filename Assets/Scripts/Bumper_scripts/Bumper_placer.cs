@@ -23,6 +23,7 @@ public class Bumper_placer : MonoBehaviour
     [Header("External Scripts")]
     public Ball_Spawn b_s;
     public BoardMaker b_m;
+    public ChangeBumperAndBoardSize c_b_b;
 
     [Header("Misc")]
     public GameObject[] bumpers;
@@ -34,7 +35,7 @@ public class Bumper_placer : MonoBehaviour
     public int testBumpersToSpawn = 1;
     public int boardSize = 5;
 
-    public int maxTestBumpersToSpawn = 1;
+    public int maxTestBumpersToSpawn;
     public int maxBoardSize;
 
     [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[10, 10];

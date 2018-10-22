@@ -18,12 +18,18 @@ public class PointSystem : MonoBehaviour
     public PlayerHigherScore b_h_S;
 
     void Start()
-    { 
-
-        // Debug.LogError("Target scores is empty, please fill in the target scores list to indicate then necessary points per round");
-        score = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
-        targetScore = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", 0);
-        points_Var.text = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score").ToString();
+    {
+        if (!PlayerPrefs.HasKey("User_" + PlayerPrefs.GetString("User") + "Score"))
+        {
+            score = 0;
+            targetScore = 0;
+        }
+        else
+        {
+            score = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
+            targetScore = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", 0);
+            points_Var.text = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score").ToString();
+        }
     }
     private void Update()
     {
@@ -40,8 +46,6 @@ public class PointSystem : MonoBehaviour
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
         b_h_S.UpdateScore();
-        //Debug.Log(score + "score");
-        //Debug.Log(targetScore + "targetscore");
         if (targetScore == 2 || targetScore == 6 || targetScore == 10 || targetScore == 12)
         {
             b_p.LevelUpTile();
