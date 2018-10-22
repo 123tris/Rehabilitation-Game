@@ -8,9 +8,10 @@ public class ToggleScript : MonoBehaviour {
 
     Text toggleText;
     public bool isToggleOn;
-    public GameObject panelToEnable;
-    public GameObject panelToDisable;
+    public GameObject panelToEnable1, panelToEnable2;
+    public GameObject panelToDisable1;
     public ToggleBool toggleBool;
+    public DeleteBool deleteBool;
     public bool isLast;
 
     [FMODUnity.EventRef]
@@ -18,9 +19,13 @@ public class ToggleScript : MonoBehaviour {
 
     void Update()
     {
-        if (toggleBool.isClicked == true)
+        if (toggleBool.isClickedToggle == true)
         {
             SelectAccount();
+        }
+        if (deleteBool.isClickedDelete == true)
+        {
+            DeletePlayerSave();
         }
     }
 
@@ -38,19 +43,37 @@ public class ToggleScript : MonoBehaviour {
 
     void SelectAccount()
     {
-        if (isToggleOn == true && toggleBool.isClicked == true)
+        if (isToggleOn == true && toggleBool.isClickedToggle == true)
         {
             FMODUnity.RuntimeManager.PlayOneShot(CheckSound, transform.position);
             toggleText = gameObject.GetComponentInChildren<Text>();
             PlayerPrefs.SetString("User", toggleText.text.Trim());
             Debug.Log(PlayerPrefs.GetString("User"));
-            panelToDisable.SetActive(false);
-            panelToEnable.SetActive(true);
-            toggleBool.isClicked = false;
+            panelToDisable1.SetActive(false);
+            panelToEnable1.SetActive(true);
+            toggleBool.isClickedToggle = false;
         }
         else if (isLast == true)
         {
-            toggleBool.isClicked = false;
+            toggleBool.isClickedToggle = false;
         }
     }
+
+    void DeletePlayerSave()
+    {
+        if (isToggleOn == true && deleteBool.isClickedDelete == true)
+        {
+            PlayerPrefs.DeleteKey("User_" + toggleText.text.Trim());
+            PlayerPrefs.SetString("User", "");
+            panelToDisable1.SetActive(false);
+            panelToEnable2.SetActive(true);
+            toggleBool.isClickedToggle = false;
+        }
+        else if (isLast == true)
+        {
+            deleteBool.isClickedDelete = false;
+        }
+    }
+
+
 }
