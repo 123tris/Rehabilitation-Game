@@ -34,4 +34,16 @@ public class AccountSelector : AccountMaker
             }
         }
     }
+
+    public void DeletePlayerSave()
+    {
+        PlayerPrefs.DeleteKey("User_" + toggleText.text.Trim());
+        PlayerPrefs.SetString("User", "");
+    }
+
+    public void DeleteAllSaves()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
 }
