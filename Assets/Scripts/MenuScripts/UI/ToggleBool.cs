@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class ToggleBool : Button_3D {
 
-    public bool isClicked;
+    public bool isClickedToggle;
 
     void Start()
     {
-        buttonPressed.AddListener(OnStart);
+        buttonPressed.AddListener(BoolToggle);
     }
 
-
-
-    void OnStart()
+    void BoolToggle()
     {
-        isClicked = true;
+        isClickedToggle = true;
     }
 }

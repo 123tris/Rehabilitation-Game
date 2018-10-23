@@ -18,12 +18,18 @@ public class PointSystem : MonoBehaviour
     public PlayerHigherScore b_h_S;
 
     void Start()
-    { 
-
-        // Debug.LogError("Target scores is empty, please fill in the target scores list to indicate then necessary points per round");
-        score = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
-        targetScore = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", 0);
-        points_Var.text = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score").ToString();
+    {
+        if (!PlayerPrefs.HasKey("User_" + PlayerPrefs.GetString("User") + "Score"))
+        {
+            score = 0;
+            targetScore = 0;
+        }
+        else
+        {
+            score = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
+            targetScore = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", 0);
+            points_Var.text = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score").ToString();
+        }
     }
     private void Update()
     {
@@ -34,14 +40,12 @@ public class PointSystem : MonoBehaviour
     }
     public void AddPoints()
     {
-        score += 100;
+        score += 100 * targetScore;
         targetScore += 1;
         points_Var.text = score.ToString();      
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
         b_h_S.UpdateScore();
-        //Debug.Log(score + "score");
-        //Debug.Log(targetScore + "targetscore");
         if (targetScore == 2 || targetScore == 6 || targetScore == 10 || targetScore == 12)
         {
             b_p.LevelUpTile();
@@ -57,7 +61,6 @@ public class PointSystem : MonoBehaviour
         if(targetScore >= 1)
         targetScore -= 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
-        //Debug.Log(targetScore + "targetscore");
         if (targetScore == 1 || targetScore == 5 || targetScore == 9 || targetScore == 11)
         {
             b_p.LevelDownTile();
@@ -66,6 +69,12 @@ public class PointSystem : MonoBehaviour
         {
             b_p.LevelDownBoard();
         }
+    }
+
+    public void DeleteScore()
+    {
+        PlayerPrefs.DeleteKey("User_" + PlayerPrefs.GetString("User") + "Score");
+        points_Var.text = "0";
     }
 
     void ResetScene()
@@ -77,7 +86,7 @@ public class PointSystem : MonoBehaviour
         b_p.testBumpersToSpawn = 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", b_p.testBumpersToSpawn);
         b_p.boardSize = 5;
-        PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", b_p.boardSize);
+        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", b_p.boardSize);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

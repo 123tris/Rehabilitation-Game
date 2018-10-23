@@ -8,22 +8,29 @@ public class ToggleScript : MonoBehaviour {
 
     Text toggleText;
     public bool isToggleOn;
-    public GameObject panelToEnable;
-    public GameObject panelToDisable;
+    public GameObject panelToEnable1, panelToEnable2;
+    public GameObject panelToDisable1;
     public ToggleBool toggleBool;
+    public DeleteBool deleteBool;
     public bool isLast;
+    public int listPosition;
+    protected List<string> accountsList;
+    protected string[] accountArray;
 
     [FMODUnity.EventRef]
     public string CheckSound = "event:/Menu/Check";
 
     void Update()
     {
-        if (toggleBool.isClicked == true)
+        if (toggleBool.isClickedToggle == true)
         {
             SelectAccount();
         }
-    }//hij doet het maar een keer omdat hij na de eerste keer dat je hem doet al meteen weer uitzet
-    //maak een prefab en spaan die als childe onder elke toggle
+        if (deleteBool.isClickedDelete == true)
+        {
+            DeletePlayerSave();
+        }
+    }
 
     public void AccountToggle(bool toggle)
     {
@@ -39,19 +46,40 @@ public class ToggleScript : MonoBehaviour {
 
     void SelectAccount()
     {
-        if (isToggleOn == true && toggleBool.isClicked == true)
+        if (isToggleOn == true && toggleBool.isClickedToggle == true)
         {
             FMODUnity.RuntimeManager.PlayOneShot(CheckSound, transform.position);
             toggleText = gameObject.GetComponentInChildren<Text>();
-            PlayerPrefs.SetString("User", toggleText.ToString());
-            PlayerPrefs.SetString("User_" + toggleText.ToString(), toggleText.ToString());
-            panelToDisable.SetActive(false);
-            panelToEnable.SetActive(true);
-            toggleBool.isClicked = false;
+            PlayerPrefs.SetString("User", toggleText.text.Trim());
+            panelToDisable1.SetActive(false);
+            panelToEnable1.SetActive(true);
+            toggleBool.isClickedToggle = false;
         }
         else if (isLast == true)
         {
-            toggleBool.isClicked = false;
+            toggleBool.isClickedToggle = false;
+        }
+    }
+
+    void DeletePlayerSave()
+    {
+        accountArray = PlayerPrefsX.GetStringArray("Users");
+        accountsList = new List<string>(accountArray);
+        if (isToggleOn == true && deleteBool.isClickedDelete == true)
+        {
+            toggleText = gameObject.GetComponentInChildren<Text>();
+            PlayerPrefs.DeleteKey("User_" + toggleText.text.Trim());
+            PlayerPrefs.SetString("User", "");
+            accountsList.RemoveAt(listPosition);
+            accountArray = accountsList.ToArray();
+            PlayerPrefsX.SetStringArray("Users", accountArray);
+            panelToDisable1.SetActive(false);
+            panelToEnable2.SetActive(true);
+            deleteBool.isClickedDelete = false;
+        }
+        else if (isLast == true)
+        {
+            deleteBool.isClickedDelete = false;
         }
     }
 }

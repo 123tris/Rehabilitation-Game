@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: 20694fd8f3087964690d472a447c1218
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: OPT_ButtonAudio
+    100002: OPT_ButtonBack
+    100004: OPT_ButtonGraphics
+    100006: OPT_ButtonMisc
+    100008: OPT_ButtonProfile
+    100010: OPT_ButtonsCheck
+    100012: OPT_ButtonTabs
+    100014: OPT_Check1
+    100016: OPT_Check2
+    100018: OPT_MenuBase
+    100020: OPT_OpenTab1
+    100022: OPT_OpenTab2
+    100024: OPT_OpenTab3
+    100026: OPT_OpenTab4
+    100028: OPT_OpenTabs
+    100030: OPT_SettingsButtons
+    100032: OPT_Slider1
+    100034: OPT_Slider1 1
+    100036: OPT_Slider2
+    100038: OPT_Slider2 1
+    100040: OPT_SliderBase1
+    100042: OPT_SliderBase2
+    100044: OPT_Sliders
+    100046: OPT_Tab1
+    100048: OPT_Tab2
+    100050: OPT_Tab3
+    100052: OPT_Tab4
+    100054: //RootNode
+    400000: OPT_ButtonAudio
+    400002: OPT_ButtonBack
+    400004: OPT_ButtonGraphics
+    400006: OPT_ButtonMisc
+    400008: OPT_ButtonProfile
+    400010: OPT_ButtonsCheck
+    400012: OPT_ButtonTabs
+    400014: OPT_Check1
+    400016: OPT_Check2
+    400018: OPT_MenuBase
+    400020: OPT_OpenTab1
+    400022: OPT_OpenTab2
+    400024: OPT_OpenTab3
+    400026: OPT_OpenTab4
+    400028: OPT_OpenTabs
+    400030: OPT_SettingsButtons
+    400032: OPT_Slider1
+    400034: OPT_Slider1 1
+    400036: OPT_Slider2
+    400038: OPT_Slider2 1
+    400040: OPT_SliderBase1
+    400042: OPT_SliderBase2
+    400044: OPT_Sliders
+    400046: OPT_Tab1
+    400048: OPT_Tab2
+    400050: OPT_Tab3
+    400052: OPT_Tab4
+    400054: //RootNode
+    2100000: Wood_M
+    2100002: Stone_M
+    2300000: OPT_ButtonAudio
+    2300002: OPT_ButtonBack
+    2300004: OPT_ButtonGraphics
+    2300006: OPT_ButtonMisc
+    2300008: OPT_ButtonProfile
+    2300010: OPT_Check1
+    2300012: OPT_Check2
+    2300014: OPT_MenuBase
+    2300016: OPT_OpenTab1
+    2300018: OPT_OpenTab2
+    2300020: OPT_OpenTab3
+    2300022: OPT_OpenTab4
+    2300024: OPT_Slider1 1
+    2300026: OPT_Slider2 1
+    2300028: OPT_SliderBase1
+    2300030: OPT_SliderBase2
+    2300032: OPT_Tab1
+    2300034: OPT_Tab2
+    2300036: OPT_Tab3
+    2300038: OPT_Tab4
+    3300000: OPT_ButtonAudio
+    3300002: OPT_ButtonBack
+    3300004: OPT_ButtonGraphics
+    3300006: OPT_ButtonMisc
+    3300008: OPT_ButtonProfile
+    3300010: OPT_Check1
+    3300012: OPT_Check2
+    3300014: OPT_MenuBase
+    3300016: OPT_OpenTab1
+    3300018: OPT_OpenTab2
+    3300020: OPT_OpenTab3
+    3300022: OPT_OpenTab4
+    3300024: OPT_Slider1 1
+    3300026: OPT_Slider2 1
+    3300028: OPT_SliderBase1
+    3300030: OPT_SliderBase2
+    3300032: OPT_Tab1
+    3300034: OPT_Tab2
+    3300036: OPT_Tab3
+    3300038: OPT_Tab4
+    4300000: OPT_MenuBase
+    4300002: OPT_ButtonBack
+    4300004: OPT_Tab1
+    4300006: OPT_Tab2
+    4300008: OPT_Tab3
+    4300010: OPT_Tab4
+    4300012: OPT_OpenTab1
+    4300014: OPT_OpenTab2
+    4300016: OPT_OpenTab3
+    4300018: OPT_OpenTab4
+    4300020: OPT_Check1
+    4300022: OPT_Check2
+    4300024: OPT_SliderBase1
+    4300026: OPT_Slider1
+    4300028: OPT_SliderBase2
+    4300030: OPT_Slider2
+    4300032: OPT_ButtonProfile
+    4300034: OPT_ButtonGraphics
+    4300036: OPT_ButtonAudio
+    4300038: OPT_ButtonMisc
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

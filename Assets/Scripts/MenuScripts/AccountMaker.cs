@@ -11,8 +11,8 @@ public class AccountMaker : MonoBehaviour
     public Text notificationTextOne;
     protected List<string> accountsList;
     protected string[] accountArray;
-    public GameObject panelToEnable;
-    public GameObject panelToDisable;
+    public GameObject panelToEnable1;
+    public GameObject panelToDisable1;
 
     private void Start()
     {
@@ -32,8 +32,8 @@ public class AccountMaker : MonoBehaviour
             accountsList.Add(registerAccountName.text);
             accountArray = accountsList.ToArray();
             PlayerPrefsX.SetStringArray("Users", accountArray);
-            panelToDisable.SetActive(false);
-            panelToEnable.SetActive(true);
+            panelToDisable1.SetActive(false);
+            panelToEnable1.SetActive(true);
         }
         else
         {
@@ -41,7 +41,7 @@ public class AccountMaker : MonoBehaviour
         }
     }
 
-    public void DeleteAccount()
+    public void DeleteAccounts()
     {
         PlayerPrefs.DeleteAll();
     }
