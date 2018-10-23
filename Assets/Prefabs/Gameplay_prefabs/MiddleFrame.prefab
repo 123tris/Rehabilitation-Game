@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 33131875338672390}
   - component: {fileID: 23590619057388252}
   - component: {fileID: 65071618813893532}
-  m_Layer: 0
+  - component: {fileID: 114930470878887944}
+  m_Layer: 9
   m_Name: MiddleFrame
   m_TagString: Outer
   m_Icon: {fileID: 0}
@@ -83,7 +84,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1598942666900236}
-  m_Mesh: {fileID: 4300000, guid: d700dc0f539461240b814e36a67c9ef4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 634550a110a16de4bb4e72b90b1cacb8, type: 3}
 --- !u!65 &65071618813893532
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -96,3 +97,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0722975, y: 0.65781873, z: 1.3505907}
   m_Center: {x: 0.00000011920929, y: 0, z: 0}
+--- !u!114 &114930470878887944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1598942666900236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0281d6a0a3f86ea4fa71e42c1577f9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motionHit: 0

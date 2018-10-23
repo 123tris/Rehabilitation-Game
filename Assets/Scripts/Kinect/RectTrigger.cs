@@ -7,21 +7,10 @@ public class RectTrigger : MonoBehaviour
 {
     Ball_Spawn ballSpawn;
 
-    [Range(0, 10)]
-    public int mSensitivity = 5;
-
-    public bool mIsTriggered = false;
-
-    public float i = 0;
-
     private Camera mCamera = null;
-    public RectTransform mConfirmTransform = null;
-    private RectTransform mRectTransform = null;
     private Renderer mMaterial = null;
 
     public int motionHit = 0;
-
-    public int mCount = 0;
 
     float timer = 0;
 
@@ -29,12 +18,11 @@ public class RectTrigger : MonoBehaviour
     {
         ballSpawn = FindObjectOfType<Ball_Spawn>();
         mCamera = Camera.main;
-        mRectTransform = GetComponent<RectTransform>();
     }
 
     private void Update()
     {
-        if (motionHit > 15)
+        if (motionHit > 8)
         {
             timer += Time.deltaTime;
             if (ballSpawn.rend == null && timer > 2)
