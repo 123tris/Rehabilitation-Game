@@ -37,7 +37,7 @@ public class MeasureDepth : MonoBehaviour
     // Kinect
     private KinectSensor mSensor = null;
     private CoordinateMapper mMapper = null;
-    private Camera mCamera = null;
+    public Camera mCamera = null;
 
     float timer = 0.0f;
 
