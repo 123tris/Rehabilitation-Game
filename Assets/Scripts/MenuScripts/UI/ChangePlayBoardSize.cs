@@ -5,20 +5,22 @@ using UnityEngine;
 public class ChangePlayBoardSize : MonoBehaviour
 {
 
-    public Mesh bigPlayField;
-    public Mesh smallPlayField;
+    public GameObject bigGameBoard, smallGameBoard;
+    public GameObject spawner;
 
     public void ChangeBoardSize(bool toggle)
     {
         if (toggle == true)
         {
-            bigPlayField = GetComponent<MeshFilter>().sharedMesh;
-            smallPlayField = Instantiate(bigPlayField);
-            GetComponent<MeshFilter>().sharedMesh = smallPlayField;
+            smallGameBoard.SetActive(true);
+            bigGameBoard.SetActive(false);
+            spawner.transform.localScale = new Vector3(33.33334f, 33.33334f, 33.33334f) * 0.78947368f;
         }
         else
         {
-
+            bigGameBoard.SetActive(true);
+            smallGameBoard.SetActive(false);
+            spawner.transform.localScale = new Vector3(33.33334f, 33.33334f, 33.33334f) * 1.26666667f;
         }
     }
 }

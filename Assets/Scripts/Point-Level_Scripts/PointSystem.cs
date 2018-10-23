@@ -40,7 +40,7 @@ public class PointSystem : MonoBehaviour
     }
     public void AddPoints()
     {
-        score += 100 * targetScore;
+        score += 100 * targetScore +1 ;
         targetScore += 1;
         points_Var.text = score.ToString();      
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
