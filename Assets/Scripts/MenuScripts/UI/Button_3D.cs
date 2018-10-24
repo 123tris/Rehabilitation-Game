@@ -23,7 +23,7 @@ public class Button_3D : MonoBehaviour
         }
         else
         {
-
+            Debug.Log(null);
         }
     }
 }
