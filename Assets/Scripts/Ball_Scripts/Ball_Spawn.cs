@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball_Spawn : MonoBehaviour {
+public class Ball_Spawn : MonoBehaviour
+{
 
     [Header("External Scripts")]
     public Bumper_placer b_p;
 
     [Header("MeshRenderer")]
-    public  Renderer rend;
+    public Renderer rend;
 
     [Header("GameObjects")]
     public GameObject ball;
@@ -38,9 +39,10 @@ public class Ball_Spawn : MonoBehaviour {
     private Vector3 newBallPosition;
     private Vector3 newBallRotation;
 
-    void Start () {
+    void Start()
+    {
         chosen = false;
-        if(playerCamera == null)
+        if (playerCamera == null)
         {
             playerCamera = Camera.main.gameObject;
         }
@@ -51,11 +53,11 @@ public class Ball_Spawn : MonoBehaviour {
         RaycastHit hit;
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 200f))
-        { 
+        {
             if (Input.GetKeyDown(KeyCode.Mouse0) && chosen == false)
-            {             
+            {
                 GameObject test = hit.collider.gameObject;
-                
+
                 if (test.gameObject.tag == "Outer" && b_p.timer <= 0)
                 {
                     target = hit.transform.gameObject;
@@ -64,26 +66,26 @@ public class Ball_Spawn : MonoBehaviour {
                     rend.sharedMaterial = clicked_mat;
                     chosen = true;
                     SpawnBall();
-                }             
+                }
             }
         }
 
-        if(right == true)
+        if (right == true)
         {
             rend = target.GetComponent<Renderer>();
             rend.sharedMaterial = right_mat;
         }
 
-        if(wrong == true)
+        if (wrong == true)
         {
             rend = target.GetComponent<Renderer>();
             rend.sharedMaterial = wrong_mat;
         }
     }
 
-    public void SetUpcomingBallPosition(Vector3 ballPosition,Vector3 rotation, Transform parent, Vector3 springPosition)
+    public void SetUpcomingBallPosition(Vector3 ballPosition, Vector3 rotation, Transform parent, Vector3 springPosition)
     {
-        instantiatedArrow = Instantiate(arrow,parent);
+        instantiatedArrow = Instantiate(arrow, parent);
         instantiatedArrow.gameObject.SetActive(false);
         instantiatedArrow.transform.position = springPosition;
         instantiatedArrow.transform.rotation = Quaternion.Euler(rotation);
