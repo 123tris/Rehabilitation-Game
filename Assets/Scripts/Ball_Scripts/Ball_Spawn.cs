@@ -39,11 +39,6 @@ public class Ball_Spawn : MonoBehaviour {
     private Vector3 newBallRotation;
 
     void Start () {
-
-        
-
-       
-
         chosen = false;
         if(playerCamera == null)
         {
@@ -86,13 +81,13 @@ public class Ball_Spawn : MonoBehaviour {
         }
     }
 
-    public void SetUpcomingBallPosition(Vector3 position,Vector3 rotation, Transform parent)
+    public void SetUpcomingBallPosition(Vector3 ballPosition,Vector3 rotation, Transform parent, Vector3 springPosition)
     {
         instantiatedArrow = Instantiate(arrow,parent);
         instantiatedArrow.gameObject.SetActive(false);
-        instantiatedArrow.transform.position = position;
+        instantiatedArrow.transform.position = springPosition;
         instantiatedArrow.transform.rotation = Quaternion.Euler(rotation);
-        newBallPosition = position;
+        newBallPosition = ballPosition;
         for (int i = 0; i < b_p.board.GetLength(0) - 5; i++)
         {
             newBallPosition += Vector3.back * 0.5f;

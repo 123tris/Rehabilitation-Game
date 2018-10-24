@@ -40,7 +40,7 @@ public class PointSystem : MonoBehaviour
     }
     public void AddPoints()
     {
-        score += 100;
+        score += 100 * targetScore +1 ;
         targetScore += 1;
         points_Var.text = score.ToString();      
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
@@ -61,7 +61,6 @@ public class PointSystem : MonoBehaviour
         if(targetScore >= 1)
         targetScore -= 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
-        //Debug.Log(targetScore + "targetscore");
         if (targetScore == 1 || targetScore == 5 || targetScore == 9 || targetScore == 11)
         {
             b_p.LevelDownTile();
@@ -70,6 +69,12 @@ public class PointSystem : MonoBehaviour
         {
             b_p.LevelDownBoard();
         }
+    }
+
+    public void DeleteScore()
+    {
+        PlayerPrefs.DeleteKey("User_" + PlayerPrefs.GetString("User") + "Score");
+        points_Var.text = "0";
     }
 
     void ResetScene()
@@ -81,7 +86,7 @@ public class PointSystem : MonoBehaviour
         b_p.testBumpersToSpawn = 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", b_p.testBumpersToSpawn);
         b_p.boardSize = 5;
-        PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", b_p.boardSize);
+        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", b_p.boardSize);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
