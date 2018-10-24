@@ -28,6 +28,9 @@ public class Ball_Controler : MonoBehaviour
     public string CorrectSound = "event:/Ball/Correct";
 
     [FMODUnity.EventRef]
+    public string ChantDissapointedSound = "event:/Ambiance/Wrong";
+
+    [FMODUnity.EventRef]
     public string WrongSound = "event:/Ball/Wrong";
 
     [FMODUnity.EventRef]
@@ -130,6 +133,7 @@ public class Ball_Controler : MonoBehaviour
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
             b_s.wrong = true;
+            FMODUnity.RuntimeManager.PlayOneShot(ChantDissapointedSound, transform.position);
             FMODUnity.RuntimeManager.PlayOneShot(WrongSound, transform.position);
             StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));
             FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
