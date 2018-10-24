@@ -14,7 +14,7 @@ public class Ball_Controler : MonoBehaviour
     [Header("Find_Scripts")]
     public GameObject bSP;
     public GameObject gameController;
-    public GameObject blackScreen;
+    public GameObject mainGameLogic;
 
     [Header("Rigidbody")]
     public Rigidbody rb;
@@ -41,7 +41,10 @@ public class Ball_Controler : MonoBehaviour
 
     FMOD.Studio.EventInstance RollingEv;
 
-    public Animator anim;
+    [Header("Misc")]
+    public GameObject boardToSpawn;
+    [HideInInspector] public GameObject playBoard;
+    [HideInInspector] public GameObject boardToDelete;
 
     float speed = 0.1f;
     public bool vertical;
@@ -51,12 +54,12 @@ public class Ball_Controler : MonoBehaviour
     {
         sCollider = GetComponent<SphereCollider>();
         bSP = GameObject.FindGameObjectWithTag("Spawner");
+        playBoard = GameObject.FindGameObjectWithTag("PlayBoard");
         gameController = GameObject.FindGameObjectWithTag("Observer");
-        blackScreen = GameObject.FindGameObjectWithTag("BlackScreen");
+        mainGameLogic = GameObject.FindGameObjectWithTag("MainGameLogic");
         b_s = gameController.GetComponent<Ball_Spawn>();
         b_p = bSP.GetComponent<Bumper_placer>();
-        p_s = gameController.GetComponent<PointSystem>();
-        anim = blackScreen.GetComponent<Animator>();
+        p_s = mainGameLogic.GetComponent<PointSystem>();
 
         spawned = false;
 
@@ -68,7 +71,7 @@ public class Ball_Controler : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (Mathf.Round(gameObject.transform.eulerAngles.y) == 0 || Mathf.Round(gameObject.transform.eulerAngles.y) == 180 
+        if (Mathf.Round(gameObject.transform.eulerAngles.y) == 0 || Mathf.Round(gameObject.transform.eulerAngles.y) == 180
             || Mathf.Round(gameObject.transform.eulerAngles.y) == -180 || Mathf.Round(gameObject.transform.eulerAngles.y) == 360 || Mathf.Round(gameObject.transform.eulerAngles.y) == -360)
         {
             vertical = true;
@@ -88,9 +91,9 @@ public class Ball_Controler : MonoBehaviour
             foreach (Renderer r in other.gameObject.GetComponentsInChildren<Renderer>())
             {
                 r.enabled = true;
-            }                
+            }
             other.gameObject.GetComponent<MeshRenderer>().enabled = true;
-           
+
             FMODUnity.RuntimeManager.PlayOneShot(BumpSound, transform.position);
             spawned = true;
         }
@@ -117,26 +120,32 @@ public class Ball_Controler : MonoBehaviour
     {
         if (collision.gameObject.name == "target" && spawned == true)
         {
-            anim.SetBool("Out", true);
             p_s.AddPoints();
-            b_s.right = true;
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
+            b_s.right = true;
             FMODUnity.RuntimeManager.PlayOneShot(CorrectSound, transform.position);
-            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));
+            GameObject instantiatedObject = Instantiate(boardToSpawn, playBoard.transform);
+            boardToDelete = GameObject.FindGameObjectWithTag("Spawner");
+            instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
+            Destroy(boardToDelete);
             FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
+            Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Outer" && spawned == true)
         {
-            anim.SetBool("Out", true);
             p_s.Missed();
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
             b_s.wrong = true;
             FMODUnity.RuntimeManager.PlayOneShot(ChantDissapointedSound, transform.position);
             FMODUnity.RuntimeManager.PlayOneShot(WrongSound, transform.position);
-            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));
+            GameObject instantiatedObject = Instantiate(boardToSpawn, playBoard.transform);
+            boardToDelete = GameObject.FindGameObjectWithTag("Spawner");
+            instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
+            Destroy(boardToDelete);
             FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
-        }          
+            Destroy(gameObject);
+        }
     }
-} 
+}

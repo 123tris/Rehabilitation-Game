@@ -16,6 +16,8 @@ TagManager:
   - Observer
   - BlackScreen
   - MusicController
+  - PlayBoard
+  - MainGameLogic
   layers:
   - Default
   - TransparentFX

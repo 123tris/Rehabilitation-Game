@@ -17,7 +17,7 @@ public class PointSystem : MonoBehaviour
     public Bumper_placer b_p;
     public PlayerHigherScore b_h_S;
 
-    void Start()
+    public void LoadScore()
     {
         if (!PlayerPrefs.HasKey("User_" + PlayerPrefs.GetString("User") + "Score"))
         {
@@ -31,16 +31,16 @@ public class PointSystem : MonoBehaviour
             points_Var.text = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score").ToString();
         }
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ResetScene();
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.R))
+    //    {
+    //        ResetScene();
+    //    }
+    //}
     public void AddPoints()
     {
-        score += 100 * targetScore +1 ;
+        score += 100 * (targetScore +1) ;
         targetScore += 1;
         points_Var.text = score.ToString();      
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
