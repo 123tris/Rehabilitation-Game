@@ -280,24 +280,69 @@
     </object>
     <object class="MixerBusEffectChain" id="{33313a87-4a28-4d4d-8855-4422eaed52e8}">
         <relationship name="effects">
+            <destination>{88288909-c274-43b3-85c8-a1b66e1d2ca9}</destination>
             <destination>{a5733c24-1564-49b6-88ec-8229cadd5c05}</destination>
-            <destination>{a82bd1ed-4df8-4f71-8a47-79b8792ec9a2}</destination>
+            <destination>{e2b326e9-1dd8-4b2e-9179-3315a0268490}</destination>
+            <destination>{70807b10-947c-4ab1-a1dd-cd90bf0d5263}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{efcb1cab-01c8-4aad-8add-419a5df4f8ac}"/>
     <object class="MixerBusFader" id="{1188504b-c38d-4e74-b3b5-8ad1cbb73622}"/>
     <object class="SpatialiserEffect" id="{ccd7b834-0235-4d5c-bdef-fd6ec91efe3e}"/>
-    <object class="MixerBusFader" id="{a5733c24-1564-49b6-88ec-8229cadd5c05}"/>
-    <object class="ThreeEQEffect" id="{a82bd1ed-4df8-4f71-8a47-79b8792ec9a2}">
-        <property name="highGain">
-            <value>-21.5</value>
+    <object class="SFXReverbEffect" id="{88288909-c274-43b3-85c8-a1b66e1d2ca9}">
+        <property name="decayTime">
+            <value>600</value>
+        </property>
+        <property name="lowShelfGain">
+            <value>1</value>
+        </property>
+        <property name="highCut">
+            <value>620</value>
+        </property>
+        <property name="earlyLateMix">
+            <value>45</value>
+        </property>
+        <property name="wetLevel">
+            <value>-2</value>
         </property>
         <relationship name="modulators">
-            <destination>{153b207d-15db-4693-bc48-a33209e33abf}</destination>
-            <destination>{18bcc0af-9f76-472a-ba6a-5fe42999a6ab}</destination>
+            <destination>{8e263bcf-a14e-4fdc-8a41-af895e8c0452}</destination>
         </relationship>
     </object>
-    <object class="RandomizerModulator" id="{153b207d-15db-4693-bc48-a33209e33abf}">
+    <object class="MixerBusFader" id="{a5733c24-1564-49b6-88ec-8229cadd5c05}"/>
+    <object class="ThreeEQEffect" id="{e2b326e9-1dd8-4b2e-9179-3315a0268490}">
+        <property name="highGain">
+            <value>-24.5</value>
+        </property>
+        <relationship name="modulators">
+            <destination>{34b3c1cd-7be5-409b-bcd2-4918f407e49a}</destination>
+            <destination>{5f3ceeb6-7fa3-48f2-ae00-d0a9089fcccd}</destination>
+        </relationship>
+    </object>
+    <object class="ChorusEffect" id="{70807b10-947c-4ab1-a1dd-cd90bf0d5263}">
+        <property name="rate">
+            <value>0.0940000042</value>
+        </property>
+        <property name="depth">
+            <value>4.5</value>
+        </property>
+        <property name="mix">
+            <value>16</value>
+        </property>
+        <relationship name="modulators">
+            <destination>{a96b62b9-0db9-4eac-8376-284ce3fe65e0}</destination>
+            <destination>{72cf38d2-149f-41e0-9437-891ff8c10d21}</destination>
+        </relationship>
+    </object>
+    <object class="RandomizerModulator" id="{8e263bcf-a14e-4fdc-8a41-af895e8c0452}">
+        <property name="nameOfPropertyBeingModulated">
+            <value>wetLevel</value>
+        </property>
+        <property name="amount">
+            <value>28.5</value>
+        </property>
+    </object>
+    <object class="RandomizerModulator" id="{34b3c1cd-7be5-409b-bcd2-4918f407e49a}">
         <property name="nameOfPropertyBeingModulated">
             <value>highGain</value>
         </property>
@@ -305,12 +350,28 @@
             <value>47.5</value>
         </property>
     </object>
-    <object class="RandomizerModulator" id="{18bcc0af-9f76-472a-ba6a-5fe42999a6ab}">
+    <object class="RandomizerModulator" id="{5f3ceeb6-7fa3-48f2-ae00-d0a9089fcccd}">
         <property name="nameOfPropertyBeingModulated">
             <value>midGain</value>
         </property>
         <property name="amount">
             <value>18.5</value>
+        </property>
+    </object>
+    <object class="RandomizerModulator" id="{a96b62b9-0db9-4eac-8376-284ce3fe65e0}">
+        <property name="nameOfPropertyBeingModulated">
+            <value>depth</value>
+        </property>
+        <property name="amount">
+            <value>46</value>
+        </property>
+    </object>
+    <object class="RandomizerModulator" id="{72cf38d2-149f-41e0-9437-891ff8c10d21}">
+        <property name="nameOfPropertyBeingModulated">
+            <value>mix</value>
+        </property>
+        <property name="amount">
+            <value>41</value>
         </property>
     </object>
 </objects>
