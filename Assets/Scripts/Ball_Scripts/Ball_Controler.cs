@@ -28,13 +28,17 @@ public class Ball_Controler : MonoBehaviour
     public string CorrectSound = "event:/Ball/Correct";
 
     [FMODUnity.EventRef]
-    public string ChantDissapointedSound = "event:/Ambiance/Wrong";
-
-    [FMODUnity.EventRef]
     public string WrongSound = "event:/Ball/Wrong";
 
     [FMODUnity.EventRef]
     public string BumpSound = "event:/Bumper/Bump";
+
+    [FMODUnity.EventRef]
+    public string ChantDissapointedSound = "event:/Ambiance/Wrong";
+
+    [FMODUnity.EventRef]
+    public string ChantCheeringSound = "event:/Ambiance/Correct";
+
 
     [FMODUnity.EventRef]
     public string RollingSound = "event:/Ball/Rolling";
@@ -124,12 +128,17 @@ public class Ball_Controler : MonoBehaviour
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
             b_s.right = true;
+
+            //Fmod-------------------------------------------------------------------------
+            FMODUnity.RuntimeManager.PlayOneShot(ChantCheeringSound, transform.position);
             FMODUnity.RuntimeManager.PlayOneShot(CorrectSound, transform.position);
+            FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
+
             GameObject instantiatedObject = Instantiate(boardToSpawn, playBoard.transform);
             boardToDelete = GameObject.FindGameObjectWithTag("Spawner");
             instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
             Destroy(boardToDelete);
-            FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
+           
             Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Outer" && spawned == true)
@@ -138,13 +147,16 @@ public class Ball_Controler : MonoBehaviour
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
             b_s.wrong = true;
+    
+            //Fmod-------------------------------------------------------------------------
             FMODUnity.RuntimeManager.PlayOneShot(ChantDissapointedSound, transform.position);
             FMODUnity.RuntimeManager.PlayOneShot(WrongSound, transform.position);
+            FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
+
             GameObject instantiatedObject = Instantiate(boardToSpawn, playBoard.transform);
             boardToDelete = GameObject.FindGameObjectWithTag("Spawner");
             instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
-            Destroy(boardToDelete);
-            FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
+            Destroy(boardToDelete);          
             Destroy(gameObject);
         }
     }

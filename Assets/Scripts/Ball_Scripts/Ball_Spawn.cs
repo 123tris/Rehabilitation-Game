@@ -102,7 +102,6 @@ public class Ball_Spawn : MonoBehaviour
     {
         Instantiate(ball, newBallPosition, Quaternion.Euler(newBallRotation));
         FMODUnity.RuntimeManager.PlayOneShot(CannonSound, instantiatedArrow.transform.position);
-
     }
 
 }
