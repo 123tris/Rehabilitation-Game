@@ -37,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4870827743409482}
   - component: {fileID: 114448211147348218}
-  - component: {fileID: 114880613578220514}
   m_Layer: 0
   m_Name: Game_Controler
   m_TagString: Observer
@@ -164,19 +163,3 @@ MonoBehaviour:
   - {fileID: 2100000, guid: c120e3b38c280e8499278cd8815c5d16, type: 2}
   - {fileID: 2100000, guid: e3603ab9af92dbb438ef16928d6f6971, type: 2}
   - {fileID: 2100000, guid: 75a2a5b832106344bb801a1a24305d5d, type: 2}
---- !u!114 &114880613578220514
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1058315374126568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d52c8b852ac054440834a9451233dcd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points_Var: {fileID: 0}
-  score: 0
-  targetScore: 0
-  b_p: {fileID: 114602781308493116}
-  b_h_S: {fileID: 0}

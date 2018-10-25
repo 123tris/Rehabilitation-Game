@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1827354414}
-  m_IndirectSpecularColor: {r: 0.5512133, g: 0.57822496, b: 0.5860317, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -780,9 +780,10 @@ GameObject:
   - component: {fileID: 47881551}
   - component: {fileID: 47881552}
   - component: {fileID: 47881554}
+  - component: {fileID: 47881555}
   m_Layer: 5
   m_Name: MainGameLogic
-  m_TagString: Untagged
+  m_TagString: MainGameLogic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -857,6 +858,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderBumper: {fileID: 1022740353}
   sliderBoard: {fileID: 1818087212}
+--- !u!114 &47881555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 47881550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52c8b852ac054440834a9451233dcd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points_Var: {fileID: 884209953}
+  score: 0
+  targetScore: 0
+  b_p: {fileID: 407157497}
+  b_h_S: {fileID: 605146151}
 --- !u!1001 &48784400
 Prefab:
   m_ObjectHideFlags: 0
@@ -4007,7 +4024,7 @@ GameObject:
   - component: {fileID: 318295026}
   m_Layer: 0
   m_Name: MusicController
-  m_TagString: Untagged
+  m_TagString: MusicController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4745,6 +4762,7 @@ MonoBehaviour:
   bigGameBoard: {fileID: 1089710320}
   smallGameBoard: {fileID: 1511746393}
   spawner: {fileID: 407157494}
+  isBoardSmall: 0
 --- !u!1001 &368756001
 Prefab:
   m_ObjectHideFlags: 0
@@ -5361,6 +5379,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4562094356493852, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f,
     type: 2}
   m_PrefabInternal: {fileID: 1163752435}
+--- !u!114 &407157497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114602781308493116, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1163752435}
+  m_Script: {fileID: 11500000, guid: f73f1bbf049d06049aa62d60c4e963aa, type: 3}
 --- !u!1 &409963917
 GameObject:
   m_ObjectHideFlags: 0
@@ -8993,6 +9017,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 47881555}
+        m_MethodName: LoadScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!65 &695702296
@@ -9225,7 +9260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &709028102
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10419,7 +10454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &799514901
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15060,30 +15095,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1005173451997398, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f, type: 2}
-      propertyPath: m_Name
-      value: Spawner 4*4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114602781308493116, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f,
-        type: 2}
-      propertyPath: c_b_b
-      value: 
-      objectReference: {fileID: 47881554}
-    - target: {fileID: 114880613578220514, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f,
-        type: 2}
-      propertyPath: points_Var
-      value: 
-      objectReference: {fileID: 884209953}
-    - target: {fileID: 114880613578220514, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f,
-        type: 2}
-      propertyPath: b_h_S
-      value: 
-      objectReference: {fileID: 605146151}
     - target: {fileID: 114448211147348218, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f,
         type: 2}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 930414689}
+    - target: {fileID: 114602781308493116, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f,
+        type: 2}
+      propertyPath: c_b_b
+      value: 
+      objectReference: {fileID: 47881554}
+    - target: {fileID: 1005173451997398, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f, type: 2}
+      propertyPath: m_Name
+      value: Spawner 4*4
+      objectReference: {fileID: 0}
     - target: {fileID: 1005173451997398, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -15346,12 +15371,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1243357831 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114880613578220514, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1163752435}
-  m_Script: {fileID: 11500000, guid: d52c8b852ac054440834a9451233dcd0, type: 3}
 --- !u!1 &1251426182
 GameObject:
   m_ObjectHideFlags: 0
@@ -16670,7 +16689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1366174059
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26328,7 +26347,7 @@ MonoBehaviour:
   buttonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1243357831}
+      - m_Target: {fileID: 0}
         m_MethodName: DeleteScore
         m_Mode: 1
         m_Arguments:
@@ -29084,6 +29103,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 47881555}
+        m_MethodName: LoadScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   isClickedToggle: 0
@@ -29975,7 +30005,7 @@ GameObject:
   - component: {fileID: 887657716}
   m_Layer: 0
   m_Name: PlayBoard
-  m_TagString: Untagged
+  m_TagString: PlayBoard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

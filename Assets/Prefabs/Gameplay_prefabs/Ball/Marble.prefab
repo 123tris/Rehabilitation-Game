@@ -223,10 +223,15 @@ MonoBehaviour:
   rb: {fileID: 54155219264666726}
   sCollider: {fileID: 0}
   CorrectSound: event:/Ball/Correct
+  ChantDissapointedSound: event:/Ambiance/Wrong
   WrongSound: event:/Ball/Wrong
   BumpSound: event:/Bumper/Bump
   RollingSound: event:/Ball/Rolling
   anim: {fileID: 0}
+  boardToSpawn: {fileID: 1005173451997398, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f,
+    type: 2}
+  playBoard: {fileID: 0}
+  boardToDelete: {fileID: 0}
   vertical: 0
 --- !u!135 &135572244629261044
 SphereCollider:
