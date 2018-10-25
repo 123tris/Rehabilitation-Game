@@ -288,6 +288,9 @@
     <object class="SpatialiserEffect" id="{a5fe4467-6944-4c9c-98f1-ea7e850d7e5a}"/>
     <object class="MixerBusFader" id="{85dcc453-8f2f-4ae6-bf9a-b9c75fac6197}"/>
     <object class="ThreeEQEffect" id="{ec905901-c675-4a8f-9270-706c98cc3df7}">
+        <property name="highGain">
+            <value>-24.5</value>
+        </property>
         <relationship name="modulators">
             <destination>{208f6791-7f32-4499-acb2-39f18391bf83}</destination>
             <destination>{d061acc9-cce3-4a3a-82ed-d1c49983e57f}</destination>
