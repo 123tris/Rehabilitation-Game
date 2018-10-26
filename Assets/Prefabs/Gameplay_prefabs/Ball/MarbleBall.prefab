@@ -201,9 +201,9 @@ MonoBehaviour:
   ChantDissapointedSound: event:/Ambiance/Wrong
   ChantCheeringSound: event:/Ambiance/Correct
   RollingSound: event:/Ball/Rolling
-  smallBoardToSpawn: {fileID: 1081945280705158, guid: af70be68aea178945ae70d0cb6a8f180,
+  smallBoardToSpawn: {fileID: 1986891294913532, guid: 983ea50509e327d45991701e58b5f9b6,
     type: 2}
-  bigBoardToSpawn: {fileID: 1268651525885000, guid: 95533770db03f5047b19975f20f112e1,
+  bigBoardToSpawn: {fileID: 1792254155884518, guid: 3393aa7dd86a6ae47a29c85f2b096973,
     type: 2}
   smallGameBoard: {fileID: 0}
   bigGameBoard: {fileID: 0}

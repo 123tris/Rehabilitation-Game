@@ -74,7 +74,7 @@ public class Bumper_placer : MonoBehaviour
         if (timer <= 0 && timerOn == true)
         {
             DisableBumperRenderers();
-            b_s.instantiatedArrow.gameObject.SetActive(true);
+            b_s.SpawnArrow(transform);
         }
 
         if (Input.GetKeyDown(KeyCode.T))
