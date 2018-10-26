@@ -35,8 +35,6 @@ public class PointSystem : MonoBehaviour
     }
     public void AddPoints()
     {
-        spawnSmall = GameObject.FindGameObjectWithTag("SpawnerKlein");
-        spawnBig = GameObject.FindGameObjectWithTag("SpawnerBig");
         score += 100 * (targetScore + 1);
         targetScore += 1;
         points_Var.text = score.ToString();
@@ -57,8 +55,6 @@ public class PointSystem : MonoBehaviour
 
     public void Missed()
     {
-        spawnSmall = GameObject.FindGameObjectWithTag("SpawnerKlein");
-        spawnBig = GameObject.FindGameObjectWithTag("SpawnerBig");
         if (targetScore >= 1)
             targetScore -= 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);

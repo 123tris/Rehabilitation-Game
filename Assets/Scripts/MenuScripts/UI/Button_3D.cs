@@ -15,15 +15,17 @@ public class Button_3D : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        Physics.Raycast(ray ,out hit);
 
-        if(hit.collider.gameObject == gameObject && Input.GetMouseButtonDown(0))
+        if (Physics.Raycast(ray, out hit))
         {
-            buttonPressed.Invoke();
-        }
-        else
-        {
-            Debug.Log(null);
+            if (hit.collider.gameObject == gameObject && Input.GetMouseButtonDown(0))
+            {
+                buttonPressed.Invoke();
+            }
+            else
+            {
+                Debug.Log(null);
+            }
         }
     }
 }

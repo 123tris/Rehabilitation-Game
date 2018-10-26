@@ -60,7 +60,7 @@ public class Ball_Controler : MonoBehaviour
     private void Start()
     {
         sCollider = GetComponent<SphereCollider>();
-       // bSP = GameObject.FindGameObjectWithTag("Spawner");
+        // bSP = GameObject.FindGameObjectWithTag("Spawner");
         smallGameBoard = GameObject.FindGameObjectWithTag("SmallGameBoard");
         bigGameBoard = GameObject.FindGameObjectWithTag("BigGameBoard");
         gameController = GameObject.FindGameObjectWithTag("Observer");
@@ -130,7 +130,6 @@ public class Ball_Controler : MonoBehaviour
         if (collision.gameObject.name == "target" && spawned == true)
         {
             GameObject instantiatedObject;
-            p_s.AddPoints();
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
             b_s.right = true;
@@ -142,15 +141,21 @@ public class Ball_Controler : MonoBehaviour
 
             if (c_p_b.isTheBoardSmall == true)
             {
+                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
+
                 instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
-                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
+                p_s.spawnSmall = instantiatedObject;
+                p_s.AddPoints();
             }
             else
             {
+                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
+
                 instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
-                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
+                p_s.spawnBig = instantiatedObject;
+                p_s.AddPoints();
             }
             instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
             Destroy(boardToDelete);
@@ -160,7 +165,6 @@ public class Ball_Controler : MonoBehaviour
         else if (collision.gameObject.tag == "Outer" && spawned == true)
         {
             GameObject instantiatedObject;
-            p_s.Missed();
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
             b_s.wrong = true;
@@ -172,18 +176,24 @@ public class Ball_Controler : MonoBehaviour
 
             if (c_p_b.isTheBoardSmall == true)
             {
-                instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
-                instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
 
+                instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
+                instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
+                p_s.spawnSmall = instantiatedObject;
+                p_s.Missed();
             }
             else
             {
+                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
+
                 instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
-                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
+                p_s.spawnBig = instantiatedObject;
+                p_s.Missed();
             }
             instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
+
             Destroy(boardToDelete);
             Destroy(gameObject);
         }
