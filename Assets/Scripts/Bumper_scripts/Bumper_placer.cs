@@ -27,16 +27,16 @@ public class Bumper_placer : MonoBehaviour
 
     [Header("Misc")]
     public GameObject[] bumpers;
-    public float timer = 2.5f;
+    [HideInInspector] public float timer = 5;
 
     public float horizontalSpacing;
     public float verticalSpacing;
 
-    public int testBumpersToSpawn = 1;
-    public int boardSize = 5;
+    [HideInInspector] public int testBumpersToSpawn = 1;
+    [HideInInspector] public int boardSize = 5;
 
-    public int maxTestBumpersToSpawn;
-    public int maxBoardSize;
+    [HideInInspector] public int maxTestBumpersToSpawn;
+    [HideInInspector] public int maxBoardSize;
 
     [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[10, 10];
     private List<GameObject> spawnedBumpers = new List<GameObject>();
@@ -61,6 +61,7 @@ public class Bumper_placer : MonoBehaviour
         b_m.SetBoardPosition();
         b_m.BuildBoard();
         testBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
+        timer = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TimerTime");
         maxTestBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBumperAmount");
         maxBoardSize = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBoardSize");
         GenerateBumpers(testBumpersToSpawn);
@@ -338,25 +339,25 @@ public class Bumper_placer : MonoBehaviour
 
         switch (randomDirection)
         {
-            case 0:
+            case 0://leftside
                 ballPosition = new Vector2(0, randomBallPosition);
                 board[0, randomBallPosition] = SpawnEntity.Ball;
-                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(0, randomBallPosition), Vector3.up * 90, transform);
+                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(0, randomBallPosition), Vector3.up * 90, transform, GetSpawnPositionByIndex(0, randomBallPosition) - new Vector3(-0.134f, 1,0));
                 break;
-            case 1:
+            case 1://rightside
                 ballPosition = new Vector2(board.GetLength(0) - 1, randomBallPosition);
                 board[board.GetLength(0) - 1, randomBallPosition] = SpawnEntity.Ball;
-                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(board.GetLength(0) - 1, randomBallPosition), Vector3.up * -90, transform);
+                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(board.GetLength(0) - 1, randomBallPosition), Vector3.up * -90, transform, GetSpawnPositionByIndex(board.GetLength(0) - 1, randomBallPosition) - new Vector3(0.134f, 1,0));
                 break;
-            case 2:
+            case 2://bottomside
                 ballPosition = new Vector2(randomBallPosition, 0);
                 board[randomBallPosition, 0] = SpawnEntity.Ball;
-                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, 0), Vector3.zero, transform);
+                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, 0), Vector3.zero, transform, GetSpawnPositionByIndex(randomBallPosition, 0) - new Vector3(0, 1, -0.134f));
                 break;
-            case 3:
+            case 3://upside
                 ballPosition = new Vector2(randomBallPosition, board.GetLength(1) - 1);
                 board[randomBallPosition, board.GetLength(1) - 1] = SpawnEntity.Ball;
-                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, board.GetLength(1) - 1), Vector3.up * 180, transform);
+                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, board.GetLength(1) - 1), Vector3.up * 180, transform,GetSpawnPositionByIndex(randomBallPosition, board.GetLength(1) - 1) - new Vector3(0, 1, 0.134f));
                 break;
         }
 
@@ -368,17 +369,4 @@ public class Bumper_placer : MonoBehaviour
         Vector3 horizontalOffset = Vector3.right * horizontalSpacing * x;
         return transform.position + verticalOffset + horizontalOffset;
     }
-
-    /*void OnDrawGizmos()
-    {
-        for (int i = 0; i < board.GetLength(0); i++)
-        {
-            for (int j = 0; j < board.GetLength(1); j++)
-            {
-                Vector3 targetPos = transform.position + Vector3.right * horizontalSpacing * i +
-                Vector3.forward * verticalSpacing * j;
-                Gizmos.DrawCube(targetPos, Vector3.one * .5f);
-            }
-        }
-    }*/
 }

@@ -22,7 +22,7 @@ public class ToggleScript : MonoBehaviour {
 
     void Update()
     {
-        if (toggleBool.isClickedToggle == true)
+    
         {
             SelectAccount();
         }

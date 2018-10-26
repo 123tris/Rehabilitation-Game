@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114866401067229190}
-  - {fileID: 114936289521523874}
+  - {fileID: 114356449460084206}
   EditorEvents:
   - {fileID: 114238470617745842}
   - {fileID: 114814395582099256}
@@ -25,10 +25,12 @@ MonoBehaviour:
   - {fileID: 114318048060917632}
   - {fileID: 114264791385722714}
   - {fileID: 114859211689022778}
-  - {fileID: 114995777270613434}
-  MasterBankRef: {fileID: 114936289521523874}
+  - {fileID: 114764442094819384}
+  - {fileID: 114415743691870830}
+  - {fileID: 114889062321735006}
+  MasterBankRef: {fileID: 114356449460084206}
   StringsBankRef: {fileID: 114866401067229190}
-  stringsBankWriteTime: 636755519829004618
+  stringsBankWriteTime: 636755522319793639
   cacheVersion: 2
 --- !u!114 &114020403728281264
 MonoBehaviour:
@@ -75,22 +77,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114066013663722128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: GameStarted
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114073162752848934
+--- !u!114 &114083408922310508
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,22 +92,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114105422559058998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: GameStarted
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114139180148942288
+--- !u!114 &114129521975086924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,7 +107,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114146943034689130
+--- !u!114 &114139180148942288
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,29 +137,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114238470617745842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Menu/Check
-  guid: 44c679b408859f4ea63602aff648e1c4
-  Banks:
-  - {fileID: 114936289521523874}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 875
---- !u!114 &114239505946058138
+--- !u!114 &114185891550295642
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,11 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Wrong
+  Name: GameStarted
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114243524681698972
+--- !u!114 &114188430226470030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,43 +160,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Menu/Click
-  guid: b4b61b14080a7b4ca296ac2b32018e93
-  Banks:
-  - {fileID: 114936289521523874}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1000
---- !u!114 &114249188591111102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Ambiance/Correct
-  guid: 9ea9e5c9a7d754419b0fe5329d9f1e42
-  Banks:
-  - {fileID: 114880303628219654}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &114256028171943970
+  Name: BallRolling
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114192953996044584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,6 +182,65 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114206393097397162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wrong
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114238470617745842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Menu/Check
+  guid: 44c679b408859f4ea63602aff648e1c4
+  Banks:
+  - {fileID: 114356449460084206}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 875
+--- !u!114 &114243524681698972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Menu/Click
+  guid: b4b61b14080a7b4ca296ac2b32018e93
+  Banks:
+  - {fileID: 114356449460084206}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &114264791385722714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,15 +255,30 @@ MonoBehaviour:
   Path: event:/Ball/Rolling
   guid: e662aff514be6c40a53be8f50785f432
   Banks:
-  - {fileID: 114936289521523874}
+  - {fileID: 114356449460084206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114489334608454844}
+  - {fileID: 114954748087649964}
   MinDistance: 1
   MaxDistance: 20
   Length: 13714
+--- !u!114 &114283096241476670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114289964790013016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +291,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: BallRolling
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114317852791453478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pitch
   Min: 0
   Max: 1
   Default: 0
@@ -313,15 +323,78 @@ MonoBehaviour:
   Path: event:/Bumper/Bump
   guid: cd3afd5948480b41b86838cc5cd1dc2c
   Banks:
-  - {fileID: 114936289521523874}
+  - {fileID: 114356449460084206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114941494438802614}
+  - {fileID: 114192953996044584}
   MinDistance: 1
   MaxDistance: 20
   Length: 642
+--- !u!114 &114332520446358358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wrong
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114345960870868412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: GameStarted
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114351850033233128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wrong
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114356449460084206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Timur\Documents\GitHub\RRD GameSounds\Build\Desktop\Master Bank.bank
+  lastModified: 636755522319514347
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1092800
+  Exists: 1
 --- !u!114 &114370857876916774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +407,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Wrong
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114387217016905908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: GameStarted
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114388886462941068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pitch
   Min: 0
   Max: 1
   Default: 0
@@ -352,6 +455,36 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114400412866721730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BallRolling
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114403825582489026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wrong
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114415743691870830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +499,7 @@ MonoBehaviour:
   Path: event:/Ambiance/Wrong
   guid: 419cca3157c55f4dab01f84c32fe95fc
   Banks:
-  - {fileID: 114839490740020570}
+  - {fileID: 114356449460084206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -374,7 +507,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &114489334608454844
+--- !u!114 &114495641165207528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -385,7 +518,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: BallRolling
+  Name: GameStarted
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114498624742854022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wrong
   Min: 0
   Max: 1
   Default: 0
@@ -404,6 +552,51 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114509006831886372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114522548628684930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114528897945802110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BallRolling
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114532307922389586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,7 +611,7 @@ MonoBehaviour:
   Path: event:/Ball/Wrong
   guid: 8151685f75aa48499c8775e4386129a4
   Banks:
-  - {fileID: 114936289521523874}
+  - {fileID: 114356449460084206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -426,6 +619,51 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3428
+--- !u!114 &114560273962201752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: GameStarted
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114613259564154026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wrong
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114617331689748770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114625476173115262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +693,7 @@ MonoBehaviour:
   Path: event:/Menu/Switch
   guid: ccca591c4801504b903c16f4f3605a59
   Banks:
-  - {fileID: 114936289521523874}
+  - {fileID: 114356449460084206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -463,6 +701,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 945
+--- !u!114 &114671322450509086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wrong
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114672137267231500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,7 +731,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114683163236733698
+--- !u!114 &114682099302462406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114687214967865406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,16 +775,16 @@ MonoBehaviour:
   Path: event:/Music/Music
   guid: 8d63e1eb7c67c54ab45fa8a91b6b5f0b
   Banks:
-  - {fileID: 114936289521523874}
+  - {fileID: 114356449460084206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114239505946058138}
+  - {fileID: 114613259564154026}
   MinDistance: 1
   MaxDistance: 20
   Length: 6500
---- !u!114 &114703259884465132
+--- !u!114 &114708248085526800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -524,13 +792,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Wrong
-  Min: 0
-  Max: 1
-  Default: 0
+  Path: D:\Timur\Documents\GitHub\RRD GameSounds\Build\Desktop\Master Bank.bank
+  lastModified: 636755522319514347
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1092800
+  Exists: 1
 --- !u!114 &114709613184172290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,28 +817,6 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114716291103079456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Ambiance/Wrong
-  guid: 419cca3157c55f4dab01f84c32fe95fc
-  Banks:
-  - {fileID: 114880303628219654}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &114730826951300530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,6 +829,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: BallRolling
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114736392168768282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BallRolling
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114753463740852712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wrong
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114763833788848042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pitch
   Min: 0
   Max: 1
   Default: 0
@@ -597,12 +891,12 @@ MonoBehaviour:
   Path: event:/Ambiance/Bar
   guid: cab88c665a242b41a3eea8ac76d005dd
   Banks:
-  - {fileID: 114839490740020570}
+  - {fileID: 114356449460084206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114027922678652424}
+  - {fileID: 114936950482966502}
   MinDistance: 1
   MaxDistance: 20
   Length: 32000
@@ -635,7 +929,7 @@ MonoBehaviour:
   Path: event:/Ball/Correct
   guid: 6c2065f92b358d41bb7d3b56d2d3c7fd
   Banks:
-  - {fileID: 114936289521523874}
+  - {fileID: 114356449460084206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -643,6 +937,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3428
+--- !u!114 &114815321193093210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BallRolling
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114816569248250138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,13 +1009,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\Stage\RRD GameSounds\Build\Desktop\Master Bank.bank
-  lastModified: 636755406954781210
+  lastModified: 636755455345766108
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1092800
-  Exists: 1
---- !u!114 &114858553531203778
+    Value: 1093408
+  Exists: 0
+--- !u!114 &114853904746101140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -717,7 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: BallRolling
+  Name: GameStarted
   Min: 0
   Max: 1
   Default: 0
@@ -735,7 +1044,7 @@ MonoBehaviour:
   Path: event:/Menu/Appearing
   guid: e71a47eaf5c70f4796a43f179e025cea
   Banks:
-  - {fileID: 114936289521523874}
+  - {fileID: 114356449460084206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -757,7 +1066,7 @@ MonoBehaviour:
   Path: event:/Ball/CannonShot
   guid: 8715db8d71816e4a94e30d3384b28138
   Banks:
-  - {fileID: 114936289521523874}
+  - {fileID: 114356449460084206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -777,13 +1086,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: RRD GameSounds\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636755519829004618
+  lastModified: 636755522319793639
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1198
+    Value: 1416
   Exists: 1
---- !u!114 &114880303628219654
+--- !u!114 &114876371258153276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -791,16 +1100,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: D:\Timur\Documents\GitHub\RRD GameSounds\Build\Desktop\Master Bank.bank
-  lastModified: 636755522319514347
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1092800
-  Exists: 1
+  Name: BallRolling
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114889062321735006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,7 +1121,7 @@ MonoBehaviour:
   Path: event:/Ambiance/Correct
   guid: 9ea9e5c9a7d754419b0fe5329d9f1e42
   Banks:
-  - {fileID: 114839490740020570}
+  - {fileID: 114356449460084206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -838,25 +1144,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114936289521523874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: D:\Source tree\Rehab Game\RRD GameSounds\Build\Desktop\Master Bank.bank
-  lastModified: 636755519828924796
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1088736
-  Exists: 1
---- !u!114 &114941494438802614
+--- !u!114 &114896640129024094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -867,7 +1155,100 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Pitch
+  Name: GameStarted
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114910363723045236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Stage\RRD GameSounds\Build\Desktop\Master Bank.bank
+  lastModified: 636760592144625430
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1486368
+  Exists: 0
+--- !u!114 &114918897667158532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: GameStarted
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114919694955883584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: GameStarted
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114936950482966502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: GameStarted
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114946076611870158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BallRolling
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114954748087649964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BallRolling
   Min: 0
   Max: 1
   Default: 0
@@ -889,7 +1270,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2378944
   Exists: 1
---- !u!114 &114995777270613434
+--- !u!114 &114966629426139022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -897,18 +1278,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Ambiance/Bar
-  guid: cab88c665a242b41a3eea8ac76d005dd
-  Banks:
-  - {fileID: 114936289521523874}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114066013663722128}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 32000
+  Name: Wrong
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114987374812059794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BallRolling
+  Min: 0
+  Max: 1
+  Default: 0

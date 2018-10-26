@@ -2,49 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera_Change : MonoBehaviour {
+public class Camera_Change : MonoBehaviour
+{
 
     public Animator animator;
 
-    Camera camera;
+    Camera cameraC;
     public GameObject camera_rot;
     bool animDone;
     bool twoD;
     bool ThreeD;
     private void Awake()
     {
-        camera = GetComponent<Camera>();
+        cameraC = GetComponent<Camera>();
         animDone = true;
         ThreeD = true;
     }
 
-    void Update () {
-
-        if (Input.GetKeyDown(KeyCode.Alpha2) && animDone == true && twoD == false)
-        {
-            camera.orthographic = true;
-            twoD = true;
-            ThreeD = false;
+    public void GoTo2D()
+    {
+        cameraC.orthographic = true;
+        twoD = true;
+        ThreeD = false;
         animator.SetBool("2D", true);
         animator.SetBool("3D", false);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && animDone == true && ThreeD == false)
-        {
-            camera.orthographic = false;
-            ThreeD = true;
-            twoD = false;
+    }
+    public void GoTo3D()
+    {
+        cameraC.orthographic = false;
+        ThreeD = true;
+        twoD = false;
         animator.SetBool("3D", true);
         animator.SetBool("2D", false);
-        }
     }
     void AnimationFinished()
     {
-    animDone = true;
+        animDone = true;
     }
 
     void AnimationBusy()
     {
-    animDone = false;
+        animDone = false;
 
     }
 }

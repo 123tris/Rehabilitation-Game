@@ -10,11 +10,13 @@ public class Ball_Controler : MonoBehaviour
     public Ball_Spawn b_s;
     public Bumper_placer b_p;
     public PointSystem p_s;
+    public ChangePlayBoardSize c_p_b;
 
     [Header("Find_Scripts")]
     public GameObject bSP;
     public GameObject gameController;
-    public GameObject blackScreen;
+    public GameObject mainGameLogic;
+    public GameObject changePlayBoardSize;
 
     [Header("Rigidbody")]
     public Rigidbody rb;
@@ -34,11 +36,22 @@ public class Ball_Controler : MonoBehaviour
     public string BumpSound = "event:/Bumper/Bump";
 
     [FMODUnity.EventRef]
+    public string ChantDissapointedSound = "event:/Ambiance/Wrong";
+
+    [FMODUnity.EventRef]
+    public string ChantCheeringSound = "event:/Ambiance/Correct";
+
+
+    [FMODUnity.EventRef]
     public string RollingSound = "event:/Ball/Rolling";
 
     FMOD.Studio.EventInstance RollingEv;
 
-    public Animator anim;
+    [Header("Misc")]
+    public GameObject smallBoardToSpawn;
+    public GameObject bigBoardToSpawn;
+    [HideInInspector] public GameObject smallGameBoard, bigGameBoard;
+    [HideInInspector] public GameObject boardToDelete;
 
     float speed = 0.1f;
     public bool vertical;
@@ -48,12 +61,15 @@ public class Ball_Controler : MonoBehaviour
     {
         sCollider = GetComponent<SphereCollider>();
         bSP = GameObject.FindGameObjectWithTag("Spawner");
+        smallGameBoard = GameObject.FindGameObjectWithTag("SmallGameBoard");
+        bigGameBoard = GameObject.FindGameObjectWithTag("BigGameBoard");
         gameController = GameObject.FindGameObjectWithTag("Observer");
-        blackScreen = GameObject.FindGameObjectWithTag("BlackScreen");
+        mainGameLogic = GameObject.FindGameObjectWithTag("MainGameLogic");
+        changePlayBoardSize = GameObject.FindGameObjectWithTag("BoardChanger");
+        c_p_b = changePlayBoardSize.GetComponent<ChangePlayBoardSize>();
         b_s = gameController.GetComponent<Ball_Spawn>();
         b_p = bSP.GetComponent<Bumper_placer>();
-        p_s = gameController.GetComponent<PointSystem>();
-        anim = blackScreen.GetComponent<Animator>();
+        p_s = mainGameLogic.GetComponent<PointSystem>();
 
         spawned = false;
 
@@ -65,7 +81,7 @@ public class Ball_Controler : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (Mathf.Round(gameObject.transform.eulerAngles.y) == 0 || Mathf.Round(gameObject.transform.eulerAngles.y) == 180 
+        if (Mathf.Round(gameObject.transform.eulerAngles.y) == 0 || Mathf.Round(gameObject.transform.eulerAngles.y) == 180
             || Mathf.Round(gameObject.transform.eulerAngles.y) == -180 || Mathf.Round(gameObject.transform.eulerAngles.y) == 360 || Mathf.Round(gameObject.transform.eulerAngles.y) == -360)
         {
             vertical = true;
@@ -85,9 +101,9 @@ public class Ball_Controler : MonoBehaviour
             foreach (Renderer r in other.gameObject.GetComponentsInChildren<Renderer>())
             {
                 r.enabled = true;
-            }                
+            }
             other.gameObject.GetComponent<MeshRenderer>().enabled = true;
-           
+
             FMODUnity.RuntimeManager.PlayOneShot(BumpSound, transform.position);
             spawned = true;
         }
@@ -114,25 +130,56 @@ public class Ball_Controler : MonoBehaviour
     {
         if (collision.gameObject.name == "target" && spawned == true)
         {
-            anim.SetBool("Out", true);
+            GameObject instantiatedObject;
             p_s.AddPoints();
-            b_s.right = true;
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
+            b_s.right = true;
+
+            //Fmod-------------------------------------------------------------------------
+            FMODUnity.RuntimeManager.PlayOneShot(ChantCheeringSound, transform.position);
             FMODUnity.RuntimeManager.PlayOneShot(CorrectSound, transform.position);
-            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));
             FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
+
+            if (c_p_b.isBoardSmall == true)
+            {
+                instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
+            }
+            else
+            {
+                instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
+            }
+            boardToDelete = GameObject.FindGameObjectWithTag("Spawner");
+            instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
+            Destroy(boardToDelete);
+
+            Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Outer" && spawned == true)
         {
-            anim.SetBool("Out", true);
+            GameObject instantiatedObject;
             p_s.Missed();
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
             b_s.wrong = true;
+
+            //Fmod-------------------------------------------------------------------------
+            FMODUnity.RuntimeManager.PlayOneShot(ChantDissapointedSound, transform.position);
             FMODUnity.RuntimeManager.PlayOneShot(WrongSound, transform.position);
-            StartCoroutine(CooldownManager.Cooldown(3f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex)));
             FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
-        }          
+
+            if (c_p_b.isBoardSmall == true)
+            {
+                instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
+            }
+            else
+            {
+                instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
+            }
+            boardToDelete = GameObject.FindGameObjectWithTag("Spawner");
+            instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
+            Destroy(boardToDelete);
+            Destroy(gameObject);
+        }
     }
-} 
+}
