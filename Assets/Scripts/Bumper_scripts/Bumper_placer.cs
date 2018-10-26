@@ -369,17 +369,4 @@ public class Bumper_placer : MonoBehaviour
         Vector3 horizontalOffset = Vector3.right * horizontalSpacing * x;
         return transform.position + verticalOffset + horizontalOffset;
     }
-
-    /*void OnDrawGizmos()
-    {
-        for (int i = 0; i < board.GetLength(0); i++)
-        {
-            for (int j = 0; j < board.GetLength(1); j++)
-            {
-                Vector3 targetPos = transform.position + Vector3.right * horizontalSpacing * i +
-                Vector3.forward * verticalSpacing * j;
-                Gizmos.DrawCube(targetPos, Vector3.one * .5f);
-            }
-        }
-    }*/
 }

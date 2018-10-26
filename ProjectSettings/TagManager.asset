@@ -12,12 +12,16 @@ TagManager:
   - left
   - Right
   - Outer
-  - Spawner
   - Observer
   - BlackScreen
   - MusicController
   - PlayBoard
   - MainGameLogic
+  - SmallGameBoard
+  - BigGameBoard
+  - BoardChanger
+  - SpawnerKlein
+  - SpawnerBig
   layers:
   - Default
   - TransparentFX

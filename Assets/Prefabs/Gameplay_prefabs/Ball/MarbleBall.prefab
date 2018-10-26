@@ -188,9 +188,11 @@ MonoBehaviour:
   b_s: {fileID: 0}
   b_p: {fileID: 0}
   p_s: {fileID: 0}
+  c_p_b: {fileID: 0}
   bSP: {fileID: 0}
   gameController: {fileID: 0}
   mainGameLogic: {fileID: 0}
+  changePlayBoardSize: {fileID: 0}
   rb: {fileID: 54947756104616894}
   sCollider: {fileID: 0}
   CorrectSound: event:/Ball/Correct
@@ -199,9 +201,12 @@ MonoBehaviour:
   ChantDissapointedSound: event:/Ambiance/Wrong
   ChantCheeringSound: event:/Ambiance/Correct
   RollingSound: event:/Ball/Rolling
-  boardToSpawn: {fileID: 1005173451997398, guid: d6ad22f41fc4c4a4a95cbb89409fbc6f,
+  smallBoardToSpawn: {fileID: 1081945280705158, guid: af70be68aea178945ae70d0cb6a8f180,
     type: 2}
-  playBoard: {fileID: 0}
+  bigBoardToSpawn: {fileID: 1268651525885000, guid: 95533770db03f5047b19975f20f112e1,
+    type: 2}
+  smallGameBoard: {fileID: 0}
+  bigGameBoard: {fileID: 0}
   boardToDelete: {fileID: 0}
   vertical: 0
 --- !u!135 &135928029984589966
