@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ActivateGame : Button_3D
 {
 
-    public GameObject gameBoardBig, gameBoardSmall;
+    public GameObject spawnBig, spawnSmall;
     public GameObject StartGame;
     public GameObject panelToEnable;
     public GameObject panelToDisable;
@@ -20,30 +20,22 @@ public class ActivateGame : Button_3D
         buttonPressed.AddListener(OnStart);
         musicControllerObject = GameObject.FindGameObjectWithTag("MusicController");
         mController = musicControllerObject.GetComponent<MusicController>();
-        //gameBoardBig = SearchTransform(transform, "SpinFrameGroot", true).gameObject;
-       // gameBoardSmall = GameObject.Find("SpinFrameKlein").transform.Find("SpawnerSmall").gameObject;
-      //  gameBoardBig = GameObject.Find("SpinFrameGroot").transform.Find("SpawnerBig").gameObject;
-    }
 
-    void FixedUpdate()
-    {
-       // gameBoardSmall = GameObject.Find("SpinFrameKlein").transform.Find("SpawnerSmall").gameObject;
-      //  gameBoardBig = GameObject.Find("SpinFrameGroot").transform.Find("SpawnerBig").gameObject;
     }
 
     void OnStart()
     {
+        spawnSmall = GameObject.FindGameObjectWithTag("SpawnerKlein");
+        spawnBig = GameObject.FindGameObjectWithTag("SpawnerBig");
         panelToDisable.SetActive(false);
         panelToEnable.SetActive(true);
         if (c_p_b.isBoardSmall == true)
         {
-            Debug.Log("ded");
-            gameBoardSmall.SetActive(true);
+            spawnSmall.GetComponent<Bumper_placer>().enabled = true;
         }
         else
         {
-            Debug.Log("frfr");
-            gameBoardBig.SetActive(true);
+            spawnBig.GetComponent<Bumper_placer>().enabled = true;
         }
         if (panelToEnable.gameObject == StartGame)
         {

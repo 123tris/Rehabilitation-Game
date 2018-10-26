@@ -9,6 +9,7 @@ public class ChangePlayBoardSize : MonoBehaviour
     public GameObject spawner;
     public bool isBoardSmall;
     bool toggleOn;
+    public IsBoardSmall boolBoardSmall;
 
     public void ChangeBoardSize(bool toggle)
     {
@@ -20,6 +21,7 @@ public class ChangePlayBoardSize : MonoBehaviour
             spawner.transform.localScale = new Vector3(33.33334f, 33.33334f, 33.33334f) * 0.65999987f;
             spawner.transform.localPosition = new Vector3(44.6f, 0, 44.6f);
             isBoardSmall = true;
+            boolBoardSmall.isTheBoardSmall = true;
         }
         else
         {
@@ -28,6 +30,7 @@ public class ChangePlayBoardSize : MonoBehaviour
             spawner.transform.localScale = new Vector3(33.33334f, 33.33334f, 33.33334f);
             spawner.transform.localPosition = new Vector3(66.66667f, 0 , 66.66667f);
             isBoardSmall = false;
+            boolBoardSmall.isTheBoardSmall = false;
         }
     }
 }

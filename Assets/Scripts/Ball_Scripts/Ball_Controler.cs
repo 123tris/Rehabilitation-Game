@@ -10,7 +10,7 @@ public class Ball_Controler : MonoBehaviour
     public Ball_Spawn b_s;
     public Bumper_placer b_p;
     public PointSystem p_s;
-    public ChangePlayBoardSize c_p_b;
+    public IsBoardSmall c_p_b;
 
     [Header("Find_Scripts")]
     public GameObject bSP;
@@ -60,15 +60,14 @@ public class Ball_Controler : MonoBehaviour
     private void Start()
     {
         sCollider = GetComponent<SphereCollider>();
-        bSP = GameObject.FindGameObjectWithTag("Spawner");
+       // bSP = GameObject.FindGameObjectWithTag("Spawner");
         smallGameBoard = GameObject.FindGameObjectWithTag("SmallGameBoard");
         bigGameBoard = GameObject.FindGameObjectWithTag("BigGameBoard");
         gameController = GameObject.FindGameObjectWithTag("Observer");
         mainGameLogic = GameObject.FindGameObjectWithTag("MainGameLogic");
-        changePlayBoardSize = GameObject.FindGameObjectWithTag("BoardChanger");
-        c_p_b = changePlayBoardSize.GetComponent<ChangePlayBoardSize>();
+        c_p_b = mainGameLogic.GetComponent<IsBoardSmall>();
         b_s = gameController.GetComponent<Ball_Spawn>();
-        b_p = bSP.GetComponent<Bumper_placer>();
+        //b_p = bSP.GetComponent<Bumper_placer>();
         p_s = mainGameLogic.GetComponent<PointSystem>();
 
         spawned = false;
@@ -141,15 +140,18 @@ public class Ball_Controler : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot(CorrectSound, transform.position);
             FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
 
-            if (c_p_b.isBoardSmall == true)
+            if (c_p_b.isTheBoardSmall == true)
             {
                 instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
+                instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
+                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
             }
             else
             {
                 instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
+                instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
+                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
             }
-            boardToDelete = GameObject.FindGameObjectWithTag("Spawner");
             instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
             Destroy(boardToDelete);
 
@@ -168,15 +170,19 @@ public class Ball_Controler : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot(WrongSound, transform.position);
             FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
 
-            if (c_p_b.isBoardSmall == true)
+            if (c_p_b.isTheBoardSmall == true)
             {
                 instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
+                instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
+                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
+
             }
             else
             {
                 instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
+                instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
+                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
             }
-            boardToDelete = GameObject.FindGameObjectWithTag("Spawner");
             instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
             Destroy(boardToDelete);
             Destroy(gameObject);

@@ -30,6 +30,10 @@ public class Ball_Spawn : MonoBehaviour
     [FMODUnity.EventRef]
     public string CannonSound = "event:/Ball/CannonShot";
 
+    [HideInInspector] Transform arrowParent;
+    [HideInInspector] Vector3 arrowPosition;
+    [HideInInspector] Vector3 arrowRotation;
+
     GameObject tagSearcher;
 
     int randomspawn;
@@ -85,10 +89,8 @@ public class Ball_Spawn : MonoBehaviour
 
     public void SetUpcomingBallPosition(Vector3 ballPosition, Vector3 rotation, Transform parent, Vector3 springPosition)
     {
-        instantiatedArrow = Instantiate(arrow, parent);
-        instantiatedArrow.gameObject.SetActive(false);
-        instantiatedArrow.transform.position = springPosition;
-        instantiatedArrow.transform.rotation = Quaternion.Euler(rotation);
+        arrowPosition = springPosition;
+        arrowRotation = rotation;
         newBallPosition = ballPosition;
         for (int i = 0; i < b_p.board.GetLength(0) - 5; i++)
         {
@@ -96,6 +98,13 @@ public class Ball_Spawn : MonoBehaviour
             newBallPosition += Vector3.left * 0.5f;
         }
         newBallRotation = rotation;
+    }
+
+    public void SpawnArrow(Transform parent)
+    {
+        instantiatedArrow = Instantiate(arrow, parent);
+        instantiatedArrow.transform.position = arrowPosition;
+        instantiatedArrow.transform.rotation = Quaternion.Euler(arrowRotation);
     }
 
     public void SpawnBall()

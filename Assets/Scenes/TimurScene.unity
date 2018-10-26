@@ -781,6 +781,7 @@ GameObject:
   - component: {fileID: 47881552}
   - component: {fileID: 47881554}
   - component: {fileID: 47881555}
+  - component: {fileID: 47881557}
   - component: {fileID: 47881556}
   m_Layer: 5
   m_Name: MainGameLogic
@@ -875,9 +876,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points_Var: {fileID: 884209953}
+  spawnSmall: {fileID: 0}
+  spawnBig: {fileID: 0}
   score: 0
   targetScore: 0
-  b_p: {fileID: 407157497}
   b_h_S: {fileID: 605146151}
 --- !u!114 &47881556
 MonoBehaviour:
@@ -890,7 +892,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d109a36aff78874da4a5e52963759e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallGameBoard: {fileID: 0}
+--- !u!114 &47881557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 47881550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b1e4a776228a54f8905fb5bf2bacc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTheBoardSmall: 0
 --- !u!1001 &48784400
 Prefab:
   m_ObjectHideFlags: 0
@@ -3952,11 +3965,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &314183807 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1703172248761322, guid: 64a547837d5e7254aabc0cd719755ea9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1625395559}
 --- !u!1 &315399868
 GameObject:
   m_ObjectHideFlags: 0
@@ -4859,6 +4867,7 @@ MonoBehaviour:
   smallGameBoard: {fileID: 1511746393}
   spawner: {fileID: 407157494}
   isBoardSmall: 0
+  boolBoardSmall: {fileID: 0}
 --- !u!1001 &368756001
 Prefab:
   m_ObjectHideFlags: 0
@@ -5428,12 +5437,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1231328218505290, guid: 64a547837d5e7254aabc0cd719755ea9,
     type: 2}
   m_PrefabInternal: {fileID: 1625395559}
---- !u!114 &407157497 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114698198572612004, guid: 64a547837d5e7254aabc0cd719755ea9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1625395559}
-  m_Script: {fileID: 11500000, guid: f73f1bbf049d06049aa62d60c4e963aa, type: 3}
 --- !u!1 &409963917
 GameObject:
   m_ObjectHideFlags: 0
@@ -7893,8 +7896,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  gameBoardBig: {fileID: 407157494}
-  gameBoardSmall: {fileID: 314183807}
+  spawnBig: {fileID: 0}
+  spawnSmall: {fileID: 0}
   StartGame: {fileID: 285220353}
   panelToEnable: {fileID: 285220353}
   panelToDisable: {fileID: 1758640153}
@@ -15889,13 +15892,12 @@ Transform:
 --- !u!114 &1256937523
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114928874259937120, guid: c3ca63cc8c65224448ed49622f5f8c59,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1256937521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72fb5ca7dd017048af19086f564d86a, type: 3}
+  m_Script: {fileID: 11500000, guid: f2ec2ae91a06bdb478cc8914dec1cdea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPressed:
@@ -15914,14 +15916,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  gameBoardBig: {fileID: 0}
-  gameBoardSmall: {fileID: 0}
-  StartGame: {fileID: 285220353}
+  spawnSmall: {fileID: 0}
+  spawnBig: {fileID: 0}
   panelToEnable: {fileID: 285220353}
   panelToDisable: {fileID: 889115221}
   c_p_b: {fileID: 366355642}
-  mController: {fileID: 0}
-  musicControllerObject: {fileID: 0}
 --- !u!65 &1256937524
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24928,19 +24927,18 @@ Transform:
 --- !u!114 &1592193763
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114146464890895534, guid: c3ca63cc8c65224448ed49622f5f8c59,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1592193761}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d358cac8ba377e4a88e593c2603cb76, type: 3}
+  m_Script: {fileID: 11500000, guid: ca02327c91720ff4f91dac1932645c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 0d358cac8ba377e4a88e593c2603cb76, type: 3}
+      - m_Target: {fileID: 1592193763}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -24953,9 +24951,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  boardToDeleteSmall: {fileID: 0}
+  boardToDeleteBig: {fileID: 0}
   panelToEnable: {fileID: 1451587601}
   panelToDisable: {fileID: 889115221}
-  ClickSound: event:/Menu/Click
+  smallBoardToSpawn: {fileID: 1081945280705158, guid: af70be68aea178945ae70d0cb6a8f180,
+    type: 2}
+  bigBoardToSpawn: {fileID: 1268651525885000, guid: 95533770db03f5047b19975f20f112e1,
+    type: 2}
+  c_p_b: {fileID: 366355642}
+  smallGameBoard: {fileID: 0}
+  bigGameBoard: {fileID: 0}
 --- !u!65 &1592193764
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25695,7 +25701,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114758263508047002, guid: 64a547837d5e7254aabc0cd719755ea9,
+    - target: {fileID: 114529692155394028, guid: 64a547837d5e7254aabc0cd719755ea9,
         type: 2}
       propertyPath: playerCamera
       value: 
@@ -25705,20 +25711,16 @@ Prefab:
       propertyPath: c_b_b
       value: 
       objectReference: {fileID: 47881554}
+    - target: {fileID: 114758263508047002, guid: 64a547837d5e7254aabc0cd719755ea9,
+        type: 2}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 930414689}
     - target: {fileID: 114698198572612004, guid: 64a547837d5e7254aabc0cd719755ea9,
         type: 2}
       propertyPath: c_b_b
       value: 
       objectReference: {fileID: 47881554}
-    - target: {fileID: 114529692155394028, guid: 64a547837d5e7254aabc0cd719755ea9,
-        type: 2}
-      propertyPath: playerCamera
-      value: 
-      objectReference: {fileID: 930414689}
-    - target: {fileID: 1231328218505290, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
-      propertyPath: m_Name
-      value: SpawnerBig
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
   m_IsPrefabAsset: 0
@@ -31589,8 +31591,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  gameBoardBig: {fileID: 0}
-  gameBoardSmall: {fileID: 0}
+  spawnBig: {fileID: 0}
+  spawnSmall: {fileID: 0}
   panelToEnable: {fileID: 889115221}
   panelToDisable: {fileID: 285220353}
   c_p_b: {fileID: 366355642}

@@ -87,12 +87,12 @@ GameObject:
   - component: {fileID: 114698198572612004}
   - component: {fileID: 114777714434413400}
   m_Layer: 0
-  m_Name: Spawner Big
+  m_Name: SpawnerBig
   m_TagString: SpawnerBig
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1259398711352112
 GameObject:
   m_ObjectHideFlags: 1
@@ -158,7 +158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1718558756976138
 GameObject:
   m_ObjectHideFlags: 1
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1703172248761322}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f73f1bbf049d06049aa62d60c4e963aa, type: 3}
   m_Name: 
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   b_p: {fileID: 114698198572612004}
   rend: {fileID: 0}
-  ball: {fileID: 1501630525813528, guid: 0b89707a8273f8941bf24ecc83c98c0a, type: 2}
+  ball: {fileID: 1876968576731008, guid: 307b0eacd3d6c5c4a90ac0b4cf594a5c, type: 2}
   playerCamera: {fileID: 0}
   arrow: {fileID: 1131087864081054, guid: 50076482e9afb554491389b59ecd5f57, type: 2}
   target: {fileID: 0}
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1231328218505290}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f73f1bbf049d06049aa62d60c4e963aa, type: 3}
   m_Name: 
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   b_p: {fileID: 114180387154201238}
   rend: {fileID: 0}
-  ball: {fileID: 1501630525813528, guid: 0b89707a8273f8941bf24ecc83c98c0a, type: 2}
+  ball: {fileID: 1876968576731008, guid: 307b0eacd3d6c5c4a90ac0b4cf594a5c, type: 2}
   playerCamera: {fileID: 0}
   arrow: {fileID: 1131087864081054, guid: 50076482e9afb554491389b59ecd5f57, type: 2}
   target: {fileID: 0}
