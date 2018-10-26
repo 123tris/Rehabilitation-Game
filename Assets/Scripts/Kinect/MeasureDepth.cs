@@ -69,7 +69,7 @@ public class MeasureDepth : MonoBehaviour
         {
             foreach (Vector2 point in mTriggerPoints)
             {
-                Vector2 Invert = new Vector2(point.x, Screen.height - point.y);
+                Vector2 Invert = new Vector2(Screen.width - point.x, Screen.height - point.y);
                 Raycast(Invert);
             }
         }
@@ -115,7 +115,8 @@ public class MeasureDepth : MonoBehaviour
 
         foreach (Vector2 point in mTriggerPoints)
         {
-            Rect rect = new Rect(point, new Vector2(10, 10));
+            Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
+            Rect rect = new Rect(Invert, new Vector2(10, 10));
             GUI.Box(rect, "");
         }
     }
