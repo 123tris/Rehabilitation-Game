@@ -186,9 +186,12 @@ GameObject:
   - component: {fileID: 4491174495884006}
   - component: {fileID: 33513772843154586}
   - component: {fileID: 23712145038216584}
+  - component: {fileID: 114185277203564400}
+  - component: {fileID: 65285535056952992}
+  - component: {fileID: 65692242272025334}
   m_Layer: 9
   m_Name: PauseButtons
-  m_TagString: Untagged
+  m_TagString: PauzeButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -661,6 +664,42 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1033861563437262}
   m_Mesh: {fileID: 4300002, guid: 03bf50fa9dae46c4e953c59762623cea, type: 3}
+--- !u!65 &65285535056952992
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1885920111062172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 73.59353, y: 14.742236, z: 76.3621}
+  m_Center: {x: -231.94849, y: 0.0000069538755, z: -7.5125065}
+--- !u!65 &65692242272025334
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1885920111062172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 77.81395, y: 14.742236, z: 76.3621}
+  m_Center: {x: 229.83739, y: 0.0000069538755, z: -7.5125065}
+--- !u!114 &114185277203564400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1885920111062172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0281d6a0a3f86ea4fa71e42c1577f9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motionHit: 0
 --- !u!114 &114234345996361262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -751,8 +790,6 @@ MonoBehaviour:
   verticalSpacing: 1
   testBumpersToSpawn: 1
   boardSize: 5
-  maxTestBumpersToSpawn: 1
-  maxBoardSize: 5
 --- !u!114 &114623436437333686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -775,8 +812,6 @@ MonoBehaviour:
   verticalSpacing: 1
   testBumpersToSpawn: 1
   boardSize: 5
-  maxTestBumpersToSpawn: 1
-  maxBoardSize: 5
 --- !u!114 &114802861006370648
 MonoBehaviour:
   m_ObjectHideFlags: 1
