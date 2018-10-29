@@ -22,6 +22,8 @@ TagManager:
   - BoardChanger
   - SpawnerKlein
   - SpawnerBig
+  - Spawner
+  - PauzeButtons
   layers:
   - Default
   - TransparentFX
