@@ -29,9 +29,9 @@ public class PointSystem : MonoBehaviour
         }
         else
         {
-            score = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
-            targetScore = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", 0);
-            points_Var.text = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score").ToString();
+          //  score = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
+           // targetScore = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", 0);
+           // points_Var.text = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score").ToString();
            pointSlider = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "PointAmount");
         }
     }
