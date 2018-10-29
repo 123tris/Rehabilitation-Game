@@ -7,6 +7,8 @@ public class RectTrigger : MonoBehaviour
 {
     Ball_Spawn ballSpawn;
 
+    public GameObject panelToEnable;
+
     private Camera mCamera = null;
     private Renderer mMaterial = null;
 
@@ -29,6 +31,7 @@ public class RectTrigger : MonoBehaviour
             {
                 if(gameObject.tag == "PauzeButtons")
                 {
+                    panelToEnable.SetActive(true);
                     Debug.Log("Pauze test");
                     timer = 0.0f;
                 }
