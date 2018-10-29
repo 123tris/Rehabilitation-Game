@@ -99,9 +99,10 @@ public class MeasureDepth : MonoBehaviour
 
     void FrameHitCheck()
     {
-        for (int ii = 0; ii < frameHit.Count; ii++)
+        for (int ii = 0; ii < frameHit.Count; ++ii)
         {
-            frameHit[ii].GetComponent<RectTrigger>().motionHit = 0;
+            frameHit[ii].GetComponent<RectTrigger>().CheckHit();
+            Debug.Log("Hoi");
         }
         frameHit.Clear();
     }

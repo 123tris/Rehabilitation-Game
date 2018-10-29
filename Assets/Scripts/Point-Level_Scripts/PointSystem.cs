@@ -15,6 +15,7 @@ public class PointSystem : MonoBehaviour
     [Header("Scores")]
     public int score;
     public int targetScore;
+    public int pointSlider;
 
     [Header("Scripts")]
     public PlayerHigherScore b_h_S;
@@ -31,22 +32,24 @@ public class PointSystem : MonoBehaviour
             score = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
             targetScore = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", 0);
             points_Var.text = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score").ToString();
+           pointSlider = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "PointAmount");
         }
     }
     public void AddPoints()
     {
+        PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "PointAmount");
         score += 100 * (targetScore + 1);
         targetScore += 1;
         points_Var.text = score.ToString();
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
         b_h_S.UpdateScore();
-        if (targetScore == 2 || targetScore == 6 || targetScore == 10 || targetScore == 12)
+        if (targetScore == 2 + (1 * pointSlider) || targetScore == 6 + (1 * pointSlider) || targetScore == 10 + (1 * pointSlider) || targetScore == 12 + (1 * pointSlider))
         {
             spawnSmall.GetComponent<Bumper_placer>().LevelUpTile();
             spawnBig.GetComponent<Bumper_placer>().LevelUpTile();
         }
-        else if (targetScore == 4 || targetScore == 8)
+        else if (targetScore == 4 + (1 * pointSlider) || targetScore == 8 + (1 * pointSlider))
         {
             spawnSmall.GetComponent<Bumper_placer>().LevelUpBoard();
             spawnBig.GetComponent<Bumper_placer>().LevelUpBoard();
@@ -55,15 +58,16 @@ public class PointSystem : MonoBehaviour
 
     public void Missed()
     {
+        PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "PointAmount");
         if (targetScore >= 1)
             targetScore -= 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
-        if (targetScore == 1 || targetScore == 5 || targetScore == 9 || targetScore == 11)
+        if (targetScore == 1 + (1 * pointSlider) || targetScore == 5 + (1 * pointSlider) || targetScore == 9 + (1 * pointSlider) || targetScore == 11 + (1 * pointSlider))
         {
             spawnSmall.GetComponent<Bumper_placer>().LevelDownTile();
             spawnBig.GetComponent<Bumper_placer>().LevelDownTile();
         }
-        else if (targetScore == 3 || targetScore == 7)
+        else if (targetScore == 3 + (1 * pointSlider) || targetScore == 7 + (1 * pointSlider))
         {
             spawnSmall.GetComponent<Bumper_placer>().LevelDownBoard();
             spawnBig.GetComponent<Bumper_placer>().LevelDownBoard();
