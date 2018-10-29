@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ActivateGame : Button_3D {
+public class ActivateGame : Button_3D
+{
 
-    public GameObject gameboard;
+    public GameObject spawnBig, spawnSmall;
     public GameObject StartGame;
     public GameObject panelToEnable;
     public GameObject panelToDisable;
+    public ChangePlayBoardSize c_p_b;
 
     public MusicController mController;
     public GameObject musicControllerObject;
@@ -23,11 +25,19 @@ public class ActivateGame : Button_3D {
 
     void OnStart()
     {
+        spawnSmall = GameObject.FindGameObjectWithTag("SpawnerKlein");
+        spawnBig = GameObject.FindGameObjectWithTag("SpawnerBig");
         panelToDisable.SetActive(false);
         panelToEnable.SetActive(true);
-        gameboard.SetActive(true);
-
-        if(panelToEnable.gameObject == StartGame)
+        if (c_p_b.isBoardSmall == true)
+        {
+            spawnSmall.GetComponent<Bumper_placer>().enabled = true;
+        }
+        else
+        {
+            spawnBig.GetComponent<Bumper_placer>().enabled = true;
+        }
+        if (panelToEnable.gameObject == StartGame)
         {
             Debug.Log("cahngeaudio");
             mController.GameStarted();

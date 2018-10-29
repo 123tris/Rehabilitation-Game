@@ -35,8 +35,8 @@ public class Bumper_placer : MonoBehaviour
     [HideInInspector] public int testBumpersToSpawn = 1;
     [HideInInspector] public int boardSize = 5;
 
-    [HideInInspector] public int maxTestBumpersToSpawn;
-    [HideInInspector] public int maxBoardSize;
+    //[HideInInspector] public int maxTestBumpersToSpawn;
+   // [HideInInspector] public int maxBoardSize;
 
     [HideInInspector] public SpawnEntity[,] board = new SpawnEntity[10, 10];
     private List<GameObject> spawnedBumpers = new List<GameObject>();
@@ -62,8 +62,8 @@ public class Bumper_placer : MonoBehaviour
         b_m.BuildBoard();
         testBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
         timer = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TimerTime");
-        maxTestBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBumperAmount");
-        maxBoardSize = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBoardSize");
+      //  maxTestBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBumperAmount");
+        //maxBoardSize = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBoardSize");
         GenerateBumpers(testBumpersToSpawn);
     }
 
@@ -74,7 +74,7 @@ public class Bumper_placer : MonoBehaviour
         if (timer <= 0 && timerOn == true)
         {
             DisableBumperRenderers();
-            b_s.instantiatedArrow.gameObject.SetActive(true);
+            b_s.SpawnArrow(transform);
         }
 
         if (Input.GetKeyDown(KeyCode.T))
@@ -85,17 +85,17 @@ public class Bumper_placer : MonoBehaviour
 
     public void LevelUpTile()
     {
-        if (testBumpersToSpawn < maxTestBumpersToSpawn)
+        if (testBumpersToSpawn < 7)
             testBumpersToSpawn += 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
     }
 
     public void LevelUpBoard()
     {
-        if (testBumpersToSpawn < maxTestBumpersToSpawn)
+        if (testBumpersToSpawn < 7)
             testBumpersToSpawn += 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
-        if (boardSize < maxBoardSize + 2)
+        if (boardSize < 5 + 2)
             boardSize += 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", boardSize);
     }
@@ -369,17 +369,4 @@ public class Bumper_placer : MonoBehaviour
         Vector3 horizontalOffset = Vector3.right * horizontalSpacing * x;
         return transform.position + verticalOffset + horizontalOffset;
     }
-
-    /*void OnDrawGizmos()
-    {
-        for (int i = 0; i < board.GetLength(0); i++)
-        {
-            for (int j = 0; j < board.GetLength(1); j++)
-            {
-                Vector3 targetPos = transform.position + Vector3.right * horizontalSpacing * i +
-                Vector3.forward * verticalSpacing * j;
-                Gizmos.DrawCube(targetPos, Vector3.one * .5f);
-            }
-        }
-    }*/
 }

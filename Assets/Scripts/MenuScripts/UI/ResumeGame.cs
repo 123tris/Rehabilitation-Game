@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class DeactivateGame : Button_3D {
+public class ResumeGame : Button_3D {
 
-    public GameObject spawnBig, spawnSmall;
+    public GameObject spawnSmall, spawnBig;
     public GameObject panelToEnable;
     public GameObject panelToDisable;
     public ChangePlayBoardSize c_p_b;
 
-     void FixedUpdate()
+    void Start()
     {
         buttonPressed.AddListener(OnStart);
     }
@@ -25,17 +24,17 @@ public class DeactivateGame : Button_3D {
         {
             foreach (Transform child in spawnSmall.transform)
             {
-                child.gameObject.SetActive(false);
+                child.gameObject.SetActive(true);
             }
-            spawnSmall.GetComponent<Bumper_placer>().enabled = false;
+            spawnSmall.GetComponent<Bumper_placer>().enabled = true;
         }
         else
         {
             foreach (Transform child in spawnBig.transform)
             {
-                child.gameObject.SetActive(false);
+                child.gameObject.SetActive(true);
             }
-            spawnBig.GetComponent<Bumper_placer>().enabled = false;
+            spawnBig.GetComponent<Bumper_placer>().enabled = true;
         }
     }
 }

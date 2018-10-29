@@ -10,11 +10,13 @@ public class Ball_Controler : MonoBehaviour
     public Ball_Spawn b_s;
     public Bumper_placer b_p;
     public PointSystem p_s;
+    public IsBoardSmall c_p_b;
 
     [Header("Find_Scripts")]
     public GameObject bSP;
     public GameObject gameController;
     public GameObject mainGameLogic;
+    public GameObject changePlayBoardSize;
 
     [Header("Rigidbody")]
     public Rigidbody rb;
@@ -46,8 +48,9 @@ public class Ball_Controler : MonoBehaviour
     FMOD.Studio.EventInstance RollingEv;
 
     [Header("Misc")]
-    public GameObject boardToSpawn;
-    [HideInInspector] public GameObject playBoard;
+    public GameObject smallBoardToSpawn;
+    public GameObject bigBoardToSpawn;
+    [HideInInspector] public GameObject smallGameBoard, bigGameBoard;
     [HideInInspector] public GameObject boardToDelete;
 
     float speed = 0.1f;
@@ -57,12 +60,14 @@ public class Ball_Controler : MonoBehaviour
     private void Start()
     {
         sCollider = GetComponent<SphereCollider>();
-        bSP = GameObject.FindGameObjectWithTag("Spawner");
-        playBoard = GameObject.FindGameObjectWithTag("PlayBoard");
+        // bSP = GameObject.FindGameObjectWithTag("Spawner");
+        smallGameBoard = GameObject.FindGameObjectWithTag("SmallGameBoard");
+        bigGameBoard = GameObject.FindGameObjectWithTag("BigGameBoard");
         gameController = GameObject.FindGameObjectWithTag("Observer");
         mainGameLogic = GameObject.FindGameObjectWithTag("MainGameLogic");
+        c_p_b = mainGameLogic.GetComponent<IsBoardSmall>();
         b_s = gameController.GetComponent<Ball_Spawn>();
-        b_p = bSP.GetComponent<Bumper_placer>();
+        //b_p = bSP.GetComponent<Bumper_placer>();
         p_s = mainGameLogic.GetComponent<PointSystem>();
 
         spawned = false;
@@ -124,7 +129,7 @@ public class Ball_Controler : MonoBehaviour
     {
         if (collision.gameObject.name == "target" && spawned == true)
         {
-            p_s.AddPoints();
+            GameObject instantiatedObject;
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
             b_s.right = true;
@@ -134,29 +139,62 @@ public class Ball_Controler : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot(CorrectSound, transform.position);
             FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
 
-            GameObject instantiatedObject = Instantiate(boardToSpawn, playBoard.transform);
-            boardToDelete = GameObject.FindGameObjectWithTag("Spawner");
+            if (c_p_b.isTheBoardSmall == true)
+            {
+                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
+
+                instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
+                instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
+                p_s.spawnSmall = instantiatedObject;
+                p_s.AddPoints();
+            }
+            else
+            {
+                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
+
+                instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
+                instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
+                p_s.spawnBig = instantiatedObject;
+                p_s.AddPoints();
+            }
             instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
             Destroy(boardToDelete);
-           
+
             Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Outer" && spawned == true)
         {
-            p_s.Missed();
+            GameObject instantiatedObject;
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
             b_s.wrong = true;
-    
+
             //Fmod-------------------------------------------------------------------------
             FMODUnity.RuntimeManager.PlayOneShot(ChantDissapointedSound, transform.position);
             FMODUnity.RuntimeManager.PlayOneShot(WrongSound, transform.position);
             FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
 
-            GameObject instantiatedObject = Instantiate(boardToSpawn, playBoard.transform);
-            boardToDelete = GameObject.FindGameObjectWithTag("Spawner");
+            if (c_p_b.isTheBoardSmall == true)
+            {
+                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
+
+                instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
+                instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
+                p_s.spawnSmall = instantiatedObject;
+                p_s.Missed();
+            }
+            else
+            {
+                boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
+
+                instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
+                instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
+                p_s.spawnBig = instantiatedObject;
+                p_s.Missed();
+            }
             instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
-            Destroy(boardToDelete);          
+
+            Destroy(boardToDelete);
             Destroy(gameObject);
         }
     }

@@ -20,24 +20,33 @@ public class RectTrigger : MonoBehaviour
         mCamera = Camera.main;
     }
 
-    private void Update()
+    public void CheckHit()
     {
         if (motionHit > 8)
         {
             timer += Time.deltaTime;
             if (ballSpawn.rend == null && timer > 2)
             {
-                ballSpawn.target = this.gameObject;
-                gameObject.name = "target";
-                GetComponent<Renderer>().sharedMaterial = ballSpawn.clicked_mat;
-                ballSpawn.rend = GetComponent<Renderer>();
-                ballSpawn.SpawnBall();
-                timer = 0.0f;
+                if(gameObject.tag == "PauzeButtons")
+                {
+                    Debug.Log("Pauze test");
+                    timer = 0.0f;
+                }
+                else if(ballSpawn.rend == null)
+                {
+                    ballSpawn.target = this.gameObject;
+                    gameObject.name = "target";
+                    GetComponent<Renderer>().sharedMaterial = ballSpawn.clicked_mat;
+                    ballSpawn.rend = GetComponent<Renderer>();
+                    ballSpawn.SpawnBall();
+                    timer = 0.0f;
+                }
             }
         }
         else
         {
             timer = 0.0f;
         }
+        motionHit = 0;
     }
 }
