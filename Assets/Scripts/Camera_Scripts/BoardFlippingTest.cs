@@ -6,11 +6,29 @@ public class BoardFlippingTest : MonoBehaviour {
 
     public Animator animator;
     int stance;
+    bool Gamestarted;
 
 	void Start () {
         animator.SetBool("BoardFlip_1", true);
+        animator.SetBool("GameStarted", false);
+        Gamestarted = false;
     }
-	
+
+    private void Update()
+    {
+
+        //Testing purpose
+        /*if (Input.GetKeyDown(KeyCode.G))
+        {
+            GameStart();
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            BoardFlipStance();
+        }
+        */
+    }
+
     void BoardFlipping()
     {
         if (stance == 0 )
@@ -24,8 +42,17 @@ public class BoardFlippingTest : MonoBehaviour {
         }
     }
 
+    public void GameStart()
+    {
+        animator.SetBool("GameStarted", true);
+        Gamestarted = true;
+    }
+
     public void BoardFlipStance()
     {
-        BoardFlipping();
+        if (Gamestarted == true)
+        {
+            BoardFlipping();
+        }        
     }
 }
