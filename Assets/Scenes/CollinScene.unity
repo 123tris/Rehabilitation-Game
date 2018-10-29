@@ -25767,6 +25767,11 @@ Prefab:
       propertyPath: panelToEnable
       value: 
       objectReference: {fileID: 889115221}
+    - target: {fileID: 114623436437333686, guid: 64a547837d5e7254aabc0cd719755ea9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
   m_IsPrefabAsset: 0
