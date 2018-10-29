@@ -11,6 +11,8 @@ public class ActivateGame : Button_3D
     public GameObject panelToEnable;
     public GameObject panelToDisable;
     public ChangePlayBoardSize c_p_b;
+    public BoardFlippingTest b_f_Small;
+    public BoardFlippingTest b_f_Big;
 
     public MusicController mController;
     public GameObject musicControllerObject;
@@ -32,10 +34,12 @@ public class ActivateGame : Button_3D
         if (c_p_b.isBoardSmall == true)
         {
             spawnSmall.GetComponent<Bumper_placer>().enabled = true;
+            b_f_Small.GameStart();
         }
         else
         {
             spawnBig.GetComponent<Bumper_placer>().enabled = true;
+            b_f_Big.GameStart();
         }
         if (panelToEnable.gameObject == StartGame)
         {

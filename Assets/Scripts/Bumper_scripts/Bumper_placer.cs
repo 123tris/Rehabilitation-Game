@@ -23,7 +23,7 @@ public class Bumper_placer : MonoBehaviour
     [Header("External Scripts")]
     public Ball_Spawn b_s;
     public BoardMaker b_m;
-    public ChangeBumperAndBoardSize c_b_b;
+   // public ChangeBumperAndBoardSize c_b_b;
 
     [Header("Misc")]
     public GameObject[] bumpers;

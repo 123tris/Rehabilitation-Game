@@ -30,15 +30,15 @@ public class QuitPlaySession : Button_3D
         panelToEnable.SetActive(true);
         if (c_p_b.isBoardSmall == true)
         {
-            instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
             boardToDeleteSmall = GameObject.FindGameObjectWithTag("SpawnerKlein");
+            instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
             instantiatedObject.transform.localPosition = boardToDeleteSmall.transform.localPosition;
             Destroy(boardToDeleteSmall);
         }
         else
         {
-            instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
             boardToDeleteBig = GameObject.FindGameObjectWithTag("SpawnerBig");
+            instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
             instantiatedObject.transform.localPosition = boardToDeleteBig.transform.localPosition;
             Destroy(boardToDeleteBig);
         }

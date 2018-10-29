@@ -48,6 +48,12 @@ public class BoardFlippingTest : MonoBehaviour {
         Gamestarted = true;
     }
 
+    public void EndAnimation()
+    {
+        animator.SetBool("GameStarted", false);
+        Gamestarted = false;
+    }
+
     public void BoardFlipStance()
     {
         if (Gamestarted == true)
