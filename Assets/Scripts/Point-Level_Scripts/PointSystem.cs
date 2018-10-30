@@ -22,18 +22,9 @@ public class PointSystem : MonoBehaviour
 
     public void LoadScore()
     {
-        if (!PlayerPrefs.HasKey("User_" + PlayerPrefs.GetString("User") + "Score"))
-        {
-            score = 0;
-            targetScore = 0;
-        }
-        else
-        {
-          //  score = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
-           // targetScore = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", 0);
-           // points_Var.text = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "Score").ToString();
-           pointSlider = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "PointAmount");
-        }
+        score = 0;
+        targetScore = 0;
+        pointSlider = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "PointAmount");
     }
     public void AddPoints()
     {

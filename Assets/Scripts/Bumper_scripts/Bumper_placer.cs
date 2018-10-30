@@ -27,8 +27,7 @@ public class Bumper_placer : MonoBehaviour
 
     [Header("Misc")]
     public GameObject[] bumpers;
-    //[HideInInspector]
-    public float timer = 5;
+    [HideInInspector] public float timer = 5;
 
     public float horizontalSpacing;
     public float verticalSpacing;
@@ -63,8 +62,6 @@ public class Bumper_placer : MonoBehaviour
         b_m.BuildBoard();
         testBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
         timer = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TimerTime");
-        //maxTestBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBumperAmount");
-        //maxBoardSize = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBoardSize");
         GenerateBumpers(testBumpersToSpawn);
     }
 
