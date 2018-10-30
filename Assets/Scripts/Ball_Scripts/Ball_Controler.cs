@@ -142,8 +142,8 @@ public class Ball_Controler : MonoBehaviour
             if (c_p_b.isTheBoardSmall == true)
             {
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
-
                 instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
+                instantiatedObject.transform.localPosition = new Vector3(66.66666f, 20, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
                 p_s.spawnSmall = instantiatedObject;
                 p_s.AddPoints();
@@ -151,13 +151,13 @@ public class Ball_Controler : MonoBehaviour
             else
             {
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
-
                 instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
+                instantiatedObject.transform.localPosition = new Vector3(66.66666f, 28, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
                 p_s.spawnBig = instantiatedObject;
                 p_s.AddPoints();
             }
-            instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
+          //  instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
             Destroy(boardToDelete);
 
             Destroy(gameObject);
@@ -177,8 +177,8 @@ public class Ball_Controler : MonoBehaviour
             if (c_p_b.isTheBoardSmall == true)
             {
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
-
                 instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
+                instantiatedObject.transform.localPosition = new Vector3(66.66666f, 20, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
                 p_s.spawnSmall = instantiatedObject;
                 p_s.Missed();
@@ -186,13 +186,13 @@ public class Ball_Controler : MonoBehaviour
             else
             {
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
-
                 instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
+                instantiatedObject.transform.localPosition = new Vector3(66.66666f, 28, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
                 p_s.spawnBig = instantiatedObject;
                 p_s.Missed();
             }
-            instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
+           // instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
 
             Destroy(boardToDelete);
             Destroy(gameObject);

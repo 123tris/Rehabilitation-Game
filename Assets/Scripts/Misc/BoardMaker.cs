@@ -10,6 +10,7 @@ public class BoardMaker : MonoBehaviour
     public GameObject corner;
 
     [Header("external objects and scripts")]
+    public StopDuplicate s_d;
     public Bumper_placer b_p;
     public GameObject tileParent;
     public Material[] tileMaterials;
@@ -17,6 +18,11 @@ public class BoardMaker : MonoBehaviour
 
     int yAsPosition = 1;
     int yAsFramePosition = 0;
+
+    private void Start()
+    {
+        s_d = FindObjectOfType<StopDuplicate>();
+    }
 
     public void SetBoardPosition()
     {

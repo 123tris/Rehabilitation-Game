@@ -23,8 +23,7 @@ public class Bumper_placer : MonoBehaviour
     [Header("External Scripts")]
     public Ball_Spawn b_s;
     public BoardMaker b_m;
-    public ChangeBumperAndBoardSize c_b_b;
-
+    // public ChangeBumperAndBoardSize c_b_b;
     [Header("Misc")]
     public GameObject[] bumpers;
     [HideInInspector] public float timer = 5;
@@ -62,8 +61,6 @@ public class Bumper_placer : MonoBehaviour
         b_m.BuildBoard();
         testBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
         timer = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TimerTime");
-      //  maxTestBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBumperAmount");
-        //maxBoardSize = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "MaxBoardSize");
         GenerateBumpers(testBumpersToSpawn);
     }
 
@@ -342,22 +339,22 @@ public class Bumper_placer : MonoBehaviour
             case 0://leftside
                 ballPosition = new Vector2(0, randomBallPosition);
                 board[0, randomBallPosition] = SpawnEntity.Ball;
-                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(0, randomBallPosition), Vector3.up * 90, transform, GetSpawnPositionByIndex(0, randomBallPosition) - new Vector3(-0.134f, 1,0));
+                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(0, randomBallPosition), Vector3.up * 90, transform, GetSpawnPositionByIndex(0, randomBallPosition));
                 break;
             case 1://rightside
                 ballPosition = new Vector2(board.GetLength(0) - 1, randomBallPosition);
                 board[board.GetLength(0) - 1, randomBallPosition] = SpawnEntity.Ball;
-                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(board.GetLength(0) - 1, randomBallPosition), Vector3.up * -90, transform, GetSpawnPositionByIndex(board.GetLength(0) - 1, randomBallPosition) - new Vector3(0.134f, 1,0));
+                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(board.GetLength(0) - 1, randomBallPosition), Vector3.up * -90, transform, GetSpawnPositionByIndex(board.GetLength(0) - 1, randomBallPosition));
                 break;
             case 2://bottomside
                 ballPosition = new Vector2(randomBallPosition, 0);
                 board[randomBallPosition, 0] = SpawnEntity.Ball;
-                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, 0), Vector3.zero, transform, GetSpawnPositionByIndex(randomBallPosition, 0) - new Vector3(0, 1, -0.134f));
+                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, 0), Vector3.zero, transform, GetSpawnPositionByIndex(randomBallPosition, 0));
                 break;
             case 3://upside
                 ballPosition = new Vector2(randomBallPosition, board.GetLength(1) - 1);
                 board[randomBallPosition, board.GetLength(1) - 1] = SpawnEntity.Ball;
-                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, board.GetLength(1) - 1), Vector3.up * 180, transform,GetSpawnPositionByIndex(randomBallPosition, board.GetLength(1) - 1) - new Vector3(0, 1, 0.134f));
+                b_s.SetUpcomingBallPosition(GetSpawnPositionByIndex(randomBallPosition, board.GetLength(1) - 1), Vector3.up * 180, transform,GetSpawnPositionByIndex(randomBallPosition, board.GetLength(1) - 1));
                 break;
         }
 

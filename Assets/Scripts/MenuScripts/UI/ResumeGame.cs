@@ -5,7 +5,6 @@ using UnityEngine;
 public class ResumeGame : Button_3D {
 
     public GameObject spawnSmall, spawnBig;
-    public GameObject panelToEnable;
     public GameObject panelToDisable;
     public ChangePlayBoardSize c_p_b;
 
@@ -19,7 +18,6 @@ public class ResumeGame : Button_3D {
         spawnSmall = GameObject.FindGameObjectWithTag("SpawnerKlein");
         spawnBig = GameObject.FindGameObjectWithTag("SpawnerBig");
         panelToDisable.SetActive(false);
-        panelToEnable.SetActive(true);
         if (c_p_b.isBoardSmall == true)
         {
             foreach (Transform child in spawnSmall.transform)

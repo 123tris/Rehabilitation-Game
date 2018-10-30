@@ -8,9 +8,10 @@ public class ActivateGame : Button_3D
 
     public GameObject spawnBig, spawnSmall;
     public GameObject StartGame;
-    public GameObject panelToEnable;
     public GameObject panelToDisable;
     public ChangePlayBoardSize c_p_b;
+    public BoardFlippingTest b_f_Small;
+    public BoardFlippingTest b_f_Big;
 
     public MusicController mController;
     public GameObject musicControllerObject;
@@ -28,20 +29,15 @@ public class ActivateGame : Button_3D
         spawnSmall = GameObject.FindGameObjectWithTag("SpawnerKlein");
         spawnBig = GameObject.FindGameObjectWithTag("SpawnerBig");
         panelToDisable.SetActive(false);
-        panelToEnable.SetActive(true);
         if (c_p_b.isBoardSmall == true)
         {
             spawnSmall.GetComponent<Bumper_placer>().enabled = true;
+            b_f_Small.GameStart();
         }
         else
         {
             spawnBig.GetComponent<Bumper_placer>().enabled = true;
-        }
-        if (panelToEnable.gameObject == StartGame)
-        {
-            Debug.Log("cahngeaudio");
-            mController.GameStarted();
-
+            b_f_Big.GameStart();
         }
     }
 }
