@@ -32,8 +32,8 @@ public class PointSystem : MonoBehaviour
         score += 100 * (targetScore + 1);
         targetScore += 1;
         points_Var.text = score.ToString();
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
+       // PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
+        //PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
         b_h_S.UpdateScore();
         if (targetScore == 2 + (1 * pointSlider) || targetScore == 6 + (1 * pointSlider) || targetScore == 10 + (1 * pointSlider) || targetScore == 12 + (1 * pointSlider))
         {
