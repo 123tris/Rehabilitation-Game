@@ -157,7 +157,7 @@ public class Ball_Controler : MonoBehaviour
                 p_s.spawnBig = instantiatedObject;
                 p_s.AddPoints();
             }
-            instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
+          //  instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
             Destroy(boardToDelete);
 
             Destroy(gameObject);
@@ -192,7 +192,7 @@ public class Ball_Controler : MonoBehaviour
                 p_s.spawnBig = instantiatedObject;
                 p_s.Missed();
             }
-            instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
+           // instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
 
             Destroy(boardToDelete);
             Destroy(gameObject);
