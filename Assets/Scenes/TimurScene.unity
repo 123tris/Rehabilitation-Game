@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 47881557}
   - component: {fileID: 47881556}
   - component: {fileID: 47881554}
+  - component: {fileID: 47881558}
   m_Layer: 5
   m_Name: MainGameLogic
   m_TagString: MainGameLogic
@@ -390,6 +391,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTheBoardSmall: 0
+--- !u!114 &47881558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 47881550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4449f7a07814fb4a92a82165d9aa3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfDuplicates: 0
 --- !u!1001 &48784400
 Prefab:
   m_ObjectHideFlags: 0
@@ -1331,9 +1344,55 @@ Prefab:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 930414689}
+    - target: {fileID: 1885920111062172, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_TagString
+      value: PauzeButtons
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &296341451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1885920111062172, guid: 64a547837d5e7254aabc0cd719755ea9,
+    type: 2}
+  m_PrefabInternal: {fileID: 296341450}
+--- !u!65 &296341452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296341451}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 77.27884, y: 14.742236, z: 76.3621}
+  m_Center: {x: -230.10529, y: 0.0000069538755, z: -7.5125065}
+--- !u!65 &296341453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296341451}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 73.859665, y: 14.742236, z: 76.3621}
+  m_Center: {x: 231.81409, y: 0.0000069538755, z: -7.5125065}
+--- !u!114 &296341454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296341451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0281d6a0a3f86ea4fa71e42c1577f9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelToEnable: {fileID: 796887971}
+  motionHit: 0
 --- !u!1 &318295025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3207,6 +3266,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3ca63cc8c65224448ed49622f5f8c59, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &796887971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1699229176527864, guid: c3ca63cc8c65224448ed49622f5f8c59,
+    type: 2}
+  m_PrefabInternal: {fileID: 796887970}
 --- !u!1 &799514900
 GameObject:
   m_ObjectHideFlags: 0
