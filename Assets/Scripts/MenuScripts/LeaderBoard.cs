@@ -64,12 +64,6 @@ public class LeaderBoard : MonoBehaviour
         if (data == null)
             data = new Data {users = new List<User>()};
 
-        List<string> userList = PlayerPrefsX.GetStringArray("Users").ToList();
-        foreach (string u in userList)
-        {
-            if (data.users.All(user => user.name != u))
-                AddUser("New User", false);
-        }
         return data;
     }
 
