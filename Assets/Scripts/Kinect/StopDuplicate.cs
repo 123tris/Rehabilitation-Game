@@ -13,10 +13,10 @@ public class StopDuplicate : MonoBehaviour {
         duplicateSpawners = GameObject.FindGameObjectsWithTag("SpawnerBig");
         amountOfDuplicates = duplicateSpawners.Length;
 
-        if(duplicateSpawners.Length > 1)
+        if (duplicateSpawners.Length > 1)
         {
             Debug.Log("more than 1");
             Destroy(GameObject.FindGameObjectWithTag("SpawnerBig"));
         }
-	}
+    }
 }
