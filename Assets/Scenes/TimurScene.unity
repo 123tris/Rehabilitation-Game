@@ -348,6 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointAmount: {fileID: 1890092466}
+  sliderPoint: {fileID: 634552310}
 --- !u!114 &47881555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2554,6 +2555,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 835df4211a5b1f14b8d87d39b9f86205,
     type: 3}
   m_PrefabInternal: {fileID: 2041407410}
+--- !u!114 &634552310 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114364210953556484, guid: c3ca63cc8c65224448ed49622f5f8c59,
+    type: 2}
+  m_PrefabInternal: {fileID: 796887970}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!4 &639696365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d28a8caa8b5fa1140a3d71d062fd01e4,
@@ -2943,6 +2950,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114381057442357792, guid: c3ca63cc8c65224448ed49622f5f8c59,
+        type: 2}
+      propertyPath: buttonPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224229841400866098, guid: c3ca63cc8c65224448ed49622f5f8c59,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -3177,6 +3189,21 @@ Prefab:
       propertyPath: b_f_Small
       value: 
       objectReference: {fileID: 2145599145}
+    - target: {fileID: 114381057442357792, guid: c3ca63cc8c65224448ed49622f5f8c59,
+        type: 2}
+      propertyPath: buttonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381057442357792, guid: c3ca63cc8c65224448ed49622f5f8c59,
+        type: 2}
+      propertyPath: buttonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381057442357792, guid: c3ca63cc8c65224448ed49622f5f8c59,
+        type: 2}
+      propertyPath: buttonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1119375312}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3ca63cc8c65224448ed49622f5f8c59, type: 2}
   m_IsPrefabAsset: 0
@@ -4825,6 +4852,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaf43210396d14744b3a6179baad6291, type: 3}
   m_IsPrefabAsset: 0
+--- !u!114 &1119375312 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114494521266664278, guid: c3ca63cc8c65224448ed49622f5f8c59,
+    type: 2}
+  m_PrefabInternal: {fileID: 796887970}
+  m_Script: {fileID: 11500000, guid: d72fb5ca7dd017048af19086f564d86a, type: 3}
 --- !u!1 &1129454464
 GameObject:
   m_ObjectHideFlags: 0
