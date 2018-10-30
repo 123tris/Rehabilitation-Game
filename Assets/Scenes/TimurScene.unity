@@ -367,7 +367,6 @@ MonoBehaviour:
   score: 0
   targetScore: 0
   pointSlider: 0
-  b_h_S: {fileID: 605146151}
 --- !u!114 &47881556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1348,6 +1347,12 @@ Prefab:
       propertyPath: m_TagString
       value: PauzeButtons
       objectReference: {fileID: 0}
+    - target: {fileID: 114234345996361262, guid: 64a547837d5e7254aabc0cd719755ea9,
+        type: 2}
+      propertyPath: arrow
+      value: 
+      objectReference: {fileID: 1395638111284484, guid: 57065d018cfb38141ad1ff8c3831c410,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
   m_IsPrefabAsset: 0
@@ -2603,12 +2608,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e194d2b7c40e4924b8accf2e2a8ab6be, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &605146151 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114705771026536380, guid: c3ca63cc8c65224448ed49622f5f8c59,
-    type: 2}
-  m_PrefabInternal: {fileID: 796887970}
-  m_Script: {fileID: 11500000, guid: e6fc0a6481609cb40a156602d4b9acf8, type: 3}
 --- !u!4 &613410650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 835df4211a5b1f14b8d87d39b9f86205,
