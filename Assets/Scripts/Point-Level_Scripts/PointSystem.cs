@@ -13,25 +13,23 @@ public class PointSystem : MonoBehaviour
     public GameObject spawnSmall, spawnBig;
 
     [Header("Scores")]
-    public int score;
-    public int targetScore;
+    public int score = 0;
+    public int targetScore = 0;
     public int pointSlider;
 
-    public void LoadScore()
-    {
-        score = 0;
-        targetScore = 0;
-    }
     public void AddPoints()
     {
         pointSlider = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "PointAmount");
-        score += 100 * (targetScore + 1);
+        if (targetScore <= 16)
         targetScore += 1;
+        score += 100 * (targetScore + 1);
         points_Var.text = score.ToString();
+        Debug.Log(targetScore);
         // PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
         //PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
         if (targetScore == 2 + (1 * pointSlider) || targetScore == 6 + (1 * pointSlider) || targetScore == 10 + (1 * pointSlider) || targetScore == 12 + (1 * pointSlider))
         {
+            Debug.Log("test");
             spawnSmall.GetComponent<Bumper_placer>().LevelUpTile();
             spawnBig.GetComponent<Bumper_placer>().LevelUpTile();
         }

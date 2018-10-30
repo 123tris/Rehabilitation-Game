@@ -6,10 +6,14 @@ public class GetScore : LeaderBoard {
 
     int score;
     string accountName;
-    int diffuculty;
+    public int diffuculty;
+    public PointSystem pointSystem;
 
 	public void GiveScore()
     {
-        AddScore(accountName,diffuculty,score);
+       accountName = PlayerPrefs.GetString("User");
+        Debug.Log(PlayerPrefs.GetString("User"));
+        score = pointSystem.score;
+        AddScore(PlayerPrefs.GetString("User").Trim(), diffuculty,score);
     }
 }
