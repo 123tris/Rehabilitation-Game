@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1792254155884518}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 66.666664, y: 28.46674, z: 70.261665}
+  m_LocalPosition: {x: 3.2781477, y: -19.975992, z: -6.689684}
   m_LocalScale: {x: 33.333336, y: 33.333336, z: 33.333336}
   m_Children:
   - {fileID: 4145401437680266}
@@ -84,7 +84,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   b_s: {fileID: 114149071176536898}
   b_m: {fileID: 114658451937680356}
-  c_b_b: {fileID: 0}
   bumpers:
   - {fileID: 1402388904706420, guid: 1c542ff2736502343911a16e84e45a63, type: 2}
   - {fileID: 1249487529435552, guid: 80fc9bf6b96ee064aba57a4b5111f53a, type: 2}
@@ -93,8 +92,6 @@ MonoBehaviour:
   verticalSpacing: 1
   testBumpersToSpawn: 1
   boardSize: 5
-  maxTestBumpersToSpawn: 1
-  maxBoardSize: 5
 --- !u!114 &114149071176536898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,7 +107,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   ball: {fileID: 1876968576731008, guid: 307b0eacd3d6c5c4a90ac0b4cf594a5c, type: 2}
   playerCamera: {fileID: 0}
-  arrow: {fileID: 1131087864081054, guid: 50076482e9afb554491389b59ecd5f57, type: 2}
+  arrow: {fileID: 1395638111284484, guid: 57065d018cfb38141ad1ff8c3831c410, type: 2}
   target: {fileID: 0}
   instantiatedArrow: {fileID: 0}
   clicked_mat: {fileID: 2100000, guid: b5f0e42ad46319a4aac63ad182711948, type: 2}

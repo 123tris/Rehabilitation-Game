@@ -1347,6 +1347,12 @@ Prefab:
       propertyPath: m_TagString
       value: PauzeButtons
       objectReference: {fileID: 0}
+    - target: {fileID: 114234345996361262, guid: 64a547837d5e7254aabc0cd719755ea9,
+        type: 2}
+      propertyPath: arrow
+      value: 
+      objectReference: {fileID: 1395638111284484, guid: 57065d018cfb38141ad1ff8c3831c410,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
   m_IsPrefabAsset: 0
