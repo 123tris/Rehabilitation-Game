@@ -98,11 +98,11 @@ MonoBehaviour:
   mMultiSource: {fileID: 114378413297544746}
   mDepthTexture: {fileID: 0}
   mDepthSensitivity: 1
-  mWallDepth: 0.53
-  mTopCutOff: 0.26
-  mBottomCutOff: -0.31
-  mLeftCutOff: -0.42
-  mRightCutOff: 0.33
+  mWallDepth: 0.6
+  mTopCutOff: 0.27
+  mBottomCutOff: -0.1
+  mLeftCutOff: -0.16
+  mRightCutOff: 0.06
   mCamera: {fileID: 0}
 --- !u!224 &224093205980601314
 RectTransform:

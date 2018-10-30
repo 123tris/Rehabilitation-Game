@@ -367,7 +367,6 @@ MonoBehaviour:
   score: 0
   targetScore: 0
   pointSlider: 0
-  b_h_S: {fileID: 605146151}
 --- !u!114 &47881556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2603,12 +2602,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e194d2b7c40e4924b8accf2e2a8ab6be, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &605146151 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114705771026536380, guid: c3ca63cc8c65224448ed49622f5f8c59,
-    type: 2}
-  m_PrefabInternal: {fileID: 796887970}
-  m_Script: {fileID: 11500000, guid: e6fc0a6481609cb40a156602d4b9acf8, type: 3}
 --- !u!4 &613410650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 835df4211a5b1f14b8d87d39b9f86205,
@@ -6498,31 +6491,6 @@ Prefab:
     - target: {fileID: 4379233256101036, guid: 21808b68e1e766f4b8755cb1db08f0df, type: 2}
       propertyPath: m_RootOrder
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114459280492103926, guid: 21808b68e1e766f4b8755cb1db08f0df,
-        type: 2}
-      propertyPath: mWallDepth
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114459280492103926, guid: 21808b68e1e766f4b8755cb1db08f0df,
-        type: 2}
-      propertyPath: mTopCutOff
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 114459280492103926, guid: 21808b68e1e766f4b8755cb1db08f0df,
-        type: 2}
-      propertyPath: mBottomCutOff
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114459280492103926, guid: 21808b68e1e766f4b8755cb1db08f0df,
-        type: 2}
-      propertyPath: mLeftCutOff
-      value: -0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 114459280492103926, guid: 21808b68e1e766f4b8755cb1db08f0df,
-        type: 2}
-      propertyPath: mRightCutOff
-      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 114459280492103926, guid: 21808b68e1e766f4b8755cb1db08f0df,
         type: 2}
