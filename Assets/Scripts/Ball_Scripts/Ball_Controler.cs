@@ -143,7 +143,6 @@ public class Ball_Controler : MonoBehaviour
             {
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
                 instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
-                p_s.spawnBig = instantiatedObject;
                 p_s.AddPoints();
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 20, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
@@ -152,9 +151,9 @@ public class Ball_Controler : MonoBehaviour
             }
             else
             {
+                Debug.Log("shot");
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
                 instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
-                p_s.spawnBig = instantiatedObject;
                 p_s.AddPoints();
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 28, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
@@ -180,7 +179,6 @@ public class Ball_Controler : MonoBehaviour
             {
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
                 instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
-                p_s.spawnSmall = instantiatedObject;
                 p_s.Missed();
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 20, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
@@ -188,9 +186,9 @@ public class Ball_Controler : MonoBehaviour
             }
             else
             {
+                Debug.Log("miss");
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
                 instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
-                p_s.spawnBig = instantiatedObject;
                 p_s.Missed();
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 28, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;

@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1792254155884518}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 3.2781477, y: -19.975992, z: -6.689684}
+  m_LocalPosition: {x: -24.816675, y: -19.975992, z: 11.60286}
   m_LocalScale: {x: 33.333336, y: 33.333336, z: 33.333336}
   m_Children:
   - {fileID: 4145401437680266}
@@ -85,8 +85,8 @@ MonoBehaviour:
   b_s: {fileID: 114149071176536898}
   b_m: {fileID: 114658451937680356}
   bumpers:
-  - {fileID: 1402388904706420, guid: 1c542ff2736502343911a16e84e45a63, type: 2}
-  - {fileID: 1249487529435552, guid: 80fc9bf6b96ee064aba57a4b5111f53a, type: 2}
+  - {fileID: 1226874041538136, guid: a68c964a384e4c94585834aae96e4f55, type: 2}
+  - {fileID: 1226874041538136, guid: a8d1cbfc040f8824ab0f9c2196fec6b8, type: 2}
   timer: 5
   horizontalSpacing: 1
   verticalSpacing: 1
@@ -147,6 +147,7 @@ MonoBehaviour:
   tile: {fileID: 1588222131027438, guid: e194d2b7c40e4924b8accf2e2a8ab6be, type: 2}
   frame: {fileID: 1598942666900236, guid: 5f2af001c748bae48ba90436110ef315, type: 2}
   corner: {fileID: 1926426558972760, guid: e4d0e8fbcf2cf84488fd47b82f07280c, type: 2}
+  s_d: {fileID: 0}
   b_p: {fileID: 114058527988492716}
   tileParent: {fileID: 1792254155884518}
   tileMaterials:

@@ -80,40 +80,6 @@ public class Bumper_placer : MonoBehaviour
         }
     }
 
-    public void LevelUpTile()
-    {
-        Debug.Log("what");
-        if (testBumpersToSpawn < 7)
-            testBumpersToSpawn += 1;
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
-    }
-
-    public void LevelUpBoard()
-    {
-        if (testBumpersToSpawn < 7)
-            testBumpersToSpawn += 1;
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
-        if (boardSize < 5 + 2)
-            boardSize += 1;
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", boardSize);
-    }
-    public void LevelDownTile()
-    {
-        if (testBumpersToSpawn > 1)
-            testBumpersToSpawn -= 1;
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
-    }
-
-    public void LevelDownBoard()
-    {
-        if (testBumpersToSpawn > 1)
-            testBumpersToSpawn -= 1;
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
-        if (boardSize > 5)
-            boardSize -= 1;
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", boardSize);
-    }
-
     void GenerateBumpers(int bumperAmount)
     {
         //Randomize ball position first because the bumper needs to be aware of where the ball spawns before it can be generated
