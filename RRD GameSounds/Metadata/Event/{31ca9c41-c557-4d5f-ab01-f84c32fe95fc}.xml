@@ -279,7 +279,7 @@
     </object>
     <object class="MixerBusEffectChain" id="{62bd6fee-b7a5-49e4-8feb-fd0370415748}">
         <relationship name="effects">
-            <destination>{ee2256da-8881-4a4b-a76f-169ef8578f2a}</destination>
+            <destination>{b4b47bfa-b375-43f4-9b0d-63d6743723e0}</destination>
             <destination>{85dcc453-8f2f-4ae6-bf9a-b9c75fac6197}</destination>
             <destination>{ec905901-c675-4a8f-9270-706c98cc3df7}</destination>
             <destination>{f322a0ee-e752-48cc-adcc-0242ae6a30ff}</destination>
@@ -288,7 +288,7 @@
     <object class="MixerBusPanner" id="{f47e2504-831d-4cc3-890a-f057e9fdeac0}"/>
     <object class="MixerBusFader" id="{2e089f14-3d57-450f-86b3-3f81e702dd5a}"/>
     <object class="SpatialiserEffect" id="{a5fe4467-6944-4c9c-98f1-ea7e850d7e5a}"/>
-    <object class="SFXReverbEffect" id="{ee2256da-8881-4a4b-a76f-169ef8578f2a}">
+    <object class="SFXReverbEffect" id="{b4b47bfa-b375-43f4-9b0d-63d6743723e0}">
         <property name="decayTime">
             <value>600</value>
         </property>
@@ -302,10 +302,13 @@
             <value>45</value>
         </property>
         <property name="wetLevel">
-            <value>-2</value>
+            <value>0</value>
+        </property>
+        <property name="dryLevel">
+            <value>-15.5</value>
         </property>
         <relationship name="modulators">
-            <destination>{f135ec3a-8e5a-4623-8aac-b0754b231a6f}</destination>
+            <destination>{4bb22bc7-9d08-4ba8-8826-648827743083}</destination>
         </relationship>
     </object>
     <object class="MixerBusFader" id="{85dcc453-8f2f-4ae6-bf9a-b9c75fac6197}"/>
@@ -333,7 +336,7 @@
             <destination>{534df30e-bc7f-4391-8d2a-c6a18e76a7b7}</destination>
         </relationship>
     </object>
-    <object class="RandomizerModulator" id="{f135ec3a-8e5a-4623-8aac-b0754b231a6f}">
+    <object class="RandomizerModulator" id="{4bb22bc7-9d08-4ba8-8826-648827743083}">
         <property name="nameOfPropertyBeingModulated">
             <value>wetLevel</value>
         </property>
