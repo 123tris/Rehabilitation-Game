@@ -26,7 +26,7 @@ public class Bumper_placer : MonoBehaviour
     // public ChangeBumperAndBoardSize c_b_b;
     [Header("Misc")]
     public GameObject[] bumpers;
-    [HideInInspector] public float timer = 5;
+    public float timer;
 
     public float horizontalSpacing;
     public float verticalSpacing;
@@ -82,6 +82,7 @@ public class Bumper_placer : MonoBehaviour
 
     public void LevelUpTile()
     {
+        Debug.Log("what");
         if (testBumpersToSpawn < 7)
             testBumpersToSpawn += 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
