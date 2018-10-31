@@ -103,6 +103,11 @@ public class Ball_Spawn : MonoBehaviour
     public void SpawnArrow(Transform parent)
     {
         instantiatedArrow = Instantiate(arrow, parent);
+        for (int i = 0; i < b_p.board.GetLength(0) - 5; i++)
+        {
+            arrowPosition += Vector3.back * 0.5f;
+            arrowPosition += Vector3.left * 0.5f;
+        }
         instantiatedArrow.transform.position = arrowPosition;
         instantiatedArrow.transform.rotation = Quaternion.Euler(arrowRotation);
     }

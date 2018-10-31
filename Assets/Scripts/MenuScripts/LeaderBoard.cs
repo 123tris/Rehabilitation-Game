@@ -23,7 +23,7 @@ public class Data
 {
     public List<User> users;
 }
-    
+
 public class LeaderBoard : MonoBehaviour
 {
     [SerializeField] private Text[] scoreTexts = new Text[3];
@@ -62,7 +62,7 @@ public class LeaderBoard : MonoBehaviour
             Debug.LogWarning(e);
         }
         if (data == null)
-            data = new Data {users = new List<User>()};
+            data = new Data { users = new List<User>() };
 
         return data;
     }
@@ -95,7 +95,9 @@ public class LeaderBoard : MonoBehaviour
 
     public static void AddScore(string userName, int difficulty, int score)
     {
-        User user = data.users.First(user1 => user1.name == userName);
+        User user = null;
+        if (data.users.Count != 0)
+            user = data.users.First(user1 => user1.name == userName);
         if (user == null)
             user = AddUser(userName);
 
@@ -161,7 +163,7 @@ public class LeaderBoard : MonoBehaviour
             {
                 Text scoreText = scoreTexts[i];
                 scoreText.text = "";
-                foreach (var score in GetAllScores(difficulty: i+1))
+                foreach (var score in GetAllScores(difficulty: i + 1))
                     scoreText.text += score.Key + ": " + score.Value + "\n";
             }
         }
@@ -182,8 +184,8 @@ class LeaderBoardEditor : UnityEditor.Editor
         if (GUILayout.Button("Add random user") && nameToAdd != "")
         {
             User user = LeaderBoard.AddUser(nameToAdd);
-            
-            for(int i = 0; i < 5; i++)
+
+            for (int i = 0; i < 5; i++)
                 user.easyScores.Add(UnityEngine.Random.Range(0, 1000));
             for (int i = 0; i < 5; i++)
                 user.mediumScores.Add(UnityEngine.Random.Range(0, 1000));

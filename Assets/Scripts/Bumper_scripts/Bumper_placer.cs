@@ -26,7 +26,7 @@ public class Bumper_placer : MonoBehaviour
     // public ChangeBumperAndBoardSize c_b_b;
     [Header("Misc")]
     public GameObject[] bumpers;
-    [HideInInspector] public float timer = 5;
+    public float timer;
 
     public float horizontalSpacing;
     public float verticalSpacing;
@@ -78,39 +78,6 @@ public class Bumper_placer : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(1);
         }
-    }
-
-    public void LevelUpTile()
-    {
-        if (testBumpersToSpawn < 7)
-            testBumpersToSpawn += 1;
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
-    }
-
-    public void LevelUpBoard()
-    {
-        if (testBumpersToSpawn < 7)
-            testBumpersToSpawn += 1;
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
-        if (boardSize < 5 + 2)
-            boardSize += 1;
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", boardSize);
-    }
-    public void LevelDownTile()
-    {
-        if (testBumpersToSpawn > 1)
-            testBumpersToSpawn -= 1;
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
-    }
-
-    public void LevelDownBoard()
-    {
-        if (testBumpersToSpawn > 1)
-            testBumpersToSpawn -= 1;
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
-        if (boardSize > 5)
-            boardSize -= 1;
-        PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BoardSize", boardSize);
     }
 
     void GenerateBumpers(int bumperAmount)

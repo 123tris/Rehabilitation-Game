@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <users>
+    <User>
+      <name>Test</name>
+      <easyScores />
+      <mediumScores />
+      <hardScores />
+    </User>
+    <User>
+      <name>Test</name>
+      <easyScores />
+      <mediumScores />
+      <hardScores />
+    </User>
+    <User>
+      <name>Test</name>
+      <easyScores />
+      <mediumScores />
+      <hardScores />
+    </User>
+    <User>
+      <name>Test</name>
+      <easyScores />
+      <mediumScores />
+      <hardScores />
+    </User>
+    <User>
+      <name>Test</name>
+      <easyScores>
+        <int>866</int>
+        <int>284</int>
+        <int>787</int>
+        <int>138</int>
+        <int>79</int>
+      </easyScores>
+      <mediumScores>
+        <int>114</int>
+        <int>185</int>
+        <int>42</int>
+        <int>165</int>
+        <int>731</int>
+      </mediumScores>
+      <hardScores>
+        <int>560</int>
+        <int>797</int>
+        <int>950</int>
+        <int>717</int>
+        <int>455</int>
+      </hardScores>
+    </User>
+    <User>
+      <name>Bla</name>
+      <easyScores>
+        <int>689</int>
+        <int>446</int>
+        <int>20</int>
+        <int>753</int>
+        <int>394</int>
+      </easyScores>
+      <mediumScores>
+        <int>997</int>
+        <int>547</int>
+        <int>345</int>
+        <int>815</int>
+        <int>191</int>
+      </mediumScores>
+      <hardScores>
+        <int>646</int>
+        <int>747</int>
+        <int>328</int>
+        <int>527</int>
+        <int>654</int>
+      </hardScores>
+    </User>
+    <User>
+      <name>Test</name>
+      <easyScores>
+        <int>16</int>
+        <int>422</int>
+        <int>175</int>
+        <int>670</int>
+        <int>715</int>
+      </easyScores>
+      <mediumScores>
+        <int>26</int>
+        <int>921</int>
+        <int>615</int>
+        <int>291</int>
+        <int>499</int>
+      </mediumScores>
+      <hardScores>
+        <int>727</int>
+        <int>396</int>
+        <int>13</int>
+        <int>104</int>
+        <int>55</int>
+      </hardScores>
+    </User>
+    <User>
+      <name>OMG</name>
+      <easyScores>
+        <int>931</int>
+        <int>140</int>
+        <int>214</int>
+        <int>51</int>
+        <int>94</int>
+      </easyScores>
+      <mediumScores>
+        <int>899</int>
+        <int>573</int>
+        <int>10</int>
+        <int>278</int>
+        <int>93</int>
+      </mediumScores>
+      <hardScores>
+        <int>186</int>
+        <int>571</int>
+        <int>85</int>
+        <int>446</int>
+        <int>994</int>
+      </hardScores>
+    </User>
+    <User>
+      <name>Asdf</name>
+      <easyScores>
+        <int>624</int>
+        <int>526</int>
+        <int>729</int>
+        <int>322</int>
+        <int>71</int>
+      </easyScores>
+      <mediumScores>
+        <int>963</int>
+        <int>386</int>
+        <int>448</int>
+        <int>472</int>
+        <int>471</int>
+      </mediumScores>
+      <hardScores>
+        <int>779</int>
+        <int>58</int>
+        <int>711</int>
+        <int>676</int>
+        <int>340</int>
+      </hardScores>
+    </User>
+    <User>
+      <name>BL</name>
+      <easyScores />
+      <mediumScores />
+      <hardScores />
+    </User>
+    <User>
+      <name>Test1</name>
+      <easyScores />
+      <mediumScores />
+      <hardScores />
+    </User>
+  </users>
+</Data>

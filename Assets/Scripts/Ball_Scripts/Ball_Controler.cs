@@ -143,24 +143,25 @@ public class Ball_Controler : MonoBehaviour
             {
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
                 instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
+                p_s.AddPoints();
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 20, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
-                p_s.spawnSmall = instantiatedObject;
-                p_s.AddPoints();
+                Destroy(boardToDelete);
+                Destroy(gameObject);
             }
             else
             {
+                Debug.Log("shot");
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
                 instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
+                p_s.AddPoints();
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 28, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
-                p_s.spawnBig = instantiatedObject;
-                p_s.AddPoints();
+                Destroy(boardToDelete);
+                Destroy(gameObject);
             }
           //  instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
-            Destroy(boardToDelete);
 
-            Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Outer" && spawned == true)
         {
@@ -178,24 +179,25 @@ public class Ball_Controler : MonoBehaviour
             {
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
                 instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
+                p_s.Missed();
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 20, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
-                p_s.spawnSmall = instantiatedObject;
-                p_s.Missed();
+                Destroy(gameObject);
             }
             else
             {
+                Debug.Log("miss");
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
                 instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
+                p_s.Missed();
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 28, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
-                p_s.spawnBig = instantiatedObject;
-                p_s.Missed();
+                Destroy(boardToDelete);
+                Destroy(gameObject);
             }
            // instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
 
-            Destroy(boardToDelete);
-            Destroy(gameObject);
+           
         }
     }
 }

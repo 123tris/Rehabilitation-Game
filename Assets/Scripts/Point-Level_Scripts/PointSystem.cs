@@ -10,35 +10,31 @@ public class PointSystem : MonoBehaviour
     public Text points_Var;
 
     [Header("Objects")]
-    public GameObject spawnSmall, spawnBig;
+    public Leveler leveler;
 
     [Header("Scores")]
-    public int score;
-    public int targetScore;
+    public int score = 0;
+    public int targetScore = 0;
     public int pointSlider;
 
-    public void LoadScore()
-    {
-        score = 0;
-        targetScore = 0;
-    }
     public void AddPoints()
     {
         pointSlider = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "PointAmount");
-        score += 100 * (targetScore + 1);
+        if (targetScore <= 16)
         targetScore += 1;
+        score += 100 * (targetScore + 1);
         points_Var.text = score.ToString();
+        Debug.Log(targetScore);
         // PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
         //PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
         if (targetScore == 2 + (1 * pointSlider) || targetScore == 6 + (1 * pointSlider) || targetScore == 10 + (1 * pointSlider) || targetScore == 12 + (1 * pointSlider))
         {
-            spawnSmall.GetComponent<Bumper_placer>().LevelUpTile();
-            spawnBig.GetComponent<Bumper_placer>().LevelUpTile();
+            Debug.Log("test");
+            leveler.LevelDownTile();
         }
         else if (targetScore == 4 + (1 * pointSlider) || targetScore == 8 + (1 * pointSlider))
         {
-            spawnSmall.GetComponent<Bumper_placer>().LevelUpBoard();
-            spawnBig.GetComponent<Bumper_placer>().LevelUpBoard();
+            leveler.LevelUpBoard();
         }
     }
 
@@ -50,13 +46,11 @@ public class PointSystem : MonoBehaviour
         //PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
         if (targetScore == 1 + (1 * pointSlider) || targetScore == 5 + (1 * pointSlider) || targetScore == 9 + (1 * pointSlider) || targetScore == 11 + (1 * pointSlider))
         {
-            spawnSmall.GetComponent<Bumper_placer>().LevelDownTile();
-            spawnBig.GetComponent<Bumper_placer>().LevelDownTile();
+            leveler.LevelDownTile();
         }
         else if (targetScore == 3 + (1 * pointSlider) || targetScore == 7 + (1 * pointSlider))
         {
-            spawnSmall.GetComponent<Bumper_placer>().LevelDownBoard();
-            spawnBig.GetComponent<Bumper_placer>().LevelDownBoard();
+            leveler.LevelDownBoard();
         }
     }
 

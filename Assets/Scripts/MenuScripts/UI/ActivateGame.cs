@@ -29,6 +29,7 @@ public class ActivateGame : Button_3D
         spawnSmall = GameObject.FindGameObjectWithTag("SpawnerKlein");
         spawnBig = GameObject.FindGameObjectWithTag("SpawnerBig");
         panelToDisable.SetActive(false);
+        StartGame.SetActive(true);
         if (c_p_b.isBoardSmall == true)
         {
             spawnSmall.GetComponent<Bumper_placer>().enabled = true;
