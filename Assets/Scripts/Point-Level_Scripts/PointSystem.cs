@@ -24,13 +24,11 @@ public class PointSystem : MonoBehaviour
         targetScore += 1;
         score += 100 * (targetScore + 1);
         points_Var.text = score.ToString();
-        Debug.Log(targetScore);
         // PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "Score", score);
         //PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "TargetScore", targetScore);
         if (targetScore == 2 + (1 * pointSlider) || targetScore == 6 + (1 * pointSlider) || targetScore == 10 + (1 * pointSlider) || targetScore == 12 + (1 * pointSlider))
         {
-            Debug.Log("test");
-            leveler.LevelDownTile();
+            leveler.LevelUpTile();
         }
         else if (targetScore == 4 + (1 * pointSlider) || targetScore == 8 + (1 * pointSlider))
         {

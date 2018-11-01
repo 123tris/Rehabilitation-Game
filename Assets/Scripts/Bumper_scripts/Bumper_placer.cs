@@ -59,7 +59,7 @@ public class Bumper_placer : MonoBehaviour
         RandomizeBall();
         b_m.SetBoardPosition();
         b_m.BuildBoard();
-        testBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
+        testBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount");
         timer = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "TimerTime");
         GenerateBumpers(testBumpersToSpawn);
     }

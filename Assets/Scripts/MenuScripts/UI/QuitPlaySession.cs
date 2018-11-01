@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuitPlaySession : Button_3D
 {
@@ -12,6 +13,8 @@ public class QuitPlaySession : Button_3D
     public GameObject bigBoardToSpawn;
     public ChangePlayBoardSize c_p_b;
     [HideInInspector] public GameObject smallGameBoard, bigGameBoard;
+    public PointSystem pointSystem;
+    public Text points_Var;
 
     void Start()
     {
@@ -28,6 +31,8 @@ public class QuitPlaySession : Button_3D
 
         panelToDisable.SetActive(false);
         panelToEnable.SetActive(true);
+        pointSystem.score = 0;
+        points_Var.text = "0";
         if (c_p_b.isBoardSmall == true)
         {
             boardToDeleteSmall = GameObject.FindGameObjectWithTag("SpawnerKlein");

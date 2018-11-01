@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4011682533119326}
   - component: {fileID: 33083963826727512}
   - component: {fileID: 23234440429773758}
+  - component: {fileID: 114551942174989758}
   m_Layer: 0
   m_Name: Decor
   m_TagString: Untagged
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1876968576731008}
   m_LocalRotation: {x: -0.012651579, y: -0.0055039125, z: 0.00006141258, w: -0.9999049}
-  m_LocalPosition: {x: -6.035493, y: -19.975992, z: 7.2584443}
+  m_LocalPosition: {x: -0.33484268, y: -19.8224, z: 0.62345123}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4011682533119326}
@@ -209,6 +210,17 @@ MonoBehaviour:
   bigGameBoard: {fileID: 0}
   boardToDelete: {fileID: 0}
   vertical: 0
+--- !u!114 &114551942174989758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1463769903258598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4535f0fb56093ea47a9afee67ab64d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135928029984589966
 SphereCollider:
   m_ObjectHideFlags: 1

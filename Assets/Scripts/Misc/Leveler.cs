@@ -11,7 +11,6 @@ public class Leveler : MonoBehaviour
     public void LevelUpTile()
     {
         testBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount");
-        Debug.Log("what");
         if (testBumpersToSpawn < 7)
             testBumpersToSpawn += 1;
         PlayerPrefs.SetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount", testBumpersToSpawn);
@@ -29,6 +28,7 @@ public class Leveler : MonoBehaviour
     }
     public void LevelDownTile()
     {
+
         testBumpersToSpawn = PlayerPrefs.GetInt("User_" + PlayerPrefs.GetString("User") + "BumperAmount");
         if (testBumpersToSpawn > 1)
             testBumpersToSpawn -= 1;
