@@ -129,6 +129,7 @@ public class Ball_Controler : MonoBehaviour
     {
         if (collision.gameObject.name == "target" && spawned == true)
         {
+            p_s.AddPoints();
             GameObject instantiatedObject;
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
@@ -143,7 +144,6 @@ public class Ball_Controler : MonoBehaviour
             {
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
                 instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
-                p_s.AddPoints();
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 20, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
                 Destroy(boardToDelete);
@@ -154,17 +154,17 @@ public class Ball_Controler : MonoBehaviour
                 Debug.Log("shot");
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
                 instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
-                p_s.AddPoints();
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 28, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
                 Destroy(boardToDelete);
                 Destroy(gameObject);
             }
-          //  instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
+            //  instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
 
         }
         else if (collision.gameObject.tag == "Outer" && spawned == true)
         {
+            p_s.Missed();
             GameObject instantiatedObject;
             GetComponent<MeshRenderer>().enabled = false;
             sCollider.enabled = false;
@@ -179,7 +179,6 @@ public class Ball_Controler : MonoBehaviour
             {
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
                 instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
-                p_s.Missed();
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 20, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
                 Destroy(gameObject);
@@ -189,15 +188,14 @@ public class Ball_Controler : MonoBehaviour
                 Debug.Log("miss");
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
                 instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
-                p_s.Missed();
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 28, 70.26167f);
                 instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
                 Destroy(boardToDelete);
                 Destroy(gameObject);
             }
-           // instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
+            // instantiatedObject.transform.localPosition = boardToDelete.transform.localPosition;
 
-           
+
         }
     }
 }

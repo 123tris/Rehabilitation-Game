@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiffucultyGiver : Button_3D {
+public class DiffucultyGiver : MonoBehaviour {
 
     public GetScore getScore;
 
