@@ -273,6 +273,7 @@ public class Bumper_placer : MonoBehaviour
         GameObject instantiatedBumper = Instantiate(bumpers[isBumper1 ? 0 : 1], transform);
         spawnedBumpers.Add(instantiatedBumper);
         instantiatedBumper.transform.position = position;
+        instantiatedBumper.transform.position += new Vector3(0, -0.275f, 0);
         instantiatedBumper.transform.rotation = isBumper1 ? Quaternion.Euler(new Vector3(0, -45, 0)) : Quaternion.Euler(new Vector3(0, 45, 0));
     }
 
