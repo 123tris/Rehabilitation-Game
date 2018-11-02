@@ -134,6 +134,9 @@
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{6bb35496-95d4-472b-be52-f316e6128ed9}">
+        <property name="volume">
+            <value>-23.5</value>
+        </property>
         <relationship name="effectChain">
             <destination>{256c8a4d-8e30-4cd7-8ea0-6a84653f41a7}</destination>
         </relationship>
@@ -433,7 +436,11 @@
             <destination>{36e0968d-d703-4b75-8192-abc6b91fb0fd}</destination>
         </relationship>
     </object>
-    <object class="MixerBusPanner" id="{c73ed298-623d-48b8-9a89-335682531f43}"/>
+    <object class="MixerBusPanner" id="{c73ed298-623d-48b8-9a89-335682531f43}">
+        <property name="stereoPan">
+            <value>60</value>
+        </property>
+    </object>
     <object class="FadeCurve" id="{c62e332c-ddcc-4896-b7df-e31411aa20c8}">
         <relationship name="startPoint">
             <destination>{c52778b8-c1ff-4523-b722-1c97a559c03d}</destination>
@@ -447,7 +454,11 @@
             <destination>{4f588322-af93-4f40-8f42-0f883d97b876}</destination>
         </relationship>
     </object>
-    <object class="MixerBusPanner" id="{abd7503c-c9a0-4443-9de4-b1f757a823cf}"/>
+    <object class="MixerBusPanner" id="{abd7503c-c9a0-4443-9de4-b1f757a823cf}">
+        <property name="stereoPan">
+            <value>60</value>
+        </property>
+    </object>
     <object class="ParameterCondition" id="{5e5a475a-5211-4df7-8117-29f4e46f5d26}">
         <property name="minimum">
             <value>0</value>
@@ -527,7 +538,7 @@
             <value>0</value>
         </property>
         <property name="curveShape">
-            <value>-0.61356169</value>
+            <value>-1.00000048</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{6bc7844d-e189-4808-9d8f-54e6d0e56252}">
@@ -547,7 +558,7 @@
             <value>1</value>
         </property>
         <property name="curveShape">
-            <value>-0.592723727</value>
+            <value>-1.00000048</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{65ab754c-e044-48e8-9f21-5f3524d843a3}">

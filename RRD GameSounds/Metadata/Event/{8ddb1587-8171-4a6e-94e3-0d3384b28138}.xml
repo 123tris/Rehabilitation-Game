@@ -76,7 +76,7 @@
     </object>
     <object class="EventMixerMaster" id="{20e761d4-a83f-45b7-9ddc-2965c06cfcb1}">
         <property name="volume">
-            <value>-5</value>
+            <value>-2</value>
         </property>
         <relationship name="effectChain">
             <destination>{78c4b343-c769-4832-acd1-4d3dd473d6c6}</destination>
@@ -98,6 +98,12 @@
         <property name="length">
             <value>0.8571428571428571</value>
         </property>
+        <property name="pitch">
+            <value>1.80000007</value>
+        </property>
+        <relationship name="modulators">
+            <destination>{066b60f3-bd2f-46ed-9501-eef29ee0f8d0}</destination>
+        </relationship>
         <relationship name="audioFile">
             <destination>{617f35ce-cb09-4f2b-b067-7bdcae646fd0}</destination>
         </relationship>
@@ -124,13 +130,45 @@
     </object>
     <object class="MixerBusPanner" id="{84414604-df01-4e96-b5bf-d29f5cc8e323}"/>
     <object class="MixerBusFader" id="{fa1195e5-539a-4d27-a153-6b231a2ee8e3}"/>
+    <object class="RandomizerModulator" id="{066b60f3-bd2f-46ed-9501-eef29ee0f8d0}">
+        <property name="nameOfPropertyBeingModulated">
+            <value>pitch</value>
+        </property>
+        <property name="amount">
+            <value>8.5</value>
+        </property>
+    </object>
     <object class="MixerBusEffectChain" id="{651c479e-b887-41fa-9c03-512447258f44}">
         <relationship name="effects">
             <destination>{458ba661-3048-406b-bd8a-134142c59060}</destination>
+            <destination>{10a0d51a-2e5c-4059-8931-ebeb293bb8bb}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{e36d17ac-ed20-4177-bcc2-d8057d4221f0}"/>
     <object class="MixerBusFader" id="{5fd137d3-164f-4212-8145-48f33ce1bfdf}"/>
     <object class="SpatialiserEffect" id="{45612ca2-752d-4149-a4c7-1629e0a2a98c}"/>
     <object class="MixerBusFader" id="{458ba661-3048-406b-bd8a-134142c59060}"/>
+    <object class="SFXReverbEffect" id="{10a0d51a-2e5c-4059-8931-ebeb293bb8bb}">
+        <property name="earlyDelay">
+            <value>68</value>
+        </property>
+        <property name="lateDelay">
+            <value>100</value>
+        </property>
+        <property name="HFDecayRatio">
+            <value>21</value>
+        </property>
+        <property name="diffusion">
+            <value>27</value>
+        </property>
+        <property name="highCut">
+            <value>4200</value>
+        </property>
+        <property name="earlyLateMix">
+            <value>82</value>
+        </property>
+        <property name="wetLevel">
+            <value>-9</value>
+        </property>
+    </object>
 </objects>
