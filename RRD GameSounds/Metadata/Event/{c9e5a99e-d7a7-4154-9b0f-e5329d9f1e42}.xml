@@ -76,7 +76,7 @@
     </object>
     <object class="EventMixerMaster" id="{aaa448be-4e90-402b-b1d8-384ef56c0623}">
         <property name="volume">
-            <value>-0.5</value>
+            <value>-2</value>
         </property>
         <relationship name="effectChain">
             <destination>{8e30cc55-9ced-4206-b6cb-c29f4986b154}</destination>
@@ -128,6 +128,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{d79eb112-7860-4349-b50c-58f6c6eb8f55}">
+        <property name="volume">
+            <value>6</value>
+        </property>
         <property name="name">
             <value>Audio 1</value>
         </property>
@@ -300,7 +303,20 @@
             <destination>{70807b10-947c-4ab1-a1dd-cd90bf0d5263}</destination>
         </relationship>
     </object>
-    <object class="MixerBusPanner" id="{efcb1cab-01c8-4aad-8add-419a5df4f8ac}"/>
+    <object class="MixerBusPanner" id="{efcb1cab-01c8-4aad-8add-419a5df4f8ac}">
+        <property name="stereoPan">
+            <value>-48</value>
+        </property>
+        <property name="overridingOutputFormat">
+            <value>1</value>
+        </property>
+        <property name="outputFormatOverridden">
+            <value>true</value>
+        </property>
+        <relationship name="modulators">
+            <destination>{d99ff432-c615-4430-8fa4-be3492cd1350}</destination>
+        </relationship>
+    </object>
     <object class="MixerBusFader" id="{1188504b-c38d-4e74-b3b5-8ad1cbb73622}"/>
     <object class="SpatialiserEffect" id="{ccd7b834-0235-4d5c-bdef-fd6ec91efe3e}"/>
     <object class="SFXReverbEffect" id="{88288909-c274-43b3-85c8-a1b66e1d2ca9}">
@@ -328,9 +344,6 @@
     </object>
     <object class="MixerBusFader" id="{a5733c24-1564-49b6-88ec-8229cadd5c05}"/>
     <object class="ThreeEQEffect" id="{e2b326e9-1dd8-4b2e-9179-3315a0268490}">
-        <property name="highGain">
-            <value>-24.5</value>
-        </property>
         <relationship name="modulators">
             <destination>{34b3c1cd-7be5-409b-bcd2-4918f407e49a}</destination>
             <destination>{5f3ceeb6-7fa3-48f2-ae00-d0a9089fcccd}</destination>
@@ -350,6 +363,11 @@
             <destination>{a96b62b9-0db9-4eac-8376-284ce3fe65e0}</destination>
             <destination>{72cf38d2-149f-41e0-9437-891ff8c10d21}</destination>
         </relationship>
+    </object>
+    <object class="RandomizerModulator" id="{d99ff432-c615-4430-8fa4-be3492cd1350}">
+        <property name="nameOfPropertyBeingModulated">
+            <value>stereoPan</value>
+        </property>
     </object>
     <object class="RandomizerModulator" id="{8e263bcf-a14e-4fdc-8a41-af895e8c0452}">
         <property name="nameOfPropertyBeingModulated">

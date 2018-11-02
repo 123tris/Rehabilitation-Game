@@ -34,11 +34,13 @@ public class ActivateGame : Button_3D
         {
             spawnSmall.GetComponent<Bumper_placer>().enabled = true;
             b_f_Small.GameStart();
+            mController.GameStarted();
         }
         else
         {
             spawnBig.GetComponent<Bumper_placer>().enabled = true;
             b_f_Big.GameStart();
+            mController.GameStarted();
         }
     }
 }
