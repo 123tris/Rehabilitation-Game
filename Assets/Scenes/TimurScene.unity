@@ -3227,6 +3227,120 @@ Prefab:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 930414689}
+    - target: {fileID: 114065269984991710, guid: 64a547837d5e7254aabc0cd719755ea9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95166211611315066, guid: 64a547837d5e7254aabc0cd719755ea9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576847703169498, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_TagString
+      value: BigGameBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582414952144850, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582414952144850, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582414952144850, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582414952144850, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582414952144850, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208117948243690, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208117948243690, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208117948243690, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208117948243690, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208117948243690, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582414952144850, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208117948243690, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352085992653452, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325057272804914, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114720579199304924, guid: 64a547837d5e7254aabc0cd719755ea9,
+        type: 2}
+      propertyPath: smallBoardToSpawn
+      value: 
+      objectReference: {fileID: 1986891294913532, guid: 983ea50509e327d45991701e58b5f9b6,
+        type: 2}
+    - target: {fileID: 114720579199304924, guid: 64a547837d5e7254aabc0cd719755ea9,
+        type: 2}
+      propertyPath: bigBoardToSpawn
+      value: 
+      objectReference: {fileID: 1792254155884518, guid: 3393aa7dd86a6ae47a29c85f2b096973,
+        type: 2}
+    - target: {fileID: 114065269984991710, guid: 64a547837d5e7254aabc0cd719755ea9,
+        type: 2}
+      propertyPath: bigBoardToSpawn
+      value: 
+      objectReference: {fileID: 1792254155884518, guid: 3393aa7dd86a6ae47a29c85f2b096973,
+        type: 2}
+    - target: {fileID: 114065269984991710, guid: 64a547837d5e7254aabc0cd719755ea9,
+        type: 2}
+      propertyPath: smallBoardToSpawn
+      value: 
+      objectReference: {fileID: 1986891294913532, guid: 983ea50509e327d45991701e58b5f9b6,
+        type: 2}
+    - target: {fileID: 4572589508371612, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572589508371612, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572589508371612, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572589508371612, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.00000028088027
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572589508371612, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a547837d5e7254aabc0cd719755ea9, type: 2}
   m_IsPrefabAsset: 0
@@ -4286,8 +4400,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  boardToDeleteSmall: {fileID: 0}
-  boardToDeleteBig: {fileID: 0}
+  boardToDelete: {fileID: 0}
   panelToEnable: {fileID: 948395571}
   panelToDisable: {fileID: 796887971}
   smallBoardToSpawn: {fileID: 1986891294913532, guid: 983ea50509e327d45991701e58b5f9b6,
@@ -4297,6 +4410,8 @@ MonoBehaviour:
   c_p_b: {fileID: 1465951633}
   smallGameBoard: {fileID: 0}
   bigGameBoard: {fileID: 0}
+  b_f_t_Small: {fileID: 0}
+  b_f_t_Big: {fileID: 0}
   pointSystem: {fileID: 47881555}
   points_Var: {fileID: 884209953}
 --- !u!65 &324716606
@@ -4383,6 +4498,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d28a8caa8b5fa1140a3d71d062fd01e4,
     type: 3}
   m_PrefabInternal: {fileID: 2092177829}
+--- !u!1 &335434935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1730632885824310, guid: 64a547837d5e7254aabc0cd719755ea9,
+    type: 2}
+  m_PrefabInternal: {fileID: 248917836}
 --- !u!4 &338606612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: aaf43210396d14744b3a6179baad6291,
@@ -12046,6 +12166,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d71a3cd4df38c644ba8680e05fd3c27a,
     type: 3}
   m_PrefabInternal: {fileID: 1958400947}
+--- !u!1 &1007759602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1875751943744756, guid: 64a547837d5e7254aabc0cd719755ea9,
+    type: 2}
+  m_PrefabInternal: {fileID: 248917836}
 --- !u!1 &1013733210
 GameObject:
   m_ObjectHideFlags: 0
@@ -13761,8 +13886,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  spawnBig: {fileID: 0}
-  spawnSmall: {fileID: 0}
+  spawnBig: {fileID: 335434935}
+  spawnSmall: {fileID: 1007759602}
   StartGame: {fileID: 1264985306}
   panelToDisable: {fileID: 1758640153}
   c_p_b: {fileID: 1465951633}
@@ -18574,8 +18699,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  spawnBig: {fileID: 0}
-  spawnSmall: {fileID: 0}
+  spawnBig: {fileID: 335434935}
+  spawnSmall: {fileID: 1007759602}
   StartGame: {fileID: 1264985306}
   panelToDisable: {fileID: 1758640153}
   c_p_b: {fileID: 1465951633}
@@ -19011,8 +19136,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  spawnBig: {fileID: 0}
-  spawnSmall: {fileID: 0}
+  spawnBig: {fileID: 335434935}
+  spawnSmall: {fileID: 1007759602}
   StartGame: {fileID: 1264985306}
   panelToDisable: {fileID: 1758640153}
   c_p_b: {fileID: 1465951633}
