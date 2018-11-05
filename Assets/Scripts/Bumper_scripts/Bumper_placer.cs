@@ -64,7 +64,7 @@ public class Bumper_placer : MonoBehaviour
         GenerateBumpers(testBumpersToSpawn);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         timer -= Time.deltaTime;
 
@@ -72,11 +72,6 @@ public class Bumper_placer : MonoBehaviour
         {
             DisableBumperRenderers();
             b_s.SpawnArrow(transform);
-        }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
         }
     }
 
