@@ -4239,6 +4239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: event:/Music/Music
   Bar: event:/Ambiance/Bar
+  ChantDissapointedSound: event:/Ambiance/Wrong
+  ChantCheeringSound: event:/Ambiance/Correct
 --- !u!4 &318295027
 Transform:
   m_ObjectHideFlags: 0

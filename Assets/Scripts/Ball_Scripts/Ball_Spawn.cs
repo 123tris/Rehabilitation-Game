@@ -76,13 +76,13 @@ public class Ball_Spawn : MonoBehaviour
 
         if (right == true)
         {
-            rend = target.GetComponent<Renderer>();
+            // rend = target.GetComponent<Renderer>();
             rend.sharedMaterial = right_mat;
         }
 
         if (wrong == true)
         {
-            rend = target.GetComponent<Renderer>();
+            // rend = target.GetComponent<Renderer>();
             rend.sharedMaterial = wrong_mat;
         }
     }
