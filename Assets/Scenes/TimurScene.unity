@@ -2803,6 +2803,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1758640153}
   panelToDisable: {fileID: 1612743599}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &233594863
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3643,6 +3644,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1445754169}
   panelToDisable: {fileID: 796887971}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &272359934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5402,6 +5404,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1156578162}
   panelToDisable: {fileID: 55494422}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &400527780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7870,6 +7873,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1233657241}
   panelToDisable: {fileID: 1156578162}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &608739656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8388,6 +8392,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 55494422}
   panelToDisable: {fileID: 1156578162}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &647149614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9521,6 +9526,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 55494422}
   panelToDisable: {fileID: 58774611}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &731868051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9822,6 +9828,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1612743599}
   panelToDisable: {fileID: 1758640153}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &758567620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11481,6 +11488,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1233657241}
   panelToDisable: {fileID: 55494422}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &939644456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12334,6 +12342,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1048707357}
   panelToDisable: {fileID: 1366174058}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1019321592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13361,6 +13370,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 55494422}
   panelToDisable: {fileID: 1233657241}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1102120453
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14387,6 +14397,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1156578162}
   panelToDisable: {fileID: 1233657241}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1151289582
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15044,6 +15055,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 293174637}
   panelToDisable: {fileID: 1758640153}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1178483550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16815,6 +16827,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1156578162}
   panelToDisable: {fileID: 58774611}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!1001 &1340518202
 Prefab:
   m_ObjectHideFlags: 0
@@ -16964,6 +16977,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1758640153}
   panelToDisable: {fileID: 948395571}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1346607851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25487,6 +25501,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 796887971}
   panelToDisable: {fileID: 1445754169}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1622444356
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26635,6 +26650,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1048707357}
   panelToDisable: {fileID: 1758640153}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1701875697
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27599,6 +27615,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 58774611}
   panelToDisable: {fileID: 1233657241}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1779494809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28438,6 +28455,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 58774611}
   panelToDisable: {fileID: 55494422}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1818356999
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28907,6 +28925,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 58774611}
   panelToDisable: {fileID: 1156578162}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1835884529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29030,6 +29049,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1048707357}
   panelToDisable: {fileID: 1490895411}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1839763490
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29158,6 +29178,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1233657241}
   panelToDisable: {fileID: 58774611}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1846700853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29459,6 +29480,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1490895411}
   panelToDisable: {fileID: 1048707357}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1868321495
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30642,6 +30664,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1366174058}
   panelToDisable: {fileID: 1048707357}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &1972014143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32746,6 +32769,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1758640153}
   panelToDisable: {fileID: 293174637}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Switch
 --- !u!65 &2114276993
 BoxCollider:
   m_ObjectHideFlags: 0
