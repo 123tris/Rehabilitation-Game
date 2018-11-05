@@ -41,9 +41,17 @@ public class Ball_Controler : MonoBehaviour
     [FMODUnity.EventRef]
     public string ChantCheeringSound = "event:/Ambiance/Correct";
 
-
     [FMODUnity.EventRef]
     public string RollingSound = "event:/Ball/Rolling";
+
+    string ballEffectsString = "vca:/BallFX";
+
+    string masterBusString = "Bus:/";
+    FMOD.Studio.Bus masterBus;
+
+    
+
+    FMOD.Studio.VCA BallEffects;
 
     FMOD.Studio.EventInstance RollingEv;
 
@@ -59,6 +67,9 @@ public class Ball_Controler : MonoBehaviour
 
     private void Start()
     {
+        masterBus = FMODUnity.RuntimeManager.GetBus(masterBusString);
+        BallEffects = FMODUnity.RuntimeManager.GetVCA(ballEffectsString);
+
         sCollider = GetComponent<SphereCollider>();
         // bSP = GameObject.FindGameObjectWithTag("Spawner");
         smallGameBoard = GameObject.FindGameObjectWithTag("SmallGameBoard");
@@ -73,8 +84,10 @@ public class Ball_Controler : MonoBehaviour
         spawned = false;
 
         RollingEv = FMODUnity.RuntimeManager.CreateInstance(RollingSound);
-        RollingEv.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+       
         RollingEv.start();
+
+        BallEffects.setVolume(1);
     }
 
     void FixedUpdate()
@@ -86,11 +99,12 @@ public class Ball_Controler : MonoBehaviour
             vertical = true;
         }
         else
-        {
+        { 
             vertical = false;
         }
 
         transform.Translate(0, 0, speed);
+        RollingEv.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
     }
 
     void OnTriggerEnter(Collider other)
@@ -173,15 +187,15 @@ public class Ball_Controler : MonoBehaviour
             //Fmod-------------------------------------------------------------------------
             FMODUnity.RuntimeManager.PlayOneShot(ChantDissapointedSound, transform.position);
             FMODUnity.RuntimeManager.PlayOneShot(WrongSound, transform.position);
-            FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
+            BallEffects.setVolume(0);
+            
 
             if (c_p_b.isTheBoardSmall == true)
             {
                 boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
                 instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
                 instantiatedObject.transform.localPosition = new Vector3(66.66666f, 20, 70.26167f);
-                instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
-                Destroy(gameObject);
+                BallEffects.setVolume(0);
             }
             else
             {

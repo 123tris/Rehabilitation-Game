@@ -10,6 +10,9 @@ public class SwitchPanel : Button_3D
     [FMODUnity.EventRef]
     public string ClickSound = "event:/Menu/Click";
 
+    [FMODUnity.EventRef]
+    public string BoardSwitchSound = "event:/Menu/Switch";
+
     void Start()
     {
         buttonPressed.AddListener(OnStart);
@@ -18,6 +21,8 @@ public class SwitchPanel : Button_3D
     void OnStart()
     {
         FMODUnity.RuntimeManager.PlayOneShot(ClickSound, transform.position);
+
+        FMODUnity.RuntimeManager.PlayOneShot(BoardSwitchSound, transform.position);
         panelToDisable.SetActive(false);
         panelToEnable.SetActive(true);
     }
