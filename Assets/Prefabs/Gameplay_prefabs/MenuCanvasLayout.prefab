@@ -20385,8 +20385,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  boardToDeleteSmall: {fileID: 0}
-  boardToDeleteBig: {fileID: 0}
+  boardToDelete: {fileID: 0}
   panelToEnable: {fileID: 1722010302873678}
   panelToDisable: {fileID: 1128834444429176}
   smallBoardToSpawn: {fileID: 0}
@@ -20394,6 +20393,8 @@ MonoBehaviour:
   c_p_b: {fileID: 114411460796990538}
   smallGameBoard: {fileID: 0}
   bigGameBoard: {fileID: 0}
+  b_f_t_Small: {fileID: 0}
+  b_f_t_Big: {fileID: 0}
   pointSystem: {fileID: 0}
   points_Var: {fileID: 0}
 --- !u!114 &114196898676457752
