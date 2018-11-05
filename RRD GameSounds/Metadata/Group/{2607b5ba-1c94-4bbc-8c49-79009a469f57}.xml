@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="MixerGroup" id="{2607b5ba-1c94-4bbc-8c49-79009a469f57}">
+        <property name="name">
+            <value>BallFX</value>
+        </property>
+        <relationship name="masters">
+            <destination>{d1b2b965-0f8d-498f-877a-927eb370a66c}</destination>
+        </relationship>
+        <relationship name="effectChain">
+            <destination>{e9afa2a4-bd6a-4e41-bda1-90591921e195}</destination>
+        </relationship>
+        <relationship name="panner">
+            <destination>{bf09e5dc-04b1-438b-bf17-6c5206f86822}</destination>
+        </relationship>
+        <relationship name="output">
+            <destination>{6d85b839-dfb8-4d04-be11-e98afd9dc3a6}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusEffectChain" id="{e9afa2a4-bd6a-4e41-bda1-90591921e195}">
+        <relationship name="effects">
+            <destination>{31017113-0944-46c2-b693-f9d4350448c2}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusPanner" id="{bf09e5dc-04b1-438b-bf17-6c5206f86822}"/>
+    <object class="MixerBusFader" id="{31017113-0944-46c2-b693-f9d4350448c2}"/>
+</objects>
