@@ -10,6 +10,12 @@ public class MusicController : MonoBehaviour {
     [FMODUnity.EventRef]
     public string Bar = "event:/Ambiance/Bar";
 
+    [FMODUnity.EventRef]
+    public string ChantDissapointedSound = "event:/Ambiance/Wrong";
+
+    [FMODUnity.EventRef]
+    public string ChantCheeringSound = "event:/Ambiance/Correct";
+
     FMOD.Studio.EventInstance musicEv;
 
     FMOD.Studio.EventInstance BarEV;
@@ -41,19 +47,38 @@ public class MusicController : MonoBehaviour {
 
            BarEV.start();
 
-           // musicEv = FMODUnity.RuntimeManager.CreateInstance(music);
+            musicEv = FMODUnity.RuntimeManager.CreateInstance(music);
 
-           // musicEv.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+            musicEv.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
 
-            //musicEv.start();
+            musicEv.start();
 
             PlayerPrefsX.SetBool("audiospawned", audioSpawned = true);
         }
+    }
+    private void Update()
+    {
+        Chanting();
+          
     }
 
     public void GameStarted()
     {
         BarEV.setParameterValue("GameStarted", 1f);
-
+        Debug.Log("Gamestarted_bigBoard");
     }	
+
+    public void Chanting()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(ChantCheeringSound, transform.position);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(ChantDissapointedSound, transform.position);
+        }
+       
+    }
 }

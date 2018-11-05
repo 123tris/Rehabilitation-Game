@@ -6,6 +6,6 @@ public class DecorRotator : MonoBehaviour {
 
 
 	void FixedUpdate () {
-        transform.Rotate(Vector3.forward * 6 , Space.World);
+        transform.Rotate(Vector3.forward * 3 , Space.World);
     }
 }

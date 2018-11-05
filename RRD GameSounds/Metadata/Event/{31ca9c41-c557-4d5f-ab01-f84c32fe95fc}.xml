@@ -76,7 +76,7 @@
     </object>
     <object class="EventMixerMaster" id="{88814bf1-54c4-49a4-856c-8fe2ce255a84}">
         <property name="volume">
-            <value>10</value>
+            <value>0.5</value>
         </property>
         <relationship name="effectChain">
             <destination>{2acb5334-d089-4961-a2c2-560dba1a2530}</destination>
@@ -126,6 +126,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{03327f57-01ae-41c0-8e64-9cf9d9472adb}">
+        <property name="volume">
+            <value>6</value>
+        </property>
         <property name="name">
             <value>Audio 1</value>
         </property>
@@ -279,16 +282,23 @@
     </object>
     <object class="MixerBusEffectChain" id="{62bd6fee-b7a5-49e4-8feb-fd0370415748}">
         <relationship name="effects">
-            <destination>{ee2256da-8881-4a4b-a76f-169ef8578f2a}</destination>
+            <destination>{1355b192-a2a9-4b52-b51d-cebb90957ff5}</destination>
             <destination>{85dcc453-8f2f-4ae6-bf9a-b9c75fac6197}</destination>
-            <destination>{ec905901-c675-4a8f-9270-706c98cc3df7}</destination>
-            <destination>{f322a0ee-e752-48cc-adcc-0242ae6a30ff}</destination>
+            <destination>{7417c3e5-a90b-4720-819c-051907bd53e0}</destination>
+            <destination>{136a5467-8797-4139-8170-d1582da252be}</destination>
         </relationship>
     </object>
-    <object class="MixerBusPanner" id="{f47e2504-831d-4cc3-890a-f057e9fdeac0}"/>
+    <object class="MixerBusPanner" id="{f47e2504-831d-4cc3-890a-f057e9fdeac0}">
+        <property name="stereoPan">
+            <value>-74</value>
+        </property>
+        <relationship name="modulators">
+            <destination>{054de8ba-e0bf-4f20-831c-3689671e33ac}</destination>
+        </relationship>
+    </object>
     <object class="MixerBusFader" id="{2e089f14-3d57-450f-86b3-3f81e702dd5a}"/>
     <object class="SpatialiserEffect" id="{a5fe4467-6944-4c9c-98f1-ea7e850d7e5a}"/>
-    <object class="SFXReverbEffect" id="{ee2256da-8881-4a4b-a76f-169ef8578f2a}">
+    <object class="SFXReverbEffect" id="{1355b192-a2a9-4b52-b51d-cebb90957ff5}">
         <property name="decayTime">
             <value>600</value>
         </property>
@@ -302,23 +312,23 @@
             <value>45</value>
         </property>
         <property name="wetLevel">
-            <value>-2</value>
+            <value>0</value>
+        </property>
+        <property name="dryLevel">
+            <value>-15.5</value>
         </property>
         <relationship name="modulators">
-            <destination>{f135ec3a-8e5a-4623-8aac-b0754b231a6f}</destination>
+            <destination>{db1ea060-abaa-4ef2-a884-d0fb2ab01857}</destination>
         </relationship>
     </object>
     <object class="MixerBusFader" id="{85dcc453-8f2f-4ae6-bf9a-b9c75fac6197}"/>
-    <object class="ThreeEQEffect" id="{ec905901-c675-4a8f-9270-706c98cc3df7}">
-        <property name="highGain">
-            <value>-24.5</value>
-        </property>
+    <object class="ThreeEQEffect" id="{7417c3e5-a90b-4720-819c-051907bd53e0}">
         <relationship name="modulators">
-            <destination>{208f6791-7f32-4499-acb2-39f18391bf83}</destination>
-            <destination>{d061acc9-cce3-4a3a-82ed-d1c49983e57f}</destination>
+            <destination>{1be10758-3f55-4705-ba0e-5d385bd9aa4e}</destination>
+            <destination>{9a68561d-a96f-49b0-b8f5-983d6f859cfc}</destination>
         </relationship>
     </object>
-    <object class="ChorusEffect" id="{f322a0ee-e752-48cc-adcc-0242ae6a30ff}">
+    <object class="ChorusEffect" id="{136a5467-8797-4139-8170-d1582da252be}">
         <property name="rate">
             <value>0.0940000042</value>
         </property>
@@ -329,11 +339,16 @@
             <value>16</value>
         </property>
         <relationship name="modulators">
-            <destination>{b5329b48-55be-42b4-bb18-3a9da6e1dd05}</destination>
-            <destination>{534df30e-bc7f-4391-8d2a-c6a18e76a7b7}</destination>
+            <destination>{f253977f-374a-4acf-a7fe-cbd1ea56f199}</destination>
+            <destination>{c3544531-8d4f-4181-a59a-614eb0317f5a}</destination>
         </relationship>
     </object>
-    <object class="RandomizerModulator" id="{f135ec3a-8e5a-4623-8aac-b0754b231a6f}">
+    <object class="RandomizerModulator" id="{054de8ba-e0bf-4f20-831c-3689671e33ac}">
+        <property name="nameOfPropertyBeingModulated">
+            <value>stereoPan</value>
+        </property>
+    </object>
+    <object class="RandomizerModulator" id="{db1ea060-abaa-4ef2-a884-d0fb2ab01857}">
         <property name="nameOfPropertyBeingModulated">
             <value>wetLevel</value>
         </property>
@@ -341,7 +356,7 @@
             <value>28.5</value>
         </property>
     </object>
-    <object class="RandomizerModulator" id="{208f6791-7f32-4499-acb2-39f18391bf83}">
+    <object class="RandomizerModulator" id="{1be10758-3f55-4705-ba0e-5d385bd9aa4e}">
         <property name="nameOfPropertyBeingModulated">
             <value>highGain</value>
         </property>
@@ -349,7 +364,7 @@
             <value>47.5</value>
         </property>
     </object>
-    <object class="RandomizerModulator" id="{d061acc9-cce3-4a3a-82ed-d1c49983e57f}">
+    <object class="RandomizerModulator" id="{9a68561d-a96f-49b0-b8f5-983d6f859cfc}">
         <property name="nameOfPropertyBeingModulated">
             <value>midGain</value>
         </property>
@@ -357,7 +372,7 @@
             <value>18.5</value>
         </property>
     </object>
-    <object class="RandomizerModulator" id="{b5329b48-55be-42b4-bb18-3a9da6e1dd05}">
+    <object class="RandomizerModulator" id="{f253977f-374a-4acf-a7fe-cbd1ea56f199}">
         <property name="nameOfPropertyBeingModulated">
             <value>depth</value>
         </property>
@@ -365,7 +380,7 @@
             <value>46</value>
         </property>
     </object>
-    <object class="RandomizerModulator" id="{534df30e-bc7f-4391-8d2a-c6a18e76a7b7}">
+    <object class="RandomizerModulator" id="{c3544531-8d4f-4181-a59a-614eb0317f5a}">
         <property name="nameOfPropertyBeingModulated">
             <value>mix</value>
         </property>

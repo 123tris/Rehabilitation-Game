@@ -26,19 +26,23 @@ public class ActivateGame : Button_3D
 
     void OnStart()
     {
-        spawnSmall = GameObject.FindGameObjectWithTag("SpawnerKlein");
-        spawnBig = GameObject.FindGameObjectWithTag("SpawnerBig");
         panelToDisable.SetActive(false);
         StartGame.SetActive(true);
         if (c_p_b.isBoardSmall == true)
         {
+            spawnSmall = GameObject.FindGameObjectWithTag("SpawnerKlein");
+
             spawnSmall.GetComponent<Bumper_placer>().enabled = true;
             b_f_Small.GameStart();
+            mController.GameStarted();
         }
         else
         {
+            spawnBig = GameObject.FindGameObjectWithTag("SpawnerBig");
+
             spawnBig.GetComponent<Bumper_placer>().enabled = true;
             b_f_Big.GameStart();
+            mController.GameStarted();
         }
     }
 }

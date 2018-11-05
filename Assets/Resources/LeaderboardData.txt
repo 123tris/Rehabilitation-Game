@@ -4,9 +4,16 @@
     <User>
       <name>lol</name>
       <easyScores />
-      <mediumScores />
+      <mediumScores>
+        <int>0</int>
+      </mediumScores>
       <hardScores>
         <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>200</int>
+        <int>200</int>
         <int>5400</int>
       </hardScores>
     </User>
