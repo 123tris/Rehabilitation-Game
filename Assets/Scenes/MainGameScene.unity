@@ -345,6 +345,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1240693195}
   panelToDisable: {fileID: 2145871873}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &8366569
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2063,6 +2064,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 2088700807}
   panelToDisable: {fileID: 1240693195}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &79724571
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2591,6 +2593,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 414184989}
   panelToDisable: {fileID: 1499312675}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &102488921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3261,6 +3264,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 2088700807}
   panelToDisable: {fileID: 2145871873}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &136850874
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4526,6 +4530,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 616115315}
   panelToDisable: {fileID: 885153645}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &182250568
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5331,6 +5336,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1256782934}
   panelToDisable: {fileID: 1240693195}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &223402003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5856,6 +5862,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1499312675}
   panelToDisable: {fileID: 1045713514}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &247688530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6253,6 +6260,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 885153645}
   panelToDisable: {fileID: 414184989}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &274416280
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6397,6 +6405,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 885153645}
   panelToDisable: {fileID: 1737157073}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &280573148
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6947,6 +6956,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1240693195}
   panelToDisable: {fileID: 1256782934}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &291067891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8562,6 +8572,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 885153645}
   panelToDisable: {fileID: 616115315}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &371018333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8918,6 +8929,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 2088700807}
   panelToDisable: {fileID: 1256782934}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &397463050
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10449,6 +10461,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 414184989}
   panelToDisable: {fileID: 151333064}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &500613455
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11223,166 +11236,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 835df4211a5b1f14b8d87d39b9f86205,
     type: 3}
   m_PrefabInternal: {fileID: 849773737}
---- !u!1001 &570804744
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.024372164
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.0072000385
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 1148
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 535
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 33215400310187228, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 33905229207454314, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 33024564554772062, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 33245841911485394, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114670605460335356, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114670605460335356, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114179600948409550, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114179600948409550, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114235896944994088, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114235896944994088, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114702068304451846, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114702068304451846, guid: dc5012e153dcb59439f7c11c2c3a1630,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dc5012e153dcb59439f7c11c2c3a1630, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &572310100
 GameObject:
   m_ObjectHideFlags: 0
@@ -11449,6 +11302,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 2145871873}
   panelToDisable: {fileID: 1256782934}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &572310103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13251,6 +13105,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 2145871873}
   panelToDisable: {fileID: 1240693195}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &700208987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14698,6 +14553,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 97279952}
   panelToDisable: {fileID: 414184989}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &788013816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15369,6 +15225,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 2145871873}
   panelToDisable: {fileID: 1256782934}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &806456414
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15923,6 +15780,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1737157073}
   panelToDisable: {fileID: 885153645}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &840086250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16201,6 +16059,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 2088700807}
   panelToDisable: {fileID: 1240693195}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &853704072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17703,6 +17562,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1837017935}
   panelToDisable: {fileID: 1045713514}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &932979528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18020,12 +17880,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 947276384}
-  stance: 0
-  boardToDelete: {fileID: 0}
-  smallGameBoard: {fileID: 0}
-  bigGameBoard: {fileID: 0}
-  smallBoardToSpawn: {fileID: 0}
-  bigBoardToSpawn: {fileID: 0}
 --- !u!95 &947276384
 Animator:
   serializedVersion: 3
@@ -19148,6 +19002,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1737157073}
   panelToDisable: {fileID: 885153645}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!23 &1013913714
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22729,6 +22584,186 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1200477092}
   m_Mesh: {fileID: 4300034, guid: d224daa937397824f9a7e5b0902c7c0d, type: 3}
+--- !u!1001 &1200557494
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.024372164
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0072000385
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 1148
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 535
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224931991087529732, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 33024564554772062, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33215400310187228, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33905229207454314, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33245841911485394, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702068304451846, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702068304451846, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114235896944994088, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114235896944994088, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114670605460335356, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114670605460335356, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114179600948409550, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114179600948409550, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65949596627457048, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.7391998
+      objectReference: {fileID: 0}
+    - target: {fileID: 65949596627457048, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 0.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 65949596627457048, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: m_Center.x
+      value: -0.052887462
+      objectReference: {fileID: 0}
+    - target: {fileID: 114159213714702812, guid: dc5012e153dcb59439f7c11c2c3a1630,
+        type: 2}
+      propertyPath: BoardSwitchSound
+      value: event:/Menu/Switch
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dc5012e153dcb59439f7c11c2c3a1630, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!4 &1208458273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d28a8caa8b5fa1140a3d71d062fd01e4,
@@ -24741,6 +24776,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1240693195}
   panelToDisable: {fileID: 2088700807}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &1306429936
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24951,6 +24987,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 885153645}
   panelToDisable: {fileID: 1737157073}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &1309339518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26222,6 +26259,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 414184989}
   panelToDisable: {fileID: 97279952}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &1449513755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26423,6 +26461,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 151333064}
   panelToDisable: {fileID: 414184989}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &1453449346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27460,6 +27499,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1256782934}
   panelToDisable: {fileID: 2088700807}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &1505816456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34631,6 +34671,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1256782934}
   panelToDisable: {fileID: 2145871873}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &1690442788
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35703,6 +35744,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 2145871873}
   panelToDisable: {fileID: 2088700807}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &1760539544
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38835,6 +38877,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 1045713514}
   panelToDisable: {fileID: 1837017935}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &1940644718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41442,6 +41485,7 @@ MonoBehaviour:
   panelToEnable: {fileID: 616115315}
   panelToDisable: {fileID: 885153645}
   ClickSound: event:/Menu/Click
+  BoardSwitchSound: event:/Menu/Click
 --- !u!65 &2116877034
 BoxCollider:
   m_ObjectHideFlags: 0
