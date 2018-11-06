@@ -14,10 +14,6 @@ public class AccountMaker : MonoBehaviour
     public GameObject panelToEnable1;
     public GameObject panelToDisable1;
 
-    private void Start()
-    {
-        notificationTextOne.text = "";
-    }
 
     public void CreateAccount()
     {

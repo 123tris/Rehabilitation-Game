@@ -43,9 +43,4 @@ public class AccountSelector : AccountMaker
         }
     }
 
-    public void DeleteAllSaves()
-    {
-        PlayerPrefs.DeleteAll();
-    }
-
 }
