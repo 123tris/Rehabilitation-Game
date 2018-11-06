@@ -8,7 +8,7 @@ public class TargetPointSlider : MonoBehaviour {
     public Text pointAmount;
     public Slider sliderPoint;
 
-    private void Awake()
+    private void OnEnable()
     {
         if (!PlayerPrefs.HasKey("User_" + PlayerPrefs.GetString("User") + "PointAmount"))
         {
