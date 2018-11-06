@@ -36,10 +36,10 @@ public class RectTriggerCalibration : MonoBehaviour
     {
         if (calibrationActive)
         {
-            if (mdc.mTriggerPoints.Count >= 50)
+            if (mdc.mTriggerPoints.Count >= 150)
             {
                 timer += Time.deltaTime;
-                //if(timer > 0.01f)
+                if(timer > 0.01f)
                 {
                     mdc.mDepthSensitivity -= 0.001f;
                     mdc.mWallDepth -= 0.01f;
@@ -49,12 +49,18 @@ public class RectTriggerCalibration : MonoBehaviour
             {
                 data.SavedWallDepth = mdc.mWallDepth;
                 data.SavedDepthSensitivity = mdc.mDepthSensitivity;
-                data.SavedTopCutOff = mdc.mTopCutOff;
-                data.SavedBottomCutOff = mdc.mBottomCutOff;
-                data.SavedLeftCutOff = mdc.mLeftCutOff;
-                data.SavedRightCutOff = mdc.mRightCutOff;
+                data.SavedTopCutOff = mdc.topCutOff.value;
+                data.SavedBottomCutOff = mdc.bottomCutOff.value;
+                data.SavedLeftCutOff = mdc.leftCutOff.value;
+                data.SavedRightCutOff = mdc.rightCutOff.value;
                 json = JsonUtility.ToJson(data);
                 File.WriteAllText(Application.dataPath + "/StreamingAssets/calibratieFile.json", json);
+
+                foreach (GameObject slider in sliders)
+                {
+                    slider.SetActive(true);
+                }
+
                 calibrationText.text = "Caliberen klaar!";
                 calibrationButton.SetActive(true);
                 calibrationActive = false;
@@ -68,9 +74,17 @@ public class RectTriggerCalibration : MonoBehaviour
         {
             slider.SetActive(false);
         }
+        mdc.mWallDepth = 10.0f;
+        mdc.mDepthSensitivity = 1.0f;
         calibrationText.text = "";
         motionHit = 0;
-        calibrationActive = true;
         calibrationButton.SetActive(false);
+        StartCoroutine(waitforcalibration(1.0f));
+    }
+    
+    IEnumerator waitforcalibration(float t)
+    {
+        yield return new WaitForSeconds(t);
+        calibrationActive = true;
     }
 }

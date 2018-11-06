@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 47881554}
   - component: {fileID: 47881558}
   - component: {fileID: 47881559}
+  - component: {fileID: 47881560}
   m_Layer: 5
   m_Name: MainGameLogic
   m_TagString: MainGameLogic
@@ -415,6 +416,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testBumpersToSpawn: 0
   boardSize: 0
+--- !u!114 &47881560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 47881550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811a8807d1e951e46bcdfe3f8c05c76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &48784400
 Prefab:
   m_ObjectHideFlags: 0

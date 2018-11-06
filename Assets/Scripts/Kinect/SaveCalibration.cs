@@ -25,10 +25,10 @@ namespace saveGame
                 mdc = FindObjectOfType<MeasureDepthCalibration>();
                 mdc.mWallDepth = playerdata.SavedWallDepth;
                 mdc.mDepthSensitivity = playerdata.SavedDepthSensitivity;
-                mdc.mTopCutOff = playerdata.SavedTopCutOff;
-                mdc.mBottomCutOff = playerdata.SavedBottomCutOff;
-                mdc.mLeftCutOff = playerdata.SavedLeftCutOff;
-                mdc.mRightCutOff = playerdata.SavedRightCutOff;
+                mdc.topCutOff.value = playerdata.SavedTopCutOff;
+                mdc.bottomCutOff.value = playerdata.SavedBottomCutOff;
+                mdc.leftCutOff.value = playerdata.SavedLeftCutOff;
+                mdc.rightCutOff.value = playerdata.SavedRightCutOff;
             }
             else if (scene.name == "TimurScene")
             {
