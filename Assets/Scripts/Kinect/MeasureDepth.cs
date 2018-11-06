@@ -106,20 +106,20 @@ public class MeasureDepth : MonoBehaviour
         frameHit.Clear();
     }
 
-    private void OnGUI()
-    {
-        GUI.Box(mRect, "");
+    //private void OnGUI()
+    //{
+    //    GUI.Box(mRect, "");
 
-        if (mTriggerPoints == null)
-            return;
+    //    if (mTriggerPoints == null)
+    //        return;
 
-        foreach (Vector2 point in mTriggerPoints)
-        {
-            Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
-            Rect rect = new Rect(Invert, new Vector2(10, 10));
-            GUI.Box(rect, "");
-        }
-    }
+    //    foreach (Vector2 point in mTriggerPoints)
+    //    {
+    //        Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
+    //        Rect rect = new Rect(Invert, new Vector2(10, 10));
+    //        GUI.Box(rect, "");
+    //    }
+    //}
 
     private List<ValidPoint> DepthToColor()
     {

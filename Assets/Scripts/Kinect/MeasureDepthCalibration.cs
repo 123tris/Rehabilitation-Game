@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Windows.Kinect;
 using UnityEngine.UI;
+
 public class MeasureDepthCalibration : MonoBehaviour
 {
     public MultiSourceManager mMultiSource;
@@ -62,7 +63,6 @@ public class MeasureDepthCalibration : MonoBehaviour
 
         mCameraSpacePoints = new CameraSpacePoint[arraySize];
         mColorSpacePoints = new ColorSpacePoint[arraySize];
-
     }
 
     private void Update()

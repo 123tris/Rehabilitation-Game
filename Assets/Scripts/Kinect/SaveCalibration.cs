@@ -29,6 +29,7 @@ namespace saveGame
                 mdc.bottomCutOff.value = playerdata.SavedBottomCutOff;
                 mdc.leftCutOff.value = playerdata.SavedLeftCutOff;
                 mdc.rightCutOff.value = playerdata.SavedRightCutOff;
+                mdc.Gui.isOn = playerdata.ShowGui;
             }
             else if (scene.name == "TimurScene")
             {
@@ -63,5 +64,7 @@ namespace saveGame
         public float SavedLeftCutOff;
 
         public float SavedRightCutOff;
+
+        public bool ShowGui;
     }
 }

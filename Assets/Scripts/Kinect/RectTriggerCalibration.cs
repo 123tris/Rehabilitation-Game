@@ -15,6 +15,8 @@ public class RectTriggerCalibration : MonoBehaviour
 
     public Text calibrationText;
     public GameObject calibrationButton;
+    public GameObject resetButton;
+    public GameObject togglegui;
 
     public GameObject[] sliders;
 
@@ -36,7 +38,7 @@ public class RectTriggerCalibration : MonoBehaviour
     {
         if (calibrationActive)
         {
-            if (mdc.mTriggerPoints.Count >= 150)
+            if (mdc.mTriggerPoints.Count >= 75)
             {
                 timer += Time.deltaTime;
                 if(timer > 0.01f)
@@ -53,6 +55,7 @@ public class RectTriggerCalibration : MonoBehaviour
                 data.SavedBottomCutOff = mdc.bottomCutOff.value;
                 data.SavedLeftCutOff = mdc.leftCutOff.value;
                 data.SavedRightCutOff = mdc.rightCutOff.value;
+                data.ShowGui = mdc.Gui.isOn;
                 json = JsonUtility.ToJson(data);
                 File.WriteAllText(Application.dataPath + "/StreamingAssets/calibratieFile.json", json);
 
@@ -60,9 +63,10 @@ public class RectTriggerCalibration : MonoBehaviour
                 {
                     slider.SetActive(true);
                 }
-
                 calibrationText.text = "Caliberen klaar!";
                 calibrationButton.SetActive(true);
+                resetButton.SetActive(true);
+                togglegui.SetActive(true);
                 calibrationActive = false;
             }
         }
@@ -78,10 +82,22 @@ public class RectTriggerCalibration : MonoBehaviour
         mdc.mDepthSensitivity = 1.0f;
         calibrationText.text = "";
         motionHit = 0;
+        togglegui.SetActive(false);
         calibrationButton.SetActive(false);
+        resetButton.SetActive(false);
         StartCoroutine(waitforcalibration(1.0f));
     }
-    
+
+    public void resetVar()
+    {
+        mdc.mWallDepth = 10.0f;
+        mdc.mDepthSensitivity = 1.0f;
+        mdc.topCutOff.value = 1.0f;
+        mdc.bottomCutOff.value = -1.0f;
+        mdc.leftCutOff.value = -1.0f;
+        mdc.rightCutOff.value = 1.0f;
+    }
+
     IEnumerator waitforcalibration(float t)
     {
         yield return new WaitForSeconds(t);
