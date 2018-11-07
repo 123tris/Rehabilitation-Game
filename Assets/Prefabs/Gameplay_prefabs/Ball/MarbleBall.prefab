@@ -209,6 +209,8 @@ MonoBehaviour:
   smallGameBoard: {fileID: 0}
   bigGameBoard: {fileID: 0}
   boardToDelete: {fileID: 0}
+  b_f_t_Small: {fileID: 0}
+  b_f_t_Big: {fileID: 0}
   vertical: 0
 --- !u!114 &114551942174989758
 MonoBehaviour:

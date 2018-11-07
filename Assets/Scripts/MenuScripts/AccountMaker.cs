@@ -9,11 +9,10 @@ public class AccountMaker : MonoBehaviour
 
     public InputField registerAccountName;
     public Text notificationTextOne;
-    protected List<string> accountsList;
-    protected string[] accountArray;
+    public List<string> accountsList;
+    public string[] accountArray;
     public GameObject panelToEnable1;
     public GameObject panelToDisable1;
-
 
     public void CreateAccount()
     {
