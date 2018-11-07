@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using saveGame;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class RectTriggerCalibration : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class RectTriggerCalibration : MonoBehaviour
     public GameObject calibrationButton;
     public GameObject resetButton;
     public GameObject togglegui;
+    public GameObject BacktoMenuButton;
 
     public GameObject[] sliders;
 
@@ -24,7 +26,7 @@ public class RectTriggerCalibration : MonoBehaviour
 
     public MeasureDepthCalibration mdc;
 
-    public PlayerData data;
+    PlayerData data;
 
     string json;
 
@@ -66,6 +68,7 @@ public class RectTriggerCalibration : MonoBehaviour
                 calibrationText.text = "Caliberen klaar!";
                 calibrationButton.SetActive(true);
                 resetButton.SetActive(true);
+                BacktoMenuButton.SetActive(true);
                 togglegui.SetActive(true);
                 calibrationActive = false;
             }
@@ -85,6 +88,7 @@ public class RectTriggerCalibration : MonoBehaviour
         togglegui.SetActive(false);
         calibrationButton.SetActive(false);
         resetButton.SetActive(false);
+        BacktoMenuButton.SetActive(false);
         StartCoroutine(waitforcalibration(1.0f));
     }
 
@@ -97,6 +101,12 @@ public class RectTriggerCalibration : MonoBehaviour
         mdc.leftCutOff.value = -1.0f;
         mdc.rightCutOff.value = 1.0f;
     }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("TimurScene");
+    }
+
 
     IEnumerator waitforcalibration(float t)
     {
