@@ -6559,11 +6559,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 300360907}
@@ -6579,7 +6579,7 @@ MonoBehaviour:
   m_maskType: 0
 --- !u!222 &300360906
 CanvasRenderer:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 222159008559245438, guid: 45543ae483b663e478364fd2fb653cea,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -6623,7 +6623,7 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!33 &300360908
 MeshFilter:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 33904503172670326, guid: 45543ae483b663e478364fd2fb653cea,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -19470,7 +19470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &917696318
 Transform:
   m_ObjectHideFlags: 0
@@ -24979,7 +24979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1149477938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29278,11 +29278,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1318297388}
@@ -29298,7 +29298,7 @@ MonoBehaviour:
   m_maskType: 0
 --- !u!222 &1318297387
 CanvasRenderer:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 222828968439663454, guid: 45543ae483b663e478364fd2fb653cea,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -29342,7 +29342,7 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!33 &1318297389
 MeshFilter:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 33662763411615946, guid: 45543ae483b663e478364fd2fb653cea,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -42616,11 +42616,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1809332293}
@@ -42636,7 +42636,7 @@ MonoBehaviour:
   m_maskType: 0
 --- !u!222 &1809332292
 CanvasRenderer:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 222281608415838932, guid: 45543ae483b663e478364fd2fb653cea,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -42680,7 +42680,7 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!33 &1809332294
 MeshFilter:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 33896084212221318, guid: 45543ae483b663e478364fd2fb653cea,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -43173,7 +43173,7 @@ MonoBehaviour:
   m_maskType: 0
 --- !u!222 &1823393220
 CanvasRenderer:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 222886250686032706, guid: 45543ae483b663e478364fd2fb653cea,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -43217,7 +43217,7 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!33 &1823393222
 MeshFilter:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 33630420727605582, guid: 45543ae483b663e478364fd2fb653cea,
     type: 2}
   m_PrefabInternal: {fileID: 0}
