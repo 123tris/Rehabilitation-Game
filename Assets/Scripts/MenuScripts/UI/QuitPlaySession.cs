@@ -14,8 +14,6 @@ public class QuitPlaySession : Button_3D
     public ChangePlayBoardSize c_p_b;
     [HideInInspector] public GameObject smallGameBoard, bigGameBoard;
     [HideInInspector] public BoardFlippingTest b_f_t_Small, b_f_t_Big;
-    public PointSystem pointSystem;
-    public Text points_Var;
 
     void Start()
     {
@@ -32,8 +30,6 @@ public class QuitPlaySession : Button_3D
 
         panelToDisable.SetActive(false);
         panelToEnable.SetActive(true);
-        pointSystem.score = 0;
-        points_Var.text = "0";
         if (c_p_b.isBoardSmall == true)
         {
             b_f_t_Small = smallGameBoard.GetComponent<BoardFlippingTest>();
