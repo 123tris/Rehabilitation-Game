@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 65812848855908464}
   - component: {fileID: 65961692605494828}
   - component: {fileID: 114662957301103720}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PauseButtons
-  m_TagString: Untagged
+  m_TagString: PauzeButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 114065269984991710}
   m_Layer: 0
   m_Name: SpinFrameGroot
-  m_TagString: SmallGameBoard
+  m_TagString: BigGameBoard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -321,7 +321,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1730632885824310}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000028088027}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.00000028088027}
   m_LocalPosition: {x: 66.66666, y: 28, z: 70.26167}
   m_LocalScale: {x: 33.333336, y: 33.333336, z: 33.333336}
   m_Children:
@@ -335,7 +335,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1576847703169498}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0000076293945, y: 57.8674, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -740,6 +740,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 95166211611315066}
+  stance: 0
+  boardToDelete: {fileID: 0}
+  smallGameBoard: {fileID: 0}
+  bigGameBoard: {fileID: 0}
+  smallBoardToSpawn: {fileID: 1986891294913532, guid: 983ea50509e327d45991701e58b5f9b6,
+    type: 2}
+  bigBoardToSpawn: {fileID: 1792254155884518, guid: 3393aa7dd86a6ae47a29c85f2b096973,
+    type: 2}
 --- !u!114 &114258161495353778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -904,6 +912,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 95176703281170798}
+  stance: 0
+  boardToDelete: {fileID: 0}
+  smallGameBoard: {fileID: 0}
+  bigGameBoard: {fileID: 0}
+  smallBoardToSpawn: {fileID: 1986891294913532, guid: 983ea50509e327d45991701e58b5f9b6,
+    type: 2}
+  bigBoardToSpawn: {fileID: 1792254155884518, guid: 3393aa7dd86a6ae47a29c85f2b096973,
+    type: 2}
 --- !u!114 &114802861006370648
 MonoBehaviour:
   m_ObjectHideFlags: 1
