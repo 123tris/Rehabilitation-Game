@@ -8,7 +8,6 @@ public class Ball_Controler : MonoBehaviour
 {
     [Header("External Scripts")]
     public Ball_Spawn b_s;
-    public Bumper_placer b_p;
     public PointSystem p_s;
     public IsBoardSmall c_p_b;
 
@@ -75,7 +74,6 @@ public class Ball_Controler : MonoBehaviour
         mainGameLogic = GameObject.FindGameObjectWithTag("MainGameLogic");
         c_p_b = mainGameLogic.GetComponent<IsBoardSmall>();
         b_s = gameController.GetComponent<Ball_Spawn>();
-        //b_p = bSP.GetComponent<Bumper_placer>();
         p_s = mainGameLogic.GetComponent<PointSystem>();
 
 

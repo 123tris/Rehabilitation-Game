@@ -7,9 +7,13 @@ public class ScoreMemory : MonoBehaviour {
 
     public Text textToGet;
     public Text textToChange;
+    public PointSystem pointSystem;
+    
 
-    private void OnEnable()
+    public void GetScore()
     {
         textToChange.text = textToGet.text;
+        pointSystem.score = 0;
+        textToGet.text = "0";
     }
 }
