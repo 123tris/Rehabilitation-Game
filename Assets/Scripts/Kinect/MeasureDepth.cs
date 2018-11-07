@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Windows.Kinect;
+using UnityEngine.UI;
 
 public class MeasureDepth : MonoBehaviour
 {
@@ -33,6 +34,9 @@ public class MeasureDepth : MonoBehaviour
     private ColorSpacePoint[] mColorSpacePoints = null;
     private List<ValidPoint> mValidPoints = null;
     private List<Vector2> mTriggerPoints = null;
+
+    public Toggle toggleGUI;
+    public GameObject toggle;
 
     // Kinect
     private KinectSensor mSensor = null;
@@ -108,16 +112,14 @@ public class MeasureDepth : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Box(mRect, "");
-
-        if (mTriggerPoints == null)
-            return;
-
-        foreach (Vector2 point in mTriggerPoints)
+        if (toggleGUI.isOn == true)
         {
-            Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
-            Rect rect = new Rect(Invert, new Vector2(10, 10));
-            GUI.Box(rect, "");
+            foreach (Vector2 point in mTriggerPoints)
+            {
+                Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
+                Rect rect = new Rect(Invert, new Vector2(10, 10));
+                GUI.Box(rect, "");
+            }
         }
     }
 
