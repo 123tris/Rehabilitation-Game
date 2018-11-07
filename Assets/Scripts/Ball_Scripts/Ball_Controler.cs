@@ -41,6 +41,9 @@ public class Ball_Controler : MonoBehaviour
     [FMODUnity.EventRef]
     public string ChantCheeringSound = "event:/Ambiance/Correct";
 
+    string BallFXPath = "vca:/BallFX";
+
+    FMOD.Studio.VCA ballFX;
 
     [FMODUnity.EventRef]
     public string RollingSound = "event:/Ball/Rolling";
@@ -60,6 +63,10 @@ public class Ball_Controler : MonoBehaviour
 
     private void Start()
     {
+        //FMOD MARBLE ROLLING SOUND
+        ballFX = FMODUnity.RuntimeManager.GetVCA(BallFXPath);
+        ballFX.setVolume(1);
+
         sCollider = GetComponent<SphereCollider>();
         // bSP = GameObject.FindGameObjectWithTag("Spawner");
         smallGameBoard = GameObject.FindGameObjectWithTag("SmallGameBoard");
@@ -141,6 +148,7 @@ public class Ball_Controler : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot(ChantCheeringSound, transform.position);
             FMODUnity.RuntimeManager.PlayOneShot(CorrectSound, transform.position);
             FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
+            ballFX.setVolume(0);
 
             if (c_p_b.isTheBoardSmall == true)
             {
@@ -180,6 +188,7 @@ public class Ball_Controler : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot(ChantDissapointedSound, transform.position);
             FMODUnity.RuntimeManager.PlayOneShot(WrongSound, transform.position);
             FMODUnity.RuntimeManager.DetachInstanceFromGameObject(RollingEv);
+            ballFX.setVolume(0);
 
             if (c_p_b.isTheBoardSmall == true)
             {
