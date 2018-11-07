@@ -26,7 +26,7 @@ public class RectTriggerCalibration : MonoBehaviour
 
     public MeasureDepthCalibration mdc;
 
-    PlayerData data;
+    public PlayerData data;
 
     string json;
 
