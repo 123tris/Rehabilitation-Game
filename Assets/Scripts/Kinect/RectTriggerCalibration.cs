@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using saveGame;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class RectTriggerCalibration : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class RectTriggerCalibration : MonoBehaviour
 
     public Text calibrationText;
     public GameObject calibrationButton;
+    public GameObject resetButton;
+    public GameObject togglegui;
+    public GameObject BacktoMenuButton;
 
     public GameObject[] sliders;
 
@@ -36,10 +40,10 @@ public class RectTriggerCalibration : MonoBehaviour
     {
         if (calibrationActive)
         {
-            if (mdc.mTriggerPoints.Count >= 50)
+            if (mdc.mTriggerPoints.Count >= 75)
             {
                 timer += Time.deltaTime;
-                //if(timer > 0.01f)
+                if(timer > 0.01f)
                 {
                     mdc.mDepthSensitivity -= 0.001f;
                     mdc.mWallDepth -= 0.01f;
@@ -49,14 +53,23 @@ public class RectTriggerCalibration : MonoBehaviour
             {
                 data.SavedWallDepth = mdc.mWallDepth;
                 data.SavedDepthSensitivity = mdc.mDepthSensitivity;
-                data.SavedTopCutOff = mdc.mTopCutOff;
-                data.SavedBottomCutOff = mdc.mBottomCutOff;
-                data.SavedLeftCutOff = mdc.mLeftCutOff;
-                data.SavedRightCutOff = mdc.mRightCutOff;
+                data.SavedTopCutOff = mdc.topCutOff.value;
+                data.SavedBottomCutOff = mdc.bottomCutOff.value;
+                data.SavedLeftCutOff = mdc.leftCutOff.value;
+                data.SavedRightCutOff = mdc.rightCutOff.value;
+                data.ShowGui = mdc.Gui.isOn;
                 json = JsonUtility.ToJson(data);
                 File.WriteAllText(Application.dataPath + "/StreamingAssets/calibratieFile.json", json);
+
+                foreach (GameObject slider in sliders)
+                {
+                    slider.SetActive(true);
+                }
                 calibrationText.text = "Caliberen klaar!";
                 calibrationButton.SetActive(true);
+                resetButton.SetActive(true);
+                BacktoMenuButton.SetActive(true);
+                togglegui.SetActive(true);
                 calibrationActive = false;
             }
         }
@@ -68,9 +81,36 @@ public class RectTriggerCalibration : MonoBehaviour
         {
             slider.SetActive(false);
         }
+        mdc.mWallDepth = 10.0f;
+        mdc.mDepthSensitivity = 1.0f;
         calibrationText.text = "";
         motionHit = 0;
-        calibrationActive = true;
+        togglegui.SetActive(false);
         calibrationButton.SetActive(false);
+        resetButton.SetActive(false);
+        BacktoMenuButton.SetActive(false);
+        StartCoroutine(waitforcalibration(1.0f));
+    }
+
+    public void resetVar()
+    {
+        mdc.mWallDepth = 10.0f;
+        mdc.mDepthSensitivity = 1.0f;
+        mdc.topCutOff.value = 1.0f;
+        mdc.bottomCutOff.value = -1.0f;
+        mdc.leftCutOff.value = -1.0f;
+        mdc.rightCutOff.value = 1.0f;
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("TimurScene");
+    }
+
+
+    IEnumerator waitforcalibration(float t)
+    {
+        yield return new WaitForSeconds(t);
+        calibrationActive = true;
     }
 }
