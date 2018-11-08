@@ -300,7 +300,19 @@
     <object class="SpatialiserEffect" id="{a5fe4467-6944-4c9c-98f1-ea7e850d7e5a}"/>
     <object class="SFXReverbEffect" id="{1355b192-a2a9-4b52-b51d-cebb90957ff5}">
         <property name="decayTime">
-            <value>600</value>
+            <value>300</value>
+        </property>
+        <property name="HFReference">
+            <value>340</value>
+        </property>
+        <property name="HFDecayRatio">
+            <value>100</value>
+        </property>
+        <property name="diffusion">
+            <value>19</value>
+        </property>
+        <property name="density">
+            <value>12</value>
         </property>
         <property name="lowShelfGain">
             <value>1</value>
@@ -312,10 +324,10 @@
             <value>45</value>
         </property>
         <property name="wetLevel">
-            <value>0</value>
+            <value>-9</value>
         </property>
         <property name="dryLevel">
-            <value>-15.5</value>
+            <value>-9.5</value>
         </property>
         <relationship name="modulators">
             <destination>{db1ea060-abaa-4ef2-a884-d0fb2ab01857}</destination>

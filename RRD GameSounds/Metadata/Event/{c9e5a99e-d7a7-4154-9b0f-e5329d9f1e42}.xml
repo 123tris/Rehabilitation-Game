@@ -99,7 +99,7 @@
             <value>2.75</value>
         </property>
         <relationship name="modulators">
-            <destination>{790e417a-e246-4eaf-808b-75ca733d9506}</destination>
+            <destination>{52dda4fa-4422-4908-8976-f731840d31e3}</destination>
         </relationship>
         <relationship name="sounds">
             <destination>{803f0b64-ef30-4147-bbea-203dad6dd10e}</destination>
@@ -152,12 +152,12 @@
     </object>
     <object class="MixerBusPanner" id="{44ff5d74-2e17-4f3a-b0d5-e57bf0016cd0}"/>
     <object class="MixerBusFader" id="{0a8b8dc9-e2b1-481f-8dc6-ab12b5543f16}"/>
-    <object class="RandomizerModulator" id="{790e417a-e246-4eaf-808b-75ca733d9506}">
+    <object class="RandomizerModulator" id="{52dda4fa-4422-4908-8976-f731840d31e3}">
         <property name="nameOfPropertyBeingModulated">
             <value>pitch</value>
         </property>
         <property name="amount">
-            <value>8.5</value>
+            <value>5.5</value>
         </property>
     </object>
     <object class="SingleSound" id="{803f0b64-ef30-4147-bbea-203dad6dd10e}">
@@ -297,7 +297,7 @@
     </object>
     <object class="MixerBusEffectChain" id="{33313a87-4a28-4d4d-8855-4422eaed52e8}">
         <relationship name="effects">
-            <destination>{88288909-c274-43b3-85c8-a1b66e1d2ca9}</destination>
+            <destination>{16691336-4942-45ae-b91a-6d45b2133bad}</destination>
             <destination>{a5733c24-1564-49b6-88ec-8229cadd5c05}</destination>
             <destination>{e2b326e9-1dd8-4b2e-9179-3315a0268490}</destination>
             <destination>{70807b10-947c-4ab1-a1dd-cd90bf0d5263}</destination>
@@ -319,9 +319,21 @@
     </object>
     <object class="MixerBusFader" id="{1188504b-c38d-4e74-b3b5-8ad1cbb73622}"/>
     <object class="SpatialiserEffect" id="{ccd7b834-0235-4d5c-bdef-fd6ec91efe3e}"/>
-    <object class="SFXReverbEffect" id="{88288909-c274-43b3-85c8-a1b66e1d2ca9}">
+    <object class="SFXReverbEffect" id="{16691336-4942-45ae-b91a-6d45b2133bad}">
         <property name="decayTime">
-            <value>600</value>
+            <value>300</value>
+        </property>
+        <property name="HFReference">
+            <value>340</value>
+        </property>
+        <property name="HFDecayRatio">
+            <value>100</value>
+        </property>
+        <property name="diffusion">
+            <value>19</value>
+        </property>
+        <property name="density">
+            <value>12</value>
         </property>
         <property name="lowShelfGain">
             <value>1</value>
@@ -333,13 +345,13 @@
             <value>45</value>
         </property>
         <property name="wetLevel">
-            <value>0</value>
+            <value>-9</value>
         </property>
         <property name="dryLevel">
-            <value>-15.5</value>
+            <value>-9.5</value>
         </property>
         <relationship name="modulators">
-            <destination>{8e263bcf-a14e-4fdc-8a41-af895e8c0452}</destination>
+            <destination>{707c652b-154d-4bfd-b2b8-a34770db1148}</destination>
         </relationship>
     </object>
     <object class="MixerBusFader" id="{a5733c24-1564-49b6-88ec-8229cadd5c05}"/>
@@ -369,7 +381,7 @@
             <value>stereoPan</value>
         </property>
     </object>
-    <object class="RandomizerModulator" id="{8e263bcf-a14e-4fdc-8a41-af895e8c0452}">
+    <object class="RandomizerModulator" id="{707c652b-154d-4bfd-b2b8-a34770db1148}">
         <property name="nameOfPropertyBeingModulated">
             <value>wetLevel</value>
         </property>
