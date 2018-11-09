@@ -35,6 +35,9 @@ public class MeasureDepth : MonoBehaviour
     private List<ValidPoint> mValidPoints = null;
     private List<Vector2> mTriggerPoints = null;
 
+    public float zoom = 1;
+    public Vector2Int offset = Vector2Int.zero;
+
     public Toggle toggleGUI;
     public GameObject toggle;
 
@@ -73,7 +76,16 @@ public class MeasureDepth : MonoBehaviour
         {
             foreach (Vector2 point in mTriggerPoints)
             {
+                //for testing at roessingh
+                //Vector2 Invert = new Vector2(point.x, Screen.height - point.y);
+                //Invert -= offset;
+                //Invert *= zoom;
+
+
+                //for testing at office
                 Vector2 Invert = new Vector2(Screen.width - point.x, Screen.height - point.y);
+                Invert -= offset;
+                Invert *= zoom;
                 Raycast(Invert);
             }
         }
@@ -112,11 +124,20 @@ public class MeasureDepth : MonoBehaviour
 
     private void OnGUI()
     {
-        if (toggleGUI.isOn == true)
+        //if (toggleGUI.isOn == true)
         {
             foreach (Vector2 point in mTriggerPoints)
             {
+                //for testing at roessingh
+                //Vector2 Invert = new Vector2(point.x, Screen.height - point.y);
+                //Invert -= offset;
+                //Invert *= zoom;
+
+
+                //for testing at office
                 Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
+                Invert -= offset;
+                Invert *= zoom;
                 Rect rect = new Rect(Invert, new Vector2(10, 10));
                 GUI.Box(rect, "");
             }

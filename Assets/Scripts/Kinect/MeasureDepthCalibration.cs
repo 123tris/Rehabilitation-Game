@@ -32,6 +32,9 @@ public class MeasureDepthCalibration : MonoBehaviour
     public float mRightCutOff = 1;
     public Slider rightCutOff;
 
+    public float zoom = 1;
+    public Vector2Int offset = Vector2Int.zero;
+
     public Toggle Gui;
 
     // Depth
@@ -80,7 +83,16 @@ public class MeasureDepthCalibration : MonoBehaviour
         {
             foreach (Vector2 point in mTriggerPoints)
             {
-                Vector2 Invert = new Vector2(Screen.width - point.x, Screen.height - point.y);
+                //use it for roessingh testing
+                //Vector2 Invert = new Vector2(point.x, Screen.height - point.y);
+                //Invert -= offset;
+                //Invert *= zoom;
+                
+
+                //Use it for office testing
+                Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
+                Invert -= offset;
+                Invert *= zoom;
                 Raycast(Invert);
             }
         }
@@ -126,7 +138,15 @@ public class MeasureDepthCalibration : MonoBehaviour
         {
             foreach (Vector2 point in mTriggerPoints)
             {
+                //use it for testing at roessingh
+                //Vector2 Invert = new Vector2(point.x, Screen.height - point.y);
+                //Invert -= offset;
+                //Invert *= zoom;
+
+                //use it for office testing
                 Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
+                Invert -= offset;
+                Invert *= zoom;
                 Rect rect = new Rect(Invert, new Vector2(10, 10));
                 GUI.Box(rect, "");
             }

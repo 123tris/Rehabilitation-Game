@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class QuitPlaySession : Button_3D
 {
 
-    [HideInInspector] public GameObject boardToDelete;
+    //[HideInInspector]
+    public GameObject boardToDelete;
     public GameObject panelToEnable;
     public GameObject panelToDisable;
     public GameObject smallBoardToSpawn;
@@ -51,6 +52,7 @@ public class QuitPlaySession : Button_3D
             instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
             b_f_t_Big.GameEnd();
             b_f_t_Big.stance = 0;
+            //boardToDelete.SetActive(false);
             Destroy(boardToDelete);
         }
 

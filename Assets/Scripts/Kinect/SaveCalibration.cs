@@ -30,6 +30,8 @@ namespace saveGame
                 mdc.leftCutOff.value = playerdata.SavedLeftCutOff;
                 mdc.rightCutOff.value = playerdata.SavedRightCutOff;
                 mdc.Gui.isOn = playerdata.ShowGui;
+                mdc.zoom = playerdata.zoomSaved;
+                mdc.offset = playerdata.offsetSaved;
             }
             else if (scene.name == "TimurScene")
             {
@@ -42,12 +44,9 @@ namespace saveGame
                 md.mBottomCutOff = playerdata.SavedBottomCutOff;
                 md.mLeftCutOff = playerdata.SavedLeftCutOff;
                 md.mRightCutOff = playerdata.SavedRightCutOff;
+                md.zoom = playerdata.zoomSaved;
+                md.offset = playerdata.offsetSaved;
             }
-            else
-            {
-                Debug.LogError("timur scene not working");
-            }
-
         }
     }
     [System.Serializable]
@@ -66,5 +65,9 @@ namespace saveGame
         public float SavedRightCutOff;
 
         public bool ShowGui;
+
+        public float zoomSaved;
+
+        public Vector2Int offsetSaved;
     }
 }

@@ -97,7 +97,7 @@ public class LeaderBoard : MonoBehaviour
     {
         User user = null;
         if (data.users.Count != 0)
-            user = data.users.First(user1 => user1.name == userName);
+            user = data.users.Find(user1 => user1.name == userName);
         if (user == null)
             user = AddUser(userName);
 

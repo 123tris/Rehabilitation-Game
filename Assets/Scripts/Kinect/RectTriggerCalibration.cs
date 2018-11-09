@@ -58,6 +58,8 @@ public class RectTriggerCalibration : MonoBehaviour
                 data.SavedLeftCutOff = mdc.leftCutOff.value;
                 data.SavedRightCutOff = mdc.rightCutOff.value;
                 data.ShowGui = mdc.Gui.isOn;
+                data.zoomSaved = mdc.zoom;
+                data.offsetSaved = mdc.offset;
                 json = JsonUtility.ToJson(data);
                 File.WriteAllText(Application.dataPath + "/StreamingAssets/calibratieFile.json", json);
 

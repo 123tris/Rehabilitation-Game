@@ -18,5 +18,18 @@
         <int>5400</int>
       </hardScores>
     </User>
+    <User>
+      <name>cococol</name>
+      <easyScores />
+      <mediumScores />
+      <hardScores>
+        <int>200</int>
+        <int>200</int>
+        <int>200</int>
+        <int>200</int>
+        <int>200</int>
+        <int>200</int>
+      </hardScores>
+    </User>
   </users>
 </Data>
