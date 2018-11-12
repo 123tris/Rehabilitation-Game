@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ToggleScript : MonoBehaviour {
+public class ToggleScript : MonoBehaviour
+{
 
-
+    ShowNameOnBoard nameShower;
     Text toggleText;
     public bool isToggleOn;
     public GameObject panelToEnable1, panelToEnable2;
@@ -20,9 +21,14 @@ public class ToggleScript : MonoBehaviour {
     [FMODUnity.EventRef]
     public string CheckSound = "event:/Menu/Check";
 
+    private void Start()
+    {
+        nameShower = FindObjectOfType<ShowNameOnBoard>();
+    }
+
     void Update()
     {
-    
+
         {
             SelectAccount();
         }
@@ -54,6 +60,7 @@ public class ToggleScript : MonoBehaviour {
             panelToDisable1.SetActive(false);
             panelToEnable1.SetActive(true);
             toggleBool.isClickedToggle = false;
+            nameShower.showName();
         }
         else if (isLast == true)
         {

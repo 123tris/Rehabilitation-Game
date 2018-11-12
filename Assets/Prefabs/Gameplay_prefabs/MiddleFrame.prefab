@@ -108,5 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0281d6a0a3f86ea4fa71e42c1577f9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnBig: {fileID: 0}
+  spawnSmall: {fileID: 0}
+  panelToDisable: {fileID: 0}
   panelToEnable: {fileID: 0}
+  c_p_b: {fileID: 0}
   motionHit: 0

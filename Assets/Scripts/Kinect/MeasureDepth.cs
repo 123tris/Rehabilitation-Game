@@ -135,11 +135,11 @@ public class MeasureDepth : MonoBehaviour
 
 
                 //for testing at office
-                Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
-                Invert -= offset;
-                Invert *= zoom;
-                Rect rect = new Rect(Invert, new Vector2(10, 10));
-                GUI.Box(rect, "");
+                //Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
+                //Invert -= offset;
+                //Invert *= zoom;
+                //Rect rect = new Rect(Invert, new Vector2(5, 5));
+                //GUI.Box(rect, "");
             }
         }
     }

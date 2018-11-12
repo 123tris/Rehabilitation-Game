@@ -15,12 +15,12 @@ public class RectTriggerCalibration : MonoBehaviour
     bool calibrationActive = false;
 
     public Text calibrationText;
-    public GameObject calibrationButton;
-    public GameObject resetButton;
-    public GameObject togglegui;
-    public GameObject BacktoMenuButton;
 
-    public GameObject[] sliders;
+    public InputField Zoom;
+    public InputField offsetX;
+    public InputField offsetY;
+
+    public GameObject[] SetFalse;
 
     float timer = 0;
 
@@ -38,6 +38,11 @@ public class RectTriggerCalibration : MonoBehaviour
 
     void Update()
     {
+        mdc.zoom = float.Parse(Zoom.text);
+        mdc.offset.x = int.Parse(offsetX.text);
+        mdc.offset.y = int.Parse(offsetY.text);
+
+
         if (calibrationActive)
         {
             if (mdc.mTriggerPoints.Count >= 75)
@@ -63,15 +68,11 @@ public class RectTriggerCalibration : MonoBehaviour
                 json = JsonUtility.ToJson(data);
                 File.WriteAllText(Application.dataPath + "/StreamingAssets/calibratieFile.json", json);
 
-                foreach (GameObject slider in sliders)
+                foreach (GameObject objects in SetFalse)
                 {
-                    slider.SetActive(true);
+                    objects.SetActive(true);
                 }
                 calibrationText.text = "Caliberen klaar!";
-                calibrationButton.SetActive(true);
-                resetButton.SetActive(true);
-                BacktoMenuButton.SetActive(true);
-                togglegui.SetActive(true);
                 calibrationActive = false;
             }
         }
@@ -79,18 +80,14 @@ public class RectTriggerCalibration : MonoBehaviour
 
     public void ActivateCalbration()
     {
-        foreach(GameObject slider in sliders)
+        foreach(GameObject objects in SetFalse)
         {
-            slider.SetActive(false);
+            objects.SetActive(false);
         }
         mdc.mWallDepth = 10.0f;
         mdc.mDepthSensitivity = 1.0f;
         calibrationText.text = "";
         motionHit = 0;
-        togglegui.SetActive(false);
-        calibrationButton.SetActive(false);
-        resetButton.SetActive(false);
-        BacktoMenuButton.SetActive(false);
         StartCoroutine(waitforcalibration(1.0f));
     }
 

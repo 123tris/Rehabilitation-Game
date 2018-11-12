@@ -28,7 +28,7 @@ public class RectTrigger : MonoBehaviour
 
     public void CheckHit()
     {
-        if (motionHit > 8)
+        if (motionHit > 6)
         {
             timer += Time.deltaTime;
             if (ballSpawn.rend == null && timer > 2)
