@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StopDuplicate : MonoBehaviour {
-
+public class StopDuplicate : MonoBehaviour
+{
     GameObject[] duplicateSpawners;
-    public int amountOfDuplicates;
 
-    // Update is called once per frame
-    void Update () {
-
+    void Update()
+    {
+        //searches for all gameobjects with the tag SpawnerBig and puts them in an array
         duplicateSpawners = GameObject.FindGameObjectsWithTag("SpawnerBig");
-        amountOfDuplicates = duplicateSpawners.Length;
 
+        //checks if there is more than 1 gameobject in the array
         if (duplicateSpawners.Length > 1)
         {
-            Debug.Log("more than 1");
+            //if there is more than 1 gameobject in the array it will destroy 1 of the objects in the array
             Destroy(GameObject.FindGameObjectWithTag("SpawnerBig"));
         }
     }

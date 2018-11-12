@@ -37,7 +37,7 @@ public class QuitPlaySession : Button_3D
             boardToDelete = GameObject.FindGameObjectWithTag("SpawnerKlein");
             instantiatedObject = Instantiate(smallBoardToSpawn, smallGameBoard.transform);
             instantiatedObject.transform.localPosition = new Vector3(66.66666f, 20, 70.26167f);
-            instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
+            //instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
             b_f_t_Small.GameEnd();
             b_f_t_Small.stance = 0;
             Destroy(boardToDelete);
@@ -49,7 +49,7 @@ public class QuitPlaySession : Button_3D
             boardToDelete = GameObject.FindGameObjectWithTag("SpawnerBig");
             instantiatedObject = Instantiate(bigBoardToSpawn, bigGameBoard.transform);
             instantiatedObject.transform.localPosition = new Vector3(66.66666f, 28, 70.26167f);
-            instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
+           // instantiatedObject.GetComponent<Bumper_placer>().enabled = true;
             b_f_t_Big.GameEnd();
             b_f_t_Big.stance = 0;
             //boardToDelete.SetActive(false);
