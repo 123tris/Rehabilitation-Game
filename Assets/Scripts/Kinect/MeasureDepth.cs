@@ -41,6 +41,8 @@ public class MeasureDepth : MonoBehaviour
     public Toggle toggleGUI;
     public GameObject toggle;
 
+    public bool inversedCoords;
+
     // Kinect
     private KinectSensor mSensor = null;
     private CoordinateMapper mMapper = null;
@@ -76,17 +78,23 @@ public class MeasureDepth : MonoBehaviour
         {
             foreach (Vector2 point in mTriggerPoints)
             {
-                //for testing at roessingh
-                //Vector2 Invert = new Vector2(point.x, Screen.height - point.y);
-                //Invert -= offset;
-                //Invert *= zoom;
+                Vector2 pos;
+                if (inversedCoords)
+                {
+                    //use it for roessingh testing
+                    pos = new Vector2(point.x, Screen.height - point.y);
+                    pos -= offset;
+                    pos *= zoom;
+                }
+                else
+                {
+                    //Use it for office testing
+                    pos = new Vector2(Screen.width - point.x, point.y);
+                    pos -= offset;
+                    pos *= zoom;
+                }
 
-
-                //for testing at office
-                Vector2 Invert = new Vector2(Screen.width - point.x, Screen.height - point.y);
-                Invert -= offset;
-                Invert *= zoom;
-                Raycast(Invert);
+                Raycast(pos);
             }
         }
     }
@@ -124,21 +132,28 @@ public class MeasureDepth : MonoBehaviour
 
     private void OnGUI()
     {
+        if (false)
         //if (toggleGUI.isOn == true)
         {
             foreach (Vector2 point in mTriggerPoints)
             {
-                //for testing at roessingh
-                //Vector2 Invert = new Vector2(point.x, Screen.height - point.y);
-                //Invert -= offset;
-                //Invert *= zoom;
+                Vector2 pos;
+                if (inversedCoords)
+                {
+                    //use it for roessingh testing
+                    pos = new Vector2(point.x, Screen.height - point.y);
+                    pos -= offset;
+                    pos *= zoom;
+                }
+                else
+                {
+                    //Use it for office testing
+                    pos = new Vector2(Screen.width - point.x, point.y);
+                    pos -= offset;
+                    pos *= zoom;
+                }
 
-
-                //for testing at office
-                Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
-                Invert -= offset;
-                Invert *= zoom;
-                Rect rect = new Rect(Invert, new Vector2(10, 10));
+                Rect rect = new Rect(pos, new Vector2(10, 10));
                 GUI.Box(rect, "");
             }
         }

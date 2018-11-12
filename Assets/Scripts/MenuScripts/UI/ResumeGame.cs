@@ -6,6 +6,7 @@ public class ResumeGame : Button_3D {
 
     public GameObject spawnSmall, spawnBig;
     public GameObject panelToDisable;
+    public GameObject panelToEnable;
     public ChangePlayBoardSize c_p_b;
 
     void Start()
@@ -17,6 +18,7 @@ public class ResumeGame : Button_3D {
     {
         spawnSmall = GameObject.FindGameObjectWithTag("SpawnerKlein");
         spawnBig = GameObject.FindGameObjectWithTag("SpawnerBig");
+        panelToEnable.SetActive(true);
         panelToDisable.SetActive(false);
         if (c_p_b.isBoardSmall == true)
         {

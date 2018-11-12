@@ -60,6 +60,7 @@ public class RectTriggerCalibration : MonoBehaviour
                 data.ShowGui = mdc.Gui.isOn;
                 data.zoomSaved = mdc.zoom;
                 data.offsetSaved = mdc.offset;
+                data.InversedCoords = mdc.inversedCoords;
                 json = JsonUtility.ToJson(data);
                 File.WriteAllText(Application.dataPath + "/StreamingAssets/calibratieFile.json", json);
 

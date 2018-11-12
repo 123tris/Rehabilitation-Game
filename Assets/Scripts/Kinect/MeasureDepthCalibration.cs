@@ -32,10 +32,18 @@ public class MeasureDepthCalibration : MonoBehaviour
     public float mRightCutOff = 1;
     public Slider rightCutOff;
 
-    public float zoom = 1;
+
+    public bool inversedCoords;
+    public Toggle inversedCoordsToggle;
+
     public Vector2Int offset = Vector2Int.zero;
+    public float zoom = 1;
+    public InputField offsetX;
+    public InputField offsetY;
+    public InputField zoomField;
 
     public Toggle Gui;
+
 
     // Depth
     private ushort[] mDepthData = null;
@@ -75,6 +83,21 @@ public class MeasureDepthCalibration : MonoBehaviour
         mLeftCutOff = leftCutOff.value;
         mRightCutOff = rightCutOff.value;
 
+        int x = 0, y = 0;
+        if (int.TryParse(offsetX.text, out x))
+            offset.x = x;
+        if (int.TryParse(offsetY.text, out y))
+            offset.y = y;
+        float z = 0;
+        if (float.TryParse(zoomField.text, out z))
+            zoom = z;
+
+        offsetX.text = offset.x + "";
+        offsetY.text = offset.y + "";
+        zoomField.text = zoom + "";
+
+        inversedCoords = inversedCoordsToggle.isOn;
+
         mValidPoints = DepthToColor();
 
         mTriggerPoints = FilterToTrigger(mValidPoints);
@@ -83,17 +106,23 @@ public class MeasureDepthCalibration : MonoBehaviour
         {
             foreach (Vector2 point in mTriggerPoints)
             {
-                //use it for roessingh testing
-                //Vector2 Invert = new Vector2(point.x, Screen.height - point.y);
-                //Invert -= offset;
-                //Invert *= zoom;
-                
+                Vector2 pos;
+                if (inversedCoords)
+                {
+                    //use it for roessingh testing
+                    pos = new Vector2(point.x, Screen.height - point.y);
+                    pos -= offset;
+                    pos *= zoom;
+                }
+                else
+                {
+                    //Use it for office testing
+                    pos = new Vector2(Screen.width - point.x, point.y);
+                    pos -= offset;
+                    pos *= zoom;
+                }
 
-                //Use it for office testing
-                Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
-                Invert -= offset;
-                Invert *= zoom;
-                Raycast(Invert);
+                Raycast(pos);
             }
         }
     }
@@ -138,16 +167,22 @@ public class MeasureDepthCalibration : MonoBehaviour
         {
             foreach (Vector2 point in mTriggerPoints)
             {
-                //use it for testing at roessingh
-                //Vector2 Invert = new Vector2(point.x, Screen.height - point.y);
-                //Invert -= offset;
-                //Invert *= zoom;
-
-                //use it for office testing
-                Vector2 Invert = new Vector2(Screen.width - point.x, point.y);
-                Invert -= offset;
-                Invert *= zoom;
-                Rect rect = new Rect(Invert, new Vector2(10, 10));
+                Vector2 pos;
+                if (inversedCoords)
+                {
+                    //use it for roessingh testing
+                    pos = new Vector2(point.x, Screen.height - point.y);
+                    pos -= offset;
+                    pos *= zoom;
+                }
+                else
+                {
+                    //Use it for office testing
+                    pos = new Vector2(Screen.width - point.x, point.y);
+                    pos -= offset;
+                    pos *= zoom;
+                }
+                Rect rect = new Rect(pos, new Vector2(10, 10));
                 GUI.Box(rect, "");
             }
         }

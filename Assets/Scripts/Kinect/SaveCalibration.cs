@@ -46,6 +46,7 @@ namespace saveGame
                 md.mRightCutOff = playerdata.SavedRightCutOff;
                 md.zoom = playerdata.zoomSaved;
                 md.offset = playerdata.offsetSaved;
+                md.inversedCoords = playerdata.InversedCoords;
             }
         }
     }
@@ -69,5 +70,7 @@ namespace saveGame
         public float zoomSaved;
 
         public Vector2Int offsetSaved;
+
+        public bool InversedCoords;
     }
 }
