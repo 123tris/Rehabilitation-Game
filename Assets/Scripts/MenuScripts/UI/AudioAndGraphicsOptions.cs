@@ -10,13 +10,13 @@ public class AudioAndGraphicsOptions :Button_3D {
     string AmbiancePath = "vca:/Ambiance";
 
     string masterBusString = "Bus:/";
-    FMOD.Studio.Bus masterBus;
+    public FMOD.Studio.Bus masterBus;
 
     public Wilberforce.Colorblind colorblind;
 
-    FMOD.Studio.VCA SoundFX;
-    FMOD.Studio.VCA Music;
-    FMOD.Studio.VCA Ambiance;
+    public FMOD.Studio.VCA SoundFX;
+    public FMOD.Studio.VCA Music;
+    public FMOD.Studio.VCA Ambiance;
 
     private void Start()
     {

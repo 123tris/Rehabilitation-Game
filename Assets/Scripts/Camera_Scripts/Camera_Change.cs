@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Camera_Change : MonoBehaviour
 {
-
     public Animator animator;
 
     Camera cameraC;
     public GameObject camera_rot;
     bool animDone;
-    bool twoD;
-    bool ThreeD;
+    public bool twoD;
+    public bool ThreeD;
     private void Awake()
     {
         cameraC = GetComponent<Camera>();

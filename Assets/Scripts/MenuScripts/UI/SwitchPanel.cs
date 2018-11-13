@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class SwitchPanel : Button_3D
 {
-
     public GameObject panelToEnable;
     public GameObject panelToDisable;
 

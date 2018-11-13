@@ -3140,7 +3140,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Caliberen
+  m_Text: Kalibreren
 --- !u!222 &1566099672
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3773,15 +3773,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motionHit: 0
   calibrationText: {fileID: 817559434}
-  calibrationButton: {fileID: 959472570}
-  resetButton: {fileID: 579439744}
-  togglegui: {fileID: 118970131}
-  BacktoMenuButton: {fileID: 2024423844}
-  sliders:
-  - {fileID: 677308270}
-  - {fileID: 1030105494}
-  - {fileID: 2081710426}
-  - {fileID: 2044218115}
+  Zoom: {fileID: 758390662}
+  offsetX: {fileID: 2113698711}
+  offsetY: {fileID: 1149802038}
+  SetFalse: []
   mdc: {fileID: 1805903733}
   data:
     SavedWallDepth: 0

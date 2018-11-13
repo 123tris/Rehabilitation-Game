@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangePlayBoardSize : MonoBehaviour
 {
-
     public GameObject bigGameBoard, smallGameBoard;
     // public GameObject spawner;
     public bool isBoardSmall;
     bool toggleOn;
     public IsBoardSmall boolBoardSmall;
+
+    private void OnEnable()
+    {
+        GetComponent<Toggle>().isOn = boolBoardSmall.isTheBoardSmall;
+    }
 
     public void ChangeBoardSize(bool toggle)
     {

@@ -11,7 +11,7 @@ public class ChangeBumperAndBoardSize : MonoBehaviour
     public Text bumperAmount, boardAmount, timeAmount;
 
 
-    private void Awake()
+    private void OnEnable()
     {
         if (!PlayerPrefs.HasKey("User_" + PlayerPrefs.GetString("User") + "MaxBumperAmount"))
         {
