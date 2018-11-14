@@ -60,6 +60,9 @@ public class MeasureDepth : MonoBehaviour
         mSensor = KinectSensor.GetDefault();
         mMapper = mSensor.CoordinateMapper;
         mCamera = Camera.main;
+        
+        if (!mSensor.IsOpen)
+            Debug.LogError("Couldn't detect kinect device!");
 
         int arraySize = mDepthResolution.x * mDepthResolution.y;
 

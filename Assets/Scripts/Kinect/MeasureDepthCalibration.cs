@@ -50,7 +50,7 @@ public class MeasureDepthCalibration : MonoBehaviour
     private CameraSpacePoint[] mCameraSpacePoints = null;
     private ColorSpacePoint[] mColorSpacePoints = null;
     private List<ValidPointCalibration> mValidPoints = null;
-    public List<Vector2> mTriggerPoints = null;
+    public List<Vector3> mTriggerPoints = null;
 
     // Kinect
     private KinectSensor mSensor = null;
@@ -237,9 +237,9 @@ public class MeasureDepthCalibration : MonoBehaviour
         return validPoints;
     }
 
-    private List<Vector2> FilterToTrigger(List<ValidPointCalibration> validPoints)
+    private List<Vector3> FilterToTrigger(List<ValidPointCalibration> validPoints)
     {
-        List<Vector2> triggerPoints = new List<Vector2>();
+        List<Vector3> triggerPoints = new List<Vector3>();
 
         foreach (ValidPointCalibration point in validPoints)
         {
@@ -247,8 +247,8 @@ public class MeasureDepthCalibration : MonoBehaviour
             {
                 if (point.z < mWallDepth * mDepthSensitivity)
                 {
-                    Vector2 screenPoint = ScreenToCamera(new Vector2(point.colorSpace.X, point.colorSpace.Y));
-
+                    Vector3 screenPoint = ScreenToCamera(new Vector3(point.colorSpace.X, point.colorSpace.Y));
+                    screenPoint.z = point.z;
                     triggerPoints.Add(screenPoint);
                 }
             }

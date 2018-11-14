@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using saveGame;
 using System.IO;
+using System.Linq;
 using UnityEngine.SceneManagement;
 
 public class RectTriggerCalibration : MonoBehaviour
@@ -38,21 +39,30 @@ public class RectTriggerCalibration : MonoBehaviour
 
     void Update()
     {
-        mdc.zoom = float.Parse(Zoom.text);
-        mdc.offset.x = int.Parse(offsetX.text);
-        mdc.offset.y = int.Parse(offsetY.text);
+        float z;
+        int x, y;
 
+        if (float.TryParse(Zoom.text, out z))
+            mdc.zoom = z;
+        if (int.TryParse(offsetX.text, out x))
+            mdc.offset.x = x;
+        if (int.TryParse(offsetY.text, out y))
+            mdc.offset.y = y;
 
         if (calibrationActive)
         {
-            if (mdc.mTriggerPoints.Count >= 75)
+            if (mdc.mTriggerPoints.Count >= 200)
             {
-                timer += Time.deltaTime;
-                if(timer > 0.01f)
-                {
-                    mdc.mDepthSensitivity -= 0.001f;
-                    mdc.mWallDepth -= 0.01f;
-                }
+                //Move the depth sensitivity closer step by step, taking the furthest point available as our anchor
+                mdc.mWallDepth = mdc.mTriggerPoints.Max(vector3 => vector3.z);
+                mdc.mDepthSensitivity = mdc.mWallDepth;
+                //Collin's old code 
+                //timer += Time.deltaTime;
+                //if(timer > 0.01f)
+                //{
+                //    mdc.mDepthSensitivity -= 0.001f;
+                //    mdc.mWallDepth -= 0.01f;
+                //}
             }
             else
             {
@@ -73,7 +83,7 @@ public class RectTriggerCalibration : MonoBehaviour
                 {
                     objects.SetActive(true);
                 }
-                calibrationText.text = "Caliberen klaar!";
+                calibrationText.text = "Kalibreren klaar!";
                 calibrationActive = false;
             }
         }
