@@ -32,7 +32,6 @@ public class MeasureDepthCalibration : MonoBehaviour
     public float mRightCutOff = 1;
     public Slider rightCutOff;
 
-
     public bool inversedCoords;
     public Toggle inversedCoordsToggle;
 
@@ -92,9 +91,9 @@ public class MeasureDepthCalibration : MonoBehaviour
         if (float.TryParse(zoomField.text, out z))
             zoom = z;
 
-        offsetX.text = offset.x + "";
-        offsetY.text = offset.y + "";
-        zoomField.text = zoom + "";
+        //offsetX.text = offset.x + "";
+        //offsetY.text = offset.y + "";
+        //zoomField.text = zoom + "";
 
         inversedCoords = inversedCoordsToggle.isOn;
 
@@ -182,7 +181,7 @@ public class MeasureDepthCalibration : MonoBehaviour
                     pos -= offset;
                     pos *= zoom;
                 }
-                Rect rect = new Rect(pos, new Vector2(10, 10));
+                Rect rect = new Rect(pos, new Vector2(50, 50));
                 GUI.Box(rect, "");
             }
         }
@@ -298,7 +297,8 @@ public class MeasureDepthCalibration : MonoBehaviour
         int height = (int)(screenBottomRight.y - screenTopLeft.y);
 
         // Create
-        Vector2 size = new Vector2(width, height);
+        //Vector2 size = new Vector2(width, height);
+        Vector2 size = new Vector2(1, 1);
         Rect rect = new Rect(screenTopLeft, size);
 
         return rect;

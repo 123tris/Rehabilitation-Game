@@ -51,18 +51,18 @@ public class RectTriggerCalibration : MonoBehaviour
 
         if (calibrationActive)
         {
-            if (mdc.mTriggerPoints.Count >= 200)
+            if (mdc.mTriggerPoints.Count >= 75)
             {
                 //Move the depth sensitivity closer step by step, taking the furthest point available as our anchor
-                mdc.mWallDepth = mdc.mTriggerPoints.Max(vector3 => vector3.z);
-                mdc.mDepthSensitivity = mdc.mWallDepth;
+                //mdc.mWallDepth = mdc.mTriggerPoints.Max(vector3 => vector3.z);
+                //mdc.mDepthSensitivity = mdc.mWallDepth;
                 //Collin's old code 
-                //timer += Time.deltaTime;
-                //if(timer > 0.01f)
-                //{
-                //    mdc.mDepthSensitivity -= 0.001f;
-                //    mdc.mWallDepth -= 0.01f;
-                //}
+                timer += Time.deltaTime;
+                if (timer > 0.01f)
+                {
+                    mdc.mDepthSensitivity -= 0.001f;
+                    mdc.mWallDepth -= 0.01f;
+                }
             }
             else
             {

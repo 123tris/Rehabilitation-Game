@@ -24,7 +24,7 @@ public class DepthSourceView : MonoBehaviour
     private int[] _Triangles;
     
     // Only works at 4 right now
-    private const int _DownsampleSize = 4;
+    private const int _DownsampleSize = 1;
     private const double _DepthScale = 0.1f;
     private const int _Speed = 50;
     

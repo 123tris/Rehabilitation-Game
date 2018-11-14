@@ -82,14 +82,14 @@ public class MeasureDepth : MonoBehaviour
             foreach (Vector2 point in mTriggerPoints)
             {
                 Vector2 pos;
-                if (inversedCoords)
-                {
-                    //use it for roessingh testing
-                    pos = new Vector2(point.x, Screen.height - point.y);
-                    pos -= offset;
-                    pos *= zoom;
-                }
-                else
+                //if (inversedCoords)
+                //{
+                //    //use it for roessingh testing
+                //    pos = new Vector2(point.x, Screen.height - point.y);
+                //    pos -= offset;
+                //    pos *= zoom;
+                //}
+                //else
                 {
                     //Use it for office testing
                     pos = new Vector2(Screen.width - point.x, point.y);
@@ -135,8 +135,8 @@ public class MeasureDepth : MonoBehaviour
 
     private void OnGUI()
     {
-        if (false)
-        //if (toggleGUI.isOn == true)
+        //if (false)
+        if (toggleGUI.isOn == true)
         {
             foreach (Vector2 point in mTriggerPoints)
             {
@@ -156,7 +156,7 @@ public class MeasureDepth : MonoBehaviour
                     pos *= zoom;
                 }
 
-                Rect rect = new Rect(pos, new Vector2(10, 10));
+                Rect rect = new Rect(pos, new Vector2(50, 50));
                 GUI.Box(rect, "");
             }
         }
