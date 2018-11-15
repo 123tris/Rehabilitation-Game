@@ -110,14 +110,14 @@ public class MeasureDepthCalibration : MonoBehaviour
                 {
                     //use it for roessingh testing
                     pos = new Vector2(point.x, Screen.height - point.y);
-                    pos -= offset;
+                    pos.x -= offset.x;
                     pos *= zoom;
                 }
                 else
                 {
                     //Use it for office testing
-                    pos = new Vector2(Screen.width - point.x, point.y);
-                    pos -= offset;
+                    pos = new Vector2(Screen.width - point.x, Screen.height - point.y);
+                    pos.x -= offset.x;
                     pos *= zoom;
                 }
 
@@ -139,12 +139,18 @@ public class MeasureDepthCalibration : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 9))
         {
+            if(hit.transform.tag == "TestHighlight")
+            {
+                hit.transform.GetComponent<MeshRenderer>().enabled = true;
+                Debug.Log("Too many cubes");
+            }
+
             if (!frameHit.Contains(hit.transform))
             {
                 frameHit.Add(hit.transform);
             }
-            Debug.DrawRay(ray.origin, ray.direction, Color.red);
-            hit.transform.GetComponent<RectTriggerCalibration>().motionHit++;
+            Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
+            //hit.transform.GetComponent<RectTriggerCalibration>().motionHit++;
         }
     }
 

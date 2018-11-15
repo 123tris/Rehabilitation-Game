@@ -23,6 +23,7 @@
       <easyScores />
       <mediumScores />
       <hardScores>
+        <int>0</int>
         <int>200</int>
         <int>200</int>
         <int>200</int>

@@ -92,8 +92,8 @@ public class MeasureDepth : MonoBehaviour
                 //else
                 {
                     //Use it for office testing
-                    pos = new Vector2(Screen.width - point.x, point.y);
-                    pos -= offset;
+                    pos = new Vector2(Screen.width - point.x, Screen.height - point.y);
+                    pos += offset;
                     pos *= zoom;
                 }
 
@@ -119,7 +119,7 @@ public class MeasureDepth : MonoBehaviour
             {
                 frameHit.Add(hit.transform);
             }
-            Debug.DrawRay(ray.origin, ray.direction, Color.red);
+            Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
             hit.transform.GetComponent<RectTrigger>().motionHit++;
         }
     }

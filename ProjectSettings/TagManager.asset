@@ -24,6 +24,7 @@ TagManager:
   - SpawnerBig
   - Spawner
   - PauzeButtons
+  - TestHighlight
   layers:
   - Default
   - TransparentFX
