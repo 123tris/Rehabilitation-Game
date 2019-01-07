@@ -9,6 +9,11 @@ public class MeasureDepthCalibration : MonoBehaviour
     public MultiSourceManager mMultiSource;
     public Texture2D mDepthTexture;
 
+    public int Bottom = 150;
+    public int Top = 110;
+    public int Left = 140;
+    public int Right = 105;
+
     // Cutoffs
     [Range(0, 1.0f)]
     public float mDepthSensitivity = 1;
@@ -105,26 +110,35 @@ public class MeasureDepthCalibration : MonoBehaviour
         {
             foreach (Vector2 point in mTriggerPoints)
             {
+                //CheckPixels(point);
                 Vector2 pos;
                 if (inversedCoords)
                 {
                     //use it for roessingh testing
-                    pos = new Vector2(point.x, Screen.height - point.y);
-                    pos.x -= offset.x;
-                    pos *= zoom;
+                    pos = new Vector2(Screen.width - point.x, Screen.height - point.y);
+                    //pos.x -= offset.x;
+                    //pos *= zoom;
                 }
                 else
                 {
                     //Use it for office testing
-                    pos = new Vector2(Screen.width - point.x, Screen.height - point.y);
-                    pos.x -= offset.x;
-                    pos *= zoom;
+                    pos = new Vector2(Screen.width - point.x, point.y);
+                    //pos.x -= offset.x;
+                    //pos *= zoom;
                 }
 
                 Raycast(pos);
             }
         }
     }
+
+    //public void CheckPixels(Vector2 PixelPos)
+    //{
+    //    if(PixelPos.x >= 1080)
+    //    {
+    //        PixelPos.x = 0;
+    //    }
+    //}
 
     private void LateUpdate()
     {
@@ -139,10 +153,10 @@ public class MeasureDepthCalibration : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 9))
         {
-            if(hit.transform.tag == "TestHighlight")
+            if (hit.transform.tag == "TestHighlight")
             {
                 hit.transform.GetComponent<MeshRenderer>().enabled = true;
-                Debug.Log("Too many cubes");
+               // Debug.Log("Too many cubes");
             }
 
             if (!frameHit.Contains(hit.transform))
@@ -163,35 +177,35 @@ public class MeasureDepthCalibration : MonoBehaviour
         frameHit.Clear();
     }
 
-    private void OnGUI()
-    {
-        if (mTriggerPoints == null)
-            return;
+    //private void OnGUI()
+    //{
+    //    if (mTriggerPoints == null)
+    //        return;
 
-        if (Gui.isOn == true)
-        {
-            foreach (Vector2 point in mTriggerPoints)
-            {
-                Vector2 pos;
-                if (inversedCoords)
-                {
-                    //use it for roessingh testing
-                    pos = new Vector2(point.x, Screen.height - point.y);
-                    pos -= offset;
-                    pos *= zoom;
-                }
-                else
-                {
-                    //Use it for office testing
-                    pos = new Vector2(Screen.width - point.x, point.y);
-                    pos -= offset;
-                    pos *= zoom;
-                }
-                Rect rect = new Rect(pos, new Vector2(50, 50));
-                GUI.Box(rect, "");
-            }
-        }
-    }
+    //    if (Gui.isOn == true)
+    //    {
+    //        foreach (Vector2 point in mTriggerPoints)
+    //        {
+    //            Vector2 pos;
+    //            if (inversedCoords)
+    //            {
+    //                //use it for roessingh testing
+    //                pos = new Vector2(Screen.width - point.x, point.y);
+    //                //pos -= offset;
+    //                //pos *= zoom;
+    //            }
+    //            else
+    //            {
+    //                //Use it for office testing
+    //                pos = new Vector2(Screen.width - point.x, point.y);
+    //                //pos -= offset;
+    //                //pos *= zoom;
+    //            }
+    //            Rect rect = new Rect(pos, new Vector2(10, 10));
+    //            GUI.Box(rect, "");
+    //        }
+    //    }
+    //}
 
     private List<ValidPointCalibration> DepthToColor()
     {
@@ -206,13 +220,13 @@ public class MeasureDepthCalibration : MonoBehaviour
         mMapper.MapDepthFrameToColorSpace(mDepthData, mColorSpacePoints);
 
         // Filter
-        for (int i = 0; i < mDepthResolution.x / 8; i++)
+        for (int i = 0; i < mDepthResolution.x; i++)//64
         {
-            for (int j = 0; j < mDepthResolution.y / 8; j++)
+            for (int j = 0; j < mDepthResolution.y; j++)//53
             {
                 // Sample index
                 int sampleIndex = (j * mDepthResolution.x) + i;
-                sampleIndex *= 8;
+                //sampleIndex *= 8;
 
                 // Cutoff tests
                 if (mCameraSpacePoints[sampleIndex].X < mLeftCutOff)
@@ -234,10 +248,18 @@ public class MeasureDepthCalibration : MonoBehaviour
                 if (mCameraSpacePoints[sampleIndex].Z >= mWallDepth)
                     newPoint.mWithinWallDepth = true;
 
+                //if (sampleIndex <= 512 * Bottom / 8)
+                //if (i > 10)
+                //    {
+                //    break;
+                //}
+
                 // Add
                 validPoints.Add(newPoint);
             }
         }
+
+        //Debug.Log(validPoints.Count);
 
         return validPoints;
     }
@@ -264,11 +286,11 @@ public class MeasureDepthCalibration : MonoBehaviour
 
     private Texture2D CreateTexture(List<ValidPointCalibration> validPoints)
     {
-        Texture2D newTexture = new Texture2D(1920, 1080, TextureFormat.Alpha8, false);
+        Texture2D newTexture = new Texture2D(1280, 768, TextureFormat.Alpha8, false);
 
-        for (int x = 0; x < 1920; x++)
+        for (int x = 0; x < 1280; x++)
         {
-            for (int y = 0; y < 1080; y++)
+            for (int y = 0; y < 768; y++)
             {
                 newTexture.SetPixel(x, y, Color.clear);
             }
@@ -325,6 +347,8 @@ public class MeasureDepthCalibration : MonoBehaviour
                 topLeft.y = point.colorSpace.Y;
         }
 
+        Debug.Log(topLeft.ToString());
+
         return topLeft;
     }
 
@@ -348,7 +372,7 @@ public class MeasureDepthCalibration : MonoBehaviour
 
     private Vector2 ScreenToCamera(Vector2 screenPosition)
     {
-        Vector2 normalizdScreen = new Vector2(Mathf.InverseLerp(0, 1920, screenPosition.x), Mathf.InverseLerp(0, 1080, screenPosition.y));
+        Vector2 normalizdScreen = new Vector2(Mathf.InverseLerp(0, 1280, screenPosition.x), Mathf.InverseLerp(0, 768, screenPosition.y));
 
         Vector2 screenPoint = new Vector2(normalizdScreen.x * mCamera.pixelWidth, normalizdScreen.y * mCamera.pixelHeight);
 
